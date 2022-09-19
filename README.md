@@ -17,3 +17,5 @@ https://fast-refuge-01044.herokuapp.com/
 ### General Areas of Focus
 
 ### Schema as of 19 September 2022
+![db_diagram] (./brandeis_class_hub/app/assets/images/db_diagram.jpg)
+Above is our db diagram. Every user will have an event list, which is one-to-one relationship. Every event list contains multiple sub-event list, which is one-to-many relationship. However, if we connect user_event with each sub_category event using event_id, then it will be an one-to-one relationship. 
