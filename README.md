@@ -22,5 +22,9 @@ David is interested in working on UI design in addition to making front-end obje
 Jason is interested in working on the general structure of the app and will be working on getting the course listing API and CSV file reader working.
 
 ### Schema as of 19 September 2022
-![db_diagram] (https://github.com/jessieffff/brandeis_class_hub/blob/main/app/assets/images/db_diagram.png)
-Above is our db diagram. Every user will have an event list, which is one-to-one relationship. Every event list contains multiple sub-event list, which is one-to-many relationship. However, if we connect user_event with each sub_category event using event_id, then it will be an one-to-one relationship. 
+![db_diagram] (./app/assets/images/db_schema.png)
+Above is our db diagram. 
+- Every user will have an event list, which is one-to-one relationship. 
+- Every event list contains multiple sub-event list (i.e., different kind of events), which is one-to-many relationship. 
+  - However, if we focus on the relationship between a single-user-event-list and a single event category, it will be a one-to-one relationship as each single-user-event-list will only contain a class/task/holiday list and a single user's class/task/holiday list will only belong to a single-user-event-list. (i.e., there won't be two event.class lists in a single-user-event-list). 
+- Every task contains different kind of sub-categories so it's also a one-to-many relationship. 
