@@ -309,3 +309,659 @@ Completed 200 OK in 58ms (Views: 51.9ms | ActiveRecord: 0.6ms | Allocations: 382
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(550586485133283165)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (5.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (109.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_development"[0m
+  [1m[35m (93.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_test"[0m
+  [1m[35m (274.3ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_development" ENCODING = 'unicode'[0m
+  [1m[35m (112.8ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_test" ENCODING = 'unicode'[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (20220916192756)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "content" text, "user_id" integer, "when" date, "canceled" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220916192756"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20220923183214)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "user_id" integer, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923183214"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-23 18:45:21.350219"], ["updated_at", "2022-09-23 18:45:21.350219"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (35.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_development"[0m
+  [1m[35m (32.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_test"[0m
+  [1m[35m (215.3ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_development" ENCODING = 'unicode'[0m
+  [1m[35m (78.4ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_test" ENCODING = 'unicode'[0m
+  [1m[35m (28.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (20220916192756)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "content" text, "user_id" integer, "start_time" timestamp(6), "end_time" timestamp(6), "location" text, "category" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220916192756"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20220923183214)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "user_id" integer, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923183214"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-23 18:49:37.573458"], ["updated_at", "2022-09-23 18:49:37.573458"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (34.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_development"[0m
+  [1m[35m (46.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_test"[0m
+  [1m[35m (188.0ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_development" ENCODING = 'unicode'[0m
+  [1m[35m (83.2ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (20220916192756)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "content" text, "event_id" integer, "user_id" integer, "start_time" timestamp(6), "end_time" timestamp(6), "location" text, "category" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220916192756"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20220923183214)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "user_id" integer, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923183214"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-23 18:50:46.005933"], ["updated_at", "2022-09-23 18:50:46.005933"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-09-23 14:51:57 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 20)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 2492)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-23 14:52:03 -0400
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 248)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:52:04 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1803)
+  Rendered layout layouts/application.html.erb (Duration: 356.9ms | Allocations: 97031)
+Completed 200 OK in 369ms (Views: 357.0ms | ActiveRecord: 2.3ms | Allocations: 99557)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:52:07 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 21.5ms | Allocations: 3508)
+  Rendered events/new.html.erb within layouts/application (Duration: 23.3ms | Allocations: 3864)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 6187)
+Completed 200 OK in 56ms (Views: 30.9ms | ActiveRecord: 5.2ms | Allocations: 13424)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:52:12 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 5.6ms | Allocations: 1119)
+  Rendered events/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3421)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 3752)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:52:23 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 3.6ms | Allocations: 1068)
+  Rendered events/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1155)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 3364)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 3641)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:52:23 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 950)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3160)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 3438)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-23 14:52:24 -0400
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 194)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-09-23 14:52:25 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1372)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3793)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 2.7ms | Allocations: 5096)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-09-23 14:52:27 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.8ms | Allocations: 2261)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 2548)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4758)
+Completed 200 OK in 32ms (Views: 15.3ms | ActiveRecord: 4.3ms | Allocations: 8476)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-09-23 14:52:38 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.7ms | Allocations: 1548)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1635)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 3844)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 4118)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-09-23 14:52:52 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jessie", "last_name"=>"li", "user_id"=>"2", "email"=>"jiefangli0605@gmail.com"}, "commit"=>"Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "user_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "jessie"], ["last_name", "li"], ["user_id", 2], ["email", "jiefangli0605@gmail.com"], ["created_at", "2022-09-23 18:52:52.029578"], ["updated_at", "2022-09-23 18:52:52.029578"]]
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 12ms (ActiveRecord: 4.0ms | Allocations: 3940)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-09-23 14:52:52 -0400
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.0ms | Allocations: 274)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3996)
+Completed 200 OK in 20ms (Views: 8.9ms | ActiveRecord: 5.5ms | Allocations: 6853)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-09-23 14:52:55 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3341)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.6ms | Allocations: 3653)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-09-23 14:52:58 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1001)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3211)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 3479)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-23 14:52:59 -0400
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 194)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:53:00 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 866)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3075)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 3346)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:53:03 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 3.1ms | Allocations: 1146)
+  Rendered events/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1234)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3443)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 3726)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:53:05 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 880)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3089)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 3359)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:55:28 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1318)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3911)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 4760)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:55:30 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 6.0ms | Allocations: 1499)
+  Rendered events/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1782)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 3991)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 4348)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:55:32 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.8ms | Allocations: 1080)
+  Rendered events/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1167)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3376)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3651)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:55:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 14.6ms | Allocations: 3679)
+  Rendered events/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 4301)
+  Rendered layout layouts/application.html.erb (Duration: 85.0ms | Allocations: 39229)
+Completed 200 OK in 113ms (Views: 89.2ms | ActiveRecord: 3.4ms | Allocations: 50208)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:55:44 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 2.5ms | Allocations: 1252)
+  Rendered events/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1347)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3584)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3937)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:55:47 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1332)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 3542)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 1.4ms | Allocations: 3980)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:55:56 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 889)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3098)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.8ms | Allocations: 3366)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:55:57 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3091)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.4ms | Allocations: 3367)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-23 14:55:58 -0400
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 14)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 664)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-09-23 14:55:59 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.0ms | Allocations: 288)
+  Rendered users/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 5511)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 7934)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 2.6ms | Allocations: 9235)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-09-23 14:56:19 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.3ms | Allocations: 2293)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2575)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 4795)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.0ms | Allocations: 5176)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-09-23 14:56:26 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.6ms | Allocations: 1548)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1635)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3849)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4121)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-09-23 14:56:27 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1100)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3309)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 3579)
+
+
+Started GET "/user" for 127.0.0.1 at 2022-09-23 14:56:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:57:02 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 1.7ms | Allocations: 1252)
+  Rendered events/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1341)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3667)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3994)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-09-23 14:57:06 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"content"=>"edfa", "user_id"=>"1"}, "commit"=>"Create Event"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:27:in `block in create'
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("content", "event_id", "user_id", "start_time", "end_time", "location", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["content", "edfa"], ["event_id", nil], ["user_id", 1], ["start_time", nil], ["end_time", nil], ["location", nil], ["category", nil], ["created_at", "2022-09-23 18:57:06.850667"], ["updated_at", "2022-09-23 18:57:06.850667"]]
+  ↳ app/controllers/events_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/events/1
+Completed 302 Found in 10ms (ActiveRecord: 2.9ms | Allocations: 4332)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2022-09-23 14:57:06 -0400
+Processing by EventsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:63:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/_event.html.erb (Duration: 1.2ms | Allocations: 201)
+  Rendered events/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1425)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3732)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 6556)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:57:08 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/_event.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1007)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3217)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.5ms | Allocations: 3492)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:58:17 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/_event.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered events/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1022)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3231)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 3499)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2022-09-23 14:58:21 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:63:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/_event.html.erb (Duration: 0.6ms | Allocations: 19)
+  Rendered events/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 664)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 2865)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.5ms | Allocations: 3634)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 14:58:23 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/_event.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1016)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3225)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 3495)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 14:58:25 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 11.1ms | Allocations: 1137)
+  Rendered events/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1225)
+  Rendered layout layouts/application.html.erb (Duration: 51.3ms | Allocations: 3444)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 0.0ms | Allocations: 3726)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 15:00:30 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 3.0ms | Allocations: 2222)
+  Rendered events/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2549)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5139)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 5979)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-09-23 15:00:38 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"content"=>"qwww", "user_id"=>"1", "event_id"=>"1", "category"=>"sacasa"}, "commit"=>"Create Event"}
+[31mUnpermitted parameters: :event_id, :category. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x000000010d9e5da0>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"content"=>"qwww", "user_id"=>"1", "event_id"=>"1", "category"=>"sacasa"}, "commit"=>"Create Event", "controller"=>"events", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:27:in `block in create'
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("content", "event_id", "user_id", "start_time", "end_time", "location", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["content", "qwww"], ["event_id", nil], ["user_id", 1], ["start_time", nil], ["end_time", nil], ["location", nil], ["category", nil], ["created_at", "2022-09-23 19:00:38.574706"], ["updated_at", "2022-09-23 19:00:38.574706"]]
+  ↳ app/controllers/events_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/events/2
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms | Allocations: 2676)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2022-09-23 15:00:38 -0400
+Processing by EventsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:63:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/_event.html.erb (Duration: 1.1ms | Allocations: 192)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1170)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3371)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 4297)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 15:00:40 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/_event.html.erb (Duration: 0.6ms | Allocations: 19)
+  Rendered events/_event.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1372)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3581)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.3ms | Allocations: 3930)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 15:01:00 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 2.6ms | Allocations: 1538)
+  Rendered events/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1625)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3834)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4112)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 15:01:02 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/_event.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered events/_event.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3338)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.3ms | Allocations: 3608)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2022-09-23 15:01:13 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:63:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/_event.html.erb (Duration: 0.4ms | Allocations: 19)
+  Rendered events/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 664)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2865)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 1.6ms | Allocations: 3631)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-09-23 15:01:37 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/_event.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered events/_event.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1126)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3335)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.4ms | Allocations: 3605)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 15:04:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 18.2ms | Allocations: 7155)
+  Rendered events/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 7721)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 7817)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 3.8ms | Allocations: 18743)
+
+
+  
+ActionView::Template::Error (undefined method `date_time_area' for #<ActionView::Helpers::FormBuilder:0x000000010b6bb640 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false}, @template=#<ActionView::Base:0x0000000000ba68>, @object=#<Event id: nil, content: nil, event_id: nil, user_id: nil, start_time: nil, end_time: nil, location: nil, category: nil, created_at: nil, updated_at: nil>, @object_name="event", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>
+
+    '.freeze;@output_buffer.append=( form.date_time_area :start_time );@output_buffer.safe_append='
+                                         ^^^^^^^^^^^^^^^
+Did you mean?  datetime_field):
+    39: 
+    40:   <div>
+    41:     <%= form.label :start_time, style: "display: block" %>
+    42:     <%= form.date_time_area :start_time %>
+    43:   </div>
+    44: 
+    45:     <div>
+  
+app/views/events/_form.html.erb:42
+app/views/events/_form.html.erb:1
+app/views/events/new.html.erb:3
+Started GET "/events/new" for 127.0.0.1 at 2022-09-23 15:05:31 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 4.4ms | Allocations: 3108)
+  Rendered events/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3446)
+  Rendered layout layouts/application.html.erb (Duration: 80.1ms | Allocations: 38668)
+Completed 200 OK in 83ms (Views: 81.8ms | ActiveRecord: 0.0ms | Allocations: 39588)
+
+

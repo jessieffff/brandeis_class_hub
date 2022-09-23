@@ -21,6 +21,32 @@
     <%= form.number_field :user_id %>
   </div>
 
+    <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.text_area :category %>
+  </div>
+
+
+  <div>
+    <%= form.label :location, style: "display: block" %>
+    <%= form.text_area :location %>
+  </div>
+
+  <div>
+    <%= form.label :start_time, style: "display: block" %>
+    <%= form.text_area :start_time %>
+  </div>
+
+    <div>
+    <%= form.label :end_time, style: "display: block" %>
+    <%= form.text_area :end_time %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>
