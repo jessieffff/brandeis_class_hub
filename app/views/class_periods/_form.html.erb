@@ -18,32 +18,17 @@
 
   <div>
     <%= form.label :individual_class_id, style: "display: block" %>
-    <%= form.text_field :individual_class_id %>
-  </div>
-
-  <div>
-    <%= form.label :integer, style: "display: block" %>
-    <%= form.text_field :integer %>
+    <%= form.number_field :individual_class_id %>
   </div>
 
   <div>
     <%= form.label :start_time, style: "display: block" %>
-    <%= form.text_field :start_time %>
-  </div>
-
-  <div>
-    <%= form.label :datetime, style: "display: block" %>
-    <%= form.text_field :datetime %>
+    <%= form.datetime_field :start_time %>
   </div>
 
   <div>
     <%= form.label :end_time, style: "display: block" %>
-    <%= form.text_field :end_time %>
-  </div>
-
-  <div>
-    <%= form.label :date_time, style: "display: block" %>
-    <%= form.text_field :date_time %>
+    <%= form.datetime_field :end_time %>
   </div>
 
   <div>

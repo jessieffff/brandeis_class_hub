@@ -15,11 +15,8 @@ class ClassPeriodsTest < ApplicationSystemTestCase
     click_on "New class period"
 
     fill_in "Course", with: @class_period.course_id
-    fill_in "Date time", with: @class_period.date_time
-    fill_in "Datetime", with: @class_period.datetime
     fill_in "End time", with: @class_period.end_time
     fill_in "Individual class", with: @class_period.individual_class_id
-    fill_in "Integer", with: @class_period.integer
     fill_in "Start time", with: @class_period.start_time
     click_on "Create Class period"
 
@@ -32,11 +29,8 @@ class ClassPeriodsTest < ApplicationSystemTestCase
     click_on "Edit this class period", match: :first
 
     fill_in "Course", with: @class_period.course_id
-    fill_in "Date time", with: @class_period.date_time
-    fill_in "Datetime", with: @class_period.datetime
     fill_in "End time", with: @class_period.end_time
     fill_in "Individual class", with: @class_period.individual_class_id
-    fill_in "Integer", with: @class_period.integer
     fill_in "Start time", with: @class_period.start_time
     click_on "Update Class period"
 
