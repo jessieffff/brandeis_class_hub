@@ -14,10 +14,16 @@ class CoursesTest < ApplicationSystemTestCase
     visit courses_url
     click_on "New course"
 
-    fill_in "Name", with: @course.name
+    fill_in "End date", with: @course.end_date
+    fill_in "Event category", with: @course.event_category
+    fill_in "Event", with: @course.event_id
+    fill_in "Event name", with: @course.event_name
+    fill_in "Location", with: @course.location
     fill_in "Professor first name", with: @course.professor_first_name
     fill_in "Professor last name", with: @course.professor_last_name
-    fill_in "Subject", with: @course.subject
+    fill_in "Repetition frequency", with: @course.repetition_frequency
+    fill_in "Start date", with: @course.start_date
+    fill_in "Url", with: @course.url
     click_on "Create Course"
 
     assert_text "Course was successfully created"
@@ -28,10 +34,16 @@ class CoursesTest < ApplicationSystemTestCase
     visit course_url(@course)
     click_on "Edit this course", match: :first
 
-    fill_in "Name", with: @course.name
+    fill_in "End date", with: @course.end_date
+    fill_in "Event category", with: @course.event_category
+    fill_in "Event", with: @course.event_id
+    fill_in "Event name", with: @course.event_name
+    fill_in "Location", with: @course.location
     fill_in "Professor first name", with: @course.professor_first_name
     fill_in "Professor last name", with: @course.professor_last_name
-    fill_in "Subject", with: @course.subject
+    fill_in "Repetition frequency", with: @course.repetition_frequency
+    fill_in "Start date", with: @course.start_date
+    fill_in "Url", with: @course.url
     click_on "Update Course"
 
     assert_text "Course was successfully updated"

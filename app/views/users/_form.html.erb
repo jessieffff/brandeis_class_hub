@@ -12,6 +12,11 @@
   <% end %>
 
   <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
     <%= form.label :first_name, style: "display: block" %>
     <%= form.text_field :first_name %>
   </div>
@@ -22,8 +27,8 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
+    <%= form.label :student_id, style: "display: block" %>
+    <%= form.number_field :student_id %>
   </div>
 
   <div>

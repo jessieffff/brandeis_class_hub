@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_id: 1
+  individual_class_id: MyString
+  integer: MyString
+  start_time: MyString
+  datetime: MyString
+  end_time: MyString
+  date_time: MyString
+
+two:
+  course_id: 1
+  individual_class_id: MyString
+  integer: MyString
+  start_time: MyString
+  datetime: MyString
+  end_time: MyString
+  date_time: MyString

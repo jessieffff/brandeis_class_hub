@@ -1,0 +1,52 @@
+<%= form_with(model: class_period) do |form| %>
+  <% if class_period.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(class_period.errors.count, "error") %> prohibited this class_period from being saved:</h2>
+
+      <ul>
+        <% class_period.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :course_id, style: "display: block" %>
+    <%= form.number_field :course_id %>
+  </div>
+
+  <div>
+    <%= form.label :individual_class_id, style: "display: block" %>
+    <%= form.text_field :individual_class_id %>
+  </div>
+
+  <div>
+    <%= form.label :integer, style: "display: block" %>
+    <%= form.text_field :integer %>
+  </div>
+
+  <div>
+    <%= form.label :start_time, style: "display: block" %>
+    <%= form.text_field :start_time %>
+  </div>
+
+  <div>
+    <%= form.label :datetime, style: "display: block" %>
+    <%= form.text_field :datetime %>
+  </div>
+
+  <div>
+    <%= form.label :end_time, style: "display: block" %>
+    <%= form.text_field :end_time %>
+  </div>
+
+  <div>
+    <%= form.label :date_time, style: "display: block" %>
+    <%= form.text_field :date_time %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

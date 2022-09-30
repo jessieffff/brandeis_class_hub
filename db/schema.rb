@@ -10,34 +10,86 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_23_191609) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_30_193903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignments", force: :cascade do |t|
-    t.string "name"
-    t.integer "assignment_id"
-    t.string "course"
+    t.integer "event_id"
+    t.string "event_name"
+    t.string "event_category"
+    t.datetime "due_date"
+    t.integer "class_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "calendars", force: :cascade do |t|
+    t.integer "calendar_id"
+    t.string "calendar_name"
+    t.integer "user_id"
+    t.boolean "shared"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "class_periods", force: :cascade do |t|
+    t.integer "course_id"
+    t.string "individual_class_id"
+    t.string "integer"
+    t.string "start_time"
+    t.string "datetime"
+    t.string "end_time"
+    t.string "date_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.integer "event_id"
+    t.string "event_name"
+    t.string "event_category"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "location"
+    t.string "professor_first_name"
+    t.string "professor_last_name"
+    t.string "repetition_frequency"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
-    t.text "content"
+    t.integer "calendar_id"
     t.integer "event_id"
+    t.string "event_category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "holidays", force: :cascade do |t|
+    t.integer "event_id"
+    t.string "event_name"
+    t.string "event_category"
+    t.date "date"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_calendars", force: :cascade do |t|
     t.integer "user_id"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.text "location"
-    t.text "category"
+    t.integer "calendar_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.integer "user_id"
     t.string "first_name"
     t.string "last_name"
-    t.integer "user_id"
+    t.integer "student_id"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

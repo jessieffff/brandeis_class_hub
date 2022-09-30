@@ -1,0 +1,42 @@
+<%= form_with(model: holiday) do |form| %>
+  <% if holiday.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(holiday.errors.count, "error") %> prohibited this holiday from being saved:</h2>
+
+      <ul>
+        <% holiday.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.label :event_name, style: "display: block" %>
+    <%= form.text_field :event_name %>
+  </div>
+
+  <div>
+    <%= form.label :event_category, style: "display: block" %>
+    <%= form.text_field :event_category %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

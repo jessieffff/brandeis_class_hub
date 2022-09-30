@@ -12,18 +12,28 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.number_field :event_id %>
   </div>
 
   <div>
-    <%= form.label :assignment_id, style: "display: block" %>
-    <%= form.number_field :assignment_id %>
+    <%= form.label :event_name, style: "display: block" %>
+    <%= form.text_field :event_name %>
   </div>
 
   <div>
-    <%= form.label :course, style: "display: block" %>
-    <%= form.text_field :course %>
+    <%= form.label :event_category, style: "display: block" %>
+    <%= form.text_field :event_category %>
+  </div>
+
+  <div>
+    <%= form.label :due_date, style: "display: block" %>
+    <%= form.datetime_field :due_date %>
+  </div>
+
+  <div>
+    <%= form.label :class_id, style: "display: block" %>
+    <%= form.number_field :class_id %>
   </div>
 
   <div>

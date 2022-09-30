@@ -17,7 +17,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create course" do
     assert_difference("Course.count") do
-      post courses_url, params: { course: { name: @course.name, professor_first_name: @course.professor_first_name, professor_last_name: @course.professor_last_name, subject: @course.subject } }
+      post courses_url, params: { course: { end_date: @course.end_date, event_category: @course.event_category, event_id: @course.event_id, event_name: @course.event_name, location: @course.location, professor_first_name: @course.professor_first_name, professor_last_name: @course.professor_last_name, repetition_frequency: @course.repetition_frequency, start_date: @course.start_date, url: @course.url } }
     end
 
     assert_redirected_to course_url(Course.last)
@@ -34,7 +34,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update course" do
-    patch course_url(@course), params: { course: { name: @course.name, professor_first_name: @course.professor_first_name, professor_last_name: @course.professor_last_name, subject: @course.subject } }
+    patch course_url(@course), params: { course: { end_date: @course.end_date, event_category: @course.event_category, event_id: @course.event_id, event_name: @course.event_name, location: @course.location, professor_first_name: @course.professor_first_name, professor_last_name: @course.professor_last_name, repetition_frequency: @course.repetition_frequency, start_date: @course.start_date, url: @course.url } }
     assert_redirected_to course_url(@course)
   end
 

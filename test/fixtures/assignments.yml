@@ -1,11 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  assignment_id: 1
-  class: MyString
+  event_id: 1
+  event_name: MyString
+  event_category: MyString
+  due_date: 2022-09-30 15:38:47
+  class_id: 1
 
 two:
-  name: MyString
-  assignment_id: 1
-  class: MyString
+  event_id: 1
+  event_name: MyString
+  event_category: MyString
+  due_date: 2022-09-30 15:38:47
+  class_id: 1
