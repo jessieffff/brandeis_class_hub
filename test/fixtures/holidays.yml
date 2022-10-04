@@ -4,12 +4,12 @@ one:
   event_id: 1
   event_name: MyString
   event_category: MyString
-  date: 2022-09-30
-  type: 
+  date: 2022-10-03
+  holiday_type: MyString
 
 two:
   event_id: 1
   event_name: MyString
   event_category: MyString
-  date: 2022-09-30
-  type: 
+  date: 2022-10-03
+  holiday_type: MyString

@@ -18,7 +18,7 @@ class HolidaysTest < ApplicationSystemTestCase
     fill_in "Event category", with: @holiday.event_category
     fill_in "Event", with: @holiday.event_id
     fill_in "Event name", with: @holiday.event_name
-    fill_in "Type", with: @holiday.type
+    fill_in "Holiday type", with: @holiday.holiday_type
     click_on "Create Holiday"
 
     assert_text "Holiday was successfully created"
@@ -33,7 +33,7 @@ class HolidaysTest < ApplicationSystemTestCase
     fill_in "Event category", with: @holiday.event_category
     fill_in "Event", with: @holiday.event_id
     fill_in "Event name", with: @holiday.event_name
-    fill_in "Type", with: @holiday.type
+    fill_in "Holiday type", with: @holiday.holiday_type
     click_on "Update Holiday"
 
     assert_text "Holiday was successfully updated"

@@ -5,7 +5,7 @@ class CreateHolidays < ActiveRecord::Migration[7.0]
       t.string :event_name
       t.string :event_category
       t.date :date
-      t.string :type
+      t.string :holiday_type
 
       t.timestamps
     end
