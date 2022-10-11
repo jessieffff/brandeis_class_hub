@@ -1,0 +1,28 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 200px);
+}
+
+.day-calender-item {
+    background-color: beige;
+    padding: 20px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.day-of-week-item {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.month-year-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px;
+}

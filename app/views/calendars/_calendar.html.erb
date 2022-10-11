@@ -1,22 +1,27 @@
-<div id="<%= dom_id calendar %>">
-  <p>
-    <strong>Calendar:</strong>
-    <%= calendar.calendar_id %>
-  </p>
+<% require_relative("../../../lib/assets/calendar_info") %>
 
-  <p>
-    <strong>Calendar name:</strong>
-    <%= calendar.calendar_name %>
-  </p>
+<% month = 10 %>
+<% year = 2022 %>
+<% c = CalendarInfo.new(month, year) %>
 
-  <p>
-    <strong>User:</strong>
-    <%= calendar.user_id %>
-  </p>
+<p class="month-year-title">
+  <%= "#{c.get_month_name(month)}, #{year}" %>
+</p>
 
-  <p>
-    <strong>Shared:</strong>
-    <%= calendar.shared %>
-  </p>
+<div class="calendar-container">
+  <% c.get_days_of_week.each do |day| %>
+    <div class="day-of-week-item">
+      <p>
+        <%= day %>
+      <p>
+    </div>
+  <% end %>
 
+  <% c.get_dates().each do |date| %>
+    <div class="day-calender-item">
+      <p>
+        <%= date %>
+      </p>
+    </div>
+  <% end %>
 </div>
