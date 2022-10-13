@@ -17,7 +17,7 @@ class CalendarsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create calendar" do
     assert_difference("Calendar.count") do
-      post calendars_url, params: { calendar: { calendar_id: @calendar.calendar_id, calendar_name: @calendar.calendar_name, shared: @calendar.shared, user_id: @calendar.user_id } }
+      post calendars_url, params: { calendar: { calendar_name: @calendar.calendar_name, shared: @calendar.shared, user_id: @calendar.user_id } }
     end
 
     assert_redirected_to calendar_url(Calendar.last)
@@ -34,7 +34,7 @@ class CalendarsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update calendar" do
-    patch calendar_url(@calendar), params: { calendar: { calendar_id: @calendar.calendar_id, calendar_name: @calendar.calendar_name, shared: @calendar.shared, user_id: @calendar.user_id } }
+    patch calendar_url(@calendar), params: { calendar: { calendar_name: @calendar.calendar_name, shared: @calendar.shared, user_id: @calendar.user_id } }
     assert_redirected_to calendar_url(@calendar)
   end
 

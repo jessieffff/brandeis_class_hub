@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_13_005059) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,7 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
   end
 
   create_table "calendars", force: :cascade do |t|
-    t.integer "calendar_id"
     t.string "calendar_name"
     t.integer "user_id"
     t.boolean "shared"
@@ -35,7 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
 
   create_table "class_periods", force: :cascade do |t|
     t.integer "course_id"
-    t.integer "individual_class_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
@@ -59,7 +57,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
 
   create_table "events", force: :cascade do |t|
     t.integer "calendar_id"
-    t.integer "event_id"
     t.string "event_category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,7 +80,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "user_id"
     t.string "first_name"
     t.string "last_name"
     t.integer "student_id"

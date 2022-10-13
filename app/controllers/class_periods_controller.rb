@@ -65,6 +65,6 @@ class ClassPeriodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def class_period_params
-      params.require(:class_period).permit(:course_id, :individual_class_id, :start_time, :end_time)
+      params.require(:class_period).permit(:course_id, :start_time, :end_time)
     end
 end

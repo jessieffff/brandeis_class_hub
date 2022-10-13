@@ -2,10 +2,8 @@
 
 one:
   calendar_id: 1
-  event_id: 1
   event_category: MyString
 
 two:
   calendar_id: 1
-  event_id: 1
   event_category: MyString
