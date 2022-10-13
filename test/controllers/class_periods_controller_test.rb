@@ -17,7 +17,7 @@ class ClassPeriodsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create class_period" do
     assert_difference("ClassPeriod.count") do
-      post class_periods_url, params: { class_period: { course_id: @class_period.course_id, end_time: @class_period.end_time, individual_class_id: @class_period.individual_class_id, start_time: @class_period.start_time } }
+      post class_periods_url, params: { class_period: { course_id: @class_period.course_id, end_time: @class_period.end_time, start_time: @class_period.start_time } }
     end
 
     assert_redirected_to class_period_url(ClassPeriod.last)
@@ -34,7 +34,7 @@ class ClassPeriodsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update class_period" do
-    patch class_period_url(@class_period), params: { class_period: { course_id: @class_period.course_id, end_time: @class_period.end_time, individual_class_id: @class_period.individual_class_id, start_time: @class_period.start_time } }
+    patch class_period_url(@class_period), params: { class_period: { course_id: @class_period.course_id, end_time: @class_period.end_time, start_time: @class_period.start_time } }
     assert_redirected_to class_period_url(@class_period)
   end
 

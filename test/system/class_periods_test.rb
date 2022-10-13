@@ -16,7 +16,6 @@ class ClassPeriodsTest < ApplicationSystemTestCase
 
     fill_in "Course", with: @class_period.course_id
     fill_in "End time", with: @class_period.end_time
-    fill_in "Individual class", with: @class_period.individual_class_id
     fill_in "Start time", with: @class_period.start_time
     click_on "Create Class period"
 
@@ -30,7 +29,6 @@ class ClassPeriodsTest < ApplicationSystemTestCase
 
     fill_in "Course", with: @class_period.course_id
     fill_in "End time", with: @class_period.end_time
-    fill_in "Individual class", with: @class_period.individual_class_id
     fill_in "Start time", with: @class_period.start_time
     click_on "Update Class period"
 
