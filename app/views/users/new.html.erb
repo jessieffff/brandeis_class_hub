@@ -1,6 +1,29 @@
-<h1>New user</h1>
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
 
-<%= render "form", user: @user %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @user) do |f| %>
+      <%= f.label :firstname %>
+      <%= f.text_field :firstname %>
+
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
 
 <br>
 
