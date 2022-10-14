@@ -16,7 +16,6 @@ class EventsTest < ApplicationSystemTestCase
 
     fill_in "Calendar", with: @event.calendar_id
     fill_in "Event category", with: @event.event_category
-    fill_in "Event", with: @event.event_id
     click_on "Create Event"
 
     assert_text "Event was successfully created"
@@ -29,7 +28,6 @@ class EventsTest < ApplicationSystemTestCase
 
     fill_in "Calendar", with: @event.calendar_id
     fill_in "Event category", with: @event.event_category
-    fill_in "Event", with: @event.event_id
     click_on "Update Event"
 
     assert_text "Event was successfully updated"

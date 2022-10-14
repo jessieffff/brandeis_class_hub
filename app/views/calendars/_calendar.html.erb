@@ -1,5 +1,4 @@
 <% require_relative("../../../lib/assets/calendar_info") %>
-
 <% month = 10 %>
 <% year = 2022 %>
 <% c = CalendarInfo.new(month, year) %>
@@ -16,7 +15,6 @@
       <p>
     </div>
   <% end %>
-
   <% c.get_dates().each do |date| %>
     <div class="day-calender-item">
       <p>
@@ -25,3 +23,4 @@
     </div>
   <% end %>
 </div>
+
