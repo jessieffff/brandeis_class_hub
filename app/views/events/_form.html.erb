@@ -11,14 +11,16 @@
     </div>
   <% end %>
 
+<%# create a drop down list for all existing calendar names %>
   <div>
-    <%= form.label :calendar_id, style: "display: block" %>
-    <%= form.number_field :calendar_id %>
+    <%= form.label :calendar_name, style: "display: block" %>
+    <%= form.select :calendar_name, Calendar.all.collect{|calendar| [calendar.calendar_name, calendar.id]}, include_blank: true %>  
   </div>
 
+<%# change it to drop-down for category %>
   <div>
-    <%= form.label :event_category, style: "display: block" %>
-    <%= form.text_field :event_category %>
+    <%= form.label :event_category, style: "display: block" %> 
+    <%= form.select :event_category, ['Course','Holiday','Assignment']%>
   </div>
 
   <div>
