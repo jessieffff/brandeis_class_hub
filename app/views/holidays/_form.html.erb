@@ -12,23 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :event_id, style: "display: block" %>
-    <%= form.number_field :event_id %>
+    <%= form.label :calendar_id, style: "display: block" %>
+    <%= form.number_field :calendar_id %>
   </div>
 
   <div>
-    <%= form.label :event_name, style: "display: block" %>
-    <%= form.text_field :event_name %>
-  </div>
-
-  <div>
-    <%= form.label :event_category, style: "display: block" %>
-    <%= form.text_field :event_category %>
+    <%= form.label :holiday_name, style: "display: block" %>
+    <%= form.text_field :holiday_name %>
   </div>
 
   <div>
     <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
+    <%= form.datetime_field :date %>
   </div>
 
   <div>

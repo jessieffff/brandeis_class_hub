@@ -1,11 +1,10 @@
 class CreateAssignments < ActiveRecord::Migration[7.0]
   def change
     create_table :assignments do |t|
-      t.integer :event_id
-      t.string :event_name
-      t.string :event_category
+      t.integer :calendar_id
+      t.string :assignment_name
       t.datetime :due_date
-      t.integer :class_id
+      t.integer :course_id
 
       t.timestamps
     end
