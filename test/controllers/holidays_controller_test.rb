@@ -17,7 +17,7 @@ class HolidaysControllerTest < ActionDispatch::IntegrationTest
 
   test "should create holiday" do
     assert_difference("Holiday.count") do
-      post holidays_url, params: { holiday: { date: @holiday.date, event_category: @holiday.event_category, event_id: @holiday.event_id, event_name: @holiday.event_name, holiday_type: @holiday.holiday_type } }
+      post holidays_url, params: { holiday: { calendar_id: @holiday.calendar_id, date: @holiday.date, holiday_name: @holiday.holiday_name, holiday_type: @holiday.holiday_type } }
     end
 
     assert_redirected_to holiday_url(Holiday.last)
@@ -34,7 +34,7 @@ class HolidaysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update holiday" do
-    patch holiday_url(@holiday), params: { holiday: { date: @holiday.date, event_category: @holiday.event_category, event_id: @holiday.event_id, event_name: @holiday.event_name, holiday_type: @holiday.holiday_type } }
+    patch holiday_url(@holiday), params: { holiday: { calendar_id: @holiday.calendar_id, date: @holiday.date, holiday_name: @holiday.holiday_name, holiday_type: @holiday.holiday_type } }
     assert_redirected_to holiday_url(@holiday)
   end
 

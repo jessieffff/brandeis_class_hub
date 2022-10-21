@@ -1,9 +1,8 @@
 class CreateCourses < ActiveRecord::Migration[7.0]
   def change
     create_table :courses do |t|
-      t.integer :event_id
-      t.string :event_name
-      t.string :event_category
+      t.integer :calendar_id
+      t.string :course_name
       t.date :start_date
       t.date :end_date
       t.string :location

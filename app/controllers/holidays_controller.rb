@@ -65,6 +65,6 @@ class HolidaysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def holiday_params
-      params.require(:holiday).permit(:event_id, :event_name, :event_category, :date, :holiday_type)
+      params.require(:holiday).permit(:calendar_id, :holiday_name, :date, :holiday_type)
     end
 end

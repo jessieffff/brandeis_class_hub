@@ -1,7 +1,7 @@
 class Course < ApplicationRecord
   belongs_to(
-    :event,
-    foreign_key: 'event_id' # name of column containing FK
+    :calendar,
+    foreign_key: 'calendar_id' # name of column containing FK
   )
   has_many(
     :class_periods,

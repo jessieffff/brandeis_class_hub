@@ -17,7 +17,7 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create assignment" do
     assert_difference("Assignment.count") do
-      post assignments_url, params: { assignment: { class_id: @assignment.class_id, due_date: @assignment.due_date, event_category: @assignment.event_category, event_id: @assignment.event_id, event_name: @assignment.event_name } }
+      post assignments_url, params: { assignment: { assignment_name: @assignment.assignment_name, calendar_id: @assignment.calendar_id, course_id: @assignment.course_id, due_date: @assignment.due_date } }
     end
 
     assert_redirected_to assignment_url(Assignment.last)
@@ -34,7 +34,7 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update assignment" do
-    patch assignment_url(@assignment), params: { assignment: { class_id: @assignment.class_id, due_date: @assignment.due_date, event_category: @assignment.event_category, event_id: @assignment.event_id, event_name: @assignment.event_name } }
+    patch assignment_url(@assignment), params: { assignment: { assignment_name: @assignment.assignment_name, calendar_id: @assignment.calendar_id, course_id: @assignment.course_id, due_date: @assignment.due_date } }
     assert_redirected_to assignment_url(@assignment)
   end
 

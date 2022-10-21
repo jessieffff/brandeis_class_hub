@@ -4,7 +4,9 @@
 
 <div>
   <%= link_to "Edit this calendar", edit_calendar_path(@calendar) %> |
-  <%= link_to "Back to calendars", calendars_path %>
-
+  <%= link_to "Back to calendars", calendars_path %> 
+  <%# add a drop-down to select different event types, i have deleted event %>
+<%# <%= link_to "New event", new_event_path %> 
   <%= button_to "Destroy this calendar", @calendar, method: :delete %>
+  
 </div>
