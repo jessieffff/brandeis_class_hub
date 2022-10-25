@@ -16939,3 +16939,418 @@ Processing by CalendarsController#index as HTML
 Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 9823)
 
 
+Started GET "/calendars" for ::1 at 2022-10-24 23:13:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.6ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/_calendar.html.erb (Duration: 1.2ms | Allocations: 559)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 114)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 10297)
+  Rendered layout layouts/application.html.erb (Duration: 105.5ms | Allocations: 72004)
+Completed 200 OK in 123ms (Views: 99.2ms | ActiveRecord: 8.9ms | Allocations: 79369)
+
+
+Started GET "/calendars/990512373782453" for ::1 at 2022-10-24 23:13:46 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 7108)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 7202)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.3ms | Allocations: 10323)
+
+
+  
+ActionView::Template::Error (undefined method `token' for #<Calendar id: 1, calendar_name: "non", user_id: 7, shared: false, invite_token: [FILTERED], created_at: "2022-10-25 03:05:46.287838000 +0000", updated_at: "2022-10-25 03:05:46.287838000 +0000">
+Did you mean?  to_key):
+    15:       <div class="card-body">
+    16:         <div class="invite-box mb-4" data-controller="invite">
+    17:           <h5 class="mb-1">Invite Link:</h5>
+    18:             <input class="calendar-url" id="cb-link-field" type="text" value="<%= new_calendar_user_calendar_url(@calendar) %>" data-target="invite.url" data-group-token="<%= @calendar.token %>"/>
+    19:               <div class="card-body__btns mt-2">
+    20:                 <button class="btn btn-primary" data-action="click->invite#copy">Copy Link</button>
+    21:               </div>
+  
+app/views/calendars/show.html.erb:18
+Started GET "/calendars/990512373782453" for ::1 at 2022-10-24 23:14:01 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (1.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 1.9ms | Allocations: 390)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1405)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 8001)
+Completed 200 OK in 29ms (Views: 22.7ms | ActiveRecord: 1.3ms | Allocations: 9962)
+
+
+Started GET "/calendars/990512373782453" for ::1 at 2022-10-24 23:14:29 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.7ms | Allocations: 390)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1414)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7881)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.5ms | Allocations: 9820)
+
+
+Started GET "/calendars/990512373782453" for ::1 at 2022-10-24 23:14:57 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.9ms | Allocations: 390)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1423)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 7890)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.3ms | Allocations: 9828)
+
+
+Started GET "/calendars/990512373782453" for ::1 at 2022-10-24 23:15:28 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.7ms | Allocations: 393)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1714)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 8166)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 10104)
+
+
+Started DELETE "/calendars/990512373782453" for ::1 at 2022-10-24 23:15:30 -0400
+Processing by CalendarsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"FHrrQr0llSFX8uJvsJhF25YFid3j7YrvKnmpSAhoFQnKzd4ZgXJtmwGGCpsqlwYnW4dy_2XK26MnPT9mN9YBxA", "invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/calendars_controller.rb:52:in `destroy'
+  [1m[36mCalendar Destroy (0.9ms)[0m  [1m[31mDELETE FROM "calendars" WHERE "calendars"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/calendars_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/calendars_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/calendars
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms | Allocations: 3198)
+
+
+Started GET "/calendars" for ::1 at 2022-10-24 23:15:30 -0400
+Processing by CalendarsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 117)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3592)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 9919)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 10383)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:15:33 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 111)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 7085)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 8304)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:25:35 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 111)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 887)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 19775)
+Completed 200 OK in 42ms (Views: 16.5ms | ActiveRecord: 9.4ms | Allocations: 24027)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:26:24 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.9ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 150.6ms | Allocations: 15677)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.9ms | Allocations: 16912)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: toast.
+        on line 3:1 of app/assets/stylesheets/custom.scss
+>> @import "toast";
+
+   ^
+):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/custom.scss:3
+app/views/layouts/application.html.erb:9
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:28:50 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (1.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.7ms | Allocations: 393)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1706)
+  Rendered layout layouts/application.html.erb (Duration: 380.5ms | Allocations: 69007)
+Completed 200 OK in 394ms (Views: 385.3ms | ActiveRecord: 1.0ms | Allocations: 70849)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:32:23 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (1.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 3.2ms | Allocations: 393)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1692)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 20862)
+Completed 200 OK in 54ms (Views: 38.0ms | ActiveRecord: 1.0ms | Allocations: 22803)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:35:03 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (5.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.3ms | Allocations: 111)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 875)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 19624)
+Completed 200 OK in 48ms (Views: 33.1ms | ActiveRecord: 5.1ms | Allocations: 20935)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:35:31 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.3ms | Allocations: 111)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 875)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 19624)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 0.5ms | Allocations: 20842)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:36:10 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (3.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 887)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 19722)
+Completed 200 OK in 53ms (Views: 31.5ms | ActiveRecord: 3.4ms | Allocations: 20941)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:38:01 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 866)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 19640)
+Completed 200 OK in 28ms (Views: 23.5ms | ActiveRecord: 0.4ms | Allocations: 20878)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:39:43 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 1.1ms | Allocations: 393)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1701)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 8153)
+Completed 200 OK in 33ms (Views: 22.2ms | ActiveRecord: 0.5ms | Allocations: 10001)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:40:22 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (1.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 1.7ms | Allocations: 393)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1692)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 8144)
+Completed 200 OK in 38ms (Views: 24.7ms | ActiveRecord: 1.3ms | Allocations: 10085)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV" for ::1 at 2022-10-24 23:42:29 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.7ms | Allocations: 393)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1693)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 20898)
+Completed 200 OK in 38ms (Views: 30.9ms | ActiveRecord: 0.5ms | Allocations: 22836)
+
+
+Started GET "/calendars/tmW9Kq43xaT1U5Zg36m91rzV/edit" for ::1 at 2022-10-24 23:42:38 -0400
+Processing by CalendarsController#edit as HTML
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/edit.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 200.8ms | Allocations: 289801)
+  Rendered calendars/edit.html.erb within layouts/application (Duration: 202.3ms | Allocations: 290169)
+  Rendered layout layouts/application.html.erb (Duration: 206.1ms | Allocations: 296481)
+Completed 200 OK in 214ms (Views: 206.6ms | ActiveRecord: 0.2ms | Allocations: 297441)
+
+
+Started GET "/calendars" for ::1 at 2022-10-24 23:42:50 -0400
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/_calendar.html.erb (Duration: 0.2ms | Allocations: 117)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.0ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered calendars/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3551)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 9646)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.5ms | Allocations: 10063)
+
+
+Started GET "/calendars/new" for ::1 at 2022-10-24 23:42:53 -0400
+Processing by CalendarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 2.6ms | Allocations: 1522)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1744)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 7837)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 8202)
+
+
+Started POST "/calendars" for ::1 at 2022-10-24 23:43:04 -0400
+Processing by CalendarsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"m08acIQx_R-gHFxOuNfi5Tu1Hs3OZ7DZ-EH_DvZ_9sAcByHjXKBqt6XslXrD7S72EFRQLjLBJfEAaXErWAxvaw", "calendar"=>{"calendar_name"=>"test a new calendar", "user_id"=>"2", "shared"=>"0"}, "commit"=>"Create Calendar"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+  [1m[36mCalendar Create (6.2ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "invite_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_name", "test a new calendar"], ["user_id", 2], ["shared", false], ["invite_token", "[FILTERED]"], ["created_at", "2022-10-25 03:43:04.423861"], ["updated_at", "2022-10-25 03:43:04.423861"]]
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/calendars/ZiLYEFkYiYhS6Sph1SXKKyJT
+Completed 302 Found in 18ms (ActiveRecord: 7.7ms | Allocations: 3785)
+
+
+Started GET "/calendars/ZiLYEFkYiYhS6Sph1SXKKyJT" for ::1 at 2022-10-24 23:43:04 -0400
+Processing by CalendarsController#show as TURBO_STREAM
+  Parameters: {"invite_token"=>"[FILTERED]"}
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:66:in `set_calendar'
+  [1m[36mCACHE Calendar Load (0.0ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."invite_token" = $1 LIMIT $2[0m  [["invite_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 111)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 978)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 7063)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 8341)
+
+
