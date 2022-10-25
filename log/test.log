@@ -1,0 +1,1360 @@
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (77.2ms)[0m  [1m[35mTRUNCATE TABLE "assignments", "calendars", "users", "class_periods", "courses", "holidays", "other_events", "user_calendars"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (79.1ms)[0m  [1m[35mTRUNCATE TABLE "assignments", "calendars", "users", "class_periods", "courses", "holidays", "other_events", "user_calendars"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (90.1ms)[0m  [1m[35mTRUNCATE TABLE "assignments", "calendars", "users", "class_periods", "courses", "holidays", "other_events", "user_calendars"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (93.1ms)[0m  [1m[35mTRUNCATE TABLE "assignments", "calendars", "users", "class_periods", "courses", "holidays", "other_events", "user_calendars"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (95.0ms)[0m  [1m[35mTRUNCATE TABLE "assignments", "calendars", "users", "class_periods", "courses", "holidays", "other_events", "user_calendars"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[35m (86.0ms)[0m  [1m[35mTRUNCATE TABLE "assignments", "user_calendars", "users", "calendars", "class_periods", "courses", "holidays", "other_events"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (96.1ms)[0m  [1m[35mTRUNCATE TABLE "assignments", "user_calendars", "users", "calendars", "class_periods", "courses", "holidays", "other_events"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (89.6ms)[0m  [1m[35mTRUNCATE TABLE "assignments", "calendars", "users", "class_periods", "courses", "holidays", "other_events", "user_calendars"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[31mDELETE FROM "assignments";
+DELETE FROM "calendars";
+DELETE FROM "class_periods";
+DELETE FROM "courses";
+DELETE FROM "holidays";
+DELETE FROM "other_events";
+DELETE FROM "user_calendars";
+DELETE FROM "users";
+INSERT INTO "assignments" ("id", "calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.447685', '2022-10-22 16:45:59.447685'), (298486374, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.447685', '2022-10-22 16:45:59.447685');
+INSERT INTO "calendars" ("id", "calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, FALSE, '2022-10-22 16:45:59.454064', '2022-10-22 16:45:59.454064'), (298486374, 'MyString', 1, FALSE, '2022-10-22 16:45:59.454064', '2022-10-22 16:45:59.454064');
+INSERT INTO "class_periods" ("id", "course_id", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.457527', '2022-10-22 16:45:59.457527'), (298486374, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.457527', '2022-10-22 16:45:59.457527');
+INSERT INTO "courses" ("id", "calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.459287', '2022-10-22 16:45:59.459287'), (298486374, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.459287', '2022-10-22 16:45:59.459287');
+INSERT INTO "holidays" ("id", "calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.460981', '2022-10-22 16:45:59.460981'), (298486374, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.460981', '2022-10-22 16:45:59.460981');
+INSERT INTO "other_events" ("id", "calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.463403', '2022-10-22 16:45:59.463403'), (298486374, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.463403', '2022-10-22 16:45:59.463403');
+INSERT INTO "user_calendars" ("id", "user_id", "calendar_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2022-10-22 16:45:59.466664', '2022-10-22 16:45:59.466664'), (298486374, 1, 1, '2022-10-22 16:45:59.466664', '2022-10-22 16:45:59.466664');
+INSERT INTO "users" ("id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.468567', '2022-10-22 16:45:59.468567'), (298486374, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.468567', '2022-10-22 16:45:59.468567')[0m
+  [1m[35m (2.8ms)[0m  [1m[31mDELETE FROM "assignments";
+DELETE FROM "calendars";
+DELETE FROM "class_periods";
+DELETE FROM "courses";
+DELETE FROM "holidays";
+DELETE FROM "other_events";
+DELETE FROM "user_calendars";
+DELETE FROM "users";
+INSERT INTO "assignments" ("id", "calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.442012', '2022-10-22 16:45:59.442012'), (298486374, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.442012', '2022-10-22 16:45:59.442012');
+INSERT INTO "calendars" ("id", "calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, FALSE, '2022-10-22 16:45:59.453940', '2022-10-22 16:45:59.453940'), (298486374, 'MyString', 1, FALSE, '2022-10-22 16:45:59.453940', '2022-10-22 16:45:59.453940');
+INSERT INTO "class_periods" ("id", "course_id", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.455926', '2022-10-22 16:45:59.455926'), (298486374, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.455926', '2022-10-22 16:45:59.455926');
+INSERT INTO "courses" ("id", "calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.458080', '2022-10-22 16:45:59.458080'), (298486374, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.458080', '2022-10-22 16:45:59.458080');
+INSERT INTO "holidays" ("id", "calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.459698', '2022-10-22 16:45:59.459698'), (298486374, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.459698', '2022-10-22 16:45:59.459698');
+INSERT INTO "other_events" ("id", "calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.461354', '2022-10-22 16:45:59.461354'), (298486374, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.461354', '2022-10-22 16:45:59.461354');
+INSERT INTO "user_calendars" ("id", "user_id", "calendar_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2022-10-22 16:45:59.463708', '2022-10-22 16:45:59.463708'), (298486374, 1, 1, '2022-10-22 16:45:59.463708', '2022-10-22 16:45:59.463708');
+INSERT INTO "users" ("id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.465254', '2022-10-22 16:45:59.465254'), (298486374, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.465254', '2022-10-22 16:45:59.465254')[0m
+  [1m[35m (2.8ms)[0m  [1m[31mDELETE FROM "assignments";
+DELETE FROM "calendars";
+DELETE FROM "class_periods";
+DELETE FROM "courses";
+DELETE FROM "holidays";
+DELETE FROM "other_events";
+DELETE FROM "user_calendars";
+DELETE FROM "users";
+INSERT INTO "assignments" ("id", "calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.442305', '2022-10-22 16:45:59.442305'), (298486374, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.442305', '2022-10-22 16:45:59.442305');
+INSERT INTO "calendars" ("id", "calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, FALSE, '2022-10-22 16:45:59.454590', '2022-10-22 16:45:59.454590'), (298486374, 'MyString', 1, FALSE, '2022-10-22 16:45:59.454590', '2022-10-22 16:45:59.454590');
+INSERT INTO "class_periods" ("id", "course_id", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.458964', '2022-10-22 16:45:59.458964'), (298486374, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.458964', '2022-10-22 16:45:59.458964');
+INSERT INTO "courses" ("id", "calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.460277', '2022-10-22 16:45:59.460277'), (298486374, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.460277', '2022-10-22 16:45:59.460277');
+INSERT INTO "holidays" ("id", "calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.462698', '2022-10-22 16:45:59.462698'), (298486374, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.462698', '2022-10-22 16:45:59.462698');
+INSERT INTO "other_events" ("id", "calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.464419', '2022-10-22 16:45:59.464419'), (298486374, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.464419', '2022-10-22 16:45:59.464419');
+INSERT INTO "user_calendars" ("id", "user_id", "calendar_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2022-10-22 16:45:59.466257', '2022-10-22 16:45:59.466257'), (298486374, 1, 1, '2022-10-22 16:45:59.466257', '2022-10-22 16:45:59.466257');
+INSERT INTO "users" ("id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.467678', '2022-10-22 16:45:59.467678'), (298486374, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.467678', '2022-10-22 16:45:59.467678')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[31mDELETE FROM "assignments";
+DELETE FROM "calendars";
+DELETE FROM "class_periods";
+DELETE FROM "courses";
+DELETE FROM "holidays";
+DELETE FROM "other_events";
+DELETE FROM "user_calendars";
+DELETE FROM "users";
+INSERT INTO "assignments" ("id", "calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.447646', '2022-10-22 16:45:59.447646'), (298486374, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.447646', '2022-10-22 16:45:59.447646');
+INSERT INTO "calendars" ("id", "calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, FALSE, '2022-10-22 16:45:59.454092', '2022-10-22 16:45:59.454092'), (298486374, 'MyString', 1, FALSE, '2022-10-22 16:45:59.454092', '2022-10-22 16:45:59.454092');
+INSERT INTO "class_periods" ("id", "course_id", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.456436', '2022-10-22 16:45:59.456436'), (298486374, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.456436', '2022-10-22 16:45:59.456436');
+INSERT INTO "courses" ("id", "calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.457795', '2022-10-22 16:45:59.457795'), (298486374, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.457795', '2022-10-22 16:45:59.457795');
+INSERT INTO "holidays" ("id", "calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.460825', '2022-10-22 16:45:59.460825'), (298486374, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.460825', '2022-10-22 16:45:59.460825');
+INSERT INTO "other_events" ("id", "calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.462255', '2022-10-22 16:45:59.462255'), (298486374, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.462255', '2022-10-22 16:45:59.462255');
+INSERT INTO "user_calendars" ("id", "user_id", "calendar_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2022-10-22 16:45:59.464143', '2022-10-22 16:45:59.464143'), (298486374, 1, 1, '2022-10-22 16:45:59.464143', '2022-10-22 16:45:59.464143');
+INSERT INTO "users" ("id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.465612', '2022-10-22 16:45:59.465612'), (298486374, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.465612', '2022-10-22 16:45:59.465612')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[31mDELETE FROM "assignments";
+DELETE FROM "calendars";
+DELETE FROM "class_periods";
+DELETE FROM "courses";
+DELETE FROM "holidays";
+DELETE FROM "other_events";
+DELETE FROM "user_calendars";
+DELETE FROM "users";
+INSERT INTO "assignments" ("id", "calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.446750', '2022-10-22 16:45:59.446750'), (298486374, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.446750', '2022-10-22 16:45:59.446750');
+INSERT INTO "calendars" ("id", "calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, FALSE, '2022-10-22 16:45:59.454252', '2022-10-22 16:45:59.454252'), (298486374, 'MyString', 1, FALSE, '2022-10-22 16:45:59.454252', '2022-10-22 16:45:59.454252');
+INSERT INTO "class_periods" ("id", "course_id", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.456232', '2022-10-22 16:45:59.456232'), (298486374, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.456232', '2022-10-22 16:45:59.456232');
+INSERT INTO "courses" ("id", "calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.457979', '2022-10-22 16:45:59.457979'), (298486374, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.457979', '2022-10-22 16:45:59.457979');
+INSERT INTO "holidays" ("id", "calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.460676', '2022-10-22 16:45:59.460676'), (298486374, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.460676', '2022-10-22 16:45:59.460676');
+INSERT INTO "other_events" ("id", "calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.462043', '2022-10-22 16:45:59.462043'), (298486374, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.462043', '2022-10-22 16:45:59.462043');
+INSERT INTO "user_calendars" ("id", "user_id", "calendar_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2022-10-22 16:45:59.463459', '2022-10-22 16:45:59.463459'), (298486374, 1, 1, '2022-10-22 16:45:59.463459', '2022-10-22 16:45:59.463459');
+INSERT INTO "users" ("id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.465627', '2022-10-22 16:45:59.465627'), (298486374, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.465627', '2022-10-22 16:45:59.465627')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[31mDELETE FROM "assignments";
+DELETE FROM "calendars";
+DELETE FROM "class_periods";
+DELETE FROM "courses";
+DELETE FROM "holidays";
+DELETE FROM "other_events";
+DELETE FROM "user_calendars";
+DELETE FROM "users";
+INSERT INTO "assignments" ("id", "calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.450007', '2022-10-22 16:45:59.450007'), (298486374, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.450007', '2022-10-22 16:45:59.450007');
+INSERT INTO "calendars" ("id", "calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, FALSE, '2022-10-22 16:45:59.462452', '2022-10-22 16:45:59.462452'), (298486374, 'MyString', 1, FALSE, '2022-10-22 16:45:59.462452', '2022-10-22 16:45:59.462452');
+INSERT INTO "class_periods" ("id", "course_id", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.464465', '2022-10-22 16:45:59.464465'), (298486374, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.464465', '2022-10-22 16:45:59.464465');
+INSERT INTO "courses" ("id", "calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.466063', '2022-10-22 16:45:59.466063'), (298486374, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.466063', '2022-10-22 16:45:59.466063');
+INSERT INTO "holidays" ("id", "calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.468948', '2022-10-22 16:45:59.468948'), (298486374, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.468948', '2022-10-22 16:45:59.468948');
+INSERT INTO "other_events" ("id", "calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.470337', '2022-10-22 16:45:59.470337'), (298486374, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.470337', '2022-10-22 16:45:59.470337');
+INSERT INTO "user_calendars" ("id", "user_id", "calendar_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2022-10-22 16:45:59.471609', '2022-10-22 16:45:59.471609'), (298486374, 1, 1, '2022-10-22 16:45:59.471609', '2022-10-22 16:45:59.471609');
+INSERT INTO "users" ("id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.473273', '2022-10-22 16:45:59.473273'), (298486374, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.473273', '2022-10-22 16:45:59.473273')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[31mDELETE FROM "assignments";
+DELETE FROM "calendars";
+DELETE FROM "class_periods";
+DELETE FROM "courses";
+DELETE FROM "holidays";
+DELETE FROM "other_events";
+DELETE FROM "user_calendars";
+DELETE FROM "users";
+INSERT INTO "assignments" ("id", "calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.455323', '2022-10-22 16:45:59.455323'), (298486374, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.455323', '2022-10-22 16:45:59.455323');
+INSERT INTO "calendars" ("id", "calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, FALSE, '2022-10-22 16:45:59.463083', '2022-10-22 16:45:59.463083'), (298486374, 'MyString', 1, FALSE, '2022-10-22 16:45:59.463083', '2022-10-22 16:45:59.463083');
+INSERT INTO "class_periods" ("id", "course_id", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.464777', '2022-10-22 16:45:59.464777'), (298486374, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.464777', '2022-10-22 16:45:59.464777');
+INSERT INTO "courses" ("id", "calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.466369', '2022-10-22 16:45:59.466369'), (298486374, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.466369', '2022-10-22 16:45:59.466369');
+INSERT INTO "holidays" ("id", "calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.468590', '2022-10-22 16:45:59.468590'), (298486374, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.468590', '2022-10-22 16:45:59.468590');
+INSERT INTO "other_events" ("id", "calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.470167', '2022-10-22 16:45:59.470167'), (298486374, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.470167', '2022-10-22 16:45:59.470167');
+INSERT INTO "user_calendars" ("id", "user_id", "calendar_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2022-10-22 16:45:59.472208', '2022-10-22 16:45:59.472208'), (298486374, 1, 1, '2022-10-22 16:45:59.472208', '2022-10-22 16:45:59.472208');
+INSERT INTO "users" ("id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.473656', '2022-10-22 16:45:59.473656'), (298486374, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.473656', '2022-10-22 16:45:59.473656')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[35m (5.7ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.6ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (7.1ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (7.5ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.4ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.0ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+AssignmentsControllerTest: test_should_update_assignment
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+AssignmentsControllerTest: test_should_get_edit
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+AssignmentsControllerTest: test_should_show_assignment
+------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+AssignmentsControllerTest: test_should_get_new
+----------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+AssignmentsControllerTest: test_should_create_assignment
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+AssignmentsControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------
+AssignmentsControllerTest: test_should_destroy_assignment
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "calendars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "class_periods" DISABLE TRIGGER ALL;ALTER TABLE "courses" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "holidays" DISABLE TRIGGER ALL;ALTER TABLE "other_events" DISABLE TRIGGER ALL;ALTER TABLE "user_calendars" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[31mDELETE FROM "assignments";
+DELETE FROM "calendars";
+DELETE FROM "class_periods";
+DELETE FROM "courses";
+DELETE FROM "holidays";
+DELETE FROM "other_events";
+DELETE FROM "user_calendars";
+DELETE FROM "users";
+INSERT INTO "assignments" ("id", "calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.468239', '2022-10-22 16:45:59.468239'), (298486374, 1, 'MyString', '2022-10-21 15:11:19', 1, '2022-10-22 16:45:59.468239', '2022-10-22 16:45:59.468239');
+INSERT INTO "calendars" ("id", "calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, FALSE, '2022-10-22 16:45:59.484239', '2022-10-22 16:45:59.484239'), (298486374, 'MyString', 1, FALSE, '2022-10-22 16:45:59.484239', '2022-10-22 16:45:59.484239');
+INSERT INTO "class_periods" ("id", "course_id", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.485611', '2022-10-22 16:45:59.485611'), (298486374, 1, '2022-10-12 20:50:03', '2022-10-12 20:50:03', '2022-10-22 16:45:59.485611', '2022-10-22 16:45:59.485611');
+INSERT INTO "courses" ("id", "calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.487244', '2022-10-22 16:45:59.487244'), (298486374, 1, 'MyString', '2022-10-21', '2022-10-21', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-10-22 16:45:59.487244', '2022-10-22 16:45:59.487244');
+INSERT INTO "holidays" ("id", "calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.489318', '2022-10-22 16:45:59.489318'), (298486374, 1, 'MyString', '2022-10-21 15:10:36', 'MyString', '2022-10-22 16:45:59.489318', '2022-10-22 16:45:59.489318');
+INSERT INTO "other_events" ("id", "calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES (980190962, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.491223', '2022-10-22 16:45:59.491223'), (298486374, 1, 'MyString', '2022-10-21 15:06:09', '2022-10-21 15:06:09', '2022-10-22 16:45:59.491223', '2022-10-22 16:45:59.491223');
+INSERT INTO "user_calendars" ("id", "user_id", "calendar_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2022-10-22 16:45:59.493530', '2022-10-22 16:45:59.493530'), (298486374, 1, 1, '2022-10-22 16:45:59.493530', '2022-10-22 16:45:59.493530');
+INSERT INTO "users" ("id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.495017', '2022-10-22 16:45:59.495017'), (298486374, 'MyString', 'MyString', 1, 'MyString', '2022-10-22 16:45:59.495017', '2022-10-22 16:45:59.495017')[0m
+  [1m[36mTRANSACTION (24.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "calendars" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "class_periods" ENABLE TRIGGER ALL;ALTER TABLE "courses" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "holidays" ENABLE TRIGGER ALL;ALTER TABLE "other_events" ENABLE TRIGGER ALL;ALTER TABLE "user_calendars" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (35.4ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+HolidaysControllerTest: test_should_show_holiday
+------------------------------------------------
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments"[0m
+  [1m[36mAssignment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments"[0m
+Started GET "/assignments/980190962" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Started GET "/assignments/980190962/edit" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Started PATCH "/assignments/980190962" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Started DELETE "/assignments/980190962" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Started GET "/assignments" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Started GET "/assignments/new" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Started POST "/assignments" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Processing by AssignmentsController#index as HTML
+Processing by AssignmentsController#create as HTML
+  Parameters: {"assignment"=>{"assignment_name"=>"MyString", "calendar_id"=>"1", "course_id"=>"1", "due_date"=>"2022-10-21 15:11:19 UTC"}}
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by AssignmentsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by AssignmentsController#new as HTML
+Processing by AssignmentsController#update as HTML
+  Parameters: {"assignment"=>{"assignment_name"=>"MyString", "calendar_id"=>"1", "course_id"=>"1", "due_date"=>"2022-10-21 15:11:19 UTC"}, "id"=>"980190962"}
+Processing by AssignmentsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAssignment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assignments" WHERE "assignments"."id" = $1[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/assignments
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms | Allocations: 2853)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering assignments/new.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering assignments/index.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering assignments/show.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering assignments/edit.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+HolidaysControllerTest: test_should_update_holiday
+--------------------------------------------------
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments"[0m
+  Rendering layout layouts/application.html.erb
+  Rendering assignments/edit.html.erb within layouts/application
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered assignments/_assignment.html.erb (Duration: 1.0ms | Allocations: 383)
+  Rendering layout layouts/application.html.erb
+  Rendering assignments/new.html.erb within layouts/application
+  Rendered assignments/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1811)
+  Rendered assignments/_assignment.html.erb (Duration: 2.3ms | Allocations: 391)
+  Rendered assignments/_assignment.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered assignments/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2043)
+Started PATCH "/holidays/980190962" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Started GET "/holidays/980190962" for 127.0.0.1 at 2022-10-22 12:45:59 -0400
+Processing by HolidaysController#update as HTML
+  Parameters: {"holiday"=>{"calendar_id"=>"1", "date"=>"2022-10-21 15:10:36 UTC", "holiday_name"=>"MyString", "holiday_type"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mHoliday Load (2.5ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering holidays/edit.html.erb within layouts/application
+Processing by HolidaysController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mHoliday Load (1.6ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering holidays/show.html.erb within layouts/application
+  Rendered holidays/_holiday.html.erb (Duration: 0.8ms | Allocations: 383)
+  Rendered holidays/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1811)
+  Rendered assignments/_form.html.erb (Duration: 258.3ms | Allocations: 277855)
+  Rendered assignments/new.html.erb within layouts/application (Duration: 260.2ms | Allocations: 278440)
+  Rendered assignments/_form.html.erb (Duration: 258.9ms | Allocations: 277969)
+  Rendered assignments/edit.html.erb within layouts/application (Duration: 260.0ms | Allocations: 278626)
+  Rendered assignments/_form.html.erb (Duration: 261.5ms | Allocations: 278288)
+  Rendered assignments/new.html.erb within layouts/application (Duration: 263.2ms | Allocations: 278858)
+  Rendered assignments/_form.html.erb (Duration: 262.2ms | Allocations: 278474)
+  Rendered assignments/edit.html.erb within layouts/application (Duration: 265.0ms | Allocations: 279116)
+  Rendered holidays/_form.html.erb (Duration: 221.2ms | Allocations: 278243)
+  Rendered holidays/edit.html.erb within layouts/application (Duration: 239.8ms | Allocations: 278882)
+  Rendered layout layouts/application.html.erb (Duration: 981.1ms | Allocations: 163743)
+Completed 200 OK in 994ms (Views: 984.4ms | ActiveRecord: 0.1ms | Allocations: 167320)
+  Rendered layout layouts/application.html.erb (Duration: 978.7ms | Allocations: 393888)
+Completed 422 Unprocessable Entity in 994ms (Views: 983.5ms | ActiveRecord: 0.4ms | Allocations: 400343)
+  Rendered layout layouts/application.html.erb (Duration: 985.2ms | Allocations: 424985)
+Completed 200 OK in 996ms (Views: 988.5ms | ActiveRecord: 0.0ms | Allocations: 428552)
+  Rendered layout layouts/application.html.erb (Duration: 986.6ms | Allocations: 160797)
+Completed 200 OK in 999ms (Views: 989.2ms | ActiveRecord: 0.1ms | Allocations: 164830)
+  Rendered layout layouts/application.html.erb (Duration: 986.9ms | Allocations: 427292)
+Completed 200 OK in 999ms (Views: 990.1ms | ActiveRecord: 0.3ms | Allocations: 431296)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendered layout layouts/application.html.erb (Duration: 896.3ms | Allocations: 155815)
+Completed 200 OK in 914ms (Views: 899.7ms | ActiveRecord: 1.6ms | Allocations: 159849)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+HolidaysControllerTest: test_should_destroy_holiday
+---------------------------------------------------
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mHoliday Load (0.4ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+HolidaysControllerTest: test_should_create_holiday
+--------------------------------------------------
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+HolidaysControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+HolidaysControllerTest: test_should_get_edit
+--------------------------------------------
+----------------------------------------------
+CoursesControllerTest: test_should_show_course
+----------------------------------------------
+  [1m[36mHoliday Load (0.4ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+HolidaysControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36mHoliday Load (0.2ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mHoliday Load (0.2ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 1017.8ms | Allocations: 388892)
+Completed 422 Unprocessable Entity in 1035ms (Views: 1023.3ms | ActiveRecord: 0.4ms | Allocations: 395127)
+  [1m[36mHoliday Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "holidays"[0m
+Started DELETE "/holidays/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mAssignment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mHoliday Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "holidays"[0m
+Started GET "/courses/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Started POST "/holidays" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Processing by HolidaysController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/holidays" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+CoursesControllerTest: test_should_update_course
+------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mHoliday Destroy (0.2ms)[0m  [1m[31mDELETE FROM "holidays" WHERE "holidays"."id" = $1[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/holidays/980190962/edit" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/holidays
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms | Allocations: 1299)
+Processing by HolidaysController#create as HTML
+  Parameters: {"holiday"=>{"calendar_id"=>"1", "date"=>"2022-10-21 15:10:36 UTC", "holiday_name"=>"MyString", "holiday_type"=>"MyString"}}
+  [1m[36mHoliday Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "holidays"[0m
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Processing by HolidaysController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by HolidaysController#index as HTML
+  Rendered courses/_course.html.erb (Duration: 0.7ms | Allocations: 384)
+  Rendering layout layouts/application.html.erb
+  Rendering holidays/index.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1215)
+  [1m[36mHoliday Load (0.4ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2728)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 3957)
+  Rendering layout layouts/application.html.erb
+  Rendering holidays/edit.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mHoliday Load (1.2ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays"[0m
+Started GET "/holidays/new" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  Rendered holidays/_form.html.erb (Duration: 1.9ms | Allocations: 2109)
+  Rendered holidays/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2499)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 4013)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 5252)
+Processing by HolidaysController#new as HTML
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering holidays/new.html.erb within layouts/application
+  Rendered holidays/_holiday.html.erb (Duration: 4.6ms | Allocations: 265)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendered holidays/_holiday.html.erb (Duration: 0.0ms | Allocations: 27)
+------------------------------------------------
+CoursesControllerTest: test_should_create_course
+------------------------------------------------
+  Rendered holidays/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1314)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+CoursesControllerTest: test_should_get_edit
+-------------------------------------------
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2843)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 1.2ms | Allocations: 3690)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+CoursesControllerTest: test_should_destroy_course
+-------------------------------------------------
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/courses/980190962/edit" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Started PATCH "/courses/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+CoursesControllerTest: test_should_get_index
+--------------------------------------------
+Processing by CoursesController#update as HTML
+  Parameters: {"course"=>{"calendar_id"=>"1", "course_name"=>"MyString", "end_date"=>"2022-10-21", "location"=>"MyString", "professor_first_name"=>"MyString", "professor_last_name"=>"MyString", "repetition_frequency"=>"MyString", "start_date"=>"2022-10-21", "url"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering courses/edit.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering holidays/new.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering courses/edit.html.erb within layouts/application
+  [1m[36mCourse Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  Rendered courses/_form.html.erb (Duration: 3.9ms | Allocations: 4221)
+  Rendered courses/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 4607)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6123)
+Started GET "/courses" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Completed 422 Unprocessable Entity in 13ms (Views: 9.8ms | ActiveRecord: 1.2ms | Allocations: 8370)
+  Rendered holidays/_form.html.erb (Duration: 4.1ms | Allocations: 2450)
+  Rendered holidays/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2753)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4267)
+Completed 422 Unprocessable Entity in 31ms (Views: 12.4ms | ActiveRecord: 1.5ms | Allocations: 7688)
+Processing by CoursesController#index as HTML
+  [1m[36mHoliday Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "holidays"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  Rendered layout layouts/application.html.erb (Duration: 1022.1ms | Allocations: 389113)
+Completed 422 Unprocessable Entity in 1055ms (Views: 1041.2ms | ActiveRecord: 3.2ms | Allocations: 394045)
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendered courses/_course.html.erb (Duration: 0.5ms | Allocations: 386)
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 45)
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1463)
+Started POST "/courses" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2992)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 3838)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Processing by CoursesController#create as HTML
+  Parameters: {"course"=>{"calendar_id"=>"1", "course_name"=>"MyString", "end_date"=>"2022-10-21", "location"=>"MyString", "professor_first_name"=>"MyString", "professor_last_name"=>"MyString", "repetition_frequency"=>"MyString", "start_date"=>"2022-10-21", "url"=>"MyString"}}
+  [1m[36mCourse Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+CoursesControllerTest: test_should_get_new
+------------------------------------------
+Started DELETE "/courses/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by CoursesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Destroy (0.2ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = $1[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/courses
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms | Allocations: 1089)
+  [1m[36mCourse Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+UserCalendarsControllerTest: test_should_show_user_calendar
+-----------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserCalendarsControllerTest: test_should_create_user_calendar
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserCalendarsControllerTest: test_should_update_user_calendar
+-------------------------------------------------------------
+  [1m[36mUserCalendar Load (0.2ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUserCalendar Load (0.6ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/courses/new" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserCalendar Load (5.0ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+Processing by CoursesController#new as HTML
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------
+UserCalendarsControllerTest: test_should_destroy_user_calendar
+--------------------------------------------------------------
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  [1m[36mUserCalendar Load (0.2ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered courses/_form.html.erb (Duration: 8.9ms | Allocations: 4191)
+  Rendered courses/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 4504)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6020)
+Completed 422 Unprocessable Entity in 27ms (Views: 10.9ms | ActiveRecord: 0.6ms | Allocations: 9410)
+  [1m[36mCourse Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendered courses/_form.html.erb (Duration: 10.1ms | Allocations: 3616)
+  Rendered courses/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 3945)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5472)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 6315)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UserCalendarsControllerTest: test_should_get_edit
+-------------------------------------------------
+Started PATCH "/user_calendars/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Started GET "/user_calendars/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mUserCalendar Load (0.3ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+UserCalendarsControllerTest: test_should_get_index
+--------------------------------------------------
+  [1m[36mUserCalendar Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "user_calendars"[0m
+  [1m[36mUserCalendar Load (0.2ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by UserCalendarsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Started POST "/user_calendars" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Processing by UserCalendarsController#update as HTML
+  Parameters: {"user_calendar"=>{"calendar_id"=>"1", "user_id"=>"1"}, "id"=>"980190962"}
+  [1m[36mUserCalendar Load (0.4ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUserCalendar Load (0.3ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by UserCalendarsController#create as HTML
+  Parameters: {"user_calendar"=>{"calendar_id"=>"1", "user_id"=>"1"}}
+  Rendering layout layouts/application.html.erb
+  Rendering user_calendars/show.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserCalendar Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "user_calendars"[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started DELETE "/user_calendars/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by UserCalendarsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  Rendering layout layouts/application.html.erb
+  Rendering user_calendars/new.html.erb within layouts/application
+  [1m[36mUserCalendar Load (0.3ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  Rendered user_calendars/_form.html.erb (Duration: 2.1ms | Allocations: 2211)
+  Rendered user_calendars/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2512)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 4026)
+Completed 422 Unprocessable Entity in 9ms (Views: 4.7ms | ActiveRecord: 0.8ms | Allocations: 6569)
+  [1m[36mUserCalendar Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_calendars" WHERE "user_calendars"."id" = $1[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_calendars/_user_calendar.html.erb (Duration: 7.5ms | Allocations: 181)
+  [1m[36mUserCalendar Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "user_calendars"[0m
+Redirected to http://www.example.com/user_calendars
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms | Allocations: 1056)
+  Rendered user_calendars/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1023)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 2536)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 3740)
+  Rendering layout layouts/application.html.erb
+  Rendering user_calendars/edit.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUserCalendar Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "user_calendars"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+------------------------------------------------
+UserCalendarsControllerTest: test_should_get_new
+------------------------------------------------
+Started GET "/user_calendars" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Started GET "/user_calendars/980190962/edit" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mUserCalendar Load (2.6ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered user_calendars/_form.html.erb (Duration: 2.3ms | Allocations: 2264)
+  Rendered user_calendars/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2628)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+ClassPeriodsControllerTest: test_should_update_class_period
+-----------------------------------------------------------
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4142)
+Completed 422 Unprocessable Entity in 19ms (Views: 13.4ms | ActiveRecord: 1.7ms | Allocations: 6862)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mClassPeriod Load (0.2ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------
+ClassPeriodsControllerTest: test_should_show_class_period
+---------------------------------------------------------
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by UserCalendarsController#index as HTML
+Started GET "/user_calendars/new" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Processing by UserCalendarsController#new as HTML
+Processing by UserCalendarsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  Rendering layout layouts/application.html.erb
+  Rendering user_calendars/new.html.erb within layouts/application
+  [1m[36mUserCalendar Load (0.3ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars" WHERE "user_calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered user_calendars/_form.html.erb (Duration: 0.6ms | Allocations: 852)
+  Rendered user_calendars/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 924)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 2374)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2691)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering user_calendars/index.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering user_calendars/edit.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+ClassPeriodsControllerTest: test_should_create_class_period
+-----------------------------------------------------------
+  [1m[36mUserCalendar Load (0.3ms)[0m  [1m[34mSELECT "user_calendars".* FROM "user_calendars"[0m
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered user_calendars/_user_calendar.html.erb (Duration: 0.5ms | Allocations: 227)
+  Rendered user_calendars/_user_calendar.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered user_calendars/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1532)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3068)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.3ms | Allocations: 3923)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------
+ClassPeriodsControllerTest: test_should_destroy_class_period
+------------------------------------------------------------
+  [1m[36mClassPeriod Load (0.4ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered user_calendars/_form.html.erb (Duration: 6.2ms | Allocations: 1415)
+  Rendered user_calendars/edit.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1795)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3309)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 4486)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started PATCH "/class_periods/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+ClassPeriodsControllerTest: test_should_get_edit
+-------------------------------------------------
+------------------------------------------------
+ClassPeriodsControllerTest: test_should_get_index
+-------------------------------------------------
+  [1m[36mClassPeriod Load (0.4ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/class_periods/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Processing by ClassPeriodsController#update as HTML
+  Parameters: {"class_period"=>{"course_id"=>"1", "end_time"=>"2022-10-12 20:50:03 UTC", "start_time"=>"2022-10-12 20:50:03 UTC"}, "id"=>"980190962"}
+  [1m[36mClassPeriod Load (8.8ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mClassPeriod Count (4.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_periods"[0m
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Started POST "/class_periods" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Started GET "/class_periods" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Processing by ClassPeriodsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassPeriod Load (0.2ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mClassPeriod Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_periods"[0m
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering class_periods/edit.html.erb within layouts/application
+  Rendering class_periods/show.html.erb within layouts/application
+Started DELETE "/class_periods/980190962" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Processing by ClassPeriodsController#create as HTML
+  Parameters: {"class_period"=>{"course_id"=>"1", "end_time"=>"2022-10-12 20:50:03 UTC", "start_time"=>"2022-10-12 20:50:03 UTC"}}
+  Rendered class_periods/_class_period.html.erb (Duration: 0.9ms | Allocations: 245)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  Rendered class_periods/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1087)
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2603)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 3808)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendered class_periods/_form.html.erb (Duration: 5.1ms | Allocations: 2303)
+  Rendered class_periods/edit.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2667)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4181)
+Completed 422 Unprocessable Entity in 14ms (Views: 8.1ms | ActiveRecord: 2.0ms | Allocations: 6360)
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+Processing by ClassPeriodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering class_periods/new.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ClassPeriodsControllerTest: test_should_get_new
+-----------------------------------------------
+Processing by ClassPeriodsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mClassPeriod Load (0.6ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mClassPeriod Load (0.4ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering class_periods/index.html.erb within layouts/application
+  [1m[36mClassPeriod Destroy (0.4ms)[0m  [1m[31mDELETE FROM "class_periods" WHERE "class_periods"."id" = $1[0m  [["id", 980190962]]
+Started GET "/class_periods/new" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ClassPeriodsController#new as HTML
+Redirected to http://www.example.com/class_periods
+  Rendering layout layouts/application.html.erb
+  Rendering class_periods/new.html.erb within layouts/application
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms | Allocations: 1061)
+  [1m[36mClassPeriod Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_periods"[0m
+  Rendered class_periods/_form.html.erb (Duration: 11.9ms | Allocations: 2114)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendered class_periods/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2415)
+  Rendered class_periods/_form.html.erb (Duration: 1.8ms | Allocations: 1126)
+  Rendered class_periods/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1364)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3929)
+Completed 422 Unprocessable Entity in 28ms (Views: 24.2ms | ActiveRecord: 0.6ms | Allocations: 6014)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2814)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3232)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mClassPeriod Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_periods"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/class_periods/980190962/edit" for 127.0.0.1 at 2022-10-22 12:46:00 -0400
+Processing by ClassPeriodsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_show_user
+------------------------------------------
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered class_periods/_class_period.html.erb (Duration: 0.4ms | Allocations: 301)
+  Rendered class_periods/_class_period.html.erb (Duration: 0.0ms | Allocations: 33)
+  Rendering layout layouts/application.html.erb
+  Rendered class_periods/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1630)
+  Rendering class_periods/edit.html.erb within layouts/application
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3160)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.3ms | Allocations: 4015)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendered class_periods/_form.html.erb (Duration: 1.6ms | Allocations: 1774)
+  Rendered class_periods/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2154)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3668)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 4849)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_update_user
+--------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_create_user
+--------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_destroy_user
+---------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_edit
+-----------------------------------------
+  Rendered courses/_form.html.erb (Duration: 208.0ms | Allocations: 279214)
+  Rendered courses/edit.html.erb within layouts/application (Duration: 213.0ms | Allocations: 279555)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 213.6ms | Allocations: 281012)
+Completed 200 OK in 217ms (Views: 213.8ms | ActiveRecord: 2.1ms | Allocations: 281488)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendered holidays/_form.html.erb (Duration: 223.6ms | Allocations: 277580)
+  Rendered holidays/new.html.erb within layouts/application (Duration: 225.4ms | Allocations: 277922)
+  Rendered layout layouts/application.html.erb (Duration: 226.1ms | Allocations: 279462)
+Completed 200 OK in 228ms (Views: 226.9ms | ActiveRecord: 0.0ms | Allocations: 280317)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------
+OtherEventsControllerTest: test_should_show_other_event
+-------------------------------------------------------
+  [1m[36mOtherEvent Load (0.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Started GET "/users/980190962/edit" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Started PATCH "/users/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms | Allocations: 1290)
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 233)
+Started POST "/users" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  Rendered users/show.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1059)
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/users" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 2572)
+Started GET "/other_events/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.3ms | Allocations: 3780)
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"email"=>"MyString", "first_name"=>"MyString", "last_name"=>"MyString", "student_id"=>"1"}, "id"=>"980190962"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------
+OtherEventsControllerTest: test_should_update_other_event
+---------------------------------------------------------
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+Processing by OtherEventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Redirected to http://www.example.com/users/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1357)
+  [1m[36mOtherEvent Load (0.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mOtherEvent Load (0.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/_form.html.erb (Duration: 13.0ms | Allocations: 2024)
+  Rendered users/edit.html.erb within layouts/application (Duration: 13.7ms | Allocations: 2402)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 235)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1264)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 3916)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.3ms | Allocations: 5082)
+  Rendering layout layouts/application.html.erb
+  Rendering other_events/show.html.erb within layouts/application
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2793)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 3639)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------
+OtherEventsControllerTest: test_should_create_other_event
+---------------------------------------------------------
+  [1m[36mOtherEvent Load (0.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"MyString", "first_name"=>"MyString", "last_name"=>"MyString", "student_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "MyString"], ["last_name", "MyString"], ["student_id", 1], ["email", "MyString"], ["created_at", "2022-10-22 16:46:01.148196"], ["updated_at", "2022-10-22 16:46:01.148196"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOtherEvent Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "other_events"[0m
+Redirected to http://www.example.com/users/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1440)
+Started POST "/other_events" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Processing by OtherEventsController#create as HTML
+  Parameters: {"other_event"=>{"calendar_id"=>"1", "end_time"=>"2022-10-21 15:06:09 UTC", "other_name"=>"MyString", "start_time"=>"2022-10-21 15:06:09 UTC"}}
+Started GET "/users/new" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Count (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered other_events/_other_event.html.erb (Duration: 0.7ms | Allocations: 271)
+  Rendered other_events/show.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1117)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendering other_events/new.html.erb within layouts/application
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 2630)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 3839)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------
+OtherEventsControllerTest: test_should_destroy_other_event
+----------------------------------------------------------
+  [1m[36mOtherEvent Load (0.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered other_events/_form.html.erb (Duration: 2.0ms | Allocations: 2420)
+  Rendered other_events/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2721)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4235)
+Completed 422 Unprocessable Entity in 7ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 6257)
+  [1m[36mOtherEvent Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "other_events"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+OtherEventsControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[36mOtherEvent Load (0.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+OtherEventsControllerTest: test_should_get_new
+----------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOtherEvent Load (0.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+--------------------------------------------------
+CalendarsControllerTest: test_should_show_calendar
+--------------------------------------------------
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 1915)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+OtherEventsControllerTest: test_should_get_edit
+-----------------------------------------------
+  Rendered users/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2236)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 3761)
+  [1m[36mOtherEvent Load (0.9ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 4595)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/other_events/980190962/edit" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Processing by OtherEventsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+CalendarsControllerTest: test_should_update_calendar
+----------------------------------------------------
+  [1m[36mOtherEvent Load (0.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering other_events/edit.html.erb within layouts/application
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/other_events" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Started GET "/calendars/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+CalendarsControllerTest: test_should_create_calendar
+----------------------------------------------------
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by OtherEventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering other_events/index.html.erb within layouts/application
+  [1m[36mOtherEvent Load (0.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events"[0m
+Processing by CalendarsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Started GET "/other_events/new" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  Rendered other_events/_other_event.html.erb (Duration: 0.8ms | Allocations: 318)
+  Rendered other_events/_other_event.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered other_events/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1538)
+  [1m[36mOtherEvent Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "other_events"[0m
+  Rendered other_events/_form.html.erb (Duration: 11.8ms | Allocations: 2204)
+  Rendered other_events/edit.html.erb within layouts/application (Duration: 22.5ms | Allocations: 2538)
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3068)
+Started DELETE "/other_events/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Processing by OtherEventsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 3923)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 3982)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.2ms | Allocations: 4442)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering other_events/new.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+Processing by OtherEventsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mOtherEvent Load (0.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+CalendarsControllerTest: test_should_destroy_calendar
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  Rendered other_events/_form.html.erb (Duration: 1.5ms | Allocations: 1942)
+  Rendered other_events/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2259)
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mOtherEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "other_events" WHERE "other_events"."id" = $1[0m  [["id", 980190962]]
+  Rendered calendars/_calendar.html.erb (Duration: 1.8ms | Allocations: 615)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3784)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1491)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 4618)
+Redirected to http://www.example.com/other_events
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms | Allocations: 1067)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3007)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 4196)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+Started PATCH "/calendars/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mOtherEvent Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "other_events"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+CalendarsControllerTest: test_should_get_edit
+---------------------------------------------
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+CalendarsControllerTest: test_should_get_index
+----------------------------------------------
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+CalendarsControllerTest: test_should_get_new
+--------------------------------------------
+Started PATCH "/other_events/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Started GET "/calendars" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (3.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCalendar Count (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "calendars"[0m
+  [1m[36mCalendar Load (5.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+Processing by OtherEventsController#update as HTML
+  Parameters: {"other_event"=>{"calendar_id"=>"1", "end_time"=>"2022-10-21 15:06:09 UTC", "other_name"=>"MyString", "start_time"=>"2022-10-21 15:06:09 UTC"}, "id"=>"980190962"}
+  Rendered calendars/_calendar.html.erb (Duration: 0.2ms | Allocations: 108)
+  Rendered calendars/_calendar.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 899)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2292)
+  [1m[36mOtherEvent Load (0.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 2666)
+Processing by CalendarsController#update as HTML
+  Parameters: {"calendar"=>{"calendar_name"=>"MyString", "shared"=>"false", "user_id"=>"1"}, "id"=>"980190962"}
+  [1m[36mCalendar Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "calendars"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started DELETE "/calendars/980190962" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Started POST "/calendars" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  [1m[36mCalendar Load (1.7ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by CalendarsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by CalendarsController#create as HTML
+  Parameters: {"calendar"=>{"calendar_name"=>"MyString", "shared"=>"false", "user_id"=>"1"}}
+Redirected to http://www.example.com/calendars/980190962
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms | Allocations: 1419)
+  [1m[36mCalendar Load (0.9ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mCalendar Create (0.3ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "MyString"], ["user_id", 1], ["shared", false], ["created_at", "2022-10-22 16:46:01.217358"], ["updated_at", "2022-10-22 16:46:01.217358"]]
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCalendar Destroy (0.3ms)[0m  [1m[31mDELETE FROM "calendars" WHERE "calendars"."id" = $1[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/calendars/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms | Allocations: 1678)
+Redirected to http://www.example.com/calendars
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms | Allocations: 1060)
+  Rendering layout layouts/application.html.erb
+  Rendering other_events/edit.html.erb within layouts/application
+  [1m[36mCalendar Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "calendars"[0m
+  [1m[36mCalendar Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "calendars"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" ORDER BY "calendars"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/calendars/980190962/edit" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+Processing by CalendarsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCalendar Load (6.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/calendars/new" for 127.0.0.1 at 2022-10-22 12:46:01 -0400
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/edit.html.erb within layouts/application
+Processing by CalendarsController#new as HTML
+  Rendered calendars/_form.html.erb (Duration: 12.5ms | Allocations: 1994)
+  Rendered calendars/edit.html.erb within layouts/application (Duration: 13.3ms | Allocations: 2393)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 3909)
+Completed 200 OK in 33ms (Views: 25.0ms | ActiveRecord: 6.4ms | Allocations: 5093)
+  Rendering layout layouts/application.html.erb
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 9.5ms | Allocations: 1903)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2235)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 3762)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms | Allocations: 4594)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendered other_events/_form.html.erb (Duration: 139.8ms | Allocations: 278453)
+  Rendered other_events/edit.html.erb within layouts/application (Duration: 141.4ms | Allocations: 278840)
+  Rendered layout layouts/application.html.erb (Duration: 141.9ms | Allocations: 280369)
+Completed 422 Unprocessable Entity in 153ms (Views: 143.9ms | ActiveRecord: 1.0ms | Allocations: 283996)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m

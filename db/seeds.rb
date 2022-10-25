@@ -13,7 +13,7 @@ require 'faker'
   Assignment.create(calendar_id: Faker::Number.number(digits: 1), assignment_name: Faker::Lorem.word,
                     due_date: Faker::Time.forward(days: 7, period: :evening), course_id: Faker::Number.number(digits: 1))
   Calendar.create(calendar_name: Faker::Lorem.word,
-                  user_id: Faker::Number.number(digits: 1), shared: Faker::Boolean.boolean)
+                  user_id: Faker::Number.number(digits: 1), shared: Faker::Boolean.boolean, invite_token: Faker::Code.imei)
   ClassPeriod.create(course_id: Faker::Number.number(digits: 1),
                      start_time: Faker::Time.between(from: DateTime.now, to: DateTime.now + 100), end_time: Faker::Time.between(from: DateTime.now, to: DateTime.now + 100))
   Course.create(calendar_id: Faker::Number.number(digits: 1), course_name: Faker::Lorem.word,
