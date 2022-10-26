@@ -1,14 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Calendars</h1>
-<%= link_to "New calendar", new_calendar_path %>
-<div id="calendars">
-  <% @calendars.each do |calendar| %>
-    <%= render calendar %>
-    <p>
-      <%= link_to "Show this calendar", calendar %>
-    </p>
-  <% end %>
+<% require 'Month' %>
+<% month = Month.new(10, 2022) %>
+<div>
+  <h1 class="text-center">
+    <%= month.get_month_year %>
+  </h1>
+<div>
+  <%= render 'month', :month => month %>
 </div>
-
-
