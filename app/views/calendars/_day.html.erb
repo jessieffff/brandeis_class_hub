@@ -8,7 +8,7 @@
         <% require 'Day' %>
         <div>
             <% if d %>
-                <div class="container text-center">
+                <div class="day-calendar-item">
                     <strong><%= d.day %></strong>
                     <% d.load_events.each do |event| %>
                         <p><%= event.other_name %></p>

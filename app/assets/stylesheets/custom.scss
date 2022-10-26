@@ -42,3 +42,16 @@
 .border {
     color: black;
 }
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 200px);
+}
+
+.day-calendar-item {
+    background-color: beige;
+    padding: 20px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
