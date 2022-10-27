@@ -24068,3 +24068,434 @@ NameError (uninitialized constant EventsController::Event
               ^^^^^):
   
 app/controllers/events_controller.rb:6:in `index'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (40.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_development"[0m
+  [1m[35m (36.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_test"[0m
+  [1m[35m (270.8ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_development" ENCODING = 'unicode'[0m
+  [1m[35m (78.1ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments" CASCADE[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" bigserial primary key, "calendar_id" integer, "assignment_name" character varying, "due_date" timestamp(6), "course_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "calendars" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "calendars" ("id" bigserial primary key, "calendar_name" character varying, "user_id" integer, "shared" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "class_periods" CASCADE[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "class_periods" ("id" bigserial primary key, "course_id" integer, "start_time" timestamp(6), "end_time" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "calendar_id" integer, "course_name" character varying, "start_date" date, "end_date" date, "location" character varying, "professor_first_name" character varying, "professor_last_name" character varying, "repetition_frequency" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "holidays" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "holidays" ("id" bigserial primary key, "calendar_id" integer, "holiday_name" character varying, "date" timestamp(6), "holiday_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "other_events" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "other_events" ("id" bigserial primary key, "calendar_id" integer, "other_name" character varying, "start_time" timestamp(6), "end_time" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_calendars" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "user_calendars" ("id" bigserial primary key, "user_id" integer, "calendar_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "student_id" integer, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221021191119)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220930193045),
+(20221013004957),
+(20221013005003),
+(20221013005059),
+(20221021190609),
+(20221021190953),
+(20221021191036);
+
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-27 02:53:22.270717"], ["updated_at", "2022-10-27 02:53:22.270717"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "be65d4dd231376ac279440ed8bab719049e2b5f9"], ["created_at", "2022-10-27 02:53:22.278393"], ["updated_at", "2022-10-27 02:53:22.278393"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments" CASCADE[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" bigserial primary key, "calendar_id" integer, "assignment_name" character varying, "due_date" timestamp(6), "course_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "calendars" CASCADE[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "calendars" ("id" bigserial primary key, "calendar_name" character varying, "user_id" integer, "shared" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "class_periods" CASCADE[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "class_periods" ("id" bigserial primary key, "course_id" integer, "start_time" timestamp(6), "end_time" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "calendar_id" integer, "course_name" character varying, "start_date" date, "end_date" date, "location" character varying, "professor_first_name" character varying, "professor_last_name" character varying, "repetition_frequency" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "holidays" CASCADE[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "holidays" ("id" bigserial primary key, "calendar_id" integer, "holiday_name" character varying, "date" timestamp(6), "holiday_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "other_events" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "other_events" ("id" bigserial primary key, "calendar_id" integer, "other_name" character varying, "start_time" timestamp(6), "end_time" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_calendars" CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "user_calendars" ("id" bigserial primary key, "user_id" integer, "calendar_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "student_id" integer, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221021191119)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220930193045),
+(20221013004957),
+(20221013005003),
+(20221013005059),
+(20221021190609),
+(20221021190953),
+(20221021191036);
+
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-27 02:53:22.383214"], ["updated_at", "2022-10-27 02:53:22.383214"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-10-27 02:53:22.390813"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "be65d4dd231376ac279440ed8bab719049e2b5f9"], ["created_at", "2022-10-27 02:53:22.396797"], ["updated_at", "2022-10-27 02:53:22.396797"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Trey"], ["last_name", "Buckridge"], ["student_id", 678628616], ["email", "karl.kiehn@connelly.net"], ["created_at", "2022-10-27 02:53:22.852739"], ["updated_at", "2022-10-27 02:53:22.852739"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Theron"], ["last_name", "Kuhlman"], ["student_id", 590738201], ["email", "randell_goyette@sauer-schimmel.info"], ["created_at", "2022-10-27 02:53:22.859710"], ["updated_at", "2022-10-27 02:53:22.859710"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Rick"], ["last_name", "Hauck"], ["student_id", 121157973], ["email", "lacy_volkman@connelly-ryan.org"], ["created_at", "2022-10-27 02:53:22.864315"], ["updated_at", "2022-10-27 02:53:22.864315"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Dudley"], ["last_name", "Stokes"], ["student_id", 898759997], ["email", "hayley.wunsch@flatley-gleason.info"], ["created_at", "2022-10-27 02:53:22.868949"], ["updated_at", "2022-10-27 02:53:22.868949"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Theodore"], ["last_name", "Schiller"], ["student_id", 710626242], ["email", "savannah.pollich@kuhic.name"], ["created_at", "2022-10-27 02:53:22.873866"], ["updated_at", "2022-10-27 02:53:22.873866"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Dennise"], ["last_name", "Yost"], ["student_id", 651571010], ["email", "stephine_rau@gutmann-dibbert.com"], ["created_at", "2022-10-27 02:53:22.878429"], ["updated_at", "2022-10-27 02:53:22.878429"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Minh"], ["last_name", "Wintheiser"], ["student_id", 884379802], ["email", "adrian@howe-tillman.net"], ["created_at", "2022-10-27 02:53:22.882833"], ["updated_at", "2022-10-27 02:53:22.882833"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Lupe"], ["last_name", "Paucek"], ["student_id", 345101477], ["email", "gustavo@corkery.info"], ["created_at", "2022-10-27 02:53:22.888644"], ["updated_at", "2022-10-27 02:53:22.888644"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Dwight"], ["last_name", "Spinka"], ["student_id", 209101166], ["email", "latricia.kilback@rogahn.info"], ["created_at", "2022-10-27 02:53:22.893736"], ["updated_at", "2022-10-27 02:53:22.893736"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Newton"], ["last_name", "Barton"], ["student_id", 889658192], ["email", "markita@hickle-damore.io"], ["created_at", "2022-10-27 02:53:22.898143"], ["updated_at", "2022-10-27 02:53:22.898143"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.7ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "illo"], ["user_id", 1], ["shared", true], ["created_at", "2022-10-27 02:53:22.916912"], ["updated_at", "2022-10-27 02:53:22.916912"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.7ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.7ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 1], ["assignment_name", "sed"], ["due_date", "2022-11-02 21:19:58"], ["course_id", 7], ["created_at", "2022-10-27 02:53:22.955714"], ["updated_at", "2022-10-27 02:53:22.955714"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 1], ["course_name", "aliquid"], ["start_date", "2022-09-05"], ["end_date", "2022-12-24"], ["location", "Suite 761 91707 Friesen Ramp, South Roy, NE 28928-1512"], ["professor_first_name", "Cordell"], ["professor_last_name", "Abernathy"], ["repetition_frequency", "p"], ["url", "http://larson.com/julius.brakus"], ["created_at", "2022-10-27 02:53:22.978688"], ["updated_at", "2022-10-27 02:53:22.978688"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (1.9ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 1], ["start_time", "2023-01-16 04:56:19.813720"], ["end_time", "2022-11-13 03:01:25.591461"], ["created_at", "2022-10-27 02:53:23.001806"], ["updated_at", "2022-10-27 02:53:23.001806"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.6ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 1], ["holiday_name", "voluptas"], ["date", "2023-05-04 08:34:33.571003"], ["holiday_type", "voluptas"], ["created_at", "2022-10-27 02:53:23.020929"], ["updated_at", "2022-10-27 02:53:23.020929"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.6ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (1.9ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["calendar_id", 1], ["created_at", "2022-10-27 02:53:23.040375"], ["updated_at", "2022-10-27 02:53:23.040375"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 1], ["other_name", "modi"], ["start_time", "2022-11-08 13:08:09.676256"], ["end_time", "2022-10-28 15:05:32.192954"], ["created_at", "2022-10-27 02:53:23.060620"], ["updated_at", "2022-10-27 02:53:23.060620"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.2ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "laudantium"], ["user_id", 2], ["shared", false], ["created_at", "2022-10-27 02:53:23.064090"], ["updated_at", "2022-10-27 02:53:23.064090"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 2], ["assignment_name", "voluptas"], ["due_date", "2022-11-02 01:42:52"], ["course_id", 6], ["created_at", "2022-10-27 02:53:23.070471"], ["updated_at", "2022-10-27 02:53:23.070471"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 2], ["course_name", "ut"], ["start_date", "2022-09-06"], ["end_date", "2022-12-27"], ["location", "9667 Conroy Hollow, South Arnoldville, IN 24855-4369"], ["professor_first_name", "Pete"], ["professor_last_name", "Mayert"], ["repetition_frequency", "2"], ["url", "http://kassulke-rutherford.biz/edward"], ["created_at", "2022-10-27 02:53:23.076299"], ["updated_at", "2022-10-27 02:53:23.076299"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.5ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 2], ["start_time", "2023-01-16 10:13:47.916257"], ["end_time", "2023-01-17 09:33:02.191668"], ["created_at", "2022-10-27 02:53:23.081660"], ["updated_at", "2022-10-27 02:53:23.081660"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.3ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 2], ["holiday_name", "repudiandae"], ["date", "2023-07-26 19:21:02.077408"], ["holiday_type", "laboriosam"], ["created_at", "2022-10-27 02:53:23.088462"], ["updated_at", "2022-10-27 02:53:23.088462"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (0.3ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["calendar_id", 2], ["created_at", "2022-10-27 02:53:23.095937"], ["updated_at", "2022-10-27 02:53:23.095937"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 2], ["other_name", "quis"], ["start_time", "2023-01-16 05:07:04.768091"], ["end_time", "2022-12-31 14:15:34.789136"], ["created_at", "2022-10-27 02:53:23.102184"], ["updated_at", "2022-10-27 02:53:23.102184"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.6ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "temporibus"], ["user_id", 3], ["shared", false], ["created_at", "2022-10-27 02:53:23.105826"], ["updated_at", "2022-10-27 02:53:23.105826"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.5ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 3], ["assignment_name", "qui"], ["due_date", "2022-11-02 00:09:31"], ["course_id", 5], ["created_at", "2022-10-27 02:53:23.112220"], ["updated_at", "2022-10-27 02:53:23.112220"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 3], ["course_name", "omnis"], ["start_date", "2022-09-29"], ["end_date", "2022-12-30"], ["location", "Apt. 605 301 Paucek Field, East Nakitaside, SC 44762"], ["professor_first_name", "Junita"], ["professor_last_name", "Schimmel"], ["repetition_frequency", "t"], ["url", "http://hettinger.org/eleonore.fisher"], ["created_at", "2022-10-27 02:53:23.119896"], ["updated_at", "2022-10-27 02:53:23.119896"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.2ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 3], ["start_time", "2022-11-06 01:28:43.192884"], ["end_time", "2023-01-19 19:53:54.270564"], ["created_at", "2022-10-27 02:53:23.125086"], ["updated_at", "2022-10-27 02:53:23.125086"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.3ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 3], ["holiday_name", "voluptas"], ["date", "2023-09-23 04:38:44.828299"], ["holiday_type", "explicabo"], ["created_at", "2022-10-27 02:53:23.130230"], ["updated_at", "2022-10-27 02:53:23.130230"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (0.3ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["calendar_id", 3], ["created_at", "2022-10-27 02:53:23.138492"], ["updated_at", "2022-10-27 02:53:23.138492"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 3], ["other_name", "cupiditate"], ["start_time", "2022-11-20 19:42:17.507566"], ["end_time", "2022-11-28 02:37:33.525880"], ["created_at", "2022-10-27 02:53:23.144560"], ["updated_at", "2022-10-27 02:53:23.144560"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.8ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "voluptatibus"], ["user_id", 4], ["shared", false], ["created_at", "2022-10-27 02:53:23.148266"], ["updated_at", "2022-10-27 02:53:23.148266"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 4], ["assignment_name", "magnam"], ["due_date", "2022-10-28 22:43:06"], ["course_id", 7], ["created_at", "2022-10-27 02:53:23.156709"], ["updated_at", "2022-10-27 02:53:23.156709"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 4], ["course_name", "sint"], ["start_date", "2022-09-28"], ["end_date", "2022-12-23"], ["location", "Suite 279 215 Sporer Skyway, Lake Casey, TN 96492-5498"], ["professor_first_name", "Ernestine"], ["professor_last_name", "Legros"], ["repetition_frequency", "a"], ["url", "http://veum-willms.io/maegan_fadel"], ["created_at", "2022-10-27 02:53:23.162807"], ["updated_at", "2022-10-27 02:53:23.162807"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.2ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 4], ["start_time", "2022-12-10 12:29:42.476885"], ["end_time", "2022-12-20 10:16:45.914192"], ["created_at", "2022-10-27 02:53:23.168231"], ["updated_at", "2022-10-27 02:53:23.168231"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.2ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 4], ["holiday_name", "et"], ["date", "2023-10-23 12:54:59.400590"], ["holiday_type", "perferendis"], ["created_at", "2022-10-27 02:53:23.174100"], ["updated_at", "2022-10-27 02:53:23.174100"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (0.4ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["calendar_id", 4], ["created_at", "2022-10-27 02:53:23.180411"], ["updated_at", "2022-10-27 02:53:23.180411"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 4], ["other_name", "dolor"], ["start_time", "2022-11-04 07:21:39.808534"], ["end_time", "2023-01-27 09:39:21.965323"], ["created_at", "2022-10-27 02:53:23.186575"], ["updated_at", "2022-10-27 02:53:23.186575"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.2ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "laboriosam"], ["user_id", 5], ["shared", false], ["created_at", "2022-10-27 02:53:23.190276"], ["updated_at", "2022-10-27 02:53:23.190276"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 5], ["assignment_name", "assumenda"], ["due_date", "2022-10-29 21:15:15"], ["course_id", 2], ["created_at", "2022-10-27 02:53:23.196737"], ["updated_at", "2022-10-27 02:53:23.196737"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.9ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 5], ["course_name", "enim"], ["start_date", "2022-09-12"], ["end_date", "2022-12-16"], ["location", "Apt. 129 693 Tesha Route, Port Livia, NM 62105"], ["professor_first_name", "Alonso"], ["professor_last_name", "Gleason"], ["repetition_frequency", "3"], ["url", "http://rice-koepp.org/arthur"], ["created_at", "2022-10-27 02:53:23.204843"], ["updated_at", "2022-10-27 02:53:23.204843"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.3ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 5], ["start_time", "2022-12-25 14:05:16.640522"], ["end_time", "2022-12-12 13:59:28.347023"], ["created_at", "2022-10-27 02:53:23.211940"], ["updated_at", "2022-10-27 02:53:23.211940"]]
+  [1m[36mTRANSACTION (32.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.4ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 5], ["holiday_name", "omnis"], ["date", "2023-05-22 08:31:34.086307"], ["holiday_type", "eos"], ["created_at", "2022-10-27 02:53:23.250885"], ["updated_at", "2022-10-27 02:53:23.250885"]]
+  [1m[36mTRANSACTION (32.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (0.4ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 5], ["calendar_id", 5], ["created_at", "2022-10-27 02:53:23.291650"], ["updated_at", "2022-10-27 02:53:23.291650"]]
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 5], ["other_name", "eveniet"], ["start_time", "2023-02-04 02:31:10.176325"], ["end_time", "2022-11-25 22:16:42.380248"], ["created_at", "2022-10-27 02:53:23.310180"], ["updated_at", "2022-10-27 02:53:23.310180"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.9ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "recusandae"], ["user_id", 6], ["shared", true], ["created_at", "2022-10-27 02:53:23.313382"], ["updated_at", "2022-10-27 02:53:23.313382"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 6], ["assignment_name", "doloribus"], ["due_date", "2022-10-31 22:29:05"], ["course_id", 0], ["created_at", "2022-10-27 02:53:23.320629"], ["updated_at", "2022-10-27 02:53:23.320629"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 6], ["course_name", "aut"], ["start_date", "2022-09-24"], ["end_date", "2022-12-06"], ["location", "Suite 162 970 Ricardo Islands, Kunzeville, WI 75283"], ["professor_first_name", "Julianna"], ["professor_last_name", "Emard"], ["repetition_frequency", "r"], ["url", "http://mante.net/will"], ["created_at", "2022-10-27 02:53:23.327136"], ["updated_at", "2022-10-27 02:53:23.327136"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.3ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 6], ["start_time", "2023-01-23 02:12:38.632769"], ["end_time", "2022-11-25 10:06:14.256903"], ["created_at", "2022-10-27 02:53:23.334200"], ["updated_at", "2022-10-27 02:53:23.334200"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.3ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 6], ["holiday_name", "ipsa"], ["date", "2023-02-28 15:54:55.979570"], ["holiday_type", "maxime"], ["created_at", "2022-10-27 02:53:23.340674"], ["updated_at", "2022-10-27 02:53:23.340674"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (0.6ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 6], ["calendar_id", 6], ["created_at", "2022-10-27 02:53:23.350723"], ["updated_at", "2022-10-27 02:53:23.350723"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 6], ["other_name", "rem"], ["start_time", "2022-11-11 07:26:32.509411"], ["end_time", "2023-01-29 08:51:38.047825"], ["created_at", "2022-10-27 02:53:23.357620"], ["updated_at", "2022-10-27 02:53:23.357620"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.3ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "voluptatem"], ["user_id", 7], ["shared", false], ["created_at", "2022-10-27 02:53:23.361226"], ["updated_at", "2022-10-27 02:53:23.361226"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 7], ["assignment_name", "aut"], ["due_date", "2022-11-03 01:21:33"], ["course_id", 1], ["created_at", "2022-10-27 02:53:23.368867"], ["updated_at", "2022-10-27 02:53:23.368867"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 7], ["course_name", "recusandae"], ["start_date", "2022-09-26"], ["end_date", "2022-12-24"], ["location", "Apt. 561 46790 Jame Ridges, North Matthewborough, AZ 00423"], ["professor_first_name", "Duane"], ["professor_last_name", "Bogan"], ["repetition_frequency", "t"], ["url", "http://bernier.info/nikia_bechtelar"], ["created_at", "2022-10-27 02:53:23.375988"], ["updated_at", "2022-10-27 02:53:23.375988"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.5ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 7], ["start_time", "2023-01-17 00:02:07.205704"], ["end_time", "2023-01-13 23:53:44.878317"], ["created_at", "2022-10-27 02:53:23.383509"], ["updated_at", "2022-10-27 02:53:23.383509"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.3ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 7], ["holiday_name", "vel"], ["date", "2023-09-14 14:47:00.472951"], ["holiday_type", "magni"], ["created_at", "2022-10-27 02:53:23.390904"], ["updated_at", "2022-10-27 02:53:23.390904"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.6ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (0.3ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 7], ["calendar_id", 7], ["created_at", "2022-10-27 02:53:23.400228"], ["updated_at", "2022-10-27 02:53:23.400228"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.6ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 7], ["other_name", "amet"], ["start_time", "2022-12-20 18:06:54.679541"], ["end_time", "2022-12-09 17:02:28.547573"], ["created_at", "2022-10-27 02:53:23.407042"], ["updated_at", "2022-10-27 02:53:23.407042"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.4ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "voluptatem"], ["user_id", 8], ["shared", false], ["created_at", "2022-10-27 02:53:23.410335"], ["updated_at", "2022-10-27 02:53:23.410335"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 8], ["assignment_name", "est"], ["due_date", "2022-10-31 23:19:08"], ["course_id", 7], ["created_at", "2022-10-27 02:53:23.420818"], ["updated_at", "2022-10-27 02:53:23.420818"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 8], ["course_name", "quam"], ["start_date", "2022-09-21"], ["end_date", "2022-12-06"], ["location", "895 Strosin Estate, Longland, VA 10743-5919"], ["professor_first_name", "Sandy"], ["professor_last_name", "Wiegand"], ["repetition_frequency", "9"], ["url", "http://botsford.org/keenan.rau"], ["created_at", "2022-10-27 02:53:23.435888"], ["updated_at", "2022-10-27 02:53:23.435888"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.7ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 8], ["start_time", "2023-01-26 01:53:39.963408"], ["end_time", "2022-11-17 00:40:33.722827"], ["created_at", "2022-10-27 02:53:23.442551"], ["updated_at", "2022-10-27 02:53:23.442551"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.7ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 8], ["holiday_name", "ipsam"], ["date", "2023-01-28 03:47:24.795253"], ["holiday_type", "voluptatem"], ["created_at", "2022-10-27 02:53:23.449948"], ["updated_at", "2022-10-27 02:53:23.449948"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (1.3ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 8], ["calendar_id", 8], ["created_at", "2022-10-27 02:53:23.458655"], ["updated_at", "2022-10-27 02:53:23.458655"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 8], ["other_name", "officiis"], ["start_time", "2022-11-07 21:46:31.845601"], ["end_time", "2022-12-06 01:37:50.304629"], ["created_at", "2022-10-27 02:53:23.472217"], ["updated_at", "2022-10-27 02:53:23.472217"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.4ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "occaecati"], ["user_id", 9], ["shared", true], ["created_at", "2022-10-27 02:53:23.475996"], ["updated_at", "2022-10-27 02:53:23.475996"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.5ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 9], ["assignment_name", "iure"], ["due_date", "2022-10-30 21:23:42"], ["course_id", 0], ["created_at", "2022-10-27 02:53:23.484671"], ["updated_at", "2022-10-27 02:53:23.484671"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCourse Create (1.0ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 9], ["course_name", "suscipit"], ["start_date", "2022-09-28"], ["end_date", "2022-12-15"], ["location", "Suite 585 722 Kristofer Wall, Lake Ardithton, OR 90737-7058"], ["professor_first_name", "Diana"], ["professor_last_name", "Gleichner"], ["repetition_frequency", "a"], ["url", "http://franecki.biz/billie.dicki"], ["created_at", "2022-10-27 02:53:23.493366"], ["updated_at", "2022-10-27 02:53:23.493366"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.5ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 9], ["start_time", "2023-01-31 16:39:35.215652"], ["end_time", "2022-12-30 05:48:48.106882"], ["created_at", "2022-10-27 02:53:23.500984"], ["updated_at", "2022-10-27 02:53:23.500984"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.3ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 9], ["holiday_name", "at"], ["date", "2022-11-15 12:01:46.159468"], ["holiday_type", "et"], ["created_at", "2022-10-27 02:53:23.507834"], ["updated_at", "2022-10-27 02:53:23.507834"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (0.4ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 9], ["calendar_id", 9], ["created_at", "2022-10-27 02:53:23.514445"], ["updated_at", "2022-10-27 02:53:23.514445"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.6ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 9], ["other_name", "est"], ["start_time", "2022-10-28 23:49:16.774396"], ["end_time", "2023-01-15 09:29:00.910869"], ["created_at", "2022-10-27 02:53:23.523202"], ["updated_at", "2022-10-27 02:53:23.523202"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.6ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "dignissimos"], ["user_id", 10], ["shared", false], ["created_at", "2022-10-27 02:53:23.526902"], ["updated_at", "2022-10-27 02:53:23.526902"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.8ms)[0m  [1m[32mINSERT INTO "assignments" ("calendar_id", "assignment_name", "due_date", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 10], ["assignment_name", "ipsam"], ["due_date", "2022-10-29 23:48:22"], ["course_id", 1], ["created_at", "2022-10-27 02:53:23.542611"], ["updated_at", "2022-10-27 02:53:23.542611"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("calendar_id", "course_name", "start_date", "end_date", "location", "professor_first_name", "professor_last_name", "repetition_frequency", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["calendar_id", 10], ["course_name", "quasi"], ["start_date", "2022-09-18"], ["end_date", "2022-12-09"], ["location", "Suite 333 6528 Predovic Vista, Port Emilefurt, IA 92046-2355"], ["professor_first_name", "Emile"], ["professor_last_name", "Kling"], ["repetition_frequency", "y"], ["url", "http://hintz.biz/benton_dicki"], ["created_at", "2022-10-27 02:53:23.553039"], ["updated_at", "2022-10-27 02:53:23.553039"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mClassPeriod Create (0.4ms)[0m  [1m[32mINSERT INTO "class_periods" ("course_id", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["course_id", 10], ["start_time", "2022-11-09 04:19:19.373361"], ["end_time", "2022-12-31 22:51:24.625432"], ["created_at", "2022-10-27 02:53:23.560855"], ["updated_at", "2022-10-27 02:53:23.560855"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mHoliday Create (0.3ms)[0m  [1m[32mINSERT INTO "holidays" ("calendar_id", "holiday_name", "date", "holiday_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 10], ["holiday_name", "nemo"], ["date", "2023-01-15 15:28:43.038297"], ["holiday_type", "mollitia"], ["created_at", "2022-10-27 02:53:23.568778"], ["updated_at", "2022-10-27 02:53:23.568778"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUserCalendar Create (0.5ms)[0m  [1m[32mINSERT INTO "user_calendars" ("user_id", "calendar_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 10], ["calendar_id", 10], ["created_at", "2022-10-27 02:53:23.577357"], ["updated_at", "2022-10-27 02:53:23.577357"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 10], ["other_name", "ut"], ["start_time", "2022-12-20 04:48:16.947333"], ["end_time", "2023-01-17 05:16:29.694587"], ["created_at", "2022-10-27 02:53:23.587451"], ["updated_at", "2022-10-27 02:53:23.587451"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "student_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "David"], ["last_name", "Shapiro"], ["student_id", 54631], ["email", "david.shapiro@gmail.com"], ["created_at", "2022-10-27 02:53:23.591839"], ["updated_at", "2022-10-27 02:53:23.591839"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Create (0.8ms)[0m  [1m[32mINSERT INTO "calendars" ("calendar_name", "user_id", "shared", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["calendar_name", "David Calendar"], ["user_id", 11], ["shared", false], ["created_at", "2022-10-27 02:53:23.596101"], ["updated_at", "2022-10-27 02:53:23.596101"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 11], ["other_name", "David Birthday"], ["start_time", "2022-10-27 00:00:00"], ["end_time", "2022-10-28 00:00:00"], ["created_at", "2022-10-27 02:53:23.605435"], ["updated_at", "2022-10-27 02:53:23.605435"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 11], ["other_name", "nemo"], ["start_time", "2022-10-17 00:00:00"], ["end_time", "2022-10-18 00:00:00"], ["created_at", "2022-10-27 02:53:23.612165"], ["updated_at", "2022-10-27 02:53:23.612165"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 11], ["other_name", "autem"], ["start_time", "2022-10-03 00:00:00"], ["end_time", "2022-10-04 00:00:00"], ["created_at", "2022-10-27 02:53:23.619360"], ["updated_at", "2022-10-27 02:53:23.619360"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mOtherEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "other_events" ("calendar_id", "other_name", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["calendar_id", 11], ["other_name", "voluptatibus"], ["start_time", "2022-10-17 00:00:00"], ["end_time", "2022-10-18 00:00:00"], ["created_at", "2022-10-27 02:53:23.625759"], ["updated_at", "2022-10-27 02:53:23.625759"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
