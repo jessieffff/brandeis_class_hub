@@ -25,5 +25,5 @@ Rails.application.routes.draw do
     resources :user_calendars, only: %i[new create]
   end
   # Defines the root path route ("/")
-  root 'application#hello'
+  root 'static_pages#home'
 end
