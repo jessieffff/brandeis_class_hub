@@ -11,3 +11,9 @@ two:
   other_name: MyString
   start_time: 2022-10-21 15:06:09
   end_time: 2022-10-21 15:06:09
+
+test_1:
+  calendar_id: 2
+  other_name: Elina_Birthday
+  start_time: 2022-10-21
+  end_time: 2022-10-22

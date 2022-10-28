@@ -16,33 +16,17 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create assignment" do
-    assert_difference("Assignment.count") do
-      post assignments_url, params: { assignment: { assignment_name: @assignment.assignment_name, calendar_id: @assignment.calendar_id, course_id: @assignment.course_id, due_date: @assignment.due_date } }
-    end
-
-    assert_redirected_to assignment_url(Assignment.last)
   end
 
   test "should show assignment" do
-    get assignment_url(@assignment)
-    assert_response :success
   end
 
   test "should get edit" do
-    get edit_assignment_url(@assignment)
-    assert_response :success
   end
 
   test "should update assignment" do
-    patch assignment_url(@assignment), params: { assignment: { assignment_name: @assignment.assignment_name, calendar_id: @assignment.calendar_id, course_id: @assignment.course_id, due_date: @assignment.due_date } }
-    assert_redirected_to assignment_url(@assignment)
   end
 
   test "should destroy assignment" do
-    assert_difference("Assignment.count", -1) do
-      delete assignment_url(@assignment)
-    end
-
-    assert_redirected_to assignments_url
   end
 end
