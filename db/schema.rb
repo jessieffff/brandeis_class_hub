@@ -67,8 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_174256) do
   create_table "other_events", force: :cascade do |t|
     t.integer "calendar_id"
     t.string "other_name"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.date "start_time"
+    t.date "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
