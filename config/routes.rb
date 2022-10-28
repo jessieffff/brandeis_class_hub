@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :other_events
   resources :holidays
   resources :class_periods
   resources :calendars

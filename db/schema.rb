@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_005059) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_191119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignments", force: :cascade do |t|
-    t.integer "event_id"
-    t.string "event_name"
-    t.string "event_category"
+    t.integer "calendar_id"
+    t.string "assignment_name"
     t.datetime "due_date"
-    t.integer "class_id"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,9 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_005059) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.integer "event_id"
-    t.string "event_name"
-    t.string "event_category"
+    t.integer "calendar_id"
+    t.string "course_name"
     t.date "start_date"
     t.date "end_date"
     t.string "location"
@@ -55,19 +53,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_005059) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", force: :cascade do |t|
+  create_table "holidays", force: :cascade do |t|
     t.integer "calendar_id"
-    t.string "event_category"
+    t.string "holiday_name"
+    t.datetime "date"
+    t.string "holiday_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "holidays", force: :cascade do |t|
-    t.integer "event_id"
-    t.string "event_name"
-    t.string "event_category"
-    t.date "date"
-    t.string "holiday_type"
+  create_table "other_events", force: :cascade do |t|
+    t.integer "calendar_id"
+    t.string "other_name"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
