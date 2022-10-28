@@ -16,6 +16,7 @@ class CalendarsTest < ApplicationSystemTestCase
 
     fill_in "Calendar name", with: @calendar.calendar_name
     check "Shared" if @calendar.shared
+    fill_in "invite_token", with: @calendar.invite_token
     fill_in "User", with: @calendar.user_id
     click_on "Create Calendar"
 
@@ -29,6 +30,7 @@ class CalendarsTest < ApplicationSystemTestCase
 
     fill_in "Calendar name", with: @calendar.calendar_name
     check "Shared" if @calendar.shared
+    fill_in "invite_token", with: @calendar.invite_token
     fill_in "User", with: @calendar.user_id
     click_on "Update Calendar"
 
