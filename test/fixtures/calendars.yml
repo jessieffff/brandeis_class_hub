@@ -4,8 +4,10 @@ one:
   calendar_name: MyString
   user_id: 1
   shared: false
+  invite_token: MyString
 
 two:
   calendar_name: MyString
   user_id: 1
   shared: false
+  invite_token: MyString

@@ -9,6 +9,8 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+/log/development.log
+/tmp/cache/bootsnap/load-path-cache
 
 # Used by dotenv library to load environment variables.
 # .env
