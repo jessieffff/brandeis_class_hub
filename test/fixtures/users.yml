@@ -6,6 +6,7 @@ one:
   last_name: MyString
   student_id: 1
   email: MyString
+  password_digest: <%= User.digest('password') %>
 
 two:
   user_id: 1
@@ -13,3 +14,4 @@ two:
   last_name: MyString
   student_id: 1
   email: MyString
+  password_digest: <%= User.digest('password') %>
