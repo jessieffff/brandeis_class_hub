@@ -9,19 +9,16 @@
 </div>
 <br>
 
-<li class="dropdown">
+<li class="dropdown" >
   <a href="#" id="new-event" class="dropdown-toggle">
     New Event <b class="caret"></b>
   </a>
   <ul id="dropdown-menu" class="dropdown-menu">
-    <%= link_to "New course", new_course_path %>
-    <%= link_to "New assignment", new_assignment_path %>
-    <%= link_to "New holiday", new_holiday_path %>
-    <%= link_to "New other event", new_other_event_path %>
-    <li class="divider"></li>
     <li>
-      <%= link_to "Log out", #,
-                              data: { "turbo-method": :delete } %>
+      <%= link_to "New course", new_course_path %>
+      <%= link_to "New assignment", new_assignment_path %>
+      <%= link_to "New holiday", new_holiday_path %>
+      <%= link_to "New other event", new_other_event_path %>
     </li>
   </ul>
 </li>
