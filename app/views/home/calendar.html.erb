@@ -1,0 +1,13 @@
+<%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
+<%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
+<h1 class="text-center">
+    <%= @month.get_month_year %>
+</h1>
+<% if @view.to_s == "month" %>
+    <%= render 'month', :month => @month %>
+<% elsif @view.to_s == "week" %>
+    <%= render 'week_buttons', :week => @week %>
+    <%= render 'week', :week => @week %>
+<% else %>
+    <%= render 'day', :day => @month.load_month[0].load_week[0] %>
+<% end %>

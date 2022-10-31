@@ -1,3 +1,4 @@
+require 'Month'
 class CalendarsController < ApplicationController
   before_action :set_calendar, only: %i[ show edit update destroy ]
 
@@ -8,6 +9,11 @@ class CalendarsController < ApplicationController
 
   # GET /calendars/1 or /calendars/1.json
   def show
+    render :index
+  end 
+
+  def increase_month
+    @month = Month.new(@month.month + 1, 2022)
   end
 
   # GET /calendars/new

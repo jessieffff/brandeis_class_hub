@@ -4,6 +4,6 @@
   <h1 class="text-center">
     <%= month.get_month_year %>
   </h1>
-<div>
-  <%= render 'month', :month => month %>
+  <%= link_to "Next Month", calendars_index_path, method: "increase_month" %>
+  <%= render 'calendar_display', :month => month%>
 </div>

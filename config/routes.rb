@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  get "home/calendar"
   resources :other_events
   resources :holidays
   resources :class_periods
-  resources :calendars
   resources :user_calendars
   resources :courses
   resources :assignments
