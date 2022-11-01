@@ -65,6 +65,6 @@ class OtherEventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def other_event_params
-      params.require(:other_event).permit(:calendar_id, :other_name, :start_time, :end_time)
+      params.require(:other_event).permit(:calendar_id, :name, :start_time, :end_time)
     end
 end
