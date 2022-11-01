@@ -6,7 +6,7 @@ class HomeController < ApplicationController
             @y = params[:date].last(4).to_i
         else
             @m = Date.today.month
-            @d = Date.today.day
+            @d = 01
             @y = Date.today.year
         end
         @month = Month.new(@m, @y)
