@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_191119) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer "calendar_id"
-    t.string "assignment_name"
+    t.string "name"
     t.datetime "due_date"
     t.integer "course_id"
     t.datetime "created_at", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_191119) do
 
   create_table "class_periods", force: :cascade do |t|
     t.integer "course_id"
+    t.string "name"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
@@ -41,7 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_191119) do
 
   create_table "courses", force: :cascade do |t|
     t.integer "calendar_id"
-    t.string "course_name"
+    t.string "name"
     t.date "start_date"
     t.date "end_date"
     t.string "location"
@@ -55,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_191119) do
 
   create_table "holidays", force: :cascade do |t|
     t.integer "calendar_id"
-    t.string "holiday_name"
+    t.string "name"
     t.datetime "date"
     t.string "holiday_type"
     t.datetime "created_at", null: false
@@ -64,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_191119) do
 
   create_table "other_events", force: :cascade do |t|
     t.integer "calendar_id"
-    t.string "other_name"
+    t.string "name"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false

@@ -11,7 +11,7 @@
                 <div class="day-calendar-item">
                     <strong><%= day.day %></strong>
                     <% day.load_events.each do |event| %>
-                        <p><%= event.other_name %></p>
+                        <p><%= event.name %></p>
                     <% end %>
                 </div>
             <% end %>

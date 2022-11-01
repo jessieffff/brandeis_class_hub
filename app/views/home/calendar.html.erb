@@ -1,5 +1,6 @@
 <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
 <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
+<%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
 <h1 class="text-center">
     <%= @month.get_month_year %>
 </h1>
@@ -9,5 +10,6 @@
     <%= render 'week_buttons', :week => @week %>
     <%= render 'week', :week => @week %>
 <% else %>
-    <%= render 'day', :day => @month.load_month[0].load_week[0] %>
+    <%= render 'day_buttons', :day => @day %>
+    <%= render 'day', :day => @day %>
 <% end %>

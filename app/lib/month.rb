@@ -19,19 +19,19 @@ class Month
         num_days_in_last_week = (days_in_month - num_days_in_first_week) % 7
         num_inner_weeks = (days_in_month - num_days_in_first_week - num_days_in_last_week) / 7
         
-        first_week = Week.new(make_date(01), num_days_in_first_week)
+        first_week = Week.new(make_date(01))
         weeks.push(first_week)
         start_day += num_days_in_first_week
 
         while num_inner_weeks > 0
-            weeks.push(Week.new(make_date(start_day), 7))
+            weeks.push(Week.new(make_date(start_day)))
             num_inner_weeks -= 1
             if (start_day + 7 < @last_of_month.day)
                 start_day += 7
             end
         end
 
-        last_week = Week.new(make_date(start_day), num_days_in_last_week)
+        last_week = Week.new(make_date(start_day))
         weeks.push(last_week)
         return weeks
     end
