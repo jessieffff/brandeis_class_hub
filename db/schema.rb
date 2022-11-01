@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_191119) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_22_174256) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,8 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_191119) do
     t.string "calendar_name"
     t.integer "user_id"
     t.boolean "shared"
+    t.string "invite_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["invite_token"], name: "index_calendars_on_invite_token", unique: true
   end
 
   create_table "class_periods", force: :cascade do |t|

@@ -1,6 +1,6 @@
 require 'Month'
 class CalendarsController < ApplicationController
-  before_action :set_calendar, only: %i[ show edit update destroy ]
+  before_action :set_calendar, only: %i[show edit update destroy]
 
   # GET /calendars or /calendars.json
   def index
@@ -9,11 +9,7 @@ class CalendarsController < ApplicationController
 
   # GET /calendars/1 or /calendars/1.json
   def show
-    render :index
-  end 
-
-  def increase_month
-    @month = Month.new(@month.month + 1, 2022)
+    @calendar = Calendar.find_by_invite_token(params[:invite_token])
   end
 
   # GET /calendars/new
@@ -22,8 +18,7 @@ class CalendarsController < ApplicationController
   end
 
   # GET /calendars/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /calendars or /calendars.json
   def create
@@ -31,7 +26,7 @@ class CalendarsController < ApplicationController
 
     respond_to do |format|
       if @calendar.save
-        format.html { redirect_to calendar_url(@calendar), notice: "Calendar was successfully created." }
+        format.html { redirect_to calendar_url(@calendar), notice: 'Calendar was successfully created.' }
         format.json { render :show, status: :created, location: @calendar }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,7 +39,7 @@ class CalendarsController < ApplicationController
   def update
     respond_to do |format|
       if @calendar.update(calendar_params)
-        format.html { redirect_to calendar_url(@calendar), notice: "Calendar was successfully updated." }
+        format.html { redirect_to calendar_url(@calendar), notice: 'Calendar was successfully updated.' }
         format.json { render :show, status: :ok, location: @calendar }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,19 +53,25 @@ class CalendarsController < ApplicationController
     @calendar.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendars_url, notice: "Calendar was successfully destroyed." }
+      format.html { redirect_to calendars_url, notice: 'Calendar was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_calendar
-      @calendar = Calendar.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def calendar_params
-      params.require(:calendar).permit(:calendar_name, :user_id, :shared)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_calendar
+    # @calendar = Calendar.find_by(params[:token])
+
+    @calendar = Calendar.find_by_invite_token(params[:invite_token])
+    # comment out because we don't have current user yet
+    # UserCalendar.where(calendar_id: thiscalendar, user: current_user).first_or_create
+    # @calendar = Calendar.where(calendar: thiscalendar).first_or_create
+  end
+
+  # Only allow a list of trusted parameters through.
+  def calendar_params
+    params.require(:calendar).permit(:calendar_name, :user_id, :shared, :invite_token)
+  end
 end

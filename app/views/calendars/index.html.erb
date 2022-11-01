@@ -7,3 +7,18 @@
   <%= link_to "Next Month", calendars_index_path, method: "increase_month" %>
   <%= render 'calendar_display', :month => month%>
 </div>
+<br>
+
+<li class="dropdown" >
+  <a href="#" id="new-event" class="dropdown-toggle">
+    New Event <b class="caret"></b>
+  </a>
+  <ul id="dropdown-menu" class="dropdown-menu">
+    <li>
+      <%= link_to "New course", new_course_path %>
+      <%= link_to "New assignment", new_assignment_path %>
+      <%= link_to "New holiday", new_holiday_path %>
+      <%= link_to "New other event", new_other_event_path %>
+    </li>
+  </ul>
+</li>
