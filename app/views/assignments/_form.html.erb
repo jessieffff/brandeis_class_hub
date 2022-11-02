@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :calendar_id, style: "display: block" %>
-    <%= form.number_field :calendar_id %>
+    <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.id] } %>
   </div>
 
   <div>
-    <%= form.label :assignment_name, style: "display: block" %>
-    <%= form.text_field :assignment_name %>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
   </div>
 
   <div>

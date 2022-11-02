@@ -1,10 +1,6 @@
 require "test_helper"
 
 class OtherEventsControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @other_event = other_events(:one)
-  end
-
   test "should get index" do
   end
 

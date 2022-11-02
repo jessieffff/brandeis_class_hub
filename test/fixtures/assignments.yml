@@ -2,12 +2,12 @@
 
 one:
   calendar_id: 1
-  assignment_name: MyString
+  name: MyString
   due_date: 2022-10-21 15:11:19
   course_id: 1
 
 two:
   calendar_id: 1
-  assignment_name: MyString
+  name: MyString
   due_date: 2022-10-21 15:11:19
   course_id: 1

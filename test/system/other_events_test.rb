@@ -16,7 +16,7 @@ class OtherEventsTest < ApplicationSystemTestCase
 
     fill_in "Calendar", with: @other_event.calendar_id
     fill_in "End time", with: @other_event.end_time
-    fill_in "Other name", with: @other_event.other_name
+    fill_in "Other name", with: @other_event.name
     fill_in "Start time", with: @other_event.start_time
     click_on "Create Other event"
 
@@ -30,7 +30,7 @@ class OtherEventsTest < ApplicationSystemTestCase
 
     fill_in "Calendar", with: @other_event.calendar_id
     fill_in "End time", with: @other_event.end_time
-    fill_in "Other name", with: @other_event.other_name
+    fill_in "Other name", with: @other_event.name
     fill_in "Start time", with: @other_event.start_time
     click_on "Update Other event"
 
