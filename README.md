@@ -29,3 +29,20 @@ Above is our db diagram.
 - Every event list contains multiple sub-event list (i.e., different kind of events), which is one-to-many relationship. 
   - However, if we focus on the relationship between a single-user-event-list and a single event category, it will be a one-to-one relationship as each single-user-event-list will only contain a class/task/holiday list and a single user's class/task/holiday list will only belong to a single-user-event-list. (i.e., there won't be two event.class lists in a single-user-event-list). 
 - Every task contains different kind of sub-categories so it's also a one-to-many relationship. 
+
+<img src="./app/assets/images/db_schema2.png">
+
+<img src="./app/assets/images/paper_prototype/first_page.png">
+<img src="./app/assets/images/paper_prototype/login.png">
+<img src="./app/assets/images/paper_prototype/sign_up.png">
+<img src="./app/assets/images/paper_prototype/month.png">
+<img src="./app/assets/images/paper_prototype/week.png">
+<img src="./app/assets/images/paper_prototype/day.png">
+<img src="./app/assets/images/paper_prototype/event.png">
+<img src="./app/assets/images/paper_prototype/new_event.png">
+<img src="./app/assets/images/paper_prototype/shared_calendars.png">
+
+
+
+
+

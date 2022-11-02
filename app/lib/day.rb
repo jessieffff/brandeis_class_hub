@@ -1,3 +1,4 @@
+#Day PORO by David Shapiro
 class Day
 
     attr_accessor :day
@@ -10,6 +11,7 @@ class Day
     end
 
     def load_events
+        #load each type of event
         today_events = Holiday.all.where(date: @today.all_day) +
                         OtherEvent.all.where(start_time: @today.all_day) +
                         ClassPeriod.all.where(start_time: @today.all_day) +
@@ -17,39 +19,24 @@ class Day
         return today_events
     end
 
+    #Get date in traditional format
     def currentDate
         return "#{@month}/#{@day}/#{@year}"
     end
 
+    #Returns date of next day for url
     def next
         next_day = @today.next_day
-        if (next_day.month < 10)
-            month_string = "0#{next_day.month}"
-        else
-            month_string = "#{next_day.month}"
-        end
-
-        if (next_day.day < 10)
-            day_string = "0#{next_day.day}"
-        else
-            day_string = "#{next_day.day}"
-        end
+        month_string = General.format(next_day.month)
+        day_string = General.format(next_day.day)
         return "#{month_string}#{day_string}#{next_day.year}"
     end
 
+    #Returns date of prev day for url
     def prev
         prev_day = @today.prev_day
-        if (prev_day.month < 10)
-            month_string = "0#{prev_day.month}"
-        else
-            month_string = "#{prev_day.month}"
-        end
-
-        if (prev_day.day < 10)
-            day_string = "0#{prev_day.day}"
-        else
-            day_string = "#{prev_day.day}"
-        end
+        month_string = General.format(prev_day.month)
+        day_string = General.format(prev_day.day)
         return "#{month_string}#{day_string}#{prev_day.year}"
     end
     

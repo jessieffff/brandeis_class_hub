@@ -25,7 +25,7 @@ c = Calendar.create(calendar_name: "David Calendar", user_id: u.id, shared: fals
 OtherEvent.create(calendar_id: c.id, name: "David Birthday",
                     start_time: Date.new(2022, 10, 27), end_time: Date.new(2022, 10, 28))
 10.times do |i|
-  start_day = rand(27)
+  start_day = rand(27) + 1
   OtherEvent.create(calendar_id: c.id, name: "Event #{Faker::Lorem.word}",
                     start_time: Date.new(2022, 10, start_day), end_time: Date.new(2022, 10, start_day + 1))
 end
