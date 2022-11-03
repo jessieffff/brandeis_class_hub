@@ -2151,3 +2151,294 @@ Processing by HomeController#calendar as HTML
 Completed 200 OK in 533ms (Views: 405.5ms | ActiveRecord: 126.5ms | Allocations: 126411)
 
 
+Started GET "/home/calendar" for 127.0.0.1 at 2022-11-03 12:15:23 -0400
+Processing by HomeController#calendar as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/calendar.html.erb within layouts/application
+  Rendered home/_week_titles.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered home/_day.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered home/_day.html.erb (Duration: 0.0ms | Allocations: 10)
+  [1m[36mHoliday Load (0.7ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-01 00:00:00"], ["date", "2022-11-01 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (2.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-01 00:00:00"], ["start_time", "2022-11-01 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.6ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-01 00:00:00"], ["start_time", "2022-11-01 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (1.9ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-01 00:00:00"], ["due_date", "2022-11-01 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 81.5ms | Allocations: 6084)
+  [1m[36mHoliday Load (0.4ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-02 00:00:00"], ["date", "2022-11-02 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (1.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-02 00:00:00"], ["start_time", "2022-11-02 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (2.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-02 00:00:00"], ["start_time", "2022-11-02 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (2.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-02 00:00:00"], ["due_date", "2022-11-02 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 37.3ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.7ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-03 00:00:00"], ["date", "2022-11-03 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.5ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-03 00:00:00"], ["start_time", "2022-11-03 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.7ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-03 00:00:00"], ["start_time", "2022-11-03 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (1.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-03 00:00:00"], ["due_date", "2022-11-03 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 10.4ms | Allocations: 3117)
+  [1m[36mHoliday Load (0.6ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-04 00:00:00"], ["date", "2022-11-04 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.8ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-04 00:00:00"], ["start_time", "2022-11-04 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-04 00:00:00"], ["start_time", "2022-11-04 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-04 00:00:00"], ["due_date", "2022-11-04 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 9.5ms | Allocations: 3097)
+  [1m[36mHoliday Load (1.2ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-05 00:00:00"], ["date", "2022-11-05 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (1.4ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-05 00:00:00"], ["start_time", "2022-11-05 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.5ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-05 00:00:00"], ["start_time", "2022-11-05 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-05 00:00:00"], ["due_date", "2022-11-05 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.3ms | Allocations: 3130)
+  Rendered home/_week.html.erb (Duration: 151.3ms | Allocations: 18938)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-06 00:00:00"], ["date", "2022-11-06 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.6ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-06 00:00:00"], ["start_time", "2022-11-06 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.7ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-06 00:00:00"], ["start_time", "2022-11-06 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (3.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-06 00:00:00"], ["due_date", "2022-11-06 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 12.1ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.6ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-07 00:00:00"], ["date", "2022-11-07 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.5ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-07 00:00:00"], ["start_time", "2022-11-07 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-07 00:00:00"], ["start_time", "2022-11-07 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-07 00:00:00"], ["due_date", "2022-11-07 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 8.1ms | Allocations: 3138)
+  [1m[36mHoliday Load (0.4ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-08 00:00:00"], ["date", "2022-11-08 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (2.7ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-08 00:00:00"], ["start_time", "2022-11-08 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.4ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-08 00:00:00"], ["start_time", "2022-11-08 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-08 00:00:00"], ["due_date", "2022-11-08 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.6ms | Allocations: 3170)
+  [1m[36mHoliday Load (0.2ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-09 00:00:00"], ["date", "2022-11-09 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-09 00:00:00"], ["start_time", "2022-11-09 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-09 00:00:00"], ["start_time", "2022-11-09 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-09 00:00:00"], ["due_date", "2022-11-09 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 6.8ms | Allocations: 3405)
+  [1m[36mHoliday Load (1.0ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-10 00:00:00"], ["date", "2022-11-10 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (1.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-10 00:00:00"], ["start_time", "2022-11-10 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.5ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-10 00:00:00"], ["start_time", "2022-11-10 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-10 00:00:00"], ["due_date", "2022-11-10 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 10.5ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.6ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-11 00:00:00"], ["date", "2022-11-11 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.5ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-11 00:00:00"], ["start_time", "2022-11-11 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-11 00:00:00"], ["start_time", "2022-11-11 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.7ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-11 00:00:00"], ["due_date", "2022-11-11 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 8.6ms | Allocations: 3097)
+  [1m[36mHoliday Load (1.1ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-12 00:00:00"], ["date", "2022-11-12 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.8ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-12 00:00:00"], ["start_time", "2022-11-12 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.5ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-12 00:00:00"], ["start_time", "2022-11-12 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.6ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-12 00:00:00"], ["due_date", "2022-11-12 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.8ms | Allocations: 3097)
+  Rendered home/_week.html.erb (Duration: 70.9ms | Allocations: 22498)
+  [1m[36mHoliday Load (4.8ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-13 00:00:00"], ["date", "2022-11-13 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (2.0ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-13 00:00:00"], ["start_time", "2022-11-13 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-13 00:00:00"], ["start_time", "2022-11-13 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-13 00:00:00"], ["due_date", "2022-11-13 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 13.8ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-14 00:00:00"], ["date", "2022-11-14 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-14 00:00:00"], ["start_time", "2022-11-14 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.6ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-14 00:00:00"], ["start_time", "2022-11-14 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (3.0ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-14 00:00:00"], ["due_date", "2022-11-14 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.7ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-15 00:00:00"], ["date", "2022-11-15 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.4ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-15 00:00:00"], ["start_time", "2022-11-15 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.5ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-15 00:00:00"], ["start_time", "2022-11-15 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-15 00:00:00"], ["due_date", "2022-11-15 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 7.3ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-16 00:00:00"], ["date", "2022-11-16 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (2.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-16 00:00:00"], ["start_time", "2022-11-16 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-16 00:00:00"], ["start_time", "2022-11-16 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-16 00:00:00"], ["due_date", "2022-11-16 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.0ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-17 00:00:00"], ["date", "2022-11-17 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.5ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-17 00:00:00"], ["start_time", "2022-11-17 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.4ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-17 00:00:00"], ["start_time", "2022-11-17 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-17 00:00:00"], ["due_date", "2022-11-17 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 7.9ms | Allocations: 3097)
+  [1m[36mHoliday Load (1.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-18 00:00:00"], ["date", "2022-11-18 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.6ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-18 00:00:00"], ["start_time", "2022-11-18 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.7ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-18 00:00:00"], ["start_time", "2022-11-18 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.5ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-18 00:00:00"], ["due_date", "2022-11-18 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 10.7ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-19 00:00:00"], ["date", "2022-11-19 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.4ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-19 00:00:00"], ["start_time", "2022-11-19 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.8ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-19 00:00:00"], ["start_time", "2022-11-19 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (1.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-19 00:00:00"], ["due_date", "2022-11-19 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.1ms | Allocations: 3097)
+  Rendered home/_week.html.erb (Duration: 75.1ms | Allocations: 22076)
+  [1m[36mHoliday Load (0.2ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-20 00:00:00"], ["date", "2022-11-20 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-20 00:00:00"], ["start_time", "2022-11-20 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-20 00:00:00"], ["start_time", "2022-11-20 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-20 00:00:00"], ["due_date", "2022-11-20 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 7.2ms | Allocations: 3160)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-21 00:00:00"], ["date", "2022-11-21 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (1.7ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-21 00:00:00"], ["start_time", "2022-11-21 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.7ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-21 00:00:00"], ["start_time", "2022-11-21 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.7ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-21 00:00:00"], ["due_date", "2022-11-21 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.3ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-22 00:00:00"], ["date", "2022-11-22 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.8ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-22 00:00:00"], ["start_time", "2022-11-22 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (1.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-22 00:00:00"], ["start_time", "2022-11-22 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (1.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-22 00:00:00"], ["due_date", "2022-11-22 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.2ms | Allocations: 3097)
+  [1m[36mHoliday Load (1.0ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-23 00:00:00"], ["date", "2022-11-23 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.2ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-23 00:00:00"], ["start_time", "2022-11-23 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.2ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-23 00:00:00"], ["start_time", "2022-11-23 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-23 00:00:00"], ["due_date", "2022-11-23 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 8.7ms | Allocations: 3118)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-24 00:00:00"], ["date", "2022-11-24 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.4ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-24 00:00:00"], ["start_time", "2022-11-24 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.8ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-24 00:00:00"], ["start_time", "2022-11-24 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (2.0ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-24 00:00:00"], ["due_date", "2022-11-24 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 9.9ms | Allocations: 3118)
+  [1m[36mHoliday Load (0.5ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-25 00:00:00"], ["date", "2022-11-25 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.6ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-25 00:00:00"], ["start_time", "2022-11-25 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.4ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-25 00:00:00"], ["start_time", "2022-11-25 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-25 00:00:00"], ["due_date", "2022-11-25 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 8.6ms | Allocations: 3118)
+  [1m[36mHoliday Load (0.4ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-26 00:00:00"], ["date", "2022-11-26 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (2.5ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-26 00:00:00"], ["start_time", "2022-11-26 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.6ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-26 00:00:00"], ["start_time", "2022-11-26 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-26 00:00:00"], ["due_date", "2022-11-26 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 10.9ms | Allocations: 3097)
+  Rendered home/_week.html.erb (Duration: 69.3ms | Allocations: 22202)
+  [1m[36mHoliday Load (0.2ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-27 00:00:00"], ["date", "2022-11-27 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.5ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-27 00:00:00"], ["start_time", "2022-11-27 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.4ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-27 00:00:00"], ["start_time", "2022-11-27 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-27 00:00:00"], ["due_date", "2022-11-27 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 7.2ms | Allocations: 3097)
+  [1m[36mHoliday Load (3.7ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-28 00:00:00"], ["date", "2022-11-28 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (1.4ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-28 00:00:00"], ["start_time", "2022-11-28 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.2ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-28 00:00:00"], ["start_time", "2022-11-28 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-28 00:00:00"], ["due_date", "2022-11-28 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 13.8ms | Allocations: 3118)
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-29 00:00:00"], ["date", "2022-11-29 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (2.3ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-29 00:00:00"], ["start_time", "2022-11-29 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-29 00:00:00"], ["start_time", "2022-11-29 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-29 00:00:00"], ["due_date", "2022-11-29 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 11.1ms | Allocations: 3097)
+  [1m[36mHoliday Load (0.2ms)[0m  [1m[34mSELECT "holidays".* FROM "holidays" WHERE "holidays"."date" BETWEEN $1 AND $2[0m  [["date", "2022-11-30 00:00:00"], ["date", "2022-11-30 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mOtherEvent Load (0.6ms)[0m  [1m[34mSELECT "other_events".* FROM "other_events" WHERE "other_events"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-30 00:00:00"], ["start_time", "2022-11-30 23:59:59.999999"]]
+  ↳ app/lib/day.rb:15:in `load_events'
+  [1m[36mClassPeriod Load (0.3ms)[0m  [1m[34mSELECT "class_periods".* FROM "class_periods" WHERE "class_periods"."start_time" BETWEEN $1 AND $2[0m  [["start_time", "2022-11-30 00:00:00"], ["start_time", "2022-11-30 23:59:59.999999"]]
+  ↳ app/lib/day.rb:16:in `+'
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."due_date" BETWEEN $1 AND $2[0m  [["due_date", "2022-11-30 00:00:00"], ["due_date", "2022-11-30 23:59:59.999999"]]
+  ↳ app/lib/day.rb:17:in `+'
+  Rendered home/_day.html.erb (Duration: 8.7ms | Allocations: 3097)
+  Rendered home/_day.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered home/_day.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered home/_day.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered home/_week.html.erb (Duration: 42.0ms | Allocations: 12830)
+  Rendered home/_month.html.erb (Duration: 413.6ms | Allocations: 99049)
+  Rendered home/calendar.html.erb within layouts/application (Duration: 414.6ms | Allocations: 99485)
+  Rendered layout layouts/application.html.erb (Duration: 431.5ms | Allocations: 105887)
+Completed 200 OK in 433ms (Views: 432.1ms | ActiveRecord: 116.7ms | Allocations: 106190)
+
+
