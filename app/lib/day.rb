@@ -1,3 +1,4 @@
+#Day PORO by David Shapiro
 class Day
 
     attr_accessor :day
@@ -10,14 +11,33 @@ class Day
     end
 
     def load_events
-        today_events = OtherEvent.all.where(start_time: @today)
-        return today_events.sort()
+        #load each type of event
+        today_events = Holiday.all.where(date: @today.all_day) +
+                        OtherEvent.all.where(start_time: @today.all_day) +
+                        ClassPeriod.all.where(start_time: @today.all_day) +
+                        Assignment.all.where(due_date: @today.all_day)
+        return today_events
     end
 
+    #Get date in traditional format
     def currentDate
         return "#{@month}/#{@day}/#{@year}"
     end
+
+    #Returns date of next day for url
+    def next
+        next_day = @today.next_day
+        month_string = General.format(next_day.month)
+        day_string = General.format(next_day.day)
+        return "#{month_string}#{day_string}#{next_day.year}"
+    end
+
+    #Returns date of prev day for url
+    def prev
+        prev_day = @today.prev_day
+        month_string = General.format(prev_day.month)
+        day_string = General.format(prev_day.day)
+        return "#{month_string}#{day_string}#{prev_day.year}"
+    end
     
 end
-
-Assignment.create(calendar_id: Faker::Number.number(digits: 1), assignment_name: Faker::Lorem.word, due_date: Faker::Time.forward(days: 7, period: :evening), course_id: Faker::Number.number(digits: 1))

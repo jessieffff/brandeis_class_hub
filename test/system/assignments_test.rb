@@ -14,7 +14,7 @@ class AssignmentsTest < ApplicationSystemTestCase
     visit assignments_url
     click_on "New assignment"
 
-    fill_in "Assignment name", with: @assignment.assignment_name
+    fill_in "Assignment name", with: @assignment.name
     fill_in "Calendar", with: @assignment.calendar_id
     fill_in "Course", with: @assignment.course_id
     fill_in "Due date", with: @assignment.due_date
@@ -28,7 +28,7 @@ class AssignmentsTest < ApplicationSystemTestCase
     visit assignment_url(@assignment)
     click_on "Edit this assignment", match: :first
 
-    fill_in "Assignment name", with: @assignment.assignment_name
+    fill_in "Assignment name", with: @assignment.name
     fill_in "Calendar", with: @assignment.calendar_id
     fill_in "Course", with: @assignment.course_id
     fill_in "Due date", with: @assignment.due_date

@@ -2,12 +2,12 @@
 
 one:
   calendar_id: 1
-  holiday_name: MyString
+  name: MyString
   date: 2022-10-21 15:10:36
   holiday_type: MyString
 
 two:
   calendar_id: 1
-  holiday_name: MyString
+  name: MyString
   date: 2022-10-21 15:10:36
   holiday_type: MyString
