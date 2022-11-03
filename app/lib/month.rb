@@ -1,3 +1,4 @@
+#Month PORO by David Shapiro
 class Month
 
     attr_accessor :month
@@ -14,15 +15,18 @@ class Month
         weeks = []
         start_day = 1 #First of month
 
+        #Important info about month
         days_in_month = @last_of_month.day
         num_days_in_first_week = 7 - @first_of_month.wday
         num_days_in_last_week = (days_in_month - num_days_in_first_week) % 7
         num_inner_weeks = (days_in_month - num_days_in_first_week - num_days_in_last_week) / 7
         
+        #Load first week
         first_week = Week.new(make_date(01))
         weeks.push(first_week)
         start_day += num_days_in_first_week
 
+        #load inner weeks
         while num_inner_weeks > 0
             weeks.push(Week.new(make_date(start_day)))
             num_inner_weeks -= 1
@@ -31,6 +35,7 @@ class Month
             end
         end
 
+        #load final week
         last_week = Week.new(make_date(start_day))
         weeks.push(last_week)
         return weeks
@@ -41,41 +46,40 @@ class Month
         return d
     end
 
-    def get_month_year()
+    #Get the month name followed by year
+    def get_month_year
         return "#{month_name @month} #{@year}"
     end
 
     def next
+        #New year
         if (@month == 12)
             return "0101#{@year + 1}"
-        elsif (@month < 9)
-            return "0#{@month + 1}01#{@year}"
+        #same year
         else
-            return "#{@month + 1}01#{@year}"
+            month_string = General.format(@month + 1)
+            return "#{month_string}01#{@year}"
         end
     end
 
     def prev
+        #Going back a year
         if (@month == 1)
             return "1201#{@year - 1}"
+        #same year
         else
-            new_month = @month - 1
-            if (new_month <= 9)
-                return "0#{new_month}01#{@year}"
-            else
-                return "#{new_month}01#{@year}"
-            end
+            month_string = General.format(@month - 1)
+            return "#{month_string}01#{@year}"
         end
     end
 
+    #current month string
     def current
-        if (@month <= 9)
-            return "0#{@month}01#{@year}"
-        else
-            return "#{@month}01#{@year}"
-        end
+        month_string = General.format(@month)
+        return "#{month_string}01#{@year}"
     end
 
+    #go from month num to name
     def month_name(month)
         num_to_month = {1 => "January", 2 => "February", 3 => "March", 4 => "April", 5 => "May",
                         6 => "June", 7 => "July", 8 => "August", 9 => "September", 10 => "October",

@@ -40,7 +40,7 @@ class MonthTest < ActiveSupport::TestCase
 
   test "previous" do
     m = Month.new(1, 2022)
-    assert_equal(m.prev, "12012022")
+    assert_equal(m.prev, "12012021")
 
     m = Month.new(5, 2022)
     assert_equal(m.prev, "04012022")
@@ -48,7 +48,7 @@ class MonthTest < ActiveSupport::TestCase
 
   test "current" do
     m = Month.new(1, 2022)
-    assert_equal(m.current, "01012021")
+    assert_equal(m.current, "01012022")
 
     m = Month.new(10, 2022)
     assert_equal(m.current, "10012022")
