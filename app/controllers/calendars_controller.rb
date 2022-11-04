@@ -1,4 +1,4 @@
-require 'Month'
+require_relative '../lib/month.rb'
 class CalendarsController < ApplicationController
   before_action :set_calendar, only: %i[show edit update destroy]
 
