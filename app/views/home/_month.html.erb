@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <% require 'Month' %>
+        <% require_relative '../../lib/month.rb' %>
         <%= link_to "Last Month", home_calendar_path(date: month.prev), method: :post%>
         <%= link_to "Next Month", home_calendar_path(date: month.next), method: :post%>
         <%= render 'week_titles' %>
