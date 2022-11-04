@@ -1,0 +1,4 @@
+<div>
+    <%= link_to "Previous Day", home_calendar_path(date: day.prev, view: :day), method: :post%>
+    <%= link_to "Next Day", home_calendar_path(date: day.next, view: :day), method: :post%>
+</div>

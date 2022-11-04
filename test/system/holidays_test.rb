@@ -14,10 +14,9 @@ class HolidaysTest < ApplicationSystemTestCase
     visit holidays_url
     click_on "New holiday"
 
+    fill_in "Calendar", with: @holiday.calendar_id
     fill_in "Date", with: @holiday.date
-    fill_in "Event category", with: @holiday.event_category
-    fill_in "Event", with: @holiday.event_id
-    fill_in "Event name", with: @holiday.event_name
+    fill_in "Holiday name", with: @holiday.holiday_name
     fill_in "Holiday type", with: @holiday.holiday_type
     click_on "Create Holiday"
 
@@ -29,10 +28,9 @@ class HolidaysTest < ApplicationSystemTestCase
     visit holiday_url(@holiday)
     click_on "Edit this holiday", match: :first
 
+    fill_in "Calendar", with: @holiday.calendar_id
     fill_in "Date", with: @holiday.date
-    fill_in "Event category", with: @holiday.event_category
-    fill_in "Event", with: @holiday.event_id
-    fill_in "Event name", with: @holiday.event_name
+    fill_in "Holiday name", with: @holiday.holiday_name
     fill_in "Holiday type", with: @holiday.holiday_type
     click_on "Update Holiday"
 

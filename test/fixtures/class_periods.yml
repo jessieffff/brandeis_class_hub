@@ -2,12 +2,10 @@
 
 one:
   course_id: 1
-  individual_class_id: 1
-  start_time: 2022-09-30 15:52:37
-  end_time: 2022-09-30 15:52:37
+  start_time: 2022-10-12 20:50:03
+  end_time: 2022-10-12 20:50:03
 
 two:
   course_id: 1
-  individual_class_id: 1
-  start_time: 2022-09-30 15:52:37
-  end_time: 2022-09-30 15:52:37
+  start_time: 2022-10-12 20:50:03
+  end_time: 2022-10-12 20:50:03

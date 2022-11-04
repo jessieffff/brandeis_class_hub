@@ -12,11 +12,6 @@
   <% end %>
 
   <div>
-    <%= form.label :calendar_id, style: "display: block" %>
-    <%= form.number_field :calendar_id %>
-  </div>
-
-  <div>
     <%= form.label :calendar_name, style: "display: block" %>
     <%= form.text_field :calendar_name %>
   </div>
@@ -30,6 +25,11 @@
     <%= form.label :shared, style: "display: block" %>
     <%= form.check_box :shared %>
   </div>
+
+  <%# <div>
+    <%= form.label :invite_token, style: "display: block" %>
+    <%# <%= form.text_field :invite_token %> 
+  <%# </div> %> 
 
   <div>
     <%= form.submit %>
