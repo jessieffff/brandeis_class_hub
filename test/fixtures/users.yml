@@ -8,8 +8,8 @@ one:
   password_digest: <%= User.digest('password') %>
 
 two:
-  first_name: MyString
-  last_name: MyString
+  first_name: MyString1
+  last_name: MyString2
   student_id: 1
   email: MyString2
   password_digest: <%= User.digest('password') %>
