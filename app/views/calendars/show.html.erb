@@ -2,9 +2,26 @@
 
 <%= render @calendar %>
 
-<div>
-  <%= link_to "Edit this calendar", edit_calendar_path(@calendar) %> |
-  <%= link_to "Back to calendars", calendars_path %>
-
-  <%= button_to "Destroy this calendar", @calendar, method: :delete %>
+<div class="row">
+  <aside class="col-md-4">
+    <section >
+      <h3>
+        <%= link_to "Edit this calendar", edit_calendar_path(@calendar) %> |
+        <%= link_to "Back to calendars", calendars_path %>
+        <%= button_to "Destroy this calendar", @calendar, method: :delete %> 
+      </h3>
+    </section>
+    <div <%= @calendar.id %>"  aria-labelledby="heading<%= @calendar.id %>">
+      <div class="card-body">
+        <div class="invite-box mb-4" data-controller="invite">
+          <h5 class="mb-1">Click on the link below to copy and share:</h5>
+           
+          
+            <input onclick="this.select();document.execCommand('copy');" class="calendar-url" id="cb-link-field" type="text" value="<%= calendar_url(@calendar) %>" data-target="invite.url" data-group-token="<%= @calendar.invite_token %>"/>
+          
+          </div>
+        </div>
+      </div>
+    <div>
+  </aside>
 </div>

@@ -12,18 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :event_id, style: "display: block" %>
-    <%= form.number_field :event_id %>
+    <%= form.label :calendar_id, style: "display: block" %>
+    <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.calendar_name, calendar.id]}, include_blank:true %>
   </div>
 
   <div>
-    <%= form.label :event_name, style: "display: block" %>
-    <%= form.text_field :event_name %>
-  </div>
-
-  <div>
-    <%= form.label :event_category, style: "display: block" %>
-    <%= form.text_field :event_category %>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
   </div>
 
   <div>
@@ -32,8 +27,8 @@
   </div>
 
   <div>
-    <%= form.label :class_id, style: "display: block" %>
-    <%= form.number_field :class_id %>
+    <%= form.label :course_id, style: "display: block" %>
+    <%= form.select :course_id, Course.all.collect { |course| [course.name, course.id]}, include_blank:true %>
   </div>
 
   <div>

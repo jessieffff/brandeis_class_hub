@@ -10,32 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_22_174256) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignments", force: :cascade do |t|
-    t.integer "event_id"
-    t.string "event_name"
-    t.string "event_category"
+    t.integer "calendar_id"
+    t.string "name"
     t.datetime "due_date"
-    t.integer "class_id"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "calendars", force: :cascade do |t|
-    t.integer "calendar_id"
     t.string "calendar_name"
     t.integer "user_id"
     t.boolean "shared"
+    t.string "invite_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["invite_token"], name: "index_calendars_on_invite_token", unique: true
   end
 
   create_table "class_periods", force: :cascade do |t|
     t.integer "course_id"
-    t.integer "individual_class_id"
+    t.string "name"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
@@ -43,9 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.integer "event_id"
-    t.string "event_name"
-    t.string "event_category"
+    t.integer "calendar_id"
+    t.string "name"
     t.date "start_date"
     t.date "end_date"
     t.string "location"
@@ -57,20 +56,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", force: :cascade do |t|
+  create_table "holidays", force: :cascade do |t|
     t.integer "calendar_id"
-    t.integer "event_id"
-    t.string "event_category"
+    t.string "name"
+    t.datetime "date"
+    t.string "holiday_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "holidays", force: :cascade do |t|
-    t.integer "event_id"
-    t.string "event_name"
-    t.string "event_category"
-    t.date "date"
-    t.string "holiday_type"
+  create_table "other_events", force: :cascade do |t|
+    t.integer "calendar_id"
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -83,13 +82,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_021014) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "user_id"
     t.string "first_name"
     t.string "last_name"
     t.integer "student_id"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
