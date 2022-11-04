@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @user %>
-<% provide (:title, @user.name) %>
+<% provide(:title, @user.first_name) %>
 
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
+        <%= @user.first_name %>
       </h1>
     </section>
   </aside>

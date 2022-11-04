@@ -5666,3 +5666,726 @@ puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (7.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (8.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (126.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_development"[0m
+  [1m[35m (217.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brandeisClassHub_test"[0m
+  [1m[35m (353.4ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_development" ENCODING = 'unicode'[0m
+  [1m[35m (133.3ms)[0m  [1m[35mCREATE DATABASE "brandeisClassHub_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments" CASCADE[0m
+  [1m[35m (52.7ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" bigserial primary key, "event_id" integer, "event_name" character varying, "event_category" character varying, "due_date" timestamp(6), "class_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "calendars" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "calendars" ("id" bigserial primary key, "calendar_id" integer, "calendar_name" character varying, "user_id" integer, "shared" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "class_periods" CASCADE[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "class_periods" ("id" bigserial primary key, "course_id" integer, "individual_class_id" integer, "start_time" timestamp(6), "end_time" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "event_id" integer, "event_name" character varying, "event_category" character varying, "start_date" date, "end_date" date, "location" character varying, "professor_first_name" character varying, "professor_last_name" character varying, "repetition_frequency" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "calendar_id" integer, "event_id" integer, "event_category" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "holidays" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "holidays" ("id" bigserial primary key, "event_id" integer, "event_name" character varying, "event_category" character varying, "date" date, "holiday_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_calendars" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "user_calendars" ("id" bigserial primary key, "user_id" integer, "calendar_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_id" integer, "first_name" character varying, "last_name" character varying, "student_id" integer, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221004021014)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220930192819),
+(20220930193045),
+(20220930193103),
+(20220930193134),
+(20220930193651),
+(20220930193847),
+(20220930195127),
+(20220930195237),
+(20221004020924);
+
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-04 00:55:05.695578"], ["updated_at", "2022-11-04 00:55:05.695578"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "a69db00be58f9c2290d4ceeed4a9140f6457c0aa"], ["created_at", "2022-11-04 00:55:05.720430"], ["updated_at", "2022-11-04 00:55:05.720430"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments" CASCADE[0m
+  [1m[35m (29.1ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" bigserial primary key, "event_id" integer, "event_name" character varying, "event_category" character varying, "due_date" timestamp(6), "class_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "calendars" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "calendars" ("id" bigserial primary key, "calendar_id" integer, "calendar_name" character varying, "user_id" integer, "shared" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "class_periods" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "class_periods" ("id" bigserial primary key, "course_id" integer, "individual_class_id" integer, "start_time" timestamp(6), "end_time" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "event_id" integer, "event_name" character varying, "event_category" character varying, "start_date" date, "end_date" date, "location" character varying, "professor_first_name" character varying, "professor_last_name" character varying, "repetition_frequency" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "calendar_id" integer, "event_id" integer, "event_category" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "holidays" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "holidays" ("id" bigserial primary key, "event_id" integer, "event_name" character varying, "event_category" character varying, "date" date, "holiday_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_calendars" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "user_calendars" ("id" bigserial primary key, "user_id" integer, "calendar_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_id" integer, "first_name" character varying, "last_name" character varying, "student_id" integer, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221004021014)[0m
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220930192819),
+(20220930193045),
+(20220930193103),
+(20220930193134),
+(20220930193651),
+(20220930193847),
+(20220930195127),
+(20220930195237),
+(20221004020924);
+
+[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-04 00:55:05.908007"], ["updated_at", "2022-11-04 00:55:05.908007"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-11-04 00:55:05.917258"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "a69db00be58f9c2290d4ceeed4a9140f6457c0aa"], ["created_at", "2022-11-04 00:55:05.933392"], ["updated_at", "2022-11-04 00:55:05.933392"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20221102175438)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221102175438"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToUsersEmail (20221102195643)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221102195643"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(550586485133283165)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-11-03 20:55:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 20)
+Completed 200 OK in 24ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 2543)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-03 20:55:35 -0400
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 251)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-11-03 20:55:35 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 220)
+  Rendered users/new.html.erb within layouts/application (Duration: 1533.1ms | Allocations: 951341)
+Started GET "/signup" for 127.0.0.1 at 2022-11-03 20:55:38 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1802)
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 472)
+  Rendered layout layouts/application.html.erb (Duration: 2220.3ms | Allocations: 253371)
+Completed 200 OK in 2222ms (Views: 2221.2ms | ActiveRecord: 0.0ms | Allocations: 253741)
+
+
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 576)
+  Rendered layout layouts/application.html.erb (Duration: 5011.9ms | Allocations: 1278990)
+Completed 200 OK in 5059ms (Views: 5015.7ms | ActiveRecord: 13.0ms | Allocations: 1288565)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-11-03 20:56:07 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jiefang", "last_name"=>"li", "email"=>"jiefang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Exists? (6.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jiefang@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (21.5ms)[0m  [1m[32mINSERT INTO "users" ("user_id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", nil], ["first_name", "jiefang"], ["last_name", "li"], ["student_id", nil], ["email", "jiefang@gmail.com"], ["created_at", "2022-11-04 00:56:07.638259"], ["updated_at", "2022-11-04 00:56:07.638259"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 370ms (ActiveRecord: 31.6ms | Allocations: 7100)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-11-03 20:56:07 -0400
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1487)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 1581)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.9ms | Allocations: 3819)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<%= render @user %>
+<% provide (:title, @user.name) %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<div>
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+
+  <%= button_to "Destroy this user", @user, method: :delete %>
+</div>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <%= render @user %>
+4:    <% provide (:title, @user.name) %>
+5:    
+6:    <div class="row">
+7:      <aside class="col-md-4">
+8:        <section class="user_info">
+9:          <h1>
+10:            <%= gravatar_for @user %>
+11:            <%= @user.name %>
+12:          </h1>
+13:        </section>
+14:      </aside>
+15:    </div>
+16:    
+17:    <div>
+18:      <%= link_to "Edit this user", edit_user_path(@user) %> |
+19:      <%= link_to "Back to users", users_path %>
+20:    
+21:      <%= button_to "Destroy this user", @user, method: :delete %>
+22:    </div>
+  
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+Started GET "/signup" for 127.0.0.1 at 2022-11-03 20:57:52 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 202)
+  Rendered users/new.html.erb within layouts/application (Duration: 26.2ms | Allocations: 2561)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 22.7ms | Allocations: 1994)
+  Rendered layout layouts/application.html.erb (Duration: 93.6ms | Allocations: 11771)
+Completed 200 OK in 106ms (Views: 102.9ms | ActiveRecord: 0.5ms | Allocations: 12636)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-11-03 20:58:14 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jiefang", "last_name"=>"li", "email"=>"jiefang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jiefang@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.3ms | Allocations: 498)
+  Rendered users/new.html.erb within layouts/application (Duration: 20.4ms | Allocations: 2505)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 740)
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 9842)
+Completed 422 Unprocessable Entity in 400ms (Views: 46.5ms | ActiveRecord: 1.4ms | Allocations: 13118)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-11-03 20:58:27 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jiefang", "last_name"=>"li", "email"=>"jiefangli@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jiefangli@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("user_id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", nil], ["first_name", "jiefang"], ["last_name", "li"], ["student_id", nil], ["email", "jiefangli@gmail.com"], ["created_at", "2022-11-04 00:58:27.993969"], ["updated_at", "2022-11-04 00:58:27.993969"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 348ms (ActiveRecord: 7.8ms | Allocations: 3349)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-11-03 20:58:28 -0400
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1206)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1286)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.1ms | Allocations: 2578)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<%# <%= render @user %> %>
+<% provide (:title, @user.name) %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<div>
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+
+  <%= button_to "Destroy this user", @user, method: :delete %>
+</div>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <%# <%= render @user %> %>
+4:    <% provide (:title, @user.name) %>
+5:    
+6:    <div class="row">
+7:      <aside class="col-md-4">
+8:        <section class="user_info">
+9:          <h1>
+10:            <%= gravatar_for @user %>
+11:            <%= @user.name %>
+12:          </h1>
+13:        </section>
+14:      </aside>
+15:    </div>
+16:    
+17:    <div>
+18:      <%= link_to "Edit this user", edit_user_path(@user) %> |
+19:      <%= link_to "Back to users", users_path %>
+20:    
+21:      <%= button_to "Destroy this user", @user, method: :delete %>
+22:    </div>
+  
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/users/show.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/users/show.html.erb:4: syntax error, unexpected ')', expecting `end'
+Started GET "/signup" for 127.0.0.1 at 2022-11-03 21:00:03 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 202)
+  Rendered users/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 2565)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 23.6ms | Allocations: 1156)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 11056)
+Completed 200 OK in 66ms (Views: 62.1ms | ActiveRecord: 1.3ms | Allocations: 11892)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-11-03 21:00:14 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jiefang", "last_name"=>"li", "email"=>"jiefangli0605@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jiefangli0605@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("user_id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", nil], ["first_name", "jiefang"], ["last_name", "li"], ["student_id", nil], ["email", "jiefangli0605@gmail.com"], ["created_at", "2022-11-04 01:00:14.995180"], ["updated_at", "2022-11-04 01:00:14.995180"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://127.0.0.1:3000/users/3
+Completed 302 Found in 275ms (ActiveRecord: 3.9ms | Allocations: 3502)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2022-11-03 21:00:15 -0400
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.1ms | Allocations: 294)
+  Rendered users/show.html.erb within layouts/application (Duration: 35.0ms | Allocations: 14568)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 14649)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.4ms | Allocations: 15977)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User id: 3, user_id: nil, first_name: "jiefang", last_name: "li", student_id: nil, email: "jiefangli0605@gmail.com", created_at: "2022-11-04 01:00:14.995180000 +0000", updated_at: "2022-11-04 01:00:14.995180000 +0000", password_digest: [FILTERED]>):
+    1: <p style="color: green"><%= notice %></p>
+    2: 
+    3: <%= render @user %>
+    4: <% provide(:title, @user.name) %>
+    5: 
+    6: <div class="row">
+    7:   <aside class="col-md-4">
+  
+app/views/users/show.html.erb:4
+Started GET "/signup" for 127.0.0.1 at 2022-11-03 21:01:27 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 202)
+  Rendered users/new.html.erb within layouts/application (Duration: 12.0ms | Allocations: 2568)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 1156)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 11057)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.6ms | Allocations: 11918)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-11-03 21:01:37 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jiefang", "last_name"=>"li", "email"=>"jiefangli2123@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jiefangli2123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("user_id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", nil], ["first_name", "jiefang"], ["last_name", "li"], ["student_id", nil], ["email", "jiefangli2123@gmail.com"], ["created_at", "2022-11-04 01:01:38.121355"], ["updated_at", "2022-11-04 01:01:38.121355"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://127.0.0.1:3000/users/4
+Completed 302 Found in 290ms (ActiveRecord: 3.0ms | Allocations: 3495)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2022-11-03 21:01:38 -0400
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.9ms | Allocations: 233)
+  Rendered users/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 6565)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 6644)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms | Allocations: 7952)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User id: 4, user_id: nil, first_name: "jiefang", last_name: "li", student_id: nil, email: "jiefangli2123@gmail.com", created_at: "2022-11-04 01:01:38.121355000 +0000", updated_at: "2022-11-04 01:01:38.121355000 +0000", password_digest: [FILTERED]>):
+     7:   <aside class="col-md-4">
+     8:     <section class="user_info">
+     9:       <h1>
+    10:         <%= gravatar_for @user %>
+    11:         <%= @user.name %>
+    12:       </h1>
+    13:     </section>
+  
+app/helpers/users_helper.rb:8:in `gravatar_for'
+app/views/users/show.html.erb:10
+Started GET "/signup" for 127.0.0.1 at 2022-11-03 21:01:52 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 202)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2574)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 26.1ms | Allocations: 1156)
+  Rendered layout layouts/application.html.erb (Duration: 56.8ms | Allocations: 11059)
+Completed 200 OK in 68ms (Views: 63.1ms | ActiveRecord: 0.5ms | Allocations: 11895)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-11-03 21:02:04 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jiefang", "last_name"=>"li", "email"=>"jiefang@brandeis.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jiefang@brandeis.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("user_id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", nil], ["first_name", "jiefang"], ["last_name", "li"], ["student_id", nil], ["email", "jiefang@brandeis.edu"], ["created_at", "2022-11-04 01:02:04.456182"], ["updated_at", "2022-11-04 01:02:04.456182"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://127.0.0.1:3000/users/5
+Completed 302 Found in 280ms (ActiveRecord: 2.3ms | Allocations: 3468)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2022-11-03 21:02:04 -0400
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 233)
+  Rendered users/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 6553)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 6632)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 7939)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User id: 5, user_id: nil, first_name: "jiefang", last_name: "li", student_id: nil, email: "jiefang@brandeis.edu", created_at: "2022-11-04 01:02:04.456182000 +0000", updated_at: "2022-11-04 01:02:04.456182000 +0000", password_digest: [FILTERED]>):
+     7:   <aside class="col-md-4">
+     8:     <section class="user_info">
+     9:       <h1>
+    10:         <%= gravatar_for @user %>
+    11:         <%= @user.first_name %>
+    12:       </h1>
+    13:     </section>
+  
+app/helpers/users_helper.rb:8:in `gravatar_for'
+app/views/users/show.html.erb:10
+Started GET "/signup" for 127.0.0.1 at 2022-11-03 21:02:30 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/new.html.erb within layouts/application (Duration: 22.3ms | Allocations: 1976)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.1ms | Allocations: 1756)
+  Rendered layout layouts/application.html.erb (Duration: 74.2ms | Allocations: 25647)
+Completed 200 OK in 91ms (Views: 75.0ms | ActiveRecord: 7.3ms | Allocations: 30152)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-11-03 21:02:46 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jiefang", "last_name"=>"li", "email"=>"jiefang@163.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jiefang@163.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("user_id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", nil], ["first_name", "jiefang"], ["last_name", "li"], ["student_id", nil], ["email", "jiefang@163.com"], ["created_at", "2022-11-04 01:02:46.840488"], ["updated_at", "2022-11-04 01:02:46.840488"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 287ms (ActiveRecord: 4.1ms | Allocations: 3859)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2022-11-03 21:02:46 -0400
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 35)
+  Rendered users/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 6302)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 6381)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 8115)
+
+
+  
+ActionView::Template::Error (undefined method `firstname' for #<User id: 6, user_id: nil, first_name: "jiefang", last_name: "li", student_id: nil, email: "jiefang@163.com", created_at: "2022-11-04 01:02:46.840488000 +0000", updated_at: "2022-11-04 01:02:46.840488000 +0000", password_digest: [FILTERED]>
+Did you mean?  first_name
+               first_name?
+               first_name=):
+     7:   <aside class="col-md-4">
+     8:     <section class="user_info">
+     9:       <h1>
+    10:         <%= gravatar_for @user %>
+    11:         <%= @user.first_name %>
+    12:       </h1>
+    13:     </section>
+  
+app/helpers/users_helper.rb:8:in `gravatar_for'
+app/views/users/show.html.erb:10
+Started GET "/signup" for 127.0.0.1 at 2022-11-03 21:03:00 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/new.html.erb within layouts/application (Duration: 21.6ms | Allocations: 1976)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.5ms | Allocations: 1809)
+  Rendered layout layouts/application.html.erb (Duration: 76.8ms | Allocations: 25699)
+Completed 200 OK in 95ms (Views: 77.7ms | ActiveRecord: 6.4ms | Allocations: 30195)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-11-03 21:03:17 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"jiefang", "last_name"=>"li", "email"=>"jiefang@qq.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jiefang@qq.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("user_id", "first_name", "last_name", "student_id", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", nil], ["first_name", "jiefang"], ["last_name", "li"], ["student_id", nil], ["email", "jiefang@qq.com"], ["created_at", "2022-11-04 01:03:18.250912"], ["updated_at", "2022-11-04 01:03:18.250912"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://127.0.0.1:3000/users/7
+Completed 302 Found in 276ms (ActiveRecord: 3.6ms | Allocations: 3848)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2022-11-03 21:03:18 -0400
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 35)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 819)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 743)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 8145)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 1.2ms | Allocations: 9893)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-03 21:03:29 -0400
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 532)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-03 21:03:29 -0400
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 210)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2022-11-03 21:03:38 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 817)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 8317)
+Completed 200 OK in 28ms (Views: 21.1ms | ActiveRecord: 0.8ms | Allocations: 9589)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2022-11-03 21:03:42 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 683)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 743)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 8074)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.5ms | Allocations: 9258)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-11-03 21:03:45 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/users/7" for 127.0.0.1 at 2022-11-03 21:03:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 747)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 8366)
+Completed 200 OK in 26ms (Views: 22.0ms | ActiveRecord: 0.8ms | Allocations: 9663)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-11-03 21:03:48 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/users/7" for 127.0.0.1 at 2022-11-03 21:03:49 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 683)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 743)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 8072)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.5ms | Allocations: 9254)
+
+
