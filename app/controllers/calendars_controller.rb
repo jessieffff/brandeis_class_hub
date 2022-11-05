@@ -23,7 +23,7 @@ class CalendarsController < ApplicationController
   # POST /calendars or /calendars.json
   def create
     @calendar = Calendar.new(calendar_params)
-
+    @calendar.user_id = Current.user.id if Current.user
     respond_to do |format|
       if @calendar.save
         format.html { redirect_to calendar_url(@calendar), notice: 'Calendar was successfully created.' }
