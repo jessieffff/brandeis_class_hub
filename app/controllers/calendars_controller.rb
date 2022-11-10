@@ -26,7 +26,7 @@ class CalendarsController < ApplicationController
     @calendar.user_id = Current.user.id if Current.user
     respond_to do |format|
       if @calendar.save
-        n = UserCalendar.new(user_id: @calendar.user_id, calendar_id: @calendar.id, creator:true)
+        n = UserCalendar.new(user_id: @calendar.user_id, calendar_id: @calendar.id, creator: true)
         n.save
         format.html { redirect_to home_calendar_url, notice: 'Calendar was successfully created.' }
         format.json { render :show, status: :created, location: @calendar }
