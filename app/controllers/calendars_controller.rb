@@ -1,7 +1,7 @@
 require_relative '../lib/month'
 class CalendarsController < ApplicationController
   before_action :set_calendar, only: %i[show edit update destroy]
-
+  before_action :logged_in_user
   # GET /calendars or /calendars.json
   def index
     @calendars = Calendar.where(user_id: current_user.id)
@@ -75,5 +75,13 @@ class CalendarsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def calendar_params
     params.require(:calendar).permit(:calendar_name, :user_id, :shared, :invite_token)
+  end
+
+        # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in? 
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url, status: :see_other
+    end
   end
 end

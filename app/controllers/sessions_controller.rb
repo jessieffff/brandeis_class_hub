@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  before_action :logged_in_user, only: %i[edit update]
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -17,5 +17,13 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     redirect_to root_url, status: :see_other
+  end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url, status: :see_other
+    end
   end
 end
