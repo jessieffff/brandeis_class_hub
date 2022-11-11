@@ -1,24 +1,28 @@
-<% require 'Month' %>
-<% month = Month.new(10, 2022) %>
-<div>
-  <h1 class="text-center">
-    <%= month.get_month_year %>
-  </h1>
-  <%= link_to "Next Month", calendars_index_path, method: "increase_month" %>
-  <%= render 'calendar_display', :month => month%>
-</div>
-<br>
 
-<li class="dropdown" >
-  <a href="#" id="new-event" class="dropdown-toggle">
-    New Event <b class="caret"></b>
-  </a>
-  <ul id="dropdown-menu" class="dropdown-menu">
-    <li>
-      <%= link_to "New course", new_course_path %>
-      <%= link_to "New assignment", new_assignment_path %>
-      <%= link_to "New holiday", new_holiday_path %>
-      <%= link_to "New other event", new_other_event_path %>
-    </li>
-  </ul>
-</li>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner</th>
+      <th>Public</th>
+      <%# <th>Token</th> %>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calendars.each do |calendar| %>
+      <tr>
+        <td><%= calendar.calendar_name %></td>
+        <td><%= calendar.users.first.first_name + " " +calendar.users.first.last_name%></td>
+        <%# <><%= calendar.user_first_name %>
+        <td><%= calendar.shared %></td>
+        <%# <><%= calendar.invite_token %>
+        <%# change show to copy token %>
+        <td><%= link_to 'Details', calendar %></td>
+        <%# <td><%= link_to 'Edit', edit_calendar_path(calendar) %>
+        <%# <td><%= link_to 'Destroy', calendar, method: :delete %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
