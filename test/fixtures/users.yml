@@ -4,7 +4,7 @@ one:
   first_name: MyString
   last_name: MyString
   student_id: 1
-  email: MyString1
+  email: MyString1@brandeis.edu
   password_digest: <%= User.digest('password') %>
 
 two:
