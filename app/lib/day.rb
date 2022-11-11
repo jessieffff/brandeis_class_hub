@@ -19,9 +19,9 @@ class Day
         return today_events
     end
 
-    #Get date in traditional format
+    #Get date in year month day format
     def currentDate
-        return "#{@month}/#{@day}/#{@year}"
+        return "#{@year}/#{@month}/#{@day}"
     end
 
     #Returns date of next day for url

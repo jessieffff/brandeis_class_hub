@@ -9,9 +9,9 @@
         <div>
             <% if day %>
                 <div class="day-calendar-item">
-                    <strong><%= day.day %></strong>
+                    <strong><%= day.day %></strong><br>
                     <% day.load_events.each do |event| %>
-                        <p><%= event.name %></p>
+                        <%= link_to event.name, "#" %>
                     <% end %>
                 </div>
             <% end %>

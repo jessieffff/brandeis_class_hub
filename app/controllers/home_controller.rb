@@ -19,4 +19,9 @@ class HomeController < ApplicationController
             @view = :month
         end
     end
+
+    def select_day
+        @test = params[:currentDate]
+        puts @test
+    end
 end

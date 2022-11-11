@@ -158,17 +158,21 @@ footer {
     color: black;
 }
 
+.calendar-page {
+  background-color: rgb(255, 223, 180);
+}
 .calendar-container {
     display: grid;
     grid-template-columns: repeat(7, 200px);
 }
 
 .day-calendar-item {
-    background-color: beige;
+    background-color: #f4fcff;
     padding: 20px;
     text-align: center;
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
+    border-color:rgb(185, 185, 185)
 }
 
 .day_title {
@@ -209,3 +213,20 @@ input {
 .dropdown-menu.active {
     display: block;
   }
+
+#datepicker {
+  width: 200px;
+}
+
+#submitbutton {
+  width: 100px;
+}
+
+.datepicker-box {
+  padding-right: 50px;
+}
+
+.prev-next-button {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}

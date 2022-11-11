@@ -3,13 +3,32 @@
         Calendar <%= @view %> 
     </title>
 </head>
-<body>
-    <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
-    <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
-    <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
+<body class="calendar-page">
+
+    <form align="right" class="datepicker-box" action="home/select_day">
+        <h3>Select a Date</h3>
+        <input id="datepicker" type="date" name="current-date" value=<% @day.currentDate %> min="2000-01-01" max="2100-12-31">
+        <input id="submitbutton" type="submit"/>
+    </form>
+    
     <h1 class="text-center">
         <%= @month.get_month_year %>
     </h1>
+
+    <ul class="nav nav-pills nav-fill justify-content-center bg-light">
+        <li class="nav-item">
+            <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
+        </li>
+
+        <li class="nav-item">
+            <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
+        </li>
+
+        <li class="nav-item active">
+            <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
+        </li>
+    </ul>
+    
     <% if @view.to_s == "month" %>
         <%= render 'month', :month => @month %>
     <% elsif @view.to_s == "week" %>
