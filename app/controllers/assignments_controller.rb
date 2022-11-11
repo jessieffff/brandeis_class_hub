@@ -1,6 +1,6 @@
 class AssignmentsController < ApplicationController
   before_action :set_assignment, only: %i[ show edit update destroy ]
-
+  before_action :logged_in_user
   # GET /assignments or /assignments.json
   def index
     @assignments = Assignment.all
@@ -67,4 +67,12 @@ class AssignmentsController < ApplicationController
     def assignment_params
       params.require(:assignment).permit(:calendar_id, :name, :due_date, :course_id)
     end
+
+      # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in? 
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url, status: :see_other
+    end
+  end
 end

@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+    before_action :logged_in_user
     def calendar
         if params[:date] != nil
             @m = params[:date][0, 2].to_i
@@ -19,4 +20,12 @@ class HomeController < ApplicationController
             @view = :month
         end
     end
+
+          # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in? 
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url, status: :see_other
+    end
+  end
 end
