@@ -13,8 +13,6 @@
 # Ignore the default SQLite database and schema.
 /db/schema.rb
 
-# Configs
-/config/database.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
