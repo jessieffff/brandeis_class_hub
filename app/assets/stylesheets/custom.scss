@@ -158,26 +158,6 @@ footer {
     color: black;
 }
 
-.calendar-page {
-  background-color: rgb(255, 223, 180);
-}
-.calendar-container {
-    display: grid;
-    grid-template-columns: repeat(7, 200px);
-}
-
-.day-calendar-item {
-    background-color: #f4fcff;
-    padding: 20px;
-    text-align: center;
-    border-style: solid;
-    border-width: 2px;
-    border-color:rgb(185, 185, 185)
-}
-
-.day_title {
-    text-align: center
-}
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -214,11 +194,15 @@ input {
     display: block;
   }
 
+
+/* Calendar */
 #datepicker {
+  margin-top: 5px;
+  margin-bottom: 5px;
   width: 200px;
 }
 
-#submitbutton {
+#datepickerButton {
   width: 100px;
 }
 
@@ -229,4 +213,26 @@ input {
 .prev-next-button {
   padding-bottom: 10px;
   padding-top: 10px;
+}
+
+
+.calendar-page {
+  background-color: rgb(255, 223, 180);
+}
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 200px);
+}
+
+.day-calendar-item {
+    background-color: #f4fcff;
+    padding: 20px;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color:rgb(185, 185, 185)
+}
+
+.day_title {
+    text-align: center
 }

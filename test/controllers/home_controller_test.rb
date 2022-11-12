@@ -7,25 +7,25 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should get calendar" do
     get home_calendar_path
     assert_response :success
-    assert_select "title", "Calendar month"
+    assert_select "title", "BrandeisClassHub"
   end
 
   test "should get page with month view" do
     get "#{home_calendar_path}?date=11012022&view=month"
     assert_response :success
-    assert_select "title", "Calendar month"
+    assert_select "title", "BrandeisClassHub"
   end
 
   test "should get page with week view" do
     get "#{home_calendar_path}?date=11012022&view=week"
     assert_response :success
-    assert_select "title", "Calendar week"
+    assert_select "title", "BrandeisClassHub"
   end
 
   test "should get page with day view" do
     get "#{home_calendar_path}?date=11012022&view=day"
     assert_response :success
-    assert_select "title", "Calendar day"
+    assert_select "title", "BrandeisClassHub"
   end
 
   test "load proper month" do
