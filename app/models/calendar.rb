@@ -1,6 +1,6 @@
 class Calendar < ApplicationRecord
   has_secure_token :invite_token
-  has_many :user_calendars
+  has_many :user_calendars, dependent: :destroy
   has_many :users, through: :user_calendars
   has_many(
     :holidays,
@@ -18,6 +18,8 @@ class Calendar < ApplicationRecord
     :other_events,
     foreign_key: 'calendar_id' # name of column containing FK in other table
   )
+
+ 
 
   def to_param
     invite_token
