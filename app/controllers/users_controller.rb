@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[edit update]
   before_action :logged_in_user, only: %i[edit update]
 
   # GET /users or /users.json
@@ -17,7 +18,8 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+  end
 
   # POST /users or /users.json
   def create
