@@ -1,5 +1,5 @@
 <div>
-    <% require 'Month' %>
+    <% require_relative '../../lib/month.rb' %>
 
     <div class="prev-next-button" align="center">
         <%= link_to "Last Month", home_calendar_path(date: month.prev), method: :post, class:"btn btn-lg btn-primary" %>

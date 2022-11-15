@@ -6,7 +6,10 @@
         <br>
         <input id="datepickerButton" type="submit"/>
     </form>
-    
+
+    <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
+    <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
+    <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
     <h1 class="text-center">
         <%= @month.get_month_year %>
     </h1>
@@ -34,12 +37,14 @@
         <%= render 'day_buttons', :day => @day %>
         <%= render 'day', :day => @day %>
     <% end %>
+</div>
 
+<div>
     <li class="dropdown" >
     <a href="#" id="new-event" class="dropdown-toggle">
         New Event <b class="caret"></b>
     </a>
-    <ul id="dropdown-menu" class="dropdown-menu">
+    <ul id="new-event-menu" class="dropdown-menu">
         <li>
         <%= link_to "New course", new_course_path %>
         <%= link_to "New assignment", new_assignment_path %>

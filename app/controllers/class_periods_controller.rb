@@ -1,6 +1,6 @@
 class ClassPeriodsController < ApplicationController
   before_action :set_class_period, only: %i[ show edit update destroy ]
-
+before_action :logged_in_user
   # GET /class_periods or /class_periods.json
   def index
     @class_periods = ClassPeriod.all
@@ -67,4 +67,12 @@ class ClassPeriodsController < ApplicationController
     def class_period_params
       params.require(:class_period).permit(:course_id, :start_time, :end_time)
     end
+
+          # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in? 
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url, status: :see_other
+    end
+  end
 end
