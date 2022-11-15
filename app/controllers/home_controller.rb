@@ -1,15 +1,10 @@
 class HomeController < ApplicationController
     def calendar
 
-        if params[:datepicker] != nil
-            @y = params[:datepicker].split("-")[0].to_i
-            @m = params[:datepicker].split("-")[1].to_i
-            @d = params[:datepicker].split("-")[2].to_i
-        elsif params[:date] != nil
-            @m = params[:date][0, 2].to_i
-            @d = params[:date][2, 2].to_i
-            @y = params[:date].last(4).to_i
-    
+        if params[:date] != nil
+            @y = params[:date].split("-")[0].to_i
+            @m = params[:date].split("-")[1].to_i
+            @d = params[:date].split("-")[2].to_i
         else
             @m = Date.today.month
             @d = 01

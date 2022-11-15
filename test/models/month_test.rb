@@ -32,26 +32,26 @@ class MonthTest < ActiveSupport::TestCase
 
   test "next" do
     m = Month.new(10, 2022)
-    assert_equal(m.next, "11012022")
+    assert_equal(m.next, "2022-11-01")
 
     m = Month.new(06, 2022)
-    assert_equal(m.next, "07012022")    
+    assert_equal(m.next, "2022-07-01")    
   end
 
   test "previous" do
     m = Month.new(1, 2022)
-    assert_equal(m.prev, "12012021")
+    assert_equal(m.prev, "2021-12-01")
 
     m = Month.new(5, 2022)
-    assert_equal(m.prev, "04012022")
+    assert_equal(m.prev, "2022-04-01")
   end
 
   test "current" do
     m = Month.new(1, 2022)
-    assert_equal(m.current, "01012022")
+    assert_equal(m.current, "2022-01-01")
 
     m = Month.new(10, 2022)
-    assert_equal(m.current, "10012022")
+    assert_equal(m.current, "2022-10-01")
   end
 
 end

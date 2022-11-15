@@ -29,7 +29,7 @@ class Day
         next_day = @today.next_day
         month_string = General.format(next_day.month)
         day_string = General.format(next_day.day)
-        return "#{month_string}#{day_string}#{next_day.year}"
+        return "#{next_day.year}-#{month_string}-#{day_string}"
     end
 
     #Returns date of prev day for url
@@ -37,7 +37,7 @@ class Day
         prev_day = @today.prev_day
         month_string = General.format(prev_day.month)
         day_string = General.format(prev_day.day)
-        return "#{month_string}#{day_string}#{prev_day.year}"
+        return "#{prev_day.year}-#{month_string}-#{day_string}"
     end
     
 end
