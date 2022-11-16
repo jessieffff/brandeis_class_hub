@@ -3,9 +3,24 @@
     <div>
         <% if day %>
             <div class="day-calendar-item">
-                <strong><%= day.day %></strong>
+                <strong><%= day.day %></strong><br>
                 <% day.load_events.each do |event| %>
-                    <p><%= event.name %></p>
+                    <% if (event.is_a? Holiday) %>
+                    <%    url = "#{holidays_url}/#{event.id}" %>
+                    <%    color = 'holidayEvent' %>
+                    <% elsif (event.is_a? Assignment) %>
+                    <%    url = "#{assignments_url}/#{event.id}" %>
+                    <%    color = 'assignmentEvent' %>
+                    <% elsif (event.is_a? ClassPeriod) %>
+                    <%    url = "#{class_periods_url}/#{event.id}" %>
+                    <%    color = 'classPeriodEvent' %>
+                    <% else %>
+                    <%    url = "#{other_events_url}/#{event.id}" %>
+                    <%    color = 'otherEvent' %>
+                    <% end %>
+                    <div id= '<%= color %>' >
+                        <%= link_to event.name, url, class: "eventFont"%>
+                    </div>
                 <% end %>
             </div>
         <% end %>

@@ -1,10 +1,33 @@
-<div class="container-new" >
+<div class="calendar-page">
+
+    <form align="right" class="datepicker-box" action="calendar">
+        <h3>Select a Date</h3>
+        <input id="datepicker" type="date" name="date" value=<% @day.currentDate %> min="2000-01-01" max="2100-12-31">
+        <br>
+        <input id="datepickerButton" type="submit"/>
+    </form>
+
     <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
     <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
     <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
     <h1 class="text-center">
         <%= @month.get_month_year %>
     </h1>
+
+    <ul class="nav nav-pills nav-fill justify-content-center bg-light">
+        <li class= '<%= @nav_item_day %>' >
+            <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
+        </li>
+
+        <li class= '<%= @nav_item_week %>'>
+            <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
+        </li>
+
+        <li class='<%= @nav_item_month %>'>
+            <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
+        </li>
+    </ul>
+    
     <% if @view.to_s == "month" %>
         <%= render 'month', :month => @month %>
     <% elsif @view.to_s == "week" %>
@@ -16,17 +39,19 @@
     <% end %>
 </div>
 
-<li class="dropdown" >
-<a href="#" id="new-event" class="dropdown-toggle">
-    New Event <b class="caret"></b>
-</a>
-<ul id="new-event-menu" class="dropdown-menu">
-    <li>
-    <%= link_to "New course", new_course_path %>
-    <%= link_to "New assignment", new_assignment_path %>
-    <%= link_to "New holiday", new_holiday_path %>
-    <%= link_to "New other event", new_other_event_path %>
+<div>
+    <li class="dropdown" >
+    <a href="#" id="new-event" class="dropdown-toggle">
+        New Event <b class="caret"></b>
+    </a>
+    <ul id="new-event-menu" class="dropdown-menu">
+        <li>
+        <%= link_to "New course", new_course_path %>
+        <%= link_to "New assignment", new_assignment_path %>
+        <%= link_to "New holiday", new_holiday_path %>
+        <%= link_to "New other event", new_other_event_path %>
+        </li>
+    </ul>
+    <%= link_to "create a new calendar", new_calendar_path %>
     </li>
-</ul>
-<%= link_to "create a new calendar", new_calendar_path %>
-</li>
+</div>
