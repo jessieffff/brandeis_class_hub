@@ -1,3 +1,5 @@
+<%= javascript_include_tag "calendars", "data-turbolinks-track" => true %>
+
 <div class="container-new" >
     <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
     <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
@@ -28,5 +30,14 @@
     <%= link_to "New other event", new_other_event_path %>
     </li>
 </ul>
-<%= link_to "create a new calendar", new_calendar_path %>
+<%= link_to "Create a new calendar", new_calendar_path %>
+
+
+<form name="myform">
+<br>
+  <textarea name="outputtext" rows="1" column="2"></textarea>
+  <%= button_tag 'Subscribe to the calendar', type: 'button', class: 'btn-default', :onclick => "addtext()" %>
+</form>
+
 </li>
+
