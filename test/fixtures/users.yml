@@ -11,5 +11,5 @@ two:
   first_name: MyString1
   last_name: MyString2
   student_id: 2
-  email: MyString2
+  email: MyString2@brandeis.edu
   password_digest: <%= User.digest('password') %>
