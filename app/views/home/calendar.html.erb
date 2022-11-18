@@ -7,9 +7,6 @@
         <input id="datepickerButton" type="submit"/>
     </form>
 
-    <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
-    <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
-    <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
     <h1 class="text-center">
         <%= @month.get_month_year %>
     </h1>
