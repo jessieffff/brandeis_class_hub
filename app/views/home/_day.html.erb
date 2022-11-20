@@ -19,7 +19,7 @@
                     <%    color = 'otherEvent' %>
                     <% end %>
                     <div id= '<%= color %>' >
-                        <%= link_to event.name, url, class: "eventFont"%>
+                        <%= link_to event.name, "#{url}?date=#{day.params_date}", class: "eventFont"%>
                     </div>
                 <% end %>
             </div>

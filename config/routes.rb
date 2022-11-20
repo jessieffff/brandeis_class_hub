@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   get "home/calendar"
-  resources :other_events
-  resources :holidays
-  resources :class_periods
+  resources :other_events, except: [:index]
+  resources :holidays, except: [:index]
+  resources :class_periods, except: [:index]
   resources :user_calendars
   resources :courses
-  resources :assignments
+  resources :assignments, except: [:index]
   resources :users
-  resources :events
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
