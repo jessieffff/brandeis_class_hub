@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :holidays
   resources :class_periods
   resources :user_calendars
-  resources :courses
+  # resources :courses
+  resources :courses do
+    collection { post :import }
+  end
   resources :assignments
   resources :users
   resources :events

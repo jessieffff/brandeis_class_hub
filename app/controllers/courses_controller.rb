@@ -57,6 +57,11 @@ before_action :logged_in_user
     end
   end
 
+  def import
+    Course.import(params[:file])
+    redirect_to courses_url, notice: "Courses Added Successfuly"
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

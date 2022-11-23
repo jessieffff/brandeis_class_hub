@@ -48,10 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
     t.date "start_date"
     t.date "end_date"
     t.string "location"
-    t.string "professor_first_name"
-    t.string "professor_last_name"
+    t.string "professor_name"
     t.string "repetition_frequency"
-    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
