@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   resources :holidays, except: [:index]
   resources :class_periods, except: [:index]
   resources :user_calendars
-  resources :courses
-  resources :assignments, except: [:index]
+  # resources :courses
+  resources :courses do
+    collection { post :import }
+  end
+  resources :assignments
   resources :users
 
 
