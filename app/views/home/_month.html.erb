@@ -1,7 +1,7 @@
 <div>
     <% require_relative '../../lib/month.rb' %>
 
-    <div class="prev-next-button" align="center">
+    <div class="d-flex prev-next-button" align="center">
         <%= link_to "Last Month", home_calendar_path(date: month.prev), method: :post, class:"btn btn-lg btn-primary" %>
         <%= link_to "Next Month", home_calendar_path(date: month.next), method: :post, class:"btn btn-lg btn-primary" %>
     </div>

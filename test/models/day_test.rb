@@ -7,7 +7,22 @@ class DayTest < ActiveSupport::TestCase
 
   test "current day" do
     day = Day.new(2022, 10, 18)
-    assert_equal(day.currentDate, "2022/10/18");
+    assert_equal(day.currentDate, "2022/10/18")
+  end
+
+  test "param day" do
+    day = Day.new(2022, 10, 18)
+    assert_equal(day.params_date, "2022-10-18")
+  end
+
+  test "display date" do
+    day = Day.new(2022, 10, 18)
+    assert_equal(day.display_date, "Tuesday October 18")
+  end
+
+  test "day_of_week" do
+    day = Day.new(2022, 10, 18)
+    assert_equal(day.day_of_week, "Tuesday")
   end
 
   test "load_events" do
