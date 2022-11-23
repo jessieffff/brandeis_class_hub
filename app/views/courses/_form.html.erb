@@ -18,7 +18,7 @@
     </div>
 
     <div class="input-group input-group-sm mb-3">
-      <%= form.label :course_name, style: "display: block" %>
+      <span class='input-group-text'>Name</span>
       <%= form.text_field :name %>
     </div>
 
@@ -44,38 +44,10 @@
 
     <div>
       <%= form.label :repetition_frequency, style: "display: block" %>
-      <div class="repitition-container">
-            <ul class="nav nav-pills nav-fill justify-content-center bg-light">
-                <li class= 'nav_item' >
-                    <%= link_to "M", '#', method: :post%>
-                </li>
-
-                <li class= 'nav_item'>
-                    <%= link_to "T", '#', method: :post%>
-                </li>
-
-                <li class='nav_item active'>
-                    <%= link_to "W", '#', method: :post%>
-                </li>
-
-                <li class='nav_item'>
-                    <%= link_to "Th", '#', method: :post%>
-                </li>
-
-                <li class='nav_item'>
-                    <%= link_to "F", '#', method: :post%>
-                </li>
-
-                <li class='nav_item'>
-                    <%= link_to "Sa", '#', method: :post%>
-                </li>
-
-                <li class='nav_item'>
-                    <%= link_to "Su", '#', method: :post%>
-                </li>
-
-            </ul>
-        </div>
+      <% days_of_week = ["M", "T", "W", "Th", "F", "Sa", "Su"] %>
+      <% choices = [] %>
+      
+      <%= form.select(choices, days_of_week.each {|day| day }, {:prompt => "Please Select"}, {:multiple => true, :size => 5}) %>
     </div>
 
     <div class="input-group input-group-sm mb-3">

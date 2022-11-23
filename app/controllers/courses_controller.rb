@@ -21,6 +21,7 @@ before_action :logged_in_user
 
   # POST /courses or /courses.json
   def create
+    debugger
     @course = Course.new(course_params)
 
     respond_to do |format|
@@ -70,7 +71,7 @@ before_action :logged_in_user
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:calendar_id, :course_name, :start_date, :end_date, :location, :professor_first_name, :professor_last_name, :repetition_frequency, :url)
+      params.require(:course).permit(:calendar_id, :name, :start_date, :end_date, :location, :professor_name, :repetition_frequency)
     end
 
           # Confirms a logged-in user.

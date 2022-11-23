@@ -29,7 +29,7 @@
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :course_id, style: "display: block" %>
-      <%= form.select :course_id, Course.all.collect { |course| [course.name, course.id]}, include_blank:true %>
+      <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.calendar_name, calendar.id]}, include_blank:true %>
     </div>
 
     <div class="input-group input-group-sm mb-3">

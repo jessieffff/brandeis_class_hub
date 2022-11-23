@@ -14,12 +14,12 @@
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :calendar_id, style: "display: block" %>
-      <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.calendar_name] } %>
+      <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.calendar_name, calendar.id]}, include_blank:true %>
     </div>
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :holiday_name, style: "display: block" %>
-      <%= form.text_field :holiday_name %>
+      <%= form.text_field :name %>
     </div>
 
     <div class="input-group input-group-sm mb-3">
