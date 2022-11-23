@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
-  def hello
-    render html: 'hello'
+  
+  before_action :set_current_user
+
+  include SessionsHelper
+
+  def set_current_user
+    Current.user = User.find_by(id: session[:user_id]) if session[:user_id]
   end
+
+
 end

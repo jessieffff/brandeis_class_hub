@@ -1,4 +1,4 @@
-<div>
-    <%= link_to "Last Week", home_calendar_path(date: week.prev, view: :week), method: :post%>
-    <%= link_to "Next Week", home_calendar_path(date: week.next, view: :week), method: :post%>
+<div class="prev-next-button" align="center">
+    <%= link_to "Last Week", home_calendar_path(date: week.prev, view: :week), method: :post, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Next Week", home_calendar_path(date: week.next, view: :week), method: :post, class: "btn btn-lg btn-primary" %>
 </div>

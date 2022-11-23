@@ -1,10 +1,22 @@
+<h1>Assignment</h1>
+<div class="container event-box" align="center">
 <p style="color: green"><%= notice %></p>
 
-<%= render @assignment %>
+<div>
+  <p><%= @assignment.name %></p>
+</div>
 
 <div>
-  <%= link_to "Edit this assignment", edit_assignment_path(@assignment) %> |
-  <%= link_to "Back to assignments", assignments_path %>
+  <strong>Due Date</strong>
+  <p><%= @assignment.due_date %></p>
+</div>
 
-  <%= button_to "Destroy this assignment", @assignment, method: :delete %>
+<div>
+  <%= link_to "Edit", edit_assignment_path(@assignment), class:"btn btn-sm btn-primary" %> |
+  <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
+
+  <div class="delete-button">
+    <%= button_to "Delete this assignment", @assignment, method: :delete, class:"btn btn-sm btn-primary" %>
+  </div>
+</div>
 </div>

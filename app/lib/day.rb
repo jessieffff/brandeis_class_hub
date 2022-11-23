@@ -12,6 +12,8 @@ class Day
 
     def load_events
         #load each type of event
+        #Find user
+        #user.calendars then go to holdya table and look for those
         today_events = Holiday.all.where(date: @today.all_day) +
                         OtherEvent.all.where(start_time: @today.all_day) +
                         ClassPeriod.all.where(start_time: @today.all_day) +
@@ -19,9 +21,23 @@ class Day
         return today_events
     end
 
-    #Get date in traditional format
+    #Get date in year month day format
     def currentDate
-        return "#{@month}/#{@day}/#{@year}"
+        return "#{@year}/#{@month}/#{@day}"
+    end
+
+    def params_date
+        return "#{@year}-#{@month}-#{@day}"
+    end
+
+    def display_date
+        return "#{day_of_week} #{Date::MONTHNAMES[@month]} #{@day}"
+    end
+    
+    def day_of_week
+        day_to_name = {0 => "Sunday", 1 => "Monday", 2 => "Tuesday", 3 => "Wednesday", 4 => "Thursday", 5 => "Friday",
+                       6 => "Saturday"}
+        return day_to_name[@today.wday]
     end
 
     #Returns date of next day for url
@@ -29,7 +45,7 @@ class Day
         next_day = @today.next_day
         month_string = General.format(next_day.month)
         day_string = General.format(next_day.day)
-        return "#{month_string}#{day_string}#{next_day.year}"
+        return "#{next_day.year}-#{month_string}-#{day_string}"
     end
 
     #Returns date of prev day for url
@@ -37,7 +53,7 @@ class Day
         prev_day = @today.prev_day
         month_string = General.format(prev_day.month)
         day_string = General.format(prev_day.day)
-        return "#{month_string}#{day_string}#{prev_day.year}"
+        return "#{prev_day.year}-#{month_string}-#{day_string}"
     end
     
 end

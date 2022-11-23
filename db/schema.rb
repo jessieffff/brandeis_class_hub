@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_22_174256) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,10 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_174256) do
     t.date "start_date"
     t.date "end_date"
     t.string "location"
-    t.string "professor_first_name"
-    t.string "professor_last_name"
+    t.string "professor_name"
     t.string "repetition_frequency"
-    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,6 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_174256) do
   create_table "user_calendars", force: :cascade do |t|
     t.integer "user_id"
     t.integer "calendar_id"
+    t.boolean "creator", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,6 +87,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_174256) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "user_calendars", "calendars"
+  add_foreign_key "user_calendars", "users"
 end
