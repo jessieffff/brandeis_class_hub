@@ -1,51 +1,86 @@
-<%= form_with(model: course) do |form| %>
-  <% if course.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<div class="container event-box" align="center">
+  <%= form_with(model: course) do |form| %>
+    <% if course.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-      <ul>
-        <% course.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% course.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :calendar_id, style: "display: block" %>
+      <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.calendar_name, calendar.id]}, include_blank:true %>
     </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :course_name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :start_date, style: "display: block" %>
+      <%= form.date_field :start_date %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :end_date, style: "display: block" %>
+      <%= form.date_field :end_date %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :location, style: "display: block" %>
+      <%= form.text_field :location %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :professor_name, style: "display: block" %>
+      <%= form.text_field :professor_name %>
+    </div>
+
+    <div>
+      <%= form.label :repetition_frequency, style: "display: block" %>
+      <div class="repitition-container">
+            <ul class="nav nav-pills nav-fill justify-content-center bg-light">
+                <li class= 'nav_item' >
+                    <%= link_to "M", '#', method: :post%>
+                </li>
+
+                <li class= 'nav_item'>
+                    <%= link_to "T", '#', method: :post%>
+                </li>
+
+                <li class='nav_item active'>
+                    <%= link_to "W", '#', method: :post%>
+                </li>
+
+                <li class='nav_item'>
+                    <%= link_to "Th", '#', method: :post%>
+                </li>
+
+                <li class='nav_item'>
+                    <%= link_to "F", '#', method: :post%>
+                </li>
+
+                <li class='nav_item'>
+                    <%= link_to "Sa", '#', method: :post%>
+                </li>
+
+                <li class='nav_item'>
+                    <%= link_to "Su", '#', method: :post%>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.submit :Update, class:"btn btn-lg btn-primary" %>
+    </div>
+    
   <% end %>
-
-  <div>
-    <%= form.label :calendar_id, style: "display: block" %>
-    <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.calendar_name, calendar.id]}, include_blank:true %>
-  </div>
-
-  <div>
-    <%= form.label :course_name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :start_date, style: "display: block" %>
-    <%= form.date_field :start_date %>
-  </div>
-
-  <div>
-    <%= form.label :end_date, style: "display: block" %>
-    <%= form.date_field :end_date %>
-  </div>
-
-  <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div>
-    <%= form.label :professor_name, style: "display: block" %>
-    <%= form.text_field :professor_name %>
-  </div>
-
-    <%= form.label :repetition_frequency, style: "display: block" %>
-    <%= form.text_field :repetition_frequency %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

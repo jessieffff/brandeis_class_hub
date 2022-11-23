@@ -1,6 +1,6 @@
 class HolidaysController < ApplicationController
   before_action :set_holiday, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+  before_action :logged_in_user
   # GET /holidays or /holidays.json
   def index
     @holidays = Holiday.all

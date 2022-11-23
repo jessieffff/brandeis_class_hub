@@ -3,12 +3,31 @@
     <h1 class="text-center calendar-label">
         <%= @month.get_month_year %>
     </h1>
-        <form class="datepicker-box" action="calendar">
+        <form class="datepicker-box" action="calendar", align="right">
             <h3>Select a Date</h3>
             <input id="datepicker" type="date" name="date" value=<% @day.currentDate %> min="2000-01-01" max="2100-12-31">
             <br>
             <input class="btn btn-sm btn-primary" id="datepicker-submit" type="submit"/>
         </form>
+
+    <div>
+        <div class="dropdown" align="left">
+        <div class="btn btn-sm btn-primary">
+            <a href="#" id="new-event" class="dropdown-toggle">
+                New Event <b class="caret"></b>
+            </a>
+        </div>
+        <ul id="new-event-menu" class="dropdown-menu">
+            <li>
+            <%= link_to "New course", new_course_path %>
+            <%= link_to "New assignment", new_assignment_path %>
+            <%= link_to "New holiday", new_holiday_path %>
+            <%= link_to "New other event", new_other_event_path %>
+            </li>
+        </ul>
+        <%= link_to "create a new calendar", new_calendar_path, class: "btn btn-sm btn-primary" %>
+        </div>
+    </div>
 
         <div class="view-container">
             <ul class="nav nav-pills nav-fill justify-content-center bg-light">
@@ -35,21 +54,4 @@
         <%= render 'day_buttons', :day => @day %>
         <%= render 'day', :day => @day %>
     <% end %>
-</div>
-
-<div>
-    <li class="dropdown" >
-    <a href="#" id="new-event" class="dropdown-toggle">
-        New Event <b class="caret"></b>
-    </a>
-    <ul id="new-event-menu" class="dropdown-menu">
-        <li>
-        <%= link_to "New course", new_course_path %>
-        <%= link_to "New assignment", new_assignment_path %>
-        <%= link_to "New holiday", new_holiday_path %>
-        <%= link_to "New other event", new_other_event_path %>
-        </li>
-    </ul>
-    <%= link_to "create a new calendar", new_calendar_path %>
-    </li>
 </div>
