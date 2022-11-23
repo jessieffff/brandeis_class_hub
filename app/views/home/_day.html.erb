@@ -1,28 +1,25 @@
 <div>
     <% require_relative '../../lib/day.rb' %>
+    <% require_relative '../../lib/event.rb' %>
+    <% paths = {holiday: holidays_url, assignment: assignments_url,
+    class_period: class_periods_url, other_event: other_events_url} %>
     <div>
         <% if day %>
             <div class="day-calendar-item">
                 <strong><%= day.day %></strong><br>
-                <% day.load_events.each do |event| %>
-                    <% if (event.is_a? Holiday) %>
-                    <%    url = "#{holidays_url}/#{event.id}" %>
-                    <%    color = 'holidayEvent' %>
-                    <% elsif (event.is_a? Assignment) %>
-                    <%    url = "#{assignments_url}/#{event.id}" %>
-                    <%    color = 'assignmentEvent' %>
-                    <% elsif (event.is_a? ClassPeriod) %>
-                    <%    url = "#{class_periods_url}/#{event.id}" %>
-                    <%    color = 'classPeriodEvent' %>
-                    <% else %>
-                    <%    url = "#{other_events_url}/#{event.id}" %>
-                    <%    color = 'otherEvent' %>
-                    <% end %>
-                    <div id= '<%= color %>' >
+                <% range = Event.getRange(@view) %>
+                <% day.load_events[range].each do |event| %>
+                    <% url = Event.getURL(event, paths) %>
+                    <% color = Event.getColor(event) %>
+                    <div class='event' id= '<%= color %>' >
                         <%= link_to event.name, "#{url}?date=#{day.params_date}", class: "eventFont"%>
                     </div>
+                <% end %>
+                <% if day.load_events.length() > 2 && @view != 'day' %>
+                    <%= link_to 'more', home_calendar_path(date: day.params_date, view: :day) %>
                 <% end %>
             </div>
         <% end %>
     </div>
+
 </div>

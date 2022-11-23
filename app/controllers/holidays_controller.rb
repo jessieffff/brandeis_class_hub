@@ -52,7 +52,7 @@ before_action :logged_in_user
     @holiday.destroy
 
     respond_to do |format|
-      format.html { redirect_to holidays_url, notice: "Holiday was successfully destroyed." }
+      format.html { redirect_to home_calendar_path, notice: "Holiday was successfully destroyed." }
       format.json { head :no_content }
     end
   end
