@@ -7,7 +7,6 @@
     <section >
     <% if creator?(@calendar) == true %>
       <h3>
-       <h5 class="mb-1">hello world</h5>
         <%= link_to "Edit this calendar", edit_calendar_path(@calendar) %> |
         <%= link_to "Back to calendars", home_calendar_path %>
         <%= button_to "Destroy this calendar", @calendar, method: :delete %> 
@@ -15,6 +14,7 @@
     <% else %>
       <h3> 
         <%= link_to "Back to calendars", home_calendar_path %>
+        <%= button_to "Unsubscribe from this calendar", @user_calendar, method: :delete %> 
       </h3> 
     <% end %>
     </section>

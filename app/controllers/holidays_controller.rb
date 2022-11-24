@@ -1,6 +1,6 @@
 class HolidaysController < ApplicationController
   before_action :set_holiday, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+  before_action :logged_in_user
   # GET /holidays or /holidays.json
   def index
     @holidays = Holiday.all
@@ -68,11 +68,5 @@ before_action :logged_in_user
       params.require(:holiday).permit(:calendar_id, :holiday_name, :date, :holiday_type)
     end
 
-          # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in? 
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url, status: :see_other
-    end
-  end
+
 end
