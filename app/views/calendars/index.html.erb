@@ -15,7 +15,7 @@
     <% current_user.user_calendars.each do |calendar| %>
       <tr>
         <td><%= calendar.calendar.calendar_name %></td>
-        <td><%= calendar.calendar.users.first.first_name + " " +calendar.calendar.users.first.last_name%></td>
+        <td><%= User.find_by(id: calendar.calendar.user_id).first_name + " " + User.find_by(id: calendar.calendar.user_id).last_name %></td>
         <%# <><%= calendar.user_first_name %>
         <td><%= calendar.calendar.shared %></td>
         <%# <><%= calendar.invite_token %>
