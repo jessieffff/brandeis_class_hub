@@ -60,7 +60,7 @@ class UserCalendarsController < ApplicationController
     @user_calendar.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_calendars_url, notice: 'User calendar was successfully destroyed.' }
+      format.html { redirect_to calendars_url, notice: 'User calendar was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
