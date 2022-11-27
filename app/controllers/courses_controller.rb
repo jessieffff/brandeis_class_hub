@@ -21,11 +21,11 @@ before_action :logged_in_user
 
   # POST /courses or /courses.json
   def create
-    debugger
     @course = Course.new(course_params)
-
     respond_to do |format|
       if @course.save
+        CalendarHelper.generate_class_period(@course.repetition_frequency, @course.name, @course.id, @course.start_date, @course.end_date,
+                                           @course.start_time, @course.end_time, @course.calendar_id)
         format.html { redirect_to course_url(@course), notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
       else
@@ -71,7 +71,10 @@ before_action :logged_in_user
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:calendar_id, :name, :start_date, :end_date, :location, :professor_name, :repetition_frequency)
+      params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
+      params['course']['start_time'] = Time.parse(params['course']['start_time']).strftime("%I:%M%p")
+      params['course']['end_time'] = Time.parse(params['course']['end_time']).strftime("%I:%M%p")
+      params.require(:course).permit(:calendar_id, :name, :start_time, :end_time, :start_date, :end_date, :location, :professor_name, :repetition_frequency)
     end
 
           # Confirms a logged-in user.

@@ -1,13 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+#id 980190962
 one:
-  calendar_name: MyString1
-  user_id: 1
+  name: TestCal
+  user_id: 980190962
+  invite_token: test 
   shared: false
-  invite_token: MyString1
 
 two:
-  calendar_name: MyString2
-  user_id: 2
+  name: TestCal2
+  user_id: 980190962
+  invite_token: test2
   shared: false
-  invite_token: MyString2
+

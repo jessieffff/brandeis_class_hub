@@ -14,7 +14,7 @@
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :calendar_id, style: "display: block" %>
-      <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.calendar_name, calendar.id]}, include_blank:true %>
+      <%= form.select :calendar_id, CalendarHelper.load_calendars(current_user[:id]), include_blank:true %>
     </div>
 
     <div class="input-group input-group-sm mb-3">
@@ -23,13 +23,18 @@
     </div>
 
     <div class="input-group input-group-sm mb-3>
+      <%= form.label :date %>
+      <%= form.date_field :date %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3>
       <%= form.label :start_time %>
-      <%= form.datetime_field :start_time %>
+      <%= form.time_field :start_time %>
     </div>
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :end_time %>
-      <%= form.datetime_field :end_time %>
+      <%= form.time_field :end_time %>
     </div>
 
     <div class="input-group input-group-sm mb-3">

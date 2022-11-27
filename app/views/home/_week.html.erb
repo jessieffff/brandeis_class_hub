@@ -2,7 +2,7 @@
 <div>
     <% require_relative '../../lib/week.rb' %>
     <div class="calendar-container">
-        <% week.load_week.each do |day| %>
+        <% week.load_week(current_user[:id]).each do |day| %>
             <%= render 'day', :day => day %>
         <% end %>
     </div>

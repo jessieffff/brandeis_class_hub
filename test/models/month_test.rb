@@ -13,7 +13,7 @@ class MonthTest < ActiveSupport::TestCase
 
   test "loading month" do
     m = Month.new(10, 2022)
-    weeks = m.load_month
+    weeks = m.load_month(users(:one).id)
     assert_equal(weeks[0].days_in_week, 1)
     assert_equal(weeks[1].days_in_week, 7)
     assert_equal(weeks[2].days_in_week, 7)

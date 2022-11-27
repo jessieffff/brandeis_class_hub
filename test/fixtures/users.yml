@@ -1,15 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+#id is 980190962
 one:
   first_name: David
   last_name: Shapiro
   student_id: 1
   email: davidshapiro@brandeis.edu
-  password_digest: <%= User.digest('password') %>
-
-two:
-  first_name: MyString1
-  last_name: MyString2
-  student_id: 2
-  email: MyString2
   password_digest: <%= User.digest('password') %>

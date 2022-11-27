@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: MyString1
-  calendar_id: one
+  user_id: 980190962
+  calendar_id: 980190962
   creator: true
 
 two:
-  user_id: MyString2
-  calendar_id: two
+  user_id: 980190962
+  calendar_id: 298486374
   creator: true

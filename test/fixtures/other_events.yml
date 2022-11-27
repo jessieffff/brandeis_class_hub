@@ -17,3 +17,17 @@ test_1:
   name: Elina_Birthday
   start_time: 2022-10-21
   end_time: 2022-10-22
+
+test_2:
+  name: TestEvent
+  calendar_id: 980190962
+  start_time: 4:00AM
+  end_time: 10:00AM
+  date: 1900-11-27
+
+test_3:
+  name: TestEvent3
+  calendar_id: 980190962
+  start_time: 3:00AM
+  end_time: 9:00AM
+  date: 1900-11-27
