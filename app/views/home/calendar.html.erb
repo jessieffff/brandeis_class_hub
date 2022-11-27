@@ -39,5 +39,14 @@
   <%= button_tag 'Subscribe to the calendar', type: 'button', class: 'btn-default', :onclick => "addtext()" %>
 </form>
 
+<%# <h4> search by calendar name: </h4>
+<%= form_tag(calendars_path, method: :get) do %>
+  <%# <p>
+    <%= text_field_tag(:search, params[:search])  %>
+    <%# <%= submit_tag ("Search") %>
+  <%# </p>
+<% end %> 
+
+
 </li>
 

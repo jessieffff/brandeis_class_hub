@@ -5,8 +5,12 @@ class CalendarsController < ApplicationController
   # GET /calendars or /calendars.json
   def index
     @calendars = Calendar.where(user_id: current_user.id)
+    # @calendars = Calendar.search(params[:search])
   end
 
+  def search
+    @calendars = Calendar.where("calendar_name LIKE ? AND shared = ?", "%" + params[:q] + "%", true)
+  end
   # GET /calendars/1 or /calendars/1.json
   def show
     @calendar = Calendar.find_by_invite_token(params[:invite_token])
