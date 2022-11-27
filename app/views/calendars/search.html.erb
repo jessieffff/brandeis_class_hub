@@ -1,20 +1,26 @@
 <div style="padding-top: 10px"> 
 <h1> Search Results </h1>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th>Calendar Name</th>
+      <th>Creator</th>
+      <th>Event</th>
+      <th>Subscribe</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
 
-
-<% @calendars.each do |calendar| %>
-    <% if calendar.shared%>
-      <p>
-        <strong>Name:</strong>
-        <%= calendar.calendar_name %>
-      </p>
-      <p>
-        <strong>Creator:</strong>
-        <%=  User.find_by(id: calendar.user_id).first_name + " " + User.find_by(id: calendar.user_id).last_name %>
-      </p>
-
-       <%= button_to "Subscribe to this calendar", UserCalendar.where(user_id: Current.user.id, calendar_id: calendar.id).first_or_create%> 
-
-    <%end%>
-<%end%>
+  <tbody>
+   
+    <% @calendars.each do |calendar| %>
+      <tr>
+        <td><%= calendar.calendar_name %></td>
+        <td><%=  User.find_by(id: calendar.user_id).first_name + " " + User.find_by(id: calendar.user_id).last_name %></td>
+        <td><%= calendar.calendar_name %></td>
+        <td><%= button_to "Subscribe to this calendar", UserCalendar.where(user_id: Current.user.id, calendar_id: calendar.id).first_or_create%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
