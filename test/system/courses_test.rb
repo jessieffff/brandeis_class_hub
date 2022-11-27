@@ -15,7 +15,7 @@ class CoursesTest < ApplicationSystemTestCase
     click_on "New course"
 
     fill_in "Calendar", with: @course.calendar_id
-    fill_in "Course name", with: @course.course_name
+    fill_in "Course name", with: @course.name
     fill_in "End date", with: @course.end_date
     fill_in "Location", with: @course.location
     fill_in "Professor first name", with: @course.professor_first_name

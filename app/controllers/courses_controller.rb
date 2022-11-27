@@ -65,7 +65,7 @@ before_action :logged_in_user
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:calendar_id, :course_name, :start_date, :end_date, :location, :professor_first_name, :professor_last_name, :repetition_frequency, :url)
+      params.require(:course).permit(:calendar_id, :name, :start_date, :end_date, :location, :professor_first_name, :professor_last_name, :repetition_frequency, :url)
     end
 
 
