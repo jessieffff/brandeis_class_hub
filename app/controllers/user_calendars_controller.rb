@@ -73,9 +73,9 @@ class UserCalendarsController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  # def user_calendar_params
-  #   params.require(:user_calendar).permit(:user_id, :calendar_id, :creator)
-  # end
+  def user_calendar_params
+     params.require(:user_calendar).permit(:user_id, :calendar_id, :creator)
+   end
 
 
 end

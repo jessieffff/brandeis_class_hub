@@ -1,7 +1,9 @@
 <div style="padding-top: 10px"> 
 <h1> Search Results </h1>
 
-<%= @calendars.each do |calendar| %>
+
+
+<% @calendars.each do |calendar| %>
     <% if calendar.shared%>
       <p>
         <strong>Name:</strong>
@@ -16,5 +18,3 @@
 
     <%end%>
 <%end%>
-
-</div>
