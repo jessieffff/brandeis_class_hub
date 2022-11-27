@@ -7,5 +7,7 @@ class CreateUserCalendars < ActiveRecord::Migration[7.0]
       
       t.timestamps
     end
+    add_index :user_calendars, [:user_id, :calendar_id], unique: true
+
   end
 end

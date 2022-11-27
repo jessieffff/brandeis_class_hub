@@ -80,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
     t.boolean "creator", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "calendar_id"], name: "index_user_calendars_on_user_id_and_calendar_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

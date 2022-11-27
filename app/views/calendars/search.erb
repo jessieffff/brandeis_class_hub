@@ -1,6 +1,20 @@
-<div style="padding-top: 30px"> 
+<div style="padding-top: 10px"> 
 <h1> Search Results </h1>
 
-<%= render @calendars%>
+<%= @calendars.each do |calendar| %>
+    <% if calendar.shared%>
+      <p>
+        <strong>Name:</strong>
+        <%= calendar.calendar_name %>
+      </p>
+      <p>
+        <strong>Creator:</strong>
+        <%=  User.find_by(id: calendar.user_id).first_name + " " + User.find_by(id: calendar.user_id).last_name %>
+      </p>
+
+       <%= button_to "Subscribe to this calendar", UserCalendar.where(user_id: Current.user.id, calendar_id: calendar.id).first_or_create%> 
+
+    <%end%>
+<%end%>
 
 </div>
