@@ -5,20 +5,14 @@
 <div class="row">
   <aside class="col-md-4">
     <section >
-    <% if creator?(@calendar) == true %>
+    <%# <% if UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %> 
+    <% if Calendar.find_by(id: @calendar.id).user_id == Current.user.id %>
       <h3>
         <%= link_to "Edit this calendar", edit_calendar_path(@calendar) %> |
         <%= link_to "Back to calendars", home_calendar_path %>
         <%= button_to "Destroy this calendar", @calendar, method: :delete %> 
       </h3>
-    <% else %>
-      <h3> 
-        <%= link_to "Back to calendars", home_calendar_path %>
-        <%= button_to "Unsubscribe from this calendar", UserCalendar.find_by(user_id: @current_user.id), method: :delete %> 
-      </h3> 
-    <% end %>
-    </section>
-    <div <%= @calendar.id %>"  aria-labelledby="heading<%= @calendar.id %>">
+        <div <%= @calendar.id %> aria-labelledby="heading<%= @calendar.id %>">
       <div class="card-body">
         <div class="invite-box mb-4" data-controller="invite">
           <h5 class="mb-1">Click on the link below to copy and share:</h5>
@@ -27,5 +21,14 @@
         </div>
       </div>
     <div>
+      
+    <% elsif UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %>
+      <h3> 
+        <%= link_to "Back to calendars", home_calendar_path %>
+        <%= button_to "Unsubscribe from this calendar", UserCalendar.find_by(user_id: @current_user.id, calendar_id: @calendar.id), method: :delete %> 
+      </h3> 
+    <% end %>
+    </section>
+    
   </aside>
 </div>
