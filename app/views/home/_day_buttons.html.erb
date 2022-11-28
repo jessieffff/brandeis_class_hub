@@ -1,4 +1,5 @@
-<div>
-    <%= link_to "Previous Day", home_calendar_path(date: day.prev, view: :day), method: :post%>
-    <%= link_to "Next Day", home_calendar_path(date: day.next, view: :day), method: :post%>
+<div class="prev-next-button" align="center">
+    <%= link_to "Previous Day", home_calendar_path(date: day.prev, view: :day), method: :post, class:"btn btn-lg btn-primary"%>
+    <%= link_to "Next Day", home_calendar_path(date: day.next, view: :day), method: :post, class:"btn btn-lg btn-primary"%>
+    <h2 class="calendar-label"><%= day.day_of_week %></h2>
 </div>

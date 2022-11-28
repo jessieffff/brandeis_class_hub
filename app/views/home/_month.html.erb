@@ -1,10 +1,13 @@
+<div>
+    <% require_relative '../../lib/month.rb' %>
 
-    <div>
-        <% require_relative '../../lib/month.rb' %>
-        <%= link_to "Last Month", home_calendar_path(date: month.prev), method: :post%>
-        <%= link_to "Next Month", home_calendar_path(date: month.next), method: :post%>
-        <%= render 'week_titles' %>
-        <% month.load_month.each do |week| %>
-                <%= render 'week', :week => week %>
-        <% end %>
+    <div class="d-flex prev-next-button" align="center">
+        <%= link_to "Last Month", home_calendar_path(date: month.prev), method: :post, class:"btn btn-lg btn-primary" %>
+        <%= link_to "Next Month", home_calendar_path(date: month.next), method: :post, class:"btn btn-lg btn-primary" %>
     </div>
+        
+    <%= render 'week_titles' %>
+    <% month.load_month(current_user[:id]).each do |week| %>
+        <%= render 'week', :week => week %>
+    <% end %>
+</div>

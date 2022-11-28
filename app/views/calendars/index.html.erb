@@ -13,7 +13,7 @@
   <tbody>
     <% UserCalendar.where(user_id:Current.user.id).each do |calendar| %>
       <tr>
-        <td><%= calendar.calendar.calendar_name %></td>
+        <td><%= calendar.calendar.name %></td>
         <td><%= calendar.calendar.description %></td>
         <td><%= User.find_by(id: calendar.calendar.user_id).first_name + " " + User.find_by(id: calendar.calendar.user_id).last_name %></td>
         <td><%= calendar.calendar.shared %></td>

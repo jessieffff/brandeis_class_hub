@@ -3,7 +3,7 @@ require 'test_helper'
 class HomeControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
-    # log_in_as(@user)
+    log_in_as(@user)
   end
 
   test 'should get calendar' do
@@ -11,45 +11,39 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get home_calendar_path
     assert_response :success
-    assert_select 'title', 'Calendar month'
+    assert_select "title", "BrandeisClassHub"
   end
 
-  test 'should get page with month view' do
-    log_in_as(@user)
-    get "#{home_calendar_path}?date=11012022&view=month"
+  test "should get page with month view" do
+    get "#{home_calendar_path}?date=2022-11-01&view=month"
     assert_response :success
-    assert_select 'title', 'Calendar month'
+    assert_select "title", "BrandeisClassHub"
   end
 
-  test 'should get page with week view' do
-    log_in_as(@user)
-    get "#{home_calendar_path}?date=11012022&view=week"
+  test "should get page with week view" do
+    get "#{home_calendar_path}?date=2022-11-01&view=week"
     assert_response :success
-    assert_select 'title', 'Calendar week'
+    assert_select "title", "BrandeisClassHub"
   end
 
-  test 'should get page with day view' do
-    log_in_as(@user)
-    get "#{home_calendar_path}?date=11012022&view=day"
+  test "should get page with day view" do
+    get "#{home_calendar_path}?date=2022-11-01&view=day"
     assert_response :success
-    assert_select 'title', 'Calendar day'
+    assert_select "title", "BrandeisClassHub"
   end
 
-  test 'load proper month' do
-    log_in_as(@user)
-    get "#{home_calendar_path}?date=07012023&view=month"
-    assert_select 'h1', 'July 2023'
+  test "load proper month" do
+    get "#{home_calendar_path}?date=2023-07-01&view=month"
+    assert_select "h1", "July 2023"
+  end 
+
+  test "load proper week" do
+    get "#{home_calendar_path}?date=2022-11-13&view=week"
+    assert_select "h1", "November 2022"
   end
 
-  test 'load proper week' do
-    log_in_as(@user)
-    get "#{home_calendar_path}?date=11132022&view=week"
-    assert_select 'h1', 'November 2022'
-  end
-
-  test 'load proper day' do
-    log_in_as(@user)
-    get "#{home_calendar_path}?date=11132022&view=day"
-    assert_select 'strong', '13'
+  test "load proper day" do
+    get "#{home_calendar_path}?date=2022-11-13&view=day"
+    assert_select "strong", "13"
   end
 end

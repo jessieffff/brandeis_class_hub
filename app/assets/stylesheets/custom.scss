@@ -158,22 +158,6 @@ footer {
     color: black;
 }
 
-.calendar-container {
-    display: grid;
-    grid-template-columns: repeat(7, 200px);
-}
-
-.day-calendar-item {
-    background-color: beige;
-    padding: 20px;
-    text-align: center;
-    border-style: solid;
-    border-width: 1px;
-}
-
-.day_title {
-    text-align: center
-}
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -207,6 +191,149 @@ input {
 /* Dropdown menu */
 
 .dropdown-menu.active {
-  display: block;
+    display: block;
+  }
+
+
+/* Calendar */
+#datepicker {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 200px;
+  display: inline-block;
+}
+
+#datepickerButton {
+  width: 100px;
+}
+
+.datepicker-box {
+  padding-right: 50px;
+}
+
+.prev-next-button {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+
+.calendar-page {
+  margin: 100px;
+  padding: 20px;
+  background-color: rgba(121, 121, 121, 0.75);
+  border-radius: 10px;
+  border-width: 10px;
+  border-style: ridge;
+}
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 150px);
+}
+
+.day-calendar-item {
+    background-color: #f4fcff;
+    padding: 20px;
+    height: 150px;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color:rgb(185, 185, 185)
+}
+
+.day_title {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: 'Trebuchet MS';
+}
+
+.event {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#holidayEvent {
+  background-color: rgb(91, 187, 255);
+  color: rgb(91, 187, 255);
+}
+
+#assignmentEvent {
+  background-color: rgb(126, 255, 126);
+  color: rgb(126, 255, 126)
+}
+
+#classPeriodEvent {
+  background-color: pink;
+  color: pink;
+}
+
+#otherEvent {
+  background-color: rgb(255, 196, 88);
+  color: rgb(255, 196, 88);
+}
+
+#new-event {
+  color: white;
+}
+
+.eventFont {
+  color: black;
+}
+
+.main-template {
+  background-image: url("backgrounds/background1.jpg");
+  background-size: cover;
+  min-width: 100%;
+
+}
+
+.event-box {
+  border:rgb(44, 44, 44);
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 5px;
+  border-style: ridge;
+  margin-top: 10px;
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 1000px;
+  background-color: rgba(255, 244, 224, 0.5);
+}
+
+.submit-button {
+  background-color: orange;
+}
+
+.view-container {
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 314px;
+  display: inline-block
+}
+
+.repitition-container {
+  align-items: center;
+  background-color: white;
+  padding: 1px;
+  border-radius: 10px;
+  display: inline-block
+}
+
+#datepicker-submit {
+  width: 100px;
+}
+
+.calendar-label {
+  color: rgb(255, 255, 255);
+  font-family: 'Trebuchet MS';
+}
+
+.delete-button {
+  margin-top: 5px;
+}
+
+.profile-pic {
+  margin-bottom: 5px;
 }
 

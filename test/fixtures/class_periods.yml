@@ -2,10 +2,28 @@
 
 one:
   course_id: 1
-  start_time: 2022-10-12 20:50:03
-  end_time: 2022-10-12 20:50:03
+  name: COSCI_CLASS
+  start_time: 10:00
+  end_time: 12:00
+  date: 2022-10-03
 
 two:
-  course_id: 1
-  start_time: 2022-10-12 20:50:03
-  end_time: 2022-10-12 20:50:03
+  course_id: 2
+  name: COSCI_CLASS
+  start_time: 10:00
+  end_time: 12:00
+  date: 2022-10-05
+
+three:
+  course_id: 3
+  name: COSCI_CLASS
+  start_time: 10:00
+  end_time: 12:00
+  date: 2022-10-06
+
+four:
+  course_id: 3
+  name: COSCI_CLASS
+  start_time: 10:00
+  end_time: 12:00
+  date: 2022-10-10

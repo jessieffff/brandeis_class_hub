@@ -9,7 +9,7 @@ class CalendarsController < ApplicationController
   end
 
   def search
-    @calendars = Calendar.where("calendar_name LIKE ? AND shared = ?", "%" + params[:q] + "%", true)
+    @calendars = Calendar.where("name LIKE ? AND shared = ?", "%" + params[:q] + "%", true)
   end
   # GET /calendars/1 or /calendars/1.json
   def show
@@ -78,7 +78,7 @@ class CalendarsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def calendar_params
-    params.require(:calendar).permit(:calendar_name, :description, :user_id, :shared, :invite_token)
+    params.require(:calendar).permit(:name, :description, :user_id, :shared, :invite_token)
   end
 
 

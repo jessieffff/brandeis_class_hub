@@ -2,22 +2,12 @@
 
 one:
   calendar_id: 1
-  name: MyString
-  start_date: 2022-10-21
-  end_date: 2022-10-21
-  location: MyString
-  professor_first_name: MyString
-  professor_last_name: MyString
-  repetition_frequency: MyString
-  url: MyString
+  name: COSCI_CLASS
+  start_date: 2022-10-01
+  end_date: 2022-10-10
+  start_time: "10:00AM"
+  end_time: "12:00PM"
+  location: GZANG
+  professor_name: SALAS
+  repetition_frequency: MWH
 
-two:
-  calendar_id: 1
-  name: MyString
-  start_date: 2022-10-21
-  end_date: 2022-10-21
-  location: MyString
-  professor_first_name: MyString
-  professor_last_name: MyString
-  repetition_frequency: MyString
-  url: MyString

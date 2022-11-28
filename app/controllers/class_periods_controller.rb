@@ -65,7 +65,7 @@ before_action :logged_in_user
 
     # Only allow a list of trusted parameters through.
     def class_period_params
-      params.require(:class_period).permit(:course_id, :start_time, :end_time)
+      params.require(:class_period).permit(:course_id, :start_time, :end_time, :date, :calendar_id)
     end
 
 end

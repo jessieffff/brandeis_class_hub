@@ -10,4 +10,7 @@ module ApplicationHelper
     user.first_name + ' ' + user.last_name
   end
 
+  def calendar_ids(user)
+    #do this later
+  end
 end
