@@ -13,17 +13,12 @@
 
   <p>
     <strong>Creator:</strong>
-    <%= calendar.users.first.first_name + " " +calendar.users.first.last_name %>
+     <%=  User.find_by(id: calendar.user_id).first_name + " " + User.find_by(id: calendar.user_id).last_name %>
   </p>
 
   <p>
     <strong>Public:</strong>
     <%= calendar.shared %>
-  </p>
-
-  <p>
-    <strong>Token:</strong>
-    <%= calendar.invite_token %>
   </p>
 
 </div>

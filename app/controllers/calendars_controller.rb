@@ -7,6 +7,10 @@ class CalendarsController < ApplicationController
     @calendars = Calendar.where(user_id: current_user.id)
   end
 
+  def search
+    @calendars = Calendar.where("name LIKE ? AND shared = ?", "%" + params[:q] + "%", true)
+  end
+
   # GET /calendars/1 or /calendars/1.json
   def show
     @calendar = Calendar.find_by_invite_token(params[:invite_token])
@@ -77,11 +81,4 @@ class CalendarsController < ApplicationController
     params.require(:calendar).permit(:name, :description, :user_id, :shared, :invite_token)
   end
 
-        # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in? 
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url, status: :see_other
-    end
-  end
 end
