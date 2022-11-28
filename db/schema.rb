@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
   end
 
   create_table "calendars", force: :cascade do |t|
-    t.string "calendar_name"
+    t.string "name"
     t.integer "user_id"
     t.boolean "shared"
     t.string "invite_token"
@@ -34,10 +34,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
   end
 
   create_table "class_periods", force: :cascade do |t|
+    t.integer "calendar_id"
     t.integer "course_id"
     t.string "name"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.string "start_time"
+    t.string "end_time"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
+    t.string "start_time"
+    t.string "end_time"
     t.string "location"
     t.string "professor_name"
     t.string "repetition_frequency"
@@ -66,8 +70,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
   create_table "other_events", force: :cascade do |t|
     t.integer "calendar_id"
     t.string "name"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.string "start_time"
+    t.string "end_time"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

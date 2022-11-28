@@ -11,7 +11,7 @@ class Month
         @last_of_month = Date.new(@year, @month, -1)
     end
 
-    def load_month
+    def load_month(user_id)
         weeks = []
         start_day = 1 #First of month
 

@@ -7,7 +7,7 @@
     </div>
         
     <%= render 'week_titles' %>
-    <% month.load_month.each do |week| %>
+    <% month.load_month(current_user[:id]).each do |week| %>
         <%= render 'week', :week => week %>
     <% end %>
 </div>

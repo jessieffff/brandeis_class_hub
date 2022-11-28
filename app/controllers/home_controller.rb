@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
     before_action :logged_in_user
     def calendar
-
         if params[:date] != nil
             @y = params[:date].split("-")[0].to_i
             @m = params[:date].split("-")[1].to_i
@@ -14,7 +13,7 @@ class HomeController < ApplicationController
         @month = Month.new(@m, @y)
         date = Date.new(@y, @m, @d)
         @week  = Week.new(date)
-        @day = Day.new(@y, @m, @d)
+        @day = Day.new(@y, @m, @d, current_user[:id])
         if params[:view] != nil
             @view = params[:view]
         else

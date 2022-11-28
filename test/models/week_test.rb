@@ -8,7 +8,7 @@ class WeekTest < ActiveSupport::TestCase
   test "load normal week" do
     date = Date.new(2022, 10, 16)
     week = Week.new(date)
-    list_of_days = week.load_week
+    list_of_days = week.load_week(users(:one).id)
     day_num = date.day
     list_of_days.each do |day|
         assert_equal(day.currentDate, "2022/10/#{day_num}")
