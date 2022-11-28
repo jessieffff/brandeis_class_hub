@@ -85,6 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
     t.string "last_name"
     t.integer "student_id"
     t.string "email"
+    t.string "google_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

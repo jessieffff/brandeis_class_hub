@@ -20,7 +20,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'static_pages#home'
   get "/signup", to: "users#new"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
+  # get "/login", to: "sessions#new"
+  # post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
+  get 'login', to: 'logins#new'
+  get 'login/create', to: 'logins#create', as: :create_login
 end
+
