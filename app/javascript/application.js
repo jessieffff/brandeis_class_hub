@@ -3,4 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "custom/menu"
 import "custom/new_event"
+import "custom/subscribe_link"
 //= require bootstrap-datepicker
