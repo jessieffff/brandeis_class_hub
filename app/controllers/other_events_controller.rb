@@ -1,6 +1,6 @@
 class OtherEventsController < ApplicationController
   before_action :set_other_event, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+
   # GET /other_events or /other_events.json
   def index
     @other_events = OtherEvent.all
@@ -67,12 +67,4 @@ before_action :logged_in_user
     def other_event_params
       params.require(:other_event).permit(:calendar_id, :name, :start_time, :end_time)
     end
-
-          # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in? 
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url, status: :see_other
-    end
-  end
 end

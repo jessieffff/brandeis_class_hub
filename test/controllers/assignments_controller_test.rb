@@ -2,9 +2,12 @@ require "test_helper"
 
 class AssignmentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
-    log_in_as(@user)
     @assignment = assignments(:one)
+  end
+
+  test "should get index" do
+    get assignments_url
+    assert_response :success
   end
 
   test "should get new" do

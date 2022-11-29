@@ -47,7 +47,7 @@ class Week
 
         month_string = General.format(next_week.month)
         day_string = General.format(next_week.day)
-        return "#{next_week.year}-#{month_string}-#{day_string}"
+        return "#{month_string}#{day_string}#{next_week.year}"
     end
 
     def prev
@@ -68,7 +68,7 @@ class Week
 
         month_string = General.format(prev_week.month)
         day_string = General.format(prev_week.day)
-        return "#{prev_week.year}-#{month_string}-#{day_string}"
+        return "#{month_string}#{day_string}#{prev_week.year}"
     end
 
     #Finds the length of week with certain day
@@ -103,7 +103,7 @@ class Week
     def current
         month_string = General.format(@month)
         day_string = General.format(@day)
-        return "#{@year}-#{month_string}-#{day_string}"
+        return "#{month_string}#{day_string}#{@year}"
     end
         
 end

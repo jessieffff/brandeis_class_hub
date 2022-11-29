@@ -1,17 +1,10 @@
-<div class="container event-box" align="center">
-  <p style="color: green"><%= notice %></p>
-  <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
-  <p><%= "#{@user.email}" %></p>
-  <div class="profile-pic">
-    <%= gravatar_for @user %>
-  </div>
-  
-  <div>
-    <%= link_to "Edit", edit_user_path(@user), class:"btn btn-sm btn-primary" %> |
-    <%= link_to "Back", home_calendar_path, class:"btn btn-sm btn-primary"%>
-    
-    <div class="delete-button">
-      <%= button_to "Delete this user", @user, method: :delete, class:"btn btn-sm btn-primary" %>
-    </div>
-  </div>
+<p style="color: green"><%= notice %></p>
+
+<%= render @user %>
+
+<div>
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+
+  <%= button_to "Destroy this user", @user, method: :delete %>
 </div>

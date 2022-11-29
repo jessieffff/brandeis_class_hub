@@ -1,39 +1,37 @@
-<div class="container event-box" align="center">
-  <%= form_with(model: holiday) do |form| %>
-    <% if holiday.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(holiday.errors.count, "error") %> prohibited this holiday from being saved:</h2>
+<%= form_with(model: holiday) do |form| %>
+  <% if holiday.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(holiday.errors.count, "error") %> prohibited this holiday from being saved:</h2>
 
-        <ul>
-          <% holiday.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="input-group input-group-sm mb-3">
-      <%= form.label :calendar_id, style: "display: block" %>
-      <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.calendar_name] } %>
-    </div>
-
-    <div class="input-group input-group-sm mb-3">
-      <%= form.label :holiday_name, style: "display: block" %>
-      <%= form.text_field :holiday_name %>
-    </div>
-
-    <div class="input-group input-group-sm mb-3">
-      <%= form.label :date, style: "display: block" %>
-      <%= form.datetime_field :date %>
-    </div>
-
-    <div class="input-group input-group-sm mb-3">
-      <%= form.label :holiday_type, style: "display: block" %>
-      <%= form.text_field :holiday_type %>
-    </div>
-
-    <div class="input-group input-group-sm mb-3">
-      <%= form.submit :Update, class:"btn btn-lg btn-primary" %>
+      <ul>
+        <% holiday.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-</div>
+
+  <div>
+    <%= form.label :calendar_id, style: "display: block" %>
+    <%= form.select :calendar_id, Calendar.all.collect { |calendar| [calendar.id] } %>
+  </div>
+
+  <div>
+    <%= form.label :holiday_name, style: "display: block" %>
+    <%= form.text_field :holiday_name %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.datetime_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :holiday_type, style: "display: block" %>
+    <%= form.text_field :holiday_type %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

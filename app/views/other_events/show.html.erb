@@ -1,27 +1,10 @@
-<h1>Event</h1>
-<div class="container event-box" align="center">
 <p style="color: green"><%= notice %></p>
 
-<div>
-  <p><%= @other_event.name %></p>
-</div>
+<%= render @other_event %>
 
 <div>
-  <strong>Start Time</strong>
-  <p><%= @other_event.start_time %></p>
-</div>
+  <%= link_to "Edit this other event", edit_other_event_path(@other_event) %> |
+  <%= link_to "Back to other events", other_events_path %>
 
-<div>
-  <strong>End Time</strong>
-  <p><%= @other_event.end_time %></p>
-</div>
-
-<div>
-  <%= link_to "Edit", edit_other_event_path(@other_event), class:"btn btn-sm btn-primary" %> |
-  <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
-
-  <div class="delete-button">
-    <%= button_to "Delete this assignment", @other_event, method: :delete, class:"btn btn-sm btn-primary" %>
-  </div>
-</div>
+  <%= button_to "Destroy this other event", @other_event, method: :delete %>
 </div>

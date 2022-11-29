@@ -1,10 +1,10 @@
-require_relative '../lib/month'
+require_relative '../lib/month.rb'
 class CalendarsController < ApplicationController
   before_action :set_calendar, only: %i[show edit update destroy]
-  before_action :logged_in_user
+
   # GET /calendars or /calendars.json
   def index
-    @calendars = Calendar.where(user_id: current_user.id)
+    @calendars = Calendar.all
   end
 
   # GET /calendars/1 or /calendars/1.json
@@ -23,12 +23,10 @@ class CalendarsController < ApplicationController
   # POST /calendars or /calendars.json
   def create
     @calendar = Calendar.new(calendar_params)
-    @calendar.user_id = Current.user.id if Current.user
+
     respond_to do |format|
       if @calendar.save
-        n = UserCalendar.new(user_id: @calendar.user_id, calendar_id: @calendar.id, creator: true)
-        n.save
-        format.html { redirect_to home_calendar_url, notice: 'Calendar was successfully created.' }
+        format.html { redirect_to calendar_url(@calendar), notice: 'Calendar was successfully created.' }
         format.json { render :show, status: :created, location: @calendar }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +39,7 @@ class CalendarsController < ApplicationController
   def update
     respond_to do |format|
       if @calendar.update(calendar_params)
-        format.html { redirect_to home_calendar_url, notice: 'Calendar was successfully updated.' }
+        format.html { redirect_to calendar_url(@calendar), notice: 'Calendar was successfully updated.' }
         format.json { render :show, status: :ok, location: @calendar }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -75,13 +73,5 @@ class CalendarsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def calendar_params
     params.require(:calendar).permit(:calendar_name, :user_id, :shared, :invite_token)
-  end
-
-        # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in? 
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url, status: :see_other
-    end
   end
 end

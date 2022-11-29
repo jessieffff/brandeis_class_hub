@@ -17,9 +17,19 @@
   </div>
 
   <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
     <%= form.label :shared, style: "display: block" %>
     <%= form.check_box :shared %>
   </div>
+
+  <%# <div>
+    <%= form.label :invite_token, style: "display: block" %>
+    <%# <%= form.text_field :invite_token %> 
+  <%# </div> %> 
 
   <div>
     <%= form.submit %>

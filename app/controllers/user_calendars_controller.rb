@@ -1,6 +1,6 @@
 class UserCalendarsController < ApplicationController
   before_action :set_user_calendar, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+
   # GET /user_calendars or /user_calendars.json
   def index
     @user_calendars = UserCalendar.all
@@ -65,14 +65,6 @@ before_action :logged_in_user
 
     # Only allow a list of trusted parameters through.
     def user_calendar_params
-      params.require(:user_calendar).permit(:user_id, :calendar_id, :creator)
+      params.require(:user_calendar).permit(:user_id, :calendar_id)
     end
-
-          # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in? 
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url, status: :see_other
-    end
-  end
 end

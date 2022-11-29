@@ -1,0 +1,12 @@
+I, [2022-09-18T21:19:54.598996 #84012]  INFO -- : [1327be1f-5e6a-40e2-8ec5-b8a8b6b4969b] Started GET "/" for 127.0.0.1 at 2022-09-18 21:19:54 -0400
+F, [2022-09-18T21:19:54.602032 #84012] FATAL -- : [1327be1f-5e6a-40e2-8ec5-b8a8b6b4969b]   
+[1327be1f-5e6a-40e2-8ec5-b8a8b6b4969b] ActionController::RoutingError (No route matches [GET] "/"):
+[1327be1f-5e6a-40e2-8ec5-b8a8b6b4969b]   
+I, [2022-09-18T21:19:55.059618 #84012]  INFO -- : [4623b822-fb84-4d5f-9721-de87389bbf82] Started GET "/favicon.ico" for 127.0.0.1 at 2022-09-18 21:19:55 -0400
+F, [2022-09-18T21:19:55.059977 #84012] FATAL -- : [4623b822-fb84-4d5f-9721-de87389bbf82]   
+[4623b822-fb84-4d5f-9721-de87389bbf82] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[4623b822-fb84-4d5f-9721-de87389bbf82]   
+I, [2022-09-18T21:24:51.310131 #85020]  INFO -- : [1bd57cd5-c76f-4b81-913e-f22be4565abf] Started GET "/" for 127.0.0.1 at 2022-09-18 21:24:51 -0400
+I, [2022-09-18T21:24:51.312491 #85020]  INFO -- : [1bd57cd5-c76f-4b81-913e-f22be4565abf] Processing by ApplicationController#hello as HTML
+I, [2022-09-18T21:24:51.314221 #85020]  INFO -- : [1bd57cd5-c76f-4b81-913e-f22be4565abf]   Rendered html template (Duration: 0.0ms | Allocations: 15)
+I, [2022-09-18T21:24:51.314888 #85020]  INFO -- : [1bd57cd5-c76f-4b81-913e-f22be4565abf] Completed 200 OK in 2ms (Views: 1.1ms | Allocations: 769)

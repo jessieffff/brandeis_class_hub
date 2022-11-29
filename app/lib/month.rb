@@ -54,29 +54,29 @@ class Month
     def next
         #New year
         if (@month == 12)
-            return "#{@year + 1}-01-01"
+            return "0101#{@year + 1}"
         #same year
         else
             month_string = General.format(@month + 1)
-            return "#{@year}-#{month_string}-01"
+            return "#{month_string}01#{@year}"
         end
     end
 
     def prev
         #Going back a year
         if (@month == 1)
-            return "#{@year - 1}-12-01"
+            return "1201#{@year - 1}"
         #same year
         else
             month_string = General.format(@month - 1)
-            return "#{@year}-#{month_string}-01"
+            return "#{month_string}01#{@year}"
         end
     end
 
     #current month string
     def current
         month_string = General.format(@month)
-        return "#{@year}-#{month_string}-01"
+        return "#{month_string}01#{@year}"
     end
 
     #go from month num to name

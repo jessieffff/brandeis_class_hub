@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+
   # GET /courses or /courses.json
   def index
     @courses = Course.all
@@ -57,11 +57,6 @@ before_action :logged_in_user
     end
   end
 
-  def import
-    Course.import(params[:file])
-    redirect_to courses_url, notice: "Courses Added Successfuly"
-  end
-  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
@@ -72,12 +67,4 @@ before_action :logged_in_user
     def course_params
       params.require(:course).permit(:calendar_id, :course_name, :start_date, :end_date, :location, :professor_first_name, :professor_last_name, :repetition_frequency, :url)
     end
-
-          # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in? 
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url, status: :see_other
-    end
-  end
 end

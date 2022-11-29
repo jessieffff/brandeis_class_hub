@@ -6,9 +6,10 @@ one:
   start_date: 2022-10-21
   end_date: 2022-10-21
   location: MyString
-  professor_name: MyString
+  professor_first_name: MyString
+  professor_last_name: MyString
   repetition_frequency: MyString
-
+  url: MyString
 
 two:
   calendar_id: 1
@@ -16,6 +17,7 @@ two:
   start_date: 2022-10-21
   end_date: 2022-10-21
   location: MyString
-  professor_name: MyString
+  professor_first_name: MyString
+  professor_last_name: MyString
   repetition_frequency: MyString
-
+  url: MyString

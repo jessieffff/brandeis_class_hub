@@ -1,27 +1,10 @@
-<h1>Class Period</h1>
-<div class="container event-box" align="center">
 <p style="color: green"><%= notice %></p>
 
-<div>
-  <p><%= @class_period.name %></p>
-</div>
+<%= render @class_period %>
 
 <div>
-  <strong>Start Time</strong>
-  <p><%= @class_period.start_time %></p>
-</div>
+  <%= link_to "Edit this class period", edit_class_period_path(@class_period) %> |
+  <%= link_to "Back to class periods", class_periods_path %>
 
-<div>
-  <strong>End Time</strong>
-  <p><%= @class_period.end_time %></p>
-</div>
-
-<div>
-  <%= link_to "Edit", edit_class_period_path(@class_period), class:"btn btn-sm btn-primary" %> |
-  <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
-
-  <div class="delete-button">
-    <%= button_to "Delete this assignment", @class_period, method: :delete, class:"btn btn-sm btn-primary" %>
-  </div>
-</div>
+  <%= button_to "Destroy this class period", @class_period, method: :delete %>
 </div>

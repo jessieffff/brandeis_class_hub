@@ -7,22 +7,7 @@ class DayTest < ActiveSupport::TestCase
 
   test "current day" do
     day = Day.new(2022, 10, 18)
-    assert_equal(day.currentDate, "2022/10/18")
-  end
-
-  test "param day" do
-    day = Day.new(2022, 10, 18)
-    assert_equal(day.params_date, "2022-10-18")
-  end
-
-  test "display date" do
-    day = Day.new(2022, 10, 18)
-    assert_equal(day.display_date, "Tuesday October 18")
-  end
-
-  test "day_of_week" do
-    day = Day.new(2022, 10, 18)
-    assert_equal(day.day_of_week, "Tuesday")
+    assert_equal(day.currentDate, "10/18/2022");
   end
 
   test "load_events" do
@@ -39,42 +24,42 @@ class DayTest < ActiveSupport::TestCase
 
   test "next is low digit" do
     day = Day.new(2022, 8, 6)
-    assert_equal(day.next, "2022-08-07")
+    assert_equal(day.next, "08072022")
   end
 
   test "next is double digit" do
     day = Day.new(2022, 8, 9)
-    assert_equal(day.next, "2022-08-10")
+    assert_equal(day.next, "08102022")
   end
 
   test "next is new month" do
     day = Day.new(2022, 10, 31)
-    assert_equal(day.next, "2022-11-01")
+    assert_equal(day.next, "11012022")
   end
 
   test "next is new year" do
     day = Day.new(2022, 12, 31)
-    assert_equal(day.next, "2023-01-01")
+    assert_equal(day.next, "01012023")
   end
 
   test "prev is low digit" do
     day = Day.new(2022, 8, 6)
-    assert_equal(day.prev, "2022-08-05")
+    assert_equal(day.prev, "08052022")
   end
 
   test "prev is double digit" do
     day = Day.new(2022, 8, 12)
-    assert_equal(day.prev, "2022-08-11")
+    assert_equal(day.prev, "08112022")
   end
 
   test "prev is prev month" do
     day = Day.new(2022, 11, 1)
-    assert_equal(day.prev, "2022-10-31")
+    assert_equal(day.prev, "10312022")
   end
 
   test "prev is last year" do
     day = Day.new(2023, 1, 1)
-    assert_equal(day.prev, "2022-12-31")
+    assert_equal(day.prev, "12312022")
   end
 
 
