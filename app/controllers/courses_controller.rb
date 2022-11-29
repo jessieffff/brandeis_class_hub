@@ -73,7 +73,7 @@ before_action :logged_in_user
       params.require(:course).permit(:calendar_id, :course_name, :start_date, :end_date, :location, :professor_first_name, :professor_last_name, :repetition_frequency, :url)
     end
 
-          # Confirms a logged-in user.
+  # Confirms a logged-in user.
   def logged_in_user
     unless logged_in? 
       flash[:danger] = 'Please log in.'

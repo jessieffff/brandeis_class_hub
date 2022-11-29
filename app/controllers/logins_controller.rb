@@ -8,7 +8,7 @@ class LoginsController < ApplicationController
       cookies.signed[:user_id] = user.id
       redirect_to user
     else
-      redirect_to new_session_url, alert: 'authentication_failed'
+      redirect_to root_path, alert: 'authentication_failed'
     end
   end
 

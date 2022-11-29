@@ -81,3 +81,4 @@ group :test do
 end
 
 gem 'google_sign_in'
+gem 'rack-cors'
