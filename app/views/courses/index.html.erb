@@ -15,7 +15,7 @@
 
 
 <h3> Import Courses </h3>
-<%= form_tag import_courses_path, multipart: true do %>
+<%= form_tag import_from_excel_courses_url, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Upload courses" %>
 <% end %>

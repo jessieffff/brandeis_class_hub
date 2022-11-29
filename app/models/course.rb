@@ -10,22 +10,6 @@ class Course < ApplicationRecord
     foreign_key: 'course_id' # name of column containing FK in other table
   )
 
-  def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      course_hash = Course.new
-      course_hash.calendar_id = row[1]
-      course_hash.name = row[0]
-      puts "111"
-      puts row[9]
-      course_hash.start_date = self.date_convertor(row[9]).to_date
-      course_hash.end_date = self.date_convertor(row[10]).to_date
-      course_hash.location = row[4]
-      course_hash.professor_name = row[8]
-      course_hash.repetition_frequency = row[6]
-      course_hash.save
-    end
-  end
-
   def self.date_convertor(date_string)
     date = ""
     if date_string[1] == '/' && date_string[3] == "/"

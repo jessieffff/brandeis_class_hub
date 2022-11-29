@@ -58,10 +58,33 @@ before_action :logged_in_user
     end
   end
 
-  def import
-    Course.import(params[:file])
-    redirect_to courses_url, notice: "Courses Added Successfuly"
-  end
+  def import_from_excel
+    file = params[:file]
+    begin
+      file_ext = File.extname(file.original_filename)
+      raise "Unknown file type: #{file.original_filename}" unless [".xls", ".xlsx"].include?(file_ext)
+      spreadsheet = (file_ext == ".xls") ? Roo::Excel.new(file.path) : Roo::Excelx.new(file.path)
+      header = spreadsheet.row(3)
+      ## We are iterating from row 2 because we have left row one for header
+      (4..spreadsheet.last_row).each do |i|
+        Course.create(
+          calendar_id: spreadsheet.row(i)[2],
+          name: spreadsheet.row(i)[1],
+          start_date: spreadsheet.row(i)[10],
+          end_date: spreadsheet.row(i)[11],
+          start_time: spreadsheet.row(i)[7],
+          end_time: spreadsheet.row(i)[7],
+          location: spreadsheet.row(i)[6], 
+          professor_name: spreadsheet.row(i)[9],
+          repetition_frequency: spreadsheet.row(i)[7])
+      end
+      flash[:notice] = "Records Imported"
+      redirect_to course_path 
+    rescue Exception => e
+      flash[:notice] = "Issues with file"
+      redirect_to course_path 
+    end
+ end
   
   private
     # Use callbacks to share common setup or constraints between actions.
