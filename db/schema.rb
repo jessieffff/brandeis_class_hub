@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.integer "user_id"
     t.boolean "shared"
     t.string "invite_token"

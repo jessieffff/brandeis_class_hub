@@ -14,7 +14,7 @@ class CalendarsTest < ApplicationSystemTestCase
     visit calendars_url
     click_on "New calendar"
 
-    fill_in "Calendar name", with: @calendar.calendar_name
+    fill_in "Calendar name", with: @calendar.name
     check "Shared" if @calendar.shared
     fill_in "invite_token", with: @calendar.invite_token
     fill_in "User", with: @calendar.user_id
@@ -28,7 +28,7 @@ class CalendarsTest < ApplicationSystemTestCase
     visit calendar_url(@calendar)
     click_on "Edit this calendar", match: :first
 
-    fill_in "Calendar name", with: @calendar.calendar_name
+    fill_in "Calendar name", with: @calendar.name
     check "Shared" if @calendar.shared
     fill_in "invite_token", with: @calendar.invite_token
     fill_in "User", with: @calendar.user_id
