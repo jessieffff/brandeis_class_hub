@@ -2,6 +2,104 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @calendar %>
+<%# assignment table %>
+  <% if Assignment.exists?(calendar_id: @calendar.id) %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Assignment </th>
+          <th>Assignment duetime</th>
+          <th>Course</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% Assignment.where(calendar_id: @calendar.id).each do |assignment| %>
+          <tr>
+            <td><%= assignment.name %></td>
+            <td><%= assignment.due_date %></td>
+            <td><%=  Course.find_by(id: assignment.course_id) %></td>
+            <td><%= link_to "Show this assignment", assignment %> <td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+<%# holiday table %>
+  <% if Holiday.exists?(calendar_id: @calendar.id) %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Holiday </th>
+          <th>Holiday Date</th>
+          <th>Holiday Type</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% Holiday.where(calendar_id: @calendar.id).each do |holiday| %>
+          <tr>
+            <td><%= holiday.name %></td>
+            <td><%= holiday.date %></td>
+            <td><%= holiday.holiday_type %></td>
+            <td><%= link_to "Show this holiday", holiday %> <td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  
+  <%# course table %>
+  <% if Course.exists?(calendar_id: @calendar.id) %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Course </th>
+          <th>Date</th>
+          <th>Location</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% Course.where(calendar_id: @calendar.id).each do |course| %>
+          <tr>
+            <td><%= course.name %></td>
+            <td><%= course.start_date.to_s + " - " + course.end_date.to_s %></td>
+            <td><%= course.location %></td>
+            <td><%= link_to "Show this course", course %> <td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <%# other event %>
+  <% if OtherEvent.exists?(calendar_id: @calendar.id) %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Other event </th>
+          <th>Date</th>
+          <th>Time</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% OtherEvent.where(calendar_id: @calendar.id).each do |other| %>
+          <tr>
+            <td><%= other.name %></td>
+            <td><%= other.date %></td>
+            <td><%= other.start_time.to_s + " - " + other.end_time.to_s %></td>
+            <td><%= link_to "Show this event", other %> <td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 
 <div class="row">
   <aside class="col-md-4">
