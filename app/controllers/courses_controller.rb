@@ -1,7 +1,6 @@
-require 'time'
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+  before_action :logged_in_user
   # GET /courses or /courses.json
   def index
     @courses = Course.all
@@ -61,6 +60,7 @@ before_action :logged_in_user
 
   def import_from_excel
     file = params[:file]
+    id = params[:calendar_id]
     begin
       file_ext = File.extname(file.original_filename)
       raise "Unknown file type: #{file.original_filename}" unless [".xls", ".xlsx"].include?(file_ext)
@@ -70,10 +70,8 @@ before_action :logged_in_user
         time_and_freq = spreadsheet.row(i)[7]
         divider_index = (0 ... time_and_freq.length).find_all { |m| time_and_freq[m, 1] == '|' }
         time = time_and_freq[divider_index[0] + 2..divider_index[1] - 2]
-        puts "111"
-        puts time[0..time.index('-') - 2].class
         @course = Course.create(
-          calendar_id: spreadsheet.row(i)[2],
+          calendar_id: id,
           name: spreadsheet.row(i)[1],
           start_date: spreadsheet.row(i)[10],
           end_date: spreadsheet.row(i)[11],
@@ -83,8 +81,8 @@ before_action :logged_in_user
           professor_name: spreadsheet.row(i)[9],
           repetition_frequency: spreadsheet.row(i)[7][0, divider_index[0]]
         )
-        CalendarHelper.generate_class_period(@course.repetition_frequency, @course.name, @course.id, @course.start_date, @course.end_date,
-        @course.start_time, @course.end_time, @course.calendar_id)
+        CalendarHelper.generate_class_period(@course.repetition_frequency, @course.name, @course.id, @course.start_date,
+            @course.end_date, @course.start_time, @course.end_time, @course.calendar_id)
       end
       flash[:notice] = "Records Imported"
       redirect_to courses_url

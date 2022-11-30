@@ -6,7 +6,6 @@
 <div class="row">
   <aside class="col-md-4">
     <section >
-    <%# <% if UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %> 
     <% if Calendar.find_by(id: @calendar.id).user_id == Current.user.id %>
       <h3>
         <%= link_to "Edit this calendar", edit_calendar_path(@calendar) %> |
@@ -21,8 +20,16 @@
           </div>
         </div>
       </div>
+
+
+
+      <h3> Import Courses To This Calendar</h3>
+        <%= form_tag import_from_excel_courses_url, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= hidden_field_tag :calendar_id , @calendar.id %>
+          <%= submit_tag "Import courses" %>
+        <% end %>
     <div>
-      
     <% elsif UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %>
       <h3> 
         <%= link_to "Back to calendars", home_calendar_path %>
@@ -30,6 +37,5 @@
       </h3> 
     <% end %>
     </section>
-    
   </aside>
 </div>

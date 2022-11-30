@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get "home/calendar"
-  
+
   resources :other_events, except: [:index]
   resources :holidays, except: [:index]
   resources :class_periods, except: [:index]
