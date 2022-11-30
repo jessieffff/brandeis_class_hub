@@ -1,13 +1,12 @@
-<div style="padding-top: 10px"> 
 <h1> Search Results </h1>
 
-<table class="table">
+<table class="table calendar-list-page">
   <thead>
     <tr>
       <th>Calendar Name</th>
       <th>Description</th>
       <th>Creator</th>
-      <th colspan="4"></th>
+      <th>Subscribe</th>
     </tr>
   </thead>
 
@@ -19,7 +18,6 @@
         <td><%= calendar.description %></td>
         <td><%=  User.find_by(id: calendar.user_id).first_name + " " + User.find_by(id: calendar.user_id).last_name %></td>
         <td><%= button_to "Subscribe to this calendar", UserCalendar.where(user_id: Current.user.id, calendar_id: calendar.id).first_or_create%> <td>
-       
       </tr>
     <% end %>
   </tbody>

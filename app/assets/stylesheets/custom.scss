@@ -337,3 +337,99 @@ input {
   margin-bottom: 5px;
 }
 
+.calendar-details-page {
+  margin: 100px;
+  padding: 20px;
+  background-color: rgba(235, 230, 230, 0.75);
+  border-radius: 10px;
+  border-width: 10px;
+  //brandeis blue
+  border: 5px solid #385988;
+}
+
+.calendar-overview{
+  background: #f8f8f8;
+  font-size: medium;
+  font-style: italic;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  // border-radius: 5px;
+  // border-width: 5px;
+  // border-style: ridge;
+  padding: 10px;
+}
+
+.calendar-table{
+  margin-top: 20px;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table tr {
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  padding: .35em;
+}
+
+
+ table th,
+table td {
+  padding: .625em;
+  text-align: left;
+}
+
+ table th {
+  background: #999;
+  color: #fff;
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-body{
+  margin: 0;
+  vertical-align: middle;
+}
+
+.calendar-event-box {
+  width: 100%;
+  padding: 10px;
+  margin: auto;
+  background-color:#f8f8f8;
+}
+
+.calendar-list-page {
+  margin: auto;
+  width: 80%;
+  // padding: 20px;
+  background-color: rgba(235, 230, 230, 0.75);
+  border-radius: 10px;
+  border-width: 10px;
+  //brandeis blue
+  border: 5px solid #385988;
+}
+
+.new-calendar-page {
+  margin: auto;
+  width: 80%;
+  // padding: 20px;
+  background-color: rgba(235, 230, 230, 0.75);
+  border-radius: 10px;
+  border-width: 10px;
+  //brandeis blue
+  border: 5px solid #385988;
+}
