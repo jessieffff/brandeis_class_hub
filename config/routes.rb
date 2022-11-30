@@ -2,13 +2,12 @@ Rails.application.routes.draw do
   get "home/calendar"
 
   resources :other_events, except: [:index]
-  resources :holidays, except: [:index]
+  resources :holidays, param: :slug
   resources :class_periods, except: [:index]
   resources :user_calendars
   resources :courses do
     collection { post :import_from_excel }
   end
-  # resources :courses, except: [:index]
   resources :assignments
   resources :users
 

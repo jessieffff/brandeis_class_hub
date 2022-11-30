@@ -81,3 +81,4 @@ group :test do
 end
 gem 'roo', '~> 2.8' 
 gem 'roo-xls'
+gem 'friendly_id', '~> 5.4.0'

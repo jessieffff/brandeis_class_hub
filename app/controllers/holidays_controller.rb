@@ -1,6 +1,12 @@
 class HolidaysController < ApplicationController
-  before_action :set_holiday, only: %i[ show edit update destroy ]
+  include HolidaysHelper
+
   before_action :logged_in_user
+  before_action :check_holiday, only: %i[ show edit update destroy ]
+  # before_action :set_holiday, only: %i[ show edit update destroy ]
+  
+
+
   # GET /holidays or /holidays.json
   def index
     @holidays = Holiday.all
@@ -36,6 +42,7 @@ class HolidaysController < ApplicationController
 
   # PATCH/PUT /holidays/1 or /holidays/1.json
   def update
+    @holiday.slug = nil if @holiday.name != params[:name]
     respond_to do |format|
       if @holiday.update(holiday_params)
         format.html { redirect_to holiday_url(@holiday), notice: "Holiday was successfully updated." }
@@ -59,13 +66,22 @@ class HolidaysController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_holiday
-      @holiday = Holiday.find(params[:id])
+    def check_holiday
+      if !@holiday = Holiday.friendly.find_by_slug(params[:slug]).nil?
+        @holiday = Holiday.friendly.find_by_slug(params[:slug])
+      else
+        render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
+      end
     end
+
+    # def set_holiday
+    #   @holiday = Holiday.friendly.find_by_slug(params[:slug])
+    # end
+
 
     # Only allow a list of trusted parameters through.
     def holiday_params
-      params.require(:holiday).permit(:calendar_id, :holiday_name, :date, :holiday_type)
+      params.require(:holiday).permit(:calendar_id, :name, :date, :holiday_type)
     end
 
 end
