@@ -13,9 +13,3 @@
 
 <%= link_to "New course", new_course_path %>
 
-
-<h3> Import Courses </h3>
-<%= form_tag import_courses_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Upload courses" %>
-<% end %>
