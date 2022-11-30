@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 section {
@@ -468,4 +468,10 @@ table td {
     flex-direction: column;
     align-items: stretch;
   }
+}
+
+
+.search-calendar-button {
+  padding:20px;
+  margin: auto;
 }
