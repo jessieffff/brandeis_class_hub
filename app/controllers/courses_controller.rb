@@ -70,8 +70,9 @@ before_action :logged_in_user
         time_and_freq = spreadsheet.row(i)[7]
         divider_index = (0 ... time_and_freq.length).find_all { |m| time_and_freq[m, 1] == '|' }
         time = time_and_freq[divider_index[0] + 2..divider_index[1] - 2]
+        puts "111"
         puts time[0..time.index('-') - 2].class
-        Course.create(
+        @course = Course.create(
           calendar_id: spreadsheet.row(i)[2],
           name: spreadsheet.row(i)[1],
           start_date: spreadsheet.row(i)[10],
@@ -82,6 +83,8 @@ before_action :logged_in_user
           professor_name: spreadsheet.row(i)[9],
           repetition_frequency: spreadsheet.row(i)[7][0, divider_index[0]]
         )
+        CalendarHelper.generate_class_period(@course.repetition_frequency, @course.name, @course.id, @course.start_date, @course.end_date,
+        @course.start_time, @course.end_time, @course.calendar_id)
       end
       flash[:notice] = "Records Imported"
       redirect_to courses_url
