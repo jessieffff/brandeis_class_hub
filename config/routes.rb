@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :courses do
     collection { post :import_from_excel }
   end
-  resources :courses
+  # resources :courses, except: [:index]
   resources :assignments
   resources :users
 

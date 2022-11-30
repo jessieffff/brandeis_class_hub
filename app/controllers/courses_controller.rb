@@ -2,9 +2,9 @@ class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
   before_action :logged_in_user
   # GET /courses or /courses.json
-  def index
-    @courses = Course.all
-  end
+  # def index
+  #   @courses = Course.all
+  # end
 
   # GET /courses/1 or /courses/1.json
   def show
