@@ -79,3 +79,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'

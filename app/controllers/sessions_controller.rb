@@ -19,6 +19,15 @@ class SessionsController < ApplicationController
     redirect_to root_url, status: :see_other
   end
 
+  def omniauth
+    user = User.from_omniauth(request.env['omniauth.auth'])
+    if user.valid?
+      session[:user_id] = user.id 
+      redirect_to user
+    else
+      redirect_to root_url, status: :see_other
+  end
+
   # Confirms a logged-in user.
   def logged_in_user
     unless logged_in?
