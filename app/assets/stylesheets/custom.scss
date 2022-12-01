@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 section {
@@ -337,3 +337,147 @@ input {
   margin-bottom: 5px;
 }
 
+.calendar-details-page {
+  margin: 100px;
+  padding: 20px;
+  background-color: rgba(235, 230, 230, 0.75);
+  border-radius: 10px;
+  border-width: 10px;
+  //brandeis blue
+  border: 5px solid #385988;
+}
+
+.calendar-overview{
+  background: #f8f8f8;
+  font-size: medium;
+  font-style: italic;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  // border-radius: 5px;
+  // border-width: 5px;
+  // border-style: ridge;
+  padding: 10px;
+}
+
+.calendar-table{
+  margin-top: 20px;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table tr {
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  padding: .35em;
+}
+
+
+ table th,
+table td {
+  padding: .625em;
+  text-align: left;
+}
+
+ table th {
+  background: #999;
+  color: #fff;
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-body{
+  margin: 0;
+  vertical-align: middle;
+}
+
+.calendar-event-box {
+  width: 100%;
+  padding: 10px;
+  margin: auto;
+  background-color:#f8f8f8;
+}
+
+.calendar-list-page {
+  margin: auto;
+  width: 80%;
+  // padding: 20px;
+  background-color: rgba(235, 230, 230, 0.75);
+  border-radius: 10px;
+  border-width: 10px;
+  //brandeis blue
+  border: 5px solid #385988;
+}
+
+.new-calendar-page {
+  margin: auto;
+  width: 80%;
+  // padding: 20px;
+  background-color: rgba(235, 230, 230, 0.75);
+  border-radius: 10px;
+  border-width: 10px;
+  //brandeis blue
+  border: 5px solid #385988;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+/* Style the input fields */
+.form-inline textarea {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.form-inline button {
+  margin: auto;
+  width: 20%;
+}
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+
+.search-calendar-button {
+  padding:20px;
+  margin: auto;
+}
+
+
+.subscribe-button{
+  margin-bottom:5px;
+  width: 200px;
+}

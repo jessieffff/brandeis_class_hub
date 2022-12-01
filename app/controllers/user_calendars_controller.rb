@@ -21,8 +21,19 @@ class UserCalendarsController < ApplicationController
   def create
     calendar = Calendar.find_by_invite_token(params[:calendar_invite_token])
     UserCalendar.where(calendar:, user: current_user).first_or_create
-    redirect_to root_path
+    redirect_to home_calendar_url
   end
+
+
+  def subscribe_calendar
+    calendar_id = params[:calendar_id]
+    @user_calendar = UserCalendar.create(
+      calendar_id: calendar_id,
+      user_id: Current.user.id,
+    )
+    redirect_to home_calendar_url
+  end
+ 
 
   # GET /user_calendars/1/edit
   def edit; end
