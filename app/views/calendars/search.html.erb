@@ -6,7 +6,7 @@
       <th>Calendar Name</th>
       <th>Description</th>
       <th>Creator</th>
-      <th>Subscribe</th>
+      <th>Details</th>
     </tr>
   </thead>
 
@@ -14,10 +14,10 @@
    
     <% @calendars.each do |calendar| %>
       <tr>
-        <td><%= calendar.name %></td>
+        <td><%= link_to calendar.name, calendar%></td>
         <td><%= calendar.description %></td>
         <td><%=  User.find_by(id: calendar.user_id).first_name + " " + User.find_by(id: calendar.user_id).last_name %></td>
-        <td><%= button_to "Subscribe to this calendar", UserCalendar.where(user_id: Current.user.id, calendar_id: calendar.id).first_or_create%> <td>
+        <td><%= link_to "Details", calendar%></td>
       </tr>
     <% end %>
   </tbody>

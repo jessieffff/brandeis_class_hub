@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :other_events, except: [:index]
   resources :holidays, except: [:index]
   resources :class_periods, except: [:index]
-  resources :user_calendars
+  # resources :user_calendars 
+  resources :user_calendars  do
+    collection { post :subscribe_calendar }
+  end
   # resources :courses
   resources :courses do
     collection { post :import }
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
   resources :calendars, param: :invite_token do
     resources :user_calendars, only: %i[new create]
   end
+  
   # Defines the root path route ("/")
   root 'static_pages#home'
   get "/signup", to: "users#new"
