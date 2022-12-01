@@ -1,6 +1,4 @@
 class HolidaysController < ApplicationController
-  include HolidaysHelper
-
   before_action :logged_in_user
   before_action :check_holiday, only: %i[ show edit update destroy ]
   # before_action :set_holiday, only: %i[ show edit update destroy ]
@@ -31,7 +29,8 @@ class HolidaysController < ApplicationController
 
     respond_to do |format|
       if @holiday.save
-        format.html { redirect_to holiday_url(@holiday), notice: "Holiday was successfully created." }
+        format.html { redirect_to calendar_holiday_path(Calendar.find_by(id: @holiday.calendar_id).invite_token, @holiday.slug), 
+          notice: "Holiday was successfully created." }
         format.json { render :show, status: :created, location: @holiday }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -73,12 +72,7 @@ class HolidaysController < ApplicationController
         render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
       end
     end
-
-    # def set_holiday
-    #   @holiday = Holiday.friendly.find_by_slug(params[:slug])
-    # end
-
-
+    
     # Only allow a list of trusted parameters through.
     def holiday_params
       params.require(:holiday).permit(:calendar_id, :name, :date, :holiday_type)

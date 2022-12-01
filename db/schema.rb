@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223123) do
   create_table "holidays", force: :cascade do |t|
     t.integer "calendar_id"
     t.string "name"
-    t.datetime "date"
+    t.date "date"
     t.string "holiday_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "home/calendar"
 
   resources :other_events, except: [:index]
-  resources :holidays, param: :slug
+  resources :holidays
   resources :class_periods, except: [:index]
   resources :user_calendars
   resources :courses do
@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :calendars, param: :invite_token do
     resources :user_calendars, only: %i[new create]
+    resources :holidays, param: :slug
   end
+  
   # Defines the root path route ("/")
   root 'static_pages#home'
   get "/signup", to: "users#new"
