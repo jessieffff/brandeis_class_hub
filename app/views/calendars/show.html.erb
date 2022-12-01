@@ -122,15 +122,14 @@
           </div>
         </div>
       </div>
-
-
-
+      <div class = "container" style = "width:70%" >
       <h3> Import Courses To This Calendar</h3>
         <%= form_tag import_from_excel_courses_url, multipart: true do %>
-          <%= file_field_tag :file %>
+          <%= file_field_tag :file%>
           <%= hidden_field_tag :calendar_id , @calendar.id %>
-          <%= submit_tag "Import courses" %>
+          <%= submit_tag "Import courses", class:"btn btn-sm btn-primary subscribe-button" %>
         <% end %>
+      </div>  
     <div>
     <% elsif UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %>
       <h3> 
