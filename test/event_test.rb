@@ -6,10 +6,12 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test "get url" do
+    calendar = Calendar.create(id: 2, invite_token:"Test")
     event = Holiday.create(id: 1, calendar_id: 2, name: "Christmas")
-    paths = {holiday: "holidayURL", assignment: "assignmentURL",
+    paths = {calendar: "calendarsURL", holiday: "holidayURL", assignment: "assignmentURL",
              class_period: "class_periodURL", other_event: "other_eventURL"}
-    assert_equal(Event.getURL(event, paths), "holidayURL/1")
+    puts event.calendar_id
+    assert_equal(Event.getURL(event, paths), "calendars/Test/holidays/christmas")
     
   end
 end
