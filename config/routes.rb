@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "home/calendar"
 
   resources :other_events, except: [:index]
-  resources :holidays, except: [:index]
+  resources :holidays, only: [:create, :new]
   resources :class_periods, except: [:index]
   # resources :user_calendars 
   resources :user_calendars  do
@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :courses do
     collection { post :import_from_excel }
   end
-  resources :courses
   resources :assignments
   resources :users
 
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :calendars, param: :invite_token do
     resources :user_calendars, only: %i[new create]
+    resources :holidays, param: :slug
   end
   
   # Defines the root path route ("/")
