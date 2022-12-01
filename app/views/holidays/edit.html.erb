@@ -5,7 +5,7 @@
     <% if @holiday.errors.any? %>
       <div style="color: red">
         <ul>
-          <% holiday.errors.each do |error| %>
+          <% @holiday.errors.each do |error| %>
             <li><%= error.full_message %></li>
           <% end %>
         </ul>
