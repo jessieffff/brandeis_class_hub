@@ -78,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223123) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.index ["name"], name: "index_holidays_on_name", unique: true
     t.index ["slug"], name: "index_holidays_on_slug", unique: true
   end
 
