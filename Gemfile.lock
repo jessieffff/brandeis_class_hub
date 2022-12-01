@@ -212,6 +212,14 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    roo (2.9.0)
+      nokogiri (~> 1)
+      rubyzip (>= 1.3.0, < 3.0.0)
+    roo-xls (1.2.0)
+      nokogiri
+      roo (>= 2.0.0, < 3)
+      spreadsheet (> 0.9.0)
+    ruby-ole (1.2.12.2)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -220,6 +228,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    spreadsheet (1.3.0)
+      ruby-ole
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -277,7 +287,12 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   rails-controller-testing
+<<<<<<< HEAD
   ransack (~> 3.2)
+=======
+  roo (~> 2.8)
+  roo-xls
+>>>>>>> development
   selenium-webdriver
   sprockets-rails
   stimulus-rails

@@ -122,8 +122,16 @@
           </div>
         </div>
       </div>
+
+
+
+      <h3> Import Courses To This Calendar</h3>
+        <%= form_tag import_from_excel_courses_url, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= hidden_field_tag :calendar_id , @calendar.id %>
+          <%= submit_tag "Import courses" %>
+        <% end %>
     <div>
-      
     <% elsif UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %>
       <h3> 
         <%= button_to "Unsubscribe from this calendar", UserCalendar.find_by(user_id: @current_user.id, calendar_id: @calendar.id), method: :delete, class:"btn btn-sm btn-primary"%> 
@@ -141,7 +149,6 @@
      <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-sm btn-primary" %>
     <% end %>
     </section>
-    
   </aside>
 </div>
 </div>

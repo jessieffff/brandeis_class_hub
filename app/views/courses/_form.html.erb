@@ -11,7 +11,7 @@
         </ul>
       </div>
     <% end %>
-
+    
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :calendar_id, style: "display: block" %>
@@ -63,11 +63,6 @@
           <%= form.check_box :repetition_frequency, { multiple: true }, 'F', false %>F
           <%= form.check_box :repetition_frequency, { multiple: true }, 'S', false %>Sa
           <%= form.check_box :repetition_frequency, { multiple: true }, 'U', false %>Su
-    </div>
-
-    <div class="input-group input-group-sm mb-3">
-      <%= form.submit :Update, class:"btn btn-lg btn-primary" %>
-    </div>
-    
+    </div>    
   <% end %>
 </div>

@@ -79,5 +79,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem "ransack", "~> 3.2"
+gem 'roo', '~> 2.8' 
+gem 'roo-xls'
