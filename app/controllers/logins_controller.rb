@@ -1,4 +1,3 @@
-# app/controllers/logins_controller.rb
 class LoginsController < ApplicationController
   def new
   end
