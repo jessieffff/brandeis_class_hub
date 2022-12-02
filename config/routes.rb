@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+
   get "home/calendar"
+  
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
 
   resources :other_events, except: [:index]
   resources :holidays, only: [:create, :new]

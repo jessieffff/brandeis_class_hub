@@ -7,8 +7,6 @@ ruby '3.1.2'
 gem "rails", "~> 7.0.4"
 gem "bcrypt",          "3.1.18"
 
-gem 'bootstrap-sass', '3.4.1'
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -82,3 +80,8 @@ end
 gem 'roo', '~> 2.8' 
 gem 'roo-xls'
 gem 'friendly_id', '~> 5.4.0'
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection", "~> 1.0"
