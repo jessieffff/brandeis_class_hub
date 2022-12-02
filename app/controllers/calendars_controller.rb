@@ -27,7 +27,7 @@ class CalendarsController < ApplicationController
   # POST /calendars or /calendars.json
   def create
     @calendar = Calendar.new(calendar_params)
-    @calendar.user_id = Current.user.id if Current.user
+    @calendar.user_id = current_user.id if current_user
     respond_to do |format|
       if @calendar.save
         n = UserCalendar.new(user_id: @calendar.user_id, calendar_id: @calendar.id, creator: true)

@@ -29,7 +29,7 @@ class UserCalendarsController < ApplicationController
     calendar_id = params[:calendar_id]
     @user_calendar = UserCalendar.create(
       calendar_id: calendar_id,
-      user_id: Current.user.id,
+      user_id: current_user.id,
     )
     redirect_to home_calendar_url
   end

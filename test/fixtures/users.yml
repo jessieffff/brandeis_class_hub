@@ -2,8 +2,7 @@
 
 #id is 980190962
 one:
-  first_name: David
-  last_name: Shapiro
-  student_id: 1
+  full_name: David Shapiro
   email: davidshapiro@brandeis.edu
-  password_digest: <%= User.digest('password') %>
+  encrypted_paessword: encrypted_password
+  

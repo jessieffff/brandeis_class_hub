@@ -12,11 +12,11 @@
   </thead>
 
   <tbody>
-    <% UserCalendar.where(user_id:Current.user.id).each do |calendar| %>
+    <% UserCalendar.where(user_id:current_user.id).each do |calendar| %>
       <tr>
         <td><%= calendar.calendar.name %></td>
         <td><%= calendar.calendar.description %></td>
-        <td><%= User.find_by(id: calendar.calendar.user_id).first_name + " " + User.find_by(id: calendar.calendar.user_id).last_name %></td>
+        <td><%= User.find_by(id: calendar.calendar.user_id).full_name%></td>
         <td><%= calendar.calendar.shared %></td>
         <td><%= link_to 'Details', calendar.calendar %></td>
       </tr>

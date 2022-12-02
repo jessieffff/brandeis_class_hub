@@ -106,7 +106,7 @@
   <aside>
     <section class="calendar-event-box" align="center">
     <%# <% if UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %> 
-    <% if Calendar.find_by(id: @calendar.id).user_id == Current.user.id %>
+    <% if Calendar.find_by(id: @calendar.id).user_id == current_user.id %>
       <h3>
         <%= link_to "Edit this calendar", edit_calendar_path(@calendar), class:"btn btn-sm btn-primary"%> |
         <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-sm btn-primary"%>

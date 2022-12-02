@@ -8,11 +8,8 @@
       <%= form_with(model: @user) do |f| %>
         <%= render 'shared/error_messages' %>
         
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: 'form-control' %>
-
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name, class: 'form-control' %>
+        <%= f.label :full_name %>
+        <%= f.text_field :full_name, class: 'form-control' %>
 
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>

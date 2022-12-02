@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to calendar.name, calendar%></td>
         <td><%= calendar.description %></td>
-        <td><%=  User.find_by(id: calendar.user_id).first_name + " " + User.find_by(id: calendar.user_id).last_name %></td>
+        <td><%=  User.find_by(id: calendar.user_id).full_name%></td>
         <td><%= link_to "Details", calendar%></td>
       </tr>
     <% end %>
