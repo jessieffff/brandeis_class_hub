@@ -17,6 +17,9 @@
       <%= form.select :calendar_id, CalendarHelper.load_calendars(current_user[:id]), include_blank:true %>
     </div>
 
+    <%= link_to "Create a New Course", new_course_path %>
+    <br><br>
+
     <div class="input-group input-group-sm mb-3">
       <span class='input-group-text'>Name</span>
       <%= form.text_field :name %>
@@ -29,7 +32,7 @@
 
     <div class="input-group input-group-sm mb-3>
       <%= form.label :start_time %>
-      <%= form.time_field %>
+      <%= form.time_field :start_time %>
     </div>
 
     <div class="input-group input-group-sm mb-3">

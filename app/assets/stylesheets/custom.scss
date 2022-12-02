@@ -5,6 +5,10 @@
 
 body {
     padding-top: 40px;
+    background-image: url(backgrounds/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 section {
@@ -118,7 +122,7 @@ footer {
 
 .calendar-container {
     display: grid;
-    grid-template-columns: repeat(7, 200px);
+    grid-template-columns: repeat(7, minmax(10px, 1fr));
 }
 
 .day-calender-item {
@@ -283,6 +287,7 @@ input {
   background-image: url("backgrounds/background1.jpg");
   background-size: cover;
   min-width: 100%;
+  min-height: 600px;
 
 }
 

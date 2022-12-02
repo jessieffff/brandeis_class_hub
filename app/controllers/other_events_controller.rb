@@ -22,7 +22,6 @@ before_action :logged_in_user
   # POST /other_events or /other_events.json
   def create
     @other_event = OtherEvent.new(other_event_params)
-
     respond_to do |format|
       if @other_event.save
         format.html { redirect_to other_event_url(@other_event), notice: "Other event was successfully created." }
@@ -65,8 +64,6 @@ before_action :logged_in_user
 
     # Only allow a list of trusted parameters through.
     def other_event_params
-      params['other_event']['start_time'] = Time.parse(params['other_event']['start_time']).strftime("%I:%M%p")
-      params['other_event']['end_time'] = Time.parse(params['other_event']['end_time']).strftime("%I:%M%p")
       params.require(:other_event).permit(:calendar_id, :name, :start_time, :end_time, :date)
     end
 

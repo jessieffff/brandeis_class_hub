@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_action :set_current_user
+  before_action :set_current_user, :set_class
 
   include SessionsHelper
 
@@ -22,5 +22,8 @@ class ApplicationController < ActionController::Base
 
   def route_not_found
     render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
+  end
+  def set_class
+    #This is where we can set class for diff pics on diff pages
   end
 end
