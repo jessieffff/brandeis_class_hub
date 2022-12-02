@@ -15,6 +15,9 @@
       <%= form.select :calendar_id, CalendarHelper.load_calendars(current_user[:id]), include_blank:true %>
     </div>
 
+    <%= link_to "Create a New Calendar", new_calendar_path %>
+    <br><br>
+
     <div class="input-group input-group-sm mb-3">
       <%= form.label :holiday_name, style: "display: block" %>
       <%= form.text_field :name %>

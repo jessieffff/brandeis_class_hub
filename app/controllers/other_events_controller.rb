@@ -65,6 +65,8 @@ before_action :logged_in_user
 
     # Only allow a list of trusted parameters through.
     def other_event_params
+      params['other_event']['start_time'] = Time.parse(params['other_event']['start_time']).strftime("%I:%M%p")
+      params['other_event']['end_time'] = Time.parse(params['other_event']['end_time']).strftime("%I:%M%p")
       params.require(:other_event).permit(:calendar_id, :name, :start_time, :end_time, :date)
     end
 

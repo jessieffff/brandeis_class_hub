@@ -7,7 +7,6 @@ class CreateCourses < ActiveRecord::Migration[7.0]
       t.date :end_date
       t.string :start_time
       t.string :end_time
-      t.string :location
       t.string :professor_name
       t.string :repetition_frequency
       
