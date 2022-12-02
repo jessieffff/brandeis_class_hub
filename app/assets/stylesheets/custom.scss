@@ -484,7 +484,11 @@ table td {
 
 .weekday-selector{
   width: 5%;
-  margin-left: 20%;
+  margin-left: -60%;
   white-space: nowrap;
 }
 
+.search-form-input{
+  width: 60%;
+  padding:10px;
+}
