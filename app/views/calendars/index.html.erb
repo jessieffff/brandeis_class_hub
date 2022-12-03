@@ -17,7 +17,11 @@
         <td><%= calendar.calendar.name %></td>
         <td><%= calendar.calendar.description %></td>
         <td><%= User.find_by(id: calendar.calendar.user_id).first_name + " " + User.find_by(id: calendar.calendar.user_id).last_name %></td>
-        <td><%= calendar.calendar.shared %></td>
+        <% if calendar.calendar.shared %>
+          <td> Public</td>
+        <% else%>
+          <td> Not public </td>
+        <%end%>
         <td><%= link_to 'Details', calendar.calendar %></td>
       </tr>
     <% end %>

@@ -1,3 +1,7 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,11 +18,17 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container main-template">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <div class="container main-template flash_msgs">
+      <% [:notice, :success,:danger, :alert].each do |level| %>
+        <% unless flash[level].blank? %>
+        <div class=" alert-dismissable alert <%= flash_class(level) %> fade in">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <%= content_tag :p, flash[level] %>
+        </div>
       <% end %>
-      <%= yield %>
+    <% end %>
+    <%= yield %>
     </div>
   </body>
 </html>
+

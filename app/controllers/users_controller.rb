@@ -30,7 +30,7 @@ class UsersController < ApplicationController
         reset_session
         log_in @user
         flash[:success] = 'Welcome to Brandeis Class Hub!'
-        format.html { redirect_to user_url(@user), notice: 'User was successfully created.' }
+        format.html { redirect_to home_calendar_url, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }

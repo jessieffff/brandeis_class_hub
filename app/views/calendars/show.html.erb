@@ -1,5 +1,5 @@
 
-<p style="color: green"><%= notice %></p>
+
 <div class = "calendar-details-page">
 <%= render @calendar %>
 <div class = "calendar-table">
@@ -45,7 +45,7 @@
             <td scope="row"><%= holiday.name %></td>
             <td scope="row"><%= holiday.date %></td>
             <td scope="row"><%= holiday.holiday_type %></td>
-            <td scope="row"><%= link_to "Show this holiday", holiday %> <td>
+            <td scope="row"><%= link_to "Show this holiday", calendar_holiday_path(Calendar.find_by(id: holiday.calendar_id).invite_token, holiday.slug) %> <td>
           </tr>
         <% end %>
       </tbody>
