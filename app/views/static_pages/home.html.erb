@@ -1,22 +1,16 @@
 <div class="center jumbotron">
 <section align="center">
   <h1>Welcome to the Brandeis Class Hub</h1>
-  <% if current_user %>
-    <h2><%= current_user.email %></h2>
-    <%= image_tag(current_user.avatar_url) %>
-    <%= link_to "Edit Account", edit_user_registration_path %>
-    <%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %>
-  <% else %>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Create Account", new_user_registration_path %>
-  <% end %>
   </div>
 </section>
 
 <section align="center">
 <%# <%= link_to "Sign up", "#", class: "btn btn-lg btn-primary" %>
 <%# <%= link_to "Log in", "#", class: "btn btn-lg btn-primary" %> 
-<%= link_to "Calender View", home_calendar_path, class: "btn btn-lg btn-primary" %>
+<%= link_to "Sign In", new_user_session_path, class: "btn btn-lg btn-primary" %>
 </section>
+
+
+
 
 

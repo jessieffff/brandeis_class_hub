@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
 
-  get "home/calendar"
-  
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-
 
   resources :other_events, except: [:index]
   resources :holidays, only: [:create, :new]
@@ -23,19 +20,16 @@ Rails.application.routes.draw do
   resources :assignments
   resources :users
 
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :calendars, param: :invite_token do
     resources :user_calendars, only: %i[new create]
     resources :holidays, param: :slug
   end
-  
+
   # Defines the root path route ("/")
   root 'static_pages#home'
-  get "/signup", to: "users#new"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+
+  get "home/calendar"
   get 'search', to: "calendars#search"
   get 'subscribe', to: 'static_pages#subscribe'
 end

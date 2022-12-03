@@ -1,6 +1,6 @@
 class OtherEventsController < ApplicationController
   before_action :set_other_event, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+  before_action :logged_in_user
   # GET /other_events or /other_events.json
   def index
     @other_events = OtherEvent.all
