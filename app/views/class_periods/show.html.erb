@@ -3,17 +3,12 @@
 
 
 <div>
-  <h1><%= @class_period.name %></h1>
+  <h3><%= @class_period.name %></h3>
 </div>
 
 <div>
-  <strong>Start Time</strong>
-  <p><%= @class_period.start_time.strftime("%I:%M%p") %></p>
-</div>
-
-<div>
-  <strong>End Time</strong>
-  <p><%= @class_period.end_time.strftime("%I:%M%p") %></p>
+  <strong>Time</strong>
+  <p><%= @class_period.start_time.strftime("%I:%M%p").to_s + " to " + @class_period.end_time.strftime("%I:%M%p").to_s %></p>
 </div>
 
 <div>

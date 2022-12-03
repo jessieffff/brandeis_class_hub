@@ -71,9 +71,8 @@ class CoursesController < ApplicationController
           name: spreadsheet.row(i)[1],
           start_date: spreadsheet.row(i)[10],
           end_date: spreadsheet.row(i)[11],
-          start_time: time[0..time.index('-') - 2],
-          end_time: time[time.index('-') + 2..time.length],
-          location: spreadsheet.row(i)[6],
+          start_time: ActiveSupport::TimeZone['UTC'].parse(time[0..time.index('-') - 2]),
+          end_time: ActiveSupport::TimeZone['UTC'].parse(time[time.index('-') + 2..time.length]),
           professor_name: spreadsheet.row(i)[9],
           repetition_frequency: spreadsheet.row(i)[7][0, divider_index[0]]
         )
@@ -83,6 +82,7 @@ class CoursesController < ApplicationController
       flash[:notice] = "Records Imported"
       redirect_to courses_url
     rescue Exception => e
+      puts e
       flash[:notice] = "Issues with file"
       redirect_to courses_url
     end
