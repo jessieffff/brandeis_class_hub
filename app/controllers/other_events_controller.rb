@@ -22,7 +22,6 @@ class OtherEventsController < ApplicationController
   # POST /other_events or /other_events.json
   def create
     @other_event = OtherEvent.new(other_event_params)
-
     respond_to do |format|
       if @other_event.save
         format.html { redirect_to other_event_url(@other_event), notice: "Other event was successfully created." }

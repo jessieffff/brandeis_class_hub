@@ -3,27 +3,27 @@
 one:
   course_id: 1
   name: COSCI_CLASS
-  start_time: 10:00
-  end_time: 12:00
+  start_time: <%= Time.zone.local(2000, 1, 1, 10, 0, 0) %>
+  end_time: <%= Time.zone.local(2000, 1, 1, 12, 0, 0) %>
   date: 2022-10-03
 
 two:
   course_id: 2
   name: COSCI_CLASS
-  start_time: 10:00
-  end_time: 12:00
+  start_time: <%= Time.zone.local(2000, 1, 1, 10, 0, 0) %>
+  end_time: <%= Time.zone.local(2000, 1, 1, 12, 0, 0) %>
   date: 2022-10-05
 
 three:
   course_id: 3
   name: COSCI_CLASS
-  start_time: 10:00
-  end_time: 12:00
+  start_time: <%= Time.zone.local(2000, 1, 1, 10, 0, 0) %>
+  end_time: <%= Time.zone.local(2000, 1, 1, 12, 0, 0) %>
   date: 2022-10-06
 
 four:
   course_id: 3
   name: COSCI_CLASS
-  start_time: 10:00
-  end_time: 12:00
+  start_time: <%= Time.zone.local(2000, 1, 1, 10, 0, 0) %>
+  end_time: <%= Time.zone.local(2000, 1, 1, 12, 0, 0) %>
   date: 2022-10-10

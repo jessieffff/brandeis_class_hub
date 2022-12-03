@@ -16,7 +16,7 @@
     <%= javascript_importmap_tags %>
 
   </head>
-  <body>
+  <body class=<%= @class %>>
     <%= render 'layouts/header' %>
     <div class="container main-template flash_msgs">
       <% [:notice, :success,:danger, :alert].each do |level| %>

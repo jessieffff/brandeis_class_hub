@@ -17,7 +17,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
   create_table "assignments", force: :cascade do |t|
     t.integer "calendar_id"
     t.string "name"
-    t.datetime "due_date"
+    t.date "due_date"
+    t.time "due_time"
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,8 +39,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
     t.integer "calendar_id"
     t.integer "course_id"
     t.string "name"
-    t.string "start_time"
-    t.string "end_time"
+    t.time "start_time"
+    t.time "end_time"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,9 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
-    t.string "start_time"
-    t.string "end_time"
-    t.string "location"
+    t.time "start_time"
+    t.time "end_time"
     t.string "professor_name"
     t.string "repetition_frequency"
     t.datetime "created_at", null: false
@@ -86,8 +86,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
   create_table "other_events", force: :cascade do |t|
     t.integer "calendar_id"
     t.string "name"
-    t.string "start_time"
-    t.string "end_time"
+    t.time "start_time"
+    t.time "end_time"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -104,7 +104,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "student_id"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
