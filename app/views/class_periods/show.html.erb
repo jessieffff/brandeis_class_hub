@@ -1,9 +1,12 @@
-<h1>Class Period</h1>
+<h1>Class Information </h1>
 <div class="container event-box" align="center">
-
 
 <div>
   <h3><%= @class_period.name %></h3>
+</div>
+<div>
+  <strong>Date</strong>
+  <p><%= @class_period.date %></p>
 </div>
 
 <div>
@@ -16,9 +19,15 @@
     <%= link_to "Edit", edit_class_period_path(@class_period), class:"btn btn-sm btn-primary" %> |
   <%end%>
   <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
+  <br>
   <% if Calendar.find_by(id: @class_period.calendar_id).user_id == Current.user.id%>
     <div class="delete-button">
-      <%= button_to "Delete this assignment", @class_period, method: :delete, class:"btn btn-sm btn-primary" %>
+      <%= link_to "Edit all class information", edit_course_path(@class_period.course_id),class:"btn btn-sm btn-primary" %>
+    </div>
+  <% end %>
+  <% if Calendar.find_by(id: @class_period.calendar_id).user_id == Current.user.id%>
+    <div class="delete-button">
+      <%= button_to "Delete this class", @class_period, method: :delete, class:"btn btn-sm btn-primary" %>
     </div>
   <%end%>  
 </div>
