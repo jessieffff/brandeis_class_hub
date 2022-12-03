@@ -19,7 +19,7 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container main-template flash_msgs">
-      <% [:notice, :success,:error, :alert].each do |level| %>
+      <% [:notice, :success,:danger, :alert].each do |level| %>
         <% unless flash[level].blank? %>
         <div class=" alert-dismissable alert <%= flash_class(level) %> fade in">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

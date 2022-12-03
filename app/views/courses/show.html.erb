@@ -1,6 +1,6 @@
 <h1>Course</h1>
 <div class="container event-box" align="center">
-  <p style="color: green"><%= notice %></p>
+
   
 <div>
   <h3><%= @course.name %></h3>
@@ -26,7 +26,7 @@
     <%= link_to "Edit this course", edit_course_path(@course),class:"btn btn-sm btn-primary" %> |
     <%= link_to "Back to courses", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
     <div class="delete-button">
-      <%= button_to "Destroy this course", @course, method: :delete, class:"btn btn-sm btn-primary" %>
+      <%= button_to "Delete this course", @course, method: :delete, class:"btn btn-sm btn-primary" %>
     </div>
   </div>
 </div>

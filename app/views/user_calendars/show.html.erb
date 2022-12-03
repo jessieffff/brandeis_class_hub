@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+
 
 <%= render @user_calendar %>
 
@@ -6,5 +6,5 @@
   <%= link_to "Edit this user calendar", edit_user_calendar_path(@user_calendar) %> |
   <%= link_to "Back to user calendars", user_calendars_path %>
 
-  <%= button_to "Destroy this user calendar", @user_calendar, method: :delete %>
+  <%= button_to "Delete this user calendar", @user_calendar, method: :delete %>
 </div>
