@@ -12,11 +12,14 @@
 </div>
 
 <div>
-  <%= link_to "Edit",edit_calendar_holiday_path(Calendar.find_by(id: @holiday.calendar_id).invite_token, @holiday.slug), class:"btn btn-sm btn-primary" %> |
-  <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
-
-  <div class="delete-button">
-    <%= button_to  "Delete this holiday", calendar_holiday_path, method: :delete, class:"btn btn-sm btn-primary" %>
-  </div>
+  <% if Calendar.find_by(id: @holiday.calendar_id).user_id == Current.user.id%>
+    <%= link_to "Edit",edit_calendar_holiday_path(Calendar.find_by(id: @holiday.calendar_id).invite_token, @holiday.slug), class:"btn btn-sm btn-primary" %> |
+  <%end%>
+    <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
+  <% if Calendar.find_by(id: @holiday.calendar_id).user_id == Current.user.id%>
+    <div class="delete-button">
+      <%= button_to  "Delete this holiday", calendar_holiday_path, method: :delete, class:"btn btn-sm btn-primary" %>
+    </div>
+  <%end%>
 </div>
 </div>

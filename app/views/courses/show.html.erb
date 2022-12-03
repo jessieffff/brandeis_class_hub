@@ -23,10 +23,14 @@
 
 
   <div>
-    <%= link_to "Edit this course", edit_course_path(@course),class:"btn btn-sm btn-primary" %> |
-    <%= link_to "Back to courses", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
-    <div class="delete-button">
-      <%= button_to "Delete this course", @course, method: :delete, class:"btn btn-sm btn-primary" %>
-    </div>
+    <% if Calendar.find_by(id: @course.calendar_id).user_id == Current.user.id%>
+      <%= link_to "Edit", edit_course_path(@course),class:"btn btn-sm btn-primary" %> |
+    <% end %>
+      <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
+    <% if Calendar.find_by(id: @course.calendar_id).user_id == Current.user.id%>
+      <div class="delete-button">
+        <%= button_to "Delete this course", @course, method: :delete, class:"btn btn-sm btn-primary" %>
+      </div>
+    <%end%>
   </div>
 </div>
