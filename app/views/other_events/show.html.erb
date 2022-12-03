@@ -3,17 +3,12 @@
 
 
 <div>
-  <p><%= @other_event.name %></p>
+  <h3><%= @other_event.name %></h3>
 </div>
 
 <div>
-  <strong>Start Time</strong>
-  <p><%= @other_event.start_time.strftime("%I:%M%p") %></p>
-</div>
-
-<div>
-  <strong>End Time</strong>
-  <p><%= @other_event.end_time.strftime("%I:%M%p") %></p>
+  <strong>Time</strong>
+  <p><%= @other_event.start_time.strftime("%I:%M%p").to_s + " to " + @other_event.end_time.strftime("%I:%M%p").to_s %></p>
 </div>
 
 <div>
