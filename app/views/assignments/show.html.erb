@@ -1,9 +1,13 @@
-<h1>Assignment</h1>
+<h1>Assignment Information</h1>
 <div class="container event-box" align="center">
-
 
 <div>
   <h3><%= @assignment.name %></h3>
+</div>
+
+<div>
+  <strong>Course Name</strong>
+  <p><%=Course.find_by(id: @assignment.course_id).name%></p>
 </div>
 
 <div>

@@ -37,7 +37,7 @@ class OtherEventsController < ApplicationController
   def update
     respond_to do |format|
       if @other_event.update(other_event_params)
-        format.html { redirect_to calendars_url(@other_event), notice: "Other event was successfully updated." }
+        format.html { redirect_to other_event_url(@other_event), notice: "Other event was successfully updated." }
         format.json { render :show, status: :ok, location: @other_event }
       else
         format.html { render :edit, status: :unprocessable_entity }

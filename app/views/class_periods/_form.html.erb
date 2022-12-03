@@ -12,14 +12,14 @@
       </div>
     <% end %>
 
-    <div class="input-group input-group-sm mb-3">
-      <%= form.label :course_id, style: "display: block" %>
-      <%= form.select :calendar_id, CalendarHelper.load_courses(current_user[:id]), include_blank:true %>
+    <div>
+      <h3><%= @class_period.name %></h3>
     </div>
 
-    <%= link_to "Create a New Course", new_course_path %>
-    <br><br>
-
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :date, style: "display: block" %>
+      <%= form.date_field :date %>
+    </div>
     <div class="input-group input-group-sm mb-3">
       <%= form.label :start_time, style: "display: block" %>
       <%= form.time_field :start_time %>
