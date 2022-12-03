@@ -1,6 +1,6 @@
 class OtherEventsController < ApplicationController
   before_action :set_other_event, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+  before_action :logged_in_user
   # GET /other_events or /other_events.json
   def index
     @other_events = OtherEvent.all
@@ -37,7 +37,7 @@ before_action :logged_in_user
   def update
     respond_to do |format|
       if @other_event.update(other_event_params)
-        format.html { redirect_to other_event_url(@other_event), notice: "Other event was successfully updated." }
+        format.html { redirect_to calendars_url(@other_event), notice: "Other event was successfully updated." }
         format.json { render :show, status: :ok, location: @other_event }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ before_action :logged_in_user
     @other_event.destroy
 
     respond_to do |format|
-      format.html { redirect_to other_events_url, notice: "Other event was successfully destroyed." }
+      format.html { redirect_to calendars_url, notice: "Other event was successfully destroyed." }
       format.json { head :no_content }
     end
   end

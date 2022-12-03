@@ -1,6 +1,6 @@
 <h1>Event</h1>
 <div class="container event-box" align="center">
-<p style="color: green"><%= notice %></p>
+
 
 <div>
   <p><%= @other_event.name %></p>
@@ -17,11 +17,14 @@
 </div>
 
 <div>
-  <%= link_to "Edit", edit_other_event_path(@other_event), class:"btn btn-sm btn-primary" %> |
-  <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
-
-  <div class="delete-button">
-    <%= button_to "Delete this assignment", @other_event, method: :delete, class:"btn btn-sm btn-primary" %>
-  </div>
+  <% if Calendar.find_by(id: @other_event.calendar_id).user_id == Current.user.id%>
+    <%= link_to "Edit", edit_other_event_path(@other_event), class:"btn btn-sm btn-primary" %> |
+  <%end%>
+    <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
+  <% if Calendar.find_by(id: @other_event.calendar_id).user_id == Current.user.id%>
+    <div class="delete-button">
+      <%= button_to "Delete this assignment", @other_event, method: :delete, class:"btn btn-sm btn-primary" %>
+    </div>
+  <%end%>
 </div>
 </div>

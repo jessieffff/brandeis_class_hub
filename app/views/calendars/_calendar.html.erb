@@ -18,7 +18,11 @@
 
   <p>
     <strong>Public:</strong>
-    <%= calendar.shared %>
+    <% if calendar.shared %>
+      <td> Public</td>
+    <% else%>
+      <td> Not public </td>
+    <%end%>
   </p>
 
 </div>
