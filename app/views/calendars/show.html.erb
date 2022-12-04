@@ -20,7 +20,7 @@
           <tr>
             <td scope="row"><%= assignment.name %></td>
             <td scope="row"><%= assignment.due_date %></td>
-            <td scope="row"><%=  Course.find_by(id: assignment.course_id) %></td>
+            <td scope="row"><%=  Course.find_by(id: assignment.course_id).name %></td>
             <td scope="row"><%= link_to "Show this assignment", assignment %> <td>
           </tr>
         <% end %>
@@ -94,7 +94,7 @@
           <tr>
             <td scope="row"><%= other.name %></td>
             <td scope="row"><%= other.date %></td>
-            <td scope="row"><%= other.start_time.to_s + " - " + other.end_time.to_s %></td>
+            <td scope="row"><%= other.start_time.strftime("%I:%M%p").to_s + " - " + other.end_time.strftime("%I:%M%p").to_s  %></td>
             <td scope="row"><%= link_to "Show this event", other %> <td>
           </tr>
         <% end %>
