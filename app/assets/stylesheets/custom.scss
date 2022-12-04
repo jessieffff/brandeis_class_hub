@@ -497,3 +497,119 @@ table td {
   width: 60%;
   padding:10px;
 }
+
+
+
+
+.intro-container{
+  margin-left:10px;
+  padding-top:20px;
+}
+
+.slogan{
+  margin-left: -30px;
+  margin-top:20px;
+  font-size: 45px;
+  font-family: "Righteous", sans-serif;
+}
+
+.intro{
+  
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+/* CSS */
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width:175px;
+  font-size: 20px;
+  text-align:center;
+  color:black;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+
+// .landing-carousel{
+//   width: 40%;
+//   margin-left:500px;
+//   margin-top: 0px;
+// }
+
+.landing-carousel {
+  // width: 80%;
+
+  padding-bottom: 40px;
+    position: absolute;
+      right: 200px;
+      width: 500px;
+}     
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+
+// .highlight {
+//   display: inline;
+//   padding: .25em 0;
+//   background: black;
+//   color: #ffffff;
+//   letter-spacing: .06em;
+//   box-shadow: .5em 0 0 #FFC107, -.5em 0 0 #FFC107;
+//   line-height: 1em;
+// }
+
+.highlight {
+  text-decoration: underline;
+  text-decoration-color: white;
+  color:black;
+  @supports (text-decoration-skip-ink: none) and (text-underline-offset: 1em) {
+    text-underline-offset: -0.65em;
+    text-decoration-thickness: 0.9em;
+    text-decoration-skip-ink: none;
+  }
+}
