@@ -18,10 +18,10 @@ class CalendarHelperTest < ActiveSupport::TestCase
         {name: "COSCI_CLASS", course_id: 1, start_time: Time.zone.local(2000, 1, 1, 10, 0, 0), end_time: Time.zone.local(2000, 1, 1, 12, 0, 0), date: Date.new(2022, 10, 06)}
     ]
     for i in 0...4 do
-        #assert_equal(all_params[i][:name], correct_params[i][:name])
-        #assert_equal(all_params[i][:start_time], correct_params[i][:start_time])
-        #assert_equal(all_params[i][:end_time], correct_params[i][:end_time])
-        #assert_equal(all_params[i][:date], correct_params[i][:date])
+        assert_equal(all_params[i][:name], correct_params[i][:name])
+        assert_equal(all_params[i][:start_time], correct_params[i][:start_time])
+        assert_equal(all_params[i][:end_time], correct_params[i][:end_time])
+        assert_equal(all_params[i][:date], correct_params[i][:date])
     end
   end 
 end

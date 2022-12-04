@@ -24,6 +24,19 @@ class AssignmentsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
+  test "should not create if no name" do
+    visit assignments_url
+    click_on "New assignment"
+
+    fill_in "Calendar", with: @assignment.calendar_id
+    fill_in "Course", with: @assignment.course_id
+    fill_in "Due date", with: @assignment.due_date
+    click_on "Create Assignment"
+
+    assert_text "Assignment was successfully created"
+    click_on "Back"
+  end
+
   test "should update Assignment" do
     visit assignment_url(@assignment)
     click_on "Edit this assignment", match: :first

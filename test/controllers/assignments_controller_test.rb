@@ -4,7 +4,7 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     log_in_as(@user)
-    @assignment = assignments(:one)
+    @assignment = assignments(:two)
   end
 
   test "should get new" do
@@ -13,6 +13,12 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create assignment" do
+    assert_difference("Assignment.count") do
+      debugger
+      post assignments_url, params: { assignment: { calendar_id: @assignment.calendar_id, name: @assignment.name, due_date: @assignment.due_date, due_time: @assignment.due_time, course_id: @assignment.course_id} }
+      debugger
+    end
+    assert_redirected_to assignment_url(Assignment.last)
   end
 
   test "should show assignment" do
