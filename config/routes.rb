@@ -30,4 +30,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get 'search', to: "calendars#search"
   get 'subscribe', to: 'static_pages#subscribe'
+
+
+  get 'auth/:provider/callback', to: 'sessions#googleAuth'
+  get 'auth/failure', to: redirect('/')
+  delete 'signout', to: 'sessions#destroy', as: 'signout'
 end
