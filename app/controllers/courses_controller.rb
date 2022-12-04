@@ -96,9 +96,17 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
-      params['course']['start_time'] = Time.parse(params['course']['start_time']).strftime("%I:%M%p")
-      params['course']['end_time'] = Time.parse(params['course']['end_time']).strftime("%I:%M%p")
+      if params['course']['repetition_frequency'] != nil
+        params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
+      end
+
+      if params['course']['start_time'] != ""
+        params['course']['start_time'] = Time.parse(params['course']['start_time']).strftime("%I:%M%p")
+      end
+
+      if params['course']['end_time'] != ""
+        params['course']['end_time'] = Time.parse(params['course']['end_time']).strftime("%I:%M%p")
+      end
       params.require(:course).permit(:calendar_id, :name, :start_time, :end_time, :start_date, :end_date, :location, :professor_name, :repetition_frequency)
     end
 
