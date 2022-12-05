@@ -16,4 +16,10 @@ class Course < ApplicationRecord
     foreign_key: 'course_id', # name of column containing FK in other table
     dependent: :destroy_async
   )
+
+  has_many(
+    :assignments,
+    foreign_key: 'course_id', # name of column containing FK in other table
+    dependent: :destroy_async
+  )
 end

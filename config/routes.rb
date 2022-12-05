@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :other_events, param: :slug, except: [:index]
     resources :courses, param: :slug, except: [:index] do 
       resources :assignments, param: :slug, except: [:index]
+      resources :class_periods, except: [:index]
     end
   end
 
