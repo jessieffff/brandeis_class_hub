@@ -21,7 +21,8 @@
             <td scope="row"><%= assignment.name %></td>
             <td scope="row"><%= assignment.due_date %></td>
             <td scope="row"><%=  Course.find_by(id: assignment.course_id).name %></td>
-            <td scope="row"><%= link_to "Show this assignment", assignment %> <td>
+            <td scope="row"><%= link_to "Show this assignment", calendar_course_assignment_path(Calendar.find_by(id: assignment.calendar_id).invite_token, 
+          Course.find_by(id: assignment.course_id).slug, assignment.slug) %> <td>
           </tr>
         <% end %>
       </tbody>

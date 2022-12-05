@@ -8,6 +8,6 @@ one:
 
 two:
   calendar_id: 1
-  name: MyString
+  name: MyString2
   due_date: 2022-10-21 15:11:19
   course_id: 1

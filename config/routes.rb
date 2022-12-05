@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :other_events, only: [:create, :new]
   resources :holidays, only: [:create, :new]
   resources :class_periods, except: [:index]
+  resources :assignments, only: [:create, :new]
+  resources :users
   resources :user_calendars  do
     collection { post :subscribe_calendar }
   end
@@ -11,8 +13,7 @@ Rails.application.routes.draw do
   resources :courses do
     collection { post :import_from_excel }
   end
-  resources :assignments
-  resources :users
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -20,8 +21,11 @@ Rails.application.routes.draw do
     resources :user_calendars, only: %i[new create]
     resources :holidays, param: :slug, except: [:index]
     resources :other_events, param: :slug, except: [:index]
-    resources :courses, param: :slug, except: [:index]
+    resources :courses, param: :slug, except: [:index] do 
+      resources :assignments, param: :slug, except: [:index]
+    end
   end
+
   
   # Defines the root path route ("/")
   root 'static_pages#home'
