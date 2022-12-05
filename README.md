@@ -15,6 +15,9 @@ https://trello.com/b/heBEa0Pv/main
 ### Heroku Link
 https://safe-woodland-06100.herokuapp.com/
 
+### Final Report Link
+It can be found [here](final-report.md)
+
 ### URL patterns
 **Root (/):** This gives the base view of the app, currently just our logo and a button to log in/sign up.
 
