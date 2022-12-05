@@ -30,7 +30,8 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.provider = auth.provider
       user.uid = auth.uid
-      user.password_digest = access_token.credentials.token
+      user.password = Digest::SHA1.hexdigest(auth.uid)
+      user.image_url = auth.info.image
     end
 
   end

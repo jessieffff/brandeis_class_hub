@@ -109,9 +109,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
     t.string "uid"
     t.string "google_token"
     t.string "google_refresh_token"
+    t.string "password_digest"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

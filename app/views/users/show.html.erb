@@ -6,7 +6,11 @@
   </div>
   
   <div>
-    <%= link_to "Edit", edit_user_path(@user), class:"btn btn-sm btn-primary" %> |
+   <% if @user.image_url%>
     <%= link_to "Back", home_calendar_path, class:"btn btn-sm btn-primary"%>
+   <% else%>
+   <%= link_to "Edit", edit_user_path(@user), class:"btn btn-sm btn-primary" %> |
+    <%= link_to "Back", home_calendar_path, class:"btn btn-sm btn-primary"%>
+    <%end%>
   </div>
 </div>

@@ -2,12 +2,6 @@ class SessionsController < ApplicationController
   before_action :logged_in_user, only: %i[edit update]
   def new; end
 
-  # def create
-  #   user = User.from_omniauth(env["omniauth.auth"])
-  #   session[:user_id] = user.id
-  #   redirect_to root_url, notice: "Signed in!"
-  # end
-
   def destroy
     session[:user_id] = nil
     redirect_to root_url, notice: "Signed out!"
@@ -41,8 +35,15 @@ class SessionsController < ApplicationController
     # Note: Refresh_token is only sent once during the first request
     refresh_token = access_token.credentials.refresh_token
     user.google_refresh_token = refresh_token if refresh_token.present?
-    user.save
-    redirect_to root_path
+    if user.save
+      flash[:success] = 'Welcome to Brandeis Class Hub!'
+      redirect_to home_calendar_url
+    else 
+      puts "print errors"
+      user.errors.full_messages.each do |msg| 
+        puts msg 
+      end
+    end
   end
 
 end
