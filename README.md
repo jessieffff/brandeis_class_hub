@@ -16,31 +16,52 @@ https://trello.com/b/heBEa0Pv/main
 https://safe-woodland-06100.herokuapp.com/
 
 ### URL patterns
-**Root (/):** This gives the base view of the app, currently just our logo and a button to log in/sign up.
+**Root (/):** This shows the landing page of the app, it introduces the concept of the app and has a carousel showing main functionalities.
+**Calendar View (/home/calendar):** This is the main page of the app, where users see all their events showing one a calendar.
+**Search (/search):** This page shows the search result of calendars. 
+**Subscribe (/subscribe):** This page is where users have options to subscribe to more calendars.
 
 **Calendar Routes:**
-- Route: */calendars* - /calendars refers to a single calendar.
+- Route: */calendars* - /calendars refers to a list of calendars this user has.
 - Methods: *#index*, *#create*
-  - #index shows the current calendars.
+  - #index shows the calendars.
   - #create allows the user to create a new calendar; it renders /new.
-- Sub-routes on /calendar: */new*, */:id* 
-  - /:id refers to the specific calendar.
-  - Methods on /:id - *#show*, *#update*, *#destroy*
+- Sub-routes on /calendar: */new*, */:index* 
+  - /:invite_token refers to the specific calendar.
+  - Methods on /:invite_token - *#show*, *#update*, *#destroy*
     - #show shows the current calendar.
     - #update updates the current calendar.
     - #destroy deletes the current calendar.
-  - Sub-route on /:id - /edit, which changes the settings on the current calendar.
+  - Sub-route on /:invite_token - /edit, which changes the settings on the current calendar.
+
+**UserCalendar Routes:**
+- Route: */user_calendars* - /calendars refers to a list of calendars with users.
+- Methods: *#index*, *#create*, *#subscribe*
+  - #index shows the user calendars.
+  - #create allows the user to create a new user calendar;
+  - #subscribe allows the user to subscribe to another calendar in the database; it renders /subscribe_calendar
+- Sub-routes on /user_calendars: */new*, */:index* 
+  - /:id refers to the specific calendar.
+  - Methods on /:id - *#show*, *#update*, *#destroy*
+    - #show shows the current user calendar.
+    - #update updates the current user calendar.
+    - #destroy deletes the current user calendar.
+  - Sub-route on /:id - /edit, which changes the settings on the current user calendar.
   
 **Event Routes**
 - Routes: */events*, */holidays*, */class_periods*, */courses*, */assignments*
   - All of these have the same methods, but are different types of event.
-- Methods on the event routes: *#index*, *#create*
-  - #index shows all events a user has of the specified type.
-  - #create makes a new event of the specified type, it renders /new.
-- Sub-routes for all event routes: */new*, */:id*
-  - /:id refers to the specific event.
-  - Method on /:id - *#show*: This displays the event.
-  - Sub-route on /:id - */edit*: This allows a user to edit the event.
+- Methods on these routes: *#new*
+  - #new makes a new event of the specified type, it renders /new.
+
+- Routes: */calendars/:calendar_invite_token/other_events*, */calendars/:calendar_invite_token/holidays*, */calendars/:calendar_invite_token/class_periods*, */calendars/:calendar_invite_token/courses*, */assignments*
+- Sub-routes for these routes: */:slug*
+  - /:slug refers to the specific event.
+  - Method on /:slug - *#show*, *#update*, *#destroy*
+    - #show shows the specific event.
+    - #update updates the specific event.
+    - #destroy deletes the specific event.
+  - Sub-route on /:slug - */edit*: This allows a user to edit the event.
   
 **Sign-up/Login Routes**
 - Routes: */users*, */signup*, */login*, */logout*
@@ -48,12 +69,10 @@ https://safe-woodland-06100.herokuapp.com/
     - /login creates a new session and logs in the user. It uses sessions#new and sessions#create to do this.
     - /logout closes the session and logs out the user via sessions#destroy.
     - /users refers to all of the users.
-      - Method on /users: *#index*, which shows all users.
       - Sub-route on /users: */:id*, which refers to a single user.
-        - Methods on /:id - *#show*, *#update*, *#destroy*
+        - Methods on /:id - *#show*, *#update*
           - #show displays the user
           - #update updates the user via /edit.
-          - #destroy deletes the user.
         - Sub-route on /:id - */edit*, which is a page that updates the user.
 
 
