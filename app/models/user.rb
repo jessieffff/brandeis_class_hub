@@ -7,7 +7,6 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
 
   has_many :user_calendars, dependent: :destroy
   has_many :calendars, through: :user_calendars
@@ -30,7 +29,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.provider = auth.provider
       user.uid = auth.uid
-      user.password = Digest::SHA1.hexdigest(auth.uid)
+      user.password_digest = self.digest(auth.uid)
       user.image_url = auth.info.image
     end
 
