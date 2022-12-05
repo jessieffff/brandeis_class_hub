@@ -59,7 +59,7 @@
     </div>
 
 <% if Current.user %>
-  Signed in as <%= current_user.name %>!
+  Signed in as <%= current_user.first_name %>!
   <%= link_to "Sign out", signout_path %>
 <% else %>
   <%= link_to "Sign in with Twitter", "/auth/google_oauth2" %>

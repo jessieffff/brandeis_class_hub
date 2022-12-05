@@ -23,17 +23,15 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
-  end
-  
-
-  def self.from_omniauth(auth)
     # Creates a new user only if it doesn't exist
-    where(email: auth.info.email).first_or_initialize do |user|
-      user.full_name = auth.info.name
+    where(email: auth.info.email).first_or_create do |user|
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
       user.email = auth.info.email
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.password_digest = access_token.credentials.token
     end
+
   end
 end
