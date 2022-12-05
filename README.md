@@ -13,7 +13,7 @@ Generally, our functionality so far is making events for the calendar, sharing c
 https://trello.com/b/heBEa0Pv/main
 
 ### Heroku Link
-https://safe-woodland-06100.herokuapp.com/
+https://rocky-hollows-83897.herokuapp.com/
 
 ### URL patterns
 **Root (/):** This shows the landing page of the app, it introduces the concept of the app and has a carousel showing main functionalities.
