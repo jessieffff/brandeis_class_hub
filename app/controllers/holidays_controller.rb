@@ -26,9 +26,9 @@ class HolidaysController < ApplicationController
   # POST 
   def create
     @holiday = Holiday.new(holiday_params)
-
+    puts @holiday.inspect
     respond_to do |format|
-      if @holiday.save
+      if @holiday.save!
         format.html { redirect_to calendar_holiday_path(Calendar.find_by(id: @holiday.calendar_id).invite_token, @holiday.slug), 
           notice: "Holiday was successfully created." }
         format.json { render :show, status: :created, location: @holiday }
@@ -60,7 +60,7 @@ class HolidaysController < ApplicationController
     @holiday.destroy
     # redirect_to calendars_url
     respond_to do |format|
-      format.html { redirect_to calendars_url, notice: "Holiday was successfully destroyed." }
+      format.html { redirect_to home_calendar_url, notice: "Holiday was successfully destroyed." }
       format.json { head :no_content }
     end
   end

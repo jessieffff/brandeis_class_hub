@@ -49,7 +49,7 @@ class CoursesController < ApplicationController
     @course.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendars_url, notice: "Course was successfully destroyed." }
+      format.html { redirect_to home_calendar_url, notice: "Course was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -97,7 +97,9 @@ class CoursesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def course_params
       if params['course']['repetition_frequency'] != nil
-        params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
+        if params['course']['repetition_frequency'].class == Array
+          params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
+        end
       end
 
       if params['course']['start_time'] != ""

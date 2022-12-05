@@ -22,7 +22,6 @@ class AssignmentsController < ApplicationController
   # POST /assignments or /assignments.json
   def create
     @assignment = Assignment.new(assignment_params)
-
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to assignment_url(@assignment), notice: "Assignment was successfully created." }
@@ -52,7 +51,7 @@ class AssignmentsController < ApplicationController
     @assignment.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendars_url, notice: "Assignment was successfully destroyed." }
+      format.html { redirect_to home_calendar_url, notice: "Assignment was successfully destroyed." }
       format.json { head :no_content }
     end
   end

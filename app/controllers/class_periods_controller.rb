@@ -52,7 +52,7 @@ before_action :logged_in_user
     @class_period.destroy
 
     respond_to do |format|
-      format.html { redirect_to class_periods_url, notice: "Class period was successfully destroyed." }
+      format.html { redirect_to home_calendar_url, notice: "Class period was successfully destroyed." }
       format.json { head :no_content }
     end
   end
