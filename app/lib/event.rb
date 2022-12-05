@@ -7,7 +7,7 @@ class Event
         elsif (event.is_a? ClassPeriod)
             "#{paths[:class_period]}/#{event.id}"
         else
-            "#{paths[:other_event]}/#{event.id}"
+            "#{paths[:calendar]}/#{Calendar.find_by(id: event.calendar_id).invite_token}/#{'other_events'}/#{event.slug}"
         end
     end
 

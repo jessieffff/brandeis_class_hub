@@ -95,7 +95,7 @@
             <td scope="row"><%= other.name %></td>
             <td scope="row"><%= other.date %></td>
             <td scope="row"><%= other.start_time.strftime("%I:%M%p").to_s + " - " + other.end_time.strftime("%I:%M%p").to_s  %></td>
-            <td scope="row"><%= link_to "Show this event", other %> <td>
+            <td scope="row"><%= link_to "Show this event", calendar_other_event_path(Calendar.find_by(id: other.calendar_id).invite_token, other.slug) %> <td>
           </tr>
         <% end %>
       </tbody>
