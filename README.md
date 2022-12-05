@@ -20,6 +20,7 @@ https://safe-woodland-06100.herokuapp.com/
 **Calendar View (/home/calendar):** This is the main page of the app, where users see all their events showing one a calendar.
 **Search (/search):** This page shows the search result of calendars. 
 **Subscribe (/subscribe):** This page is where users have options to subscribe to more calendars.
+**Events table (/total_events):** This refers to a list of events this user has.
 
 **Calendar Routes:**
 - Route: */calendars* - /calendars refers to a list of calendars this user has.
@@ -80,11 +81,16 @@ https://safe-woodland-06100.herokuapp.com/
 ### Schema
 <img src="./app/assets/images/schema.png"/>
 
-### Planned views
+### Views
+- Landing page to introduce the app.
 - Sign up page and login page for users. 
-- Calendar home view where users can switch between days, weeks and months.
+- Calendar home view where users can switch between days, weeks and months and view all events.
 - Shared calendar view where users can create a calendar, edit a shared calendar, either shared or not.
 - Event view is built on calendar view, where users can create an event on a calendar. Based on the event category, assignment view, holiday view and other events view loads where users can put in detailed information for each event.
+- Calendar list view where users can see all the calendars they created and subscribed to.
+- Event list view where users can see all the events they have in a list.
+- Subscribe form view where users can search for more calendars to subscribe.
+- Search view where users can view the search result of calendars in a list. 
 
 ### List of our dependencies on APIs, gems, libraries and so on
 - gem 'rails', '~> 7.0.4'
