@@ -43,7 +43,7 @@ We also wanted to split up the view into a Day, Week, and Month view. This allow
 Given more time, it would be useful to have weeks span multiple months, and to incorporate other views if possible.
 
 ### URLs
-Finally, we discussed exactly how we wanted the URL to look, whether it be a simple iterated URL like `https://rocky-hollows-83897.herokuapp.com/events/1` or a more complex URL like `https://rocky-hollows-83897.herokuapp.com/events/[ENCRYPTED_CALENDAR_TOKEN]/event_name`. We decided to go with the latter URL design on events and calendars to ensure data protection. With an insecure URL like `events/1`, data can be accessed randomly and can be changed by a malicious user. With the encrypted design, it is much safer.
+Finally, we discussed exactly how we wanted the URL to look, whether it be a simple iterated URL like `https://rocky-hollows-83897.herokuapp.com/events/1` or a more complex URL like `https://rocky-hollows-83897.herokuapp.com/calendars/[:ENCRYPTED_CALENDAR_TOKEN]/events/[:event_name]`. We decided to go with the latter URL design on events and calendars to ensure data protection. With an insecure URL like `events/1`, data can be accessed randomly and can be changed by a malicious user. With the encrypted design, it is much safer.
 
 A challenge here was how to design a URL pattern that is difficult to decode but also provides relevant information. So, we combined the calendar’s token with the event name to solve this disparity.
 
