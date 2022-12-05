@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :user_calendars, only: %i[new create]
     resources :holidays, param: :slug, except: [:index]
     resources :other_events, param: :slug, except: [:index]
+    resources :courses, param: :slug, except: [:index]
   end
   
   # Defines the root path route ("/")

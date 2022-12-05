@@ -36,7 +36,6 @@ class OtherEventsController < ApplicationController
   # PATCH/PUT /other_events/1 or /other_events/1.json
   def update
     @other_event.slug = nil if @other_event.name != params[:name]
-    puts other_event_params
     respond_to do |format|
       if @other_event.update(other_event_params)
         format.html { redirect_to calendar_path(Calendar.find_by(id: @other_event.calendar_id)), 

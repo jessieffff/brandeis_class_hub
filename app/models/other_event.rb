@@ -4,7 +4,9 @@ class OtherEvent < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 255 }, uniqueness: true
   validates :date, presence: true
-  validates :date, presence:true
+  validates :start_time, presence:true
+  validates :end_time, presence:true
+
 
   belongs_to(
     :calendar,
