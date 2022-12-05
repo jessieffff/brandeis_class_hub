@@ -26,14 +26,21 @@
       <%= form.label :email, style: "display: block" %>
       <%= form.text_field :email %>
     </div>
-    
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :password, style: "display: block" %>
+      <%= form.password_field :password %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :password_confirmation, style: "display: block" %>
+      <%= form.password_field :password_confirmation %>
+    </div>
+
     <br>
     <div class="input-group input-group-sm mb-3">
       <%= form.submit :Save, class:"btn btn-lg btn-primary" %>
     </div>
-
-    <br>
-    <%= button_to "Delete this user", @user, method: :delete %>
 
   <% end %>
 </div>
