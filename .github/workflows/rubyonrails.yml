@@ -6,9 +6,6 @@
 # run tests and linters.
 name: "Ruby on Rails CI"
 on: [push]
-on:
-  pull_request:
-    branches: ["main", "development"]
 jobs:
   test:
     runs-on: ubuntu-latest
