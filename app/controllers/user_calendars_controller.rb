@@ -3,10 +3,10 @@ class UserCalendarsController < ApplicationController
   before_action :logged_in_user
   # GET /user_calendars or /user_calendars.json
   def index
-    @user_calendars = UserCalendar.all
+    redirect_to calendars_path
   end
 
-  # GET /user_calendars/1 or /user_calendars/1.json
+  # GET
   def show; end
 
   def new
