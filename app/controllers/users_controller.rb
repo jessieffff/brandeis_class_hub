@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update]
   before_action :logged_in_user, only: %i[edit update]
+  before_action :correct_user,   only: [:edit, :update]
 
   # GET /users or /users.json
   def index
@@ -73,6 +74,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url)
   end
 
 end

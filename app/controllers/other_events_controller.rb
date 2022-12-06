@@ -51,7 +51,7 @@ class OtherEventsController < ApplicationController
     @other_event.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendars_url, notice: "Other event was successfully destroyed." }
+      format.html { redirect_to home_calendar_url, notice: "Other event was successfully destroyed." }
       format.json { head :no_content }
     end
   end

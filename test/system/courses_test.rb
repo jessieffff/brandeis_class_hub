@@ -23,14 +23,14 @@ class CoursesTest < ApplicationSystemTestCase
   end
 
   test "should update course" do
-     visit courses_url(@course).gsub(".", "/")
-     click_on "Edit this course", match: :first
+    @course.update_attribute(:calendar_id, Calendar.first.id)
+     visit course_url(@course)
+     click_on "Edit", match: :first
 
-     fill_in "Calendar", with: @course.calendar_id
+     select 'TestCal2', :from => 'Calendar'
      fill_in "Name", with: @course.name
      fill_in "End date", with: @course.end_date
      fill_in "Professor name", with: @course.professor_name
-     fill_in "Meeting days", with: @course.repetition_frequency
      fill_in "Start date", with: @course.start_date
      fill_in "Start time", with: @course.start_time
      fill_in "End time", with: @course.end_time
