@@ -20,8 +20,9 @@
           <tr>
             <td scope="row"><%= assignment.name %></td>
             <td scope="row"><%= assignment.due_date %></td>
-            <td scope="row"><%=  Course.find_by(id: assignment.course_id) %></td>
-            <td scope="row"><%= link_to "Show this assignment", assignment %> <td>
+            <td scope="row"><%= Course.find_by(id: assignment.course_id).name %></td>
+            <td scope="row"><%= link_to "Show this assignment", calendar_course_assignment_path(Calendar.find_by(id: assignment.calendar_id).invite_token, 
+          Course.find_by(id: assignment.course_id).slug, assignment.slug) %> <td>
           </tr>
         <% end %>
       </tbody>
@@ -70,7 +71,7 @@
             <td scope="row"><%= course.name %></td>
             <td scope="row"><%= course.start_date.to_s + " - " + course.end_date.to_s %></td>
             <td scope="row"><%= course.professor_name %></td>
-            <td scope="row"><%= link_to "Show this course", course %> <td>
+            <td scope="row"><%= link_to "Show this course", calendar_course_path(Calendar.find_by(id: course.calendar_id).invite_token, course.slug) %> <td>
           </tr>
         <% end %>
       </tbody>
@@ -94,8 +95,8 @@
           <tr>
             <td scope="row"><%= other.name %></td>
             <td scope="row"><%= other.date %></td>
-            <td scope="row"><%= other.start_time.to_s + " - " + other.end_time.to_s %></td>
-            <td scope="row"><%= link_to "Show this event", other %> <td>
+            <td scope="row"><%= other.start_time.strftime("%I:%M%p").to_s + " - " + other.end_time.strftime("%I:%M%p").to_s  %></td>
+            <td scope="row"><%= link_to "Show this event", calendar_other_event_path(Calendar.find_by(id: other.calendar_id).invite_token, other.slug) %> <td>
           </tr>
         <% end %>
       </tbody>

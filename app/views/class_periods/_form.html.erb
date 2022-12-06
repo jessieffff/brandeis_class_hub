@@ -1,11 +1,11 @@
 <div class="container event-box" align="center">
-  <%= form_with(model: class_period) do |form| %>
-    <% if class_period.errors.any? %>
+  <%= form_with(scope: :class_period, url:calendar_course_class_period_path(@class_period), method: :patch) do |form| %>
+    <% if @class_period.errors.any? %>
       <div style="color: red">
-        <h2><%= pluralize(class_period.errors.count, "error") %> prohibited this class_period from being saved:</h2>
+        <h2><%= pluralize(@class_period.errors.count, "error") %> prohibited this class_period from being saved:</h2>
 
         <ul>
-          <% class_period.errors.each do |error| %>
+          <% @class_period.errors.each do |error| %>
             <li><%= error.full_message %></li>
           <% end %>
         </ul>

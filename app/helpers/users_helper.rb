@@ -3,8 +3,11 @@ module UsersHelper
 # Returns the Gravatar for the given user.
 # TEMP - We can replace this as needed.
   def gravatar_for(user, size: 80)
-    gravatar_id  = Digest::MD5::hexdigest(user.email.downcase)
-    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
-    image_tag(gravatar_url, alt: user.first_name, class: "gravatar")
+    if user.image_url
+      gravatar_url = user.image_url
+    else
+      gravatar_url = "brandeis_logo.png"
+    end
+    image_tag(gravatar_url, alt: user.first_name, width: 100, class: "gravatar")
   end
 end

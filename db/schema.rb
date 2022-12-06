@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_223716) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["name"], name: "index_assignments_on_name", unique: true
+    t.index ["slug"], name: "index_assignments_on_slug", unique: true
   end
 
   create_table "calendars", force: :cascade do |t|
@@ -57,6 +60,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
     t.string "repetition_frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["name"], name: "index_courses_on_name", unique: true
+    t.index ["slug"], name: "index_courses_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -91,6 +97,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["name"], name: "index_other_events_on_name", unique: true
+    t.index ["slug"], name: "index_other_events_on_slug", unique: true
   end
 
   create_table "user_calendars", force: :cascade do |t|
@@ -105,9 +114,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_223035) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.string "provider"
+    t.string "uid"
+    t.string "google_token"
+    t.string "google_refresh_token"
+    t.string "password_digest"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

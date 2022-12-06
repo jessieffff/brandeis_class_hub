@@ -1,10 +1,47 @@
-<h1> Edit Event Information </h1>
+<h1>Edit Event Information</h1>
 
-<%= render "form", other_event: @other_event %>
+<div class="container event-box" align="center">
+  <%= form_with(scope: :other_event, url: calendar_other_event_path(@other_event), method: :patch) do |form| %>
+    <% if @other_event.errors.any? %>
+      <div style="color: red">
+        <ul>
+          <% @other_event.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-<br>
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :calendar_id, style: "display: block" %>
+      <%= form.select :calendar_id, CalendarHelper.load_calendars(current_user[:id]), include_blank:true %>
+    </div>
 
-<div>
-  <%= link_to "Show this event", @other_event %> |
-  <%= link_to "Back to events", other_events_path %>
+    <%= link_to "Create a New Calendar", new_calendar_path %>
+    <br><br>
+
+    <div class="input-group input-group-sm mb-3">
+      <span class='input-group-text'>Name</span>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3>
+      <%= form.label :date %>
+      <%= form.date_field :date %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3>
+      <%= form.label :start_time %>
+      <%= form.time_field :start_time %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :end_time %>
+      <%= form.time_field :end_time %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.submit :Submit, class:"btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
 </div>

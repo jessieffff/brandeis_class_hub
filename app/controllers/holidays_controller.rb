@@ -1,9 +1,6 @@
 class HolidaysController < ApplicationController
   before_action :logged_in_user
   before_action :check_holiday, only: %i[ show edit update destroy ]
-  # before_action :set_holiday, only: %i[ show edit update destroy ]
-
-
 
   # GET /holidays or /holidays.json
   def index
@@ -45,7 +42,7 @@ class HolidaysController < ApplicationController
     respond_to do |format|
 
       if @holiday.update(holiday_params)
-        format.html { redirect_to calendar_holiday_path(Calendar.find_by(id: @holiday.calendar_id).invite_token, @holiday.slug), 
+        format.html { redirect_to calendar_path(Calendar.find_by(id: @holiday.calendar_id).invite_token), 
           notice: "Holiday was successfully updated." }
         format.json { render :show, status: :ok, location: @holiday }
       else
@@ -57,10 +54,10 @@ class HolidaysController < ApplicationController
 
   # DELETE
   def destroy
+    @prev_calendar_id = Calendar.find_by(id: @holiday.calendar_id)
     @holiday.destroy
-    # redirect_to calendars_url
     respond_to do |format|
-      format.html { redirect_to home_calendar_url, notice: "Holiday was successfully destroyed." }
+      format.html { redirect_to calendar_path(@prev_calendar_id), notice: "Holiday was successfully deleted." }
       format.json { head :no_content }
     end
   end

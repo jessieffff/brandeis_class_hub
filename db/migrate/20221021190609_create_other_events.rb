@@ -6,7 +6,6 @@ class CreateOtherEvents < ActiveRecord::Migration[7.0]
       t.time :start_time
       t.time :end_time
       t.date :date
-
       t.timestamps
     end
   end

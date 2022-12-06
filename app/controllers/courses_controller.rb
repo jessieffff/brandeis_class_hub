@@ -1,19 +1,17 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show edit update destroy ]
   before_action :logged_in_user
+  before_action :check_course, only: %i[ show edit update destroy ]
 
-  # GET /courses/1 or /courses/1.json
-  def show
-  end
+  # GET
+  def show;end
 
   # GET /courses/new
   def new
     @course = Course.new
   end
 
-  # GET /courses/1/edit
-  def edit
-  end
+  # GET
+  def edit;end
 
   # POST /courses or /courses.json
   def create
@@ -22,7 +20,8 @@ class CoursesController < ApplicationController
       if @course.save
         CalendarHelper.generate_class_period(@course.repetition_frequency, @course.name, @course.id, @course.start_date, @course.end_date,
                                            @course.start_time, @course.end_time, @course.calendar_id)
-        format.html { redirect_to course_url(@course), notice: "Course was successfully created." }
+        format.html { redirect_to calendar_course_path(Calendar.find_by(id: @course.calendar_id).invite_token, @course.slug), 
+          notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,9 +32,11 @@ class CoursesController < ApplicationController
 
   # PATCH/PUT /courses/1 or /courses/1.json
   def update
+    @course.slug = nil if @course.name != params[:name]
     respond_to do |format|
       if @course.update(course_params)
-        format.html { redirect_to course_url(@course), notice: "Course was successfully updated." }
+        format.html { redirect_to calendar_course_path(Calendar.find_by(id: @course.calendar_id).invite_token, @course.slug), 
+          notice: "Course was successfully updated." }
         format.json { render :show, status: :ok, location: @course }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -46,10 +47,11 @@ class CoursesController < ApplicationController
 
   # DELETE /courses/1 or /courses/1.json
   def destroy
+    prev_calendar_id = Calendar.find_by(id: @course.calendar_id)
     @course.destroy
 
     respond_to do |format|
-      format.html { redirect_to home_calendar_url, notice: "Course was successfully destroyed." }
+      format.html { redirect_to calendar_path(prev_calendar_id), notice: "Course was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -74,16 +76,19 @@ class CoursesController < ApplicationController
           start_time: ActiveSupport::TimeZone['UTC'].parse(time[0..time.index('-') - 2]),
           end_time: ActiveSupport::TimeZone['UTC'].parse(time[time.index('-') + 2..time.length]),
           professor_name: spreadsheet.row(i)[9],
-          repetition_frequency: spreadsheet.row(i)[7][0, divider_index[0]]
+          repetition_frequency: spreadsheet.row(i)[7][0, divider_index[0]],
+          slug: spreadsheet.row(i)[1].gsub(/\s+/, "").downcase
         )
         CalendarHelper.generate_class_period(@course.repetition_frequency, @course.name, @course.id, @course.start_date,
             @course.end_date, @course.start_time, @course.end_time, @course.calendar_id)
       end
-      flash[:notice] = "Records Imported"
+      flash[:notice] = "Courses Imported"
       redirect_to courses_url
     rescue Exception => e
-      puts e
-      flash[:notice] = "Issues with file"
+      if file.nil?
+        e = "Please choose file to upload"
+      end
+      flash[:notice] = e
       redirect_to courses_url
     end
  end
@@ -96,6 +101,7 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
+<<<<<<< HEAD
       if params['course']['repetition_frequency'] != nil
         if params['course']['repetition_frequency'].class == Array
           params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
@@ -110,6 +116,21 @@ class CoursesController < ApplicationController
         params['course']['end_time'] = Time.parse(params['course']['end_time']).strftime("%I:%M%p")
       end
       params.require(:course).permit(:calendar_id, :name, :start_time, :end_time, :start_date, :end_date, :location, :professor_name, :repetition_frequency)
+=======
+      params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
+      params['course']['start_time'] = Time.parse(params['course']['start_time']).strftime("%I:%M%p")
+      params['course']['end_time'] = Time.parse(params['course']['end_time']).strftime("%I:%M%p")
+      params.require(:course).permit(:calendar_id, :name, :start_time, :end_time, :start_date, :end_date, :location, :professor_name, :repetition_frequency, :slug)
+    end
+
+    # Use callbacks to share common setup or constraints between actions.
+    def check_course
+      if !@course = Course.friendly.find_by_slug(params[:slug]).nil?
+        @course = Course.friendly.find_by_slug(params[:slug])
+      else
+        render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
+      end
+>>>>>>> development
     end
 
 end
