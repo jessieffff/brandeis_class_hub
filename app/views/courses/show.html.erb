@@ -1,4 +1,4 @@
-<h1>Course</h1>
+<h1>Course Information</h1>
 <div class="container event-box" align="center">
 
   
@@ -24,12 +24,12 @@
 
   <div>
     <% if Calendar.find_by(id: @course.calendar_id).user_id == Current.user.id%>
-      <%= link_to "Edit", edit_course_path(@course),class:"btn btn-sm btn-primary" %> |
+      <%= link_to "Edit", edit_calendar_course_path(Calendar.find_by(id: @course.calendar_id).invite_token, @course.slug),class:"btn btn-sm btn-primary" %> |
     <% end %>
       <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
     <% if Calendar.find_by(id: @course.calendar_id).user_id == Current.user.id%>
       <div class="delete-button">
-        <%= button_to "Delete this course", @course, method: :delete, class:"btn btn-sm btn-primary" %>
+         <%= button_to  "Delete this course", calendar_course_path, method: :delete, class:"btn btn-sm btn-primary" %>
       </div>
     <%end%>
   </div>
