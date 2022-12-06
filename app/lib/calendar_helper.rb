@@ -39,9 +39,38 @@ class CalendarHelper
         calendars = UserCalendar.where(user_id: user_id)
         all_courses = []
         calendars.each do |cal|
-            all_courses += Course.all.where(calendar_id: cal.calendar_id).collect { |course| [course.name, course.id]}
+            all_courses += Course.all.where(calendar_id: cal.calendar_id).collect { |course| [course.name, course.id, course.calendar_id, course.slug, course.start_date, course.end_date, course.professor_name]}
         end
         return all_courses
+
+    end
+
+    def self.load_holidays(user_id)
+        calendars = UserCalendar.where(user_id: user_id)
+        all_holidays = []
+        calendars.each do |cal|
+            all_holidays += Holiday.all.where(calendar_id: cal.calendar_id).collect { |holiday| [holiday.name, holiday.date, holiday.calendar_id, holiday.slug, holiday.holiday_type]}
+        end
+        return all_holidays
+    end
+
+    def self.load_assignments(user_id)
+        calendars = UserCalendar.where(user_id: user_id)
+        all_assignments = []
+        calendars.each do |cal|
+            all_assignments += Assignment.all.where(calendar_id: cal.calendar_id).collect { |assignment| [assignment.id, assignment.name, assignment.due_date, assignment.course_id, assignment.slug, assignment.calendar_id]}
+        end
+        return all_assignments   
+
+    end
+
+    def self.load_other_events(user_id)
+        calendars = UserCalendar.where(user_id: user_id)
+        all_other_events = []
+        calendars.each do |cal|
+            all_other_events += OtherEvent.all.where(calendar_id: cal.calendar_id).collect { |other_event| [other_event.id, other_event.name, other_event.date, other_event.start_time, other_event.end_time, other_event.calendar_id, other_event.slug]}
+        end
+        return all_other_events   
 
     end
 end
