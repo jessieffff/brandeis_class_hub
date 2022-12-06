@@ -82,7 +82,7 @@ class CoursesController < ApplicationController
         CalendarHelper.generate_class_period(@course.repetition_frequency, @course.name, @course.id, @course.start_date,
             @course.end_date, @course.start_time, @course.end_time, @course.calendar_id)
       end
-      flash[:notice] = "Records Imported"
+      flash[:notice] = "Courses Imported"
       redirect_to courses_url
     rescue Exception => e
       if file.nil?
