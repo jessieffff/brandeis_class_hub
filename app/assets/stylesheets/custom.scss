@@ -237,7 +237,10 @@ input {
 
 
 .calendar-page {
-  margin: 100px;
+  margin-top:50px;
+  margin-bottom: 100px;
+  margin-left:100px;
+  margin-right:100px;
   padding: 20px;
   background-color: rgba(235, 230, 230, 0.75);
   border-radius: 5px;
@@ -362,6 +365,7 @@ input {
 .calendar-details-page {
   margin-left: 100px;
   margin-right:100px;
+  margin-bottom:100px;
   padding: 20px;
   background-color: rgba(235, 230, 230, 0.75);
   border-radius: 10px;
