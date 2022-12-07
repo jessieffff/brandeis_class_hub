@@ -1,7 +1,24 @@
 
-
+<h1 class = "container" style = "text-align: center"> Calendar Details </h1>
 <div class = "calendar-details-page">
-<%= render @calendar %>
+
+<div class="calendar_details_overview" >
+  <h2><strong><%= @calendar.name %></strong> 
+    <% if @calendar.shared %> 
+      (Public)
+    <%else%> 
+    (Private)
+    <%end%>
+  </h2>
+
+  <h3><%= @calendar.description %></h3>
+
+  <h4> Created by: <%= User.find_by(id: @calendar.user_id).first_name %> <%= User.find_by(id: @calendar.user_id).last_name %> <h4>
+</div>
+
+
+
+
 <div class = "calendar-table">
 <%# assignment table %>
   <% if Assignment.exists?(calendar_id: @calendar.id) %>
@@ -109,17 +126,17 @@
     <%# <% if UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %> 
     <% if Calendar.find_by(id: @calendar.id).user_id == Current.user.id %>
       <h3>
-        <%= link_to "Edit this calendar", edit_calendar_path(@calendar), class:"btn btn-sm btn-primary"%> |
-        <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-sm btn-primary"%>
+        <%= link_to "Edit this calendar", edit_calendar_path(@calendar), class:"btn btn-lg btn-primary"%> |
+        <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-lg btn-primary"%>
         <div class="delete-button">
-        <%= button_to "Delete this calendar", @calendar, method: :delete, class:"btn btn-sm btn-primary"%> 
+        <%= button_to "Delete this calendar", @calendar, method: :delete, class:"btn btn-lg btn-primary"%> 
         </div>
       </h3>
       <div <%= @calendar.id %> aria-labelledby="heading<%= @calendar.id %>">
       <div class="card-body">
         <div class="invite-box" data-controller="invite">
           <h5 class="mb-1">Click on the link below to copy and share with a friend:</h5>
-          <input class="btn btn-sm btn-link" onclick="this.select();document.execCommand('copy');" class="calendar-url" id="cb-link-field" type="text" value="<%= new_calendar_user_calendar_url(@calendar) %>" data-target="invite.url" data-calendar-token="<%= @calendar.invite_token %>"/>
+          <input class="btn btn-lg btn-link" onclick="this.select();document.execCommand('copy');" class="calendar-url" id="cb-link-field" type="text" value="<%= new_calendar_user_calendar_url(@calendar) %>" data-target="invite.url" data-calendar-token="<%= @calendar.invite_token %>"/>
           </div>
         </div>
       </div>
@@ -128,25 +145,25 @@
         <%= form_tag import_from_excel_courses_url, multipart: true do %>
           <%= file_field_tag :file%>
           <%= hidden_field_tag :calendar_id , @calendar.id %>
-          <%= submit_tag "Import courses", class:"btn btn-sm btn-primary subscribe-button" %>
+          <%= submit_tag "Import courses", class:"btn btn-lg btn-primary subscribe-button" %>
         <% end %>
       </div>  
     <div>
     <% elsif UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %>
       <h3> 
-        <%= button_to "Unsubscribe from this calendar", UserCalendar.find_by(user_id: @current_user.id, calendar_id: @calendar.id), method: :delete, class:"btn btn-sm btn-primary"%> 
+        <%= button_to "Unsubscribe from this calendar", UserCalendar.find_by(user_id: @current_user.id, calendar_id: @calendar.id), method: :delete, class:"btn btn-lg btn-primary"%> 
         <div class="delete-button">
-          <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-sm btn-primary" %>
+          <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-lg btn-primary" %>
         <div>
       </h3> 
     <% else%>  
     <div>
     <%= form_tag subscribe_calendar_user_calendars_url, multipart: true do %>
       <%= hidden_field_tag :calendar_id , @calendar.id %>
-      <%= submit_tag "Subscribe to this calendar", class:"btn btn-sm btn-primary subscribe-button" %>
+      <%= submit_tag "Subscribe to this calendar", class:"btn btn-lg btn-primary subscribe-button" %>
     <% end %>
     </div>
-     <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-sm btn-primary" %>
+     <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-lg btn-primary" %>
     <% end %>
     </section>
   </aside>

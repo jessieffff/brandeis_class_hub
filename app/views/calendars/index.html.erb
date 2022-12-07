@@ -1,33 +1,37 @@
-<table class="table calendar-list-page">
-  
-  <thead>
-    <h3 class = "container" style = "text-align: center"> Current Subscribed Calendars </h3>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Owner</th>
-      <th>Public</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% UserCalendar.where(user_id:Current.user.id).each do |calendar| %>
+<h1 style = "text-align: center"> Current Subscribed Calendars </h1>
+<div class = "calendar-details-page">
+  <table class="table">
+    
+    <thead>
+      
       <tr>
-        <td><%= calendar.calendar.name %></td>
-        <td><%= calendar.calendar.description %></td>
-        <td><%= User.find_by(id: calendar.calendar.user_id).first_name + " " + User.find_by(id: calendar.calendar.user_id).last_name %></td>
-        <% if calendar.calendar.shared %>
-          <td> Public</td>
-        <% else%>
-          <td> Not public </td>
-        <%end%>
-        <td><%= link_to 'Details', calendar.calendar %></td>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Owner</th>
+        <th>Public</th>
+        <th>Details</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<%# redirect to search page %>
-<div class="input-group input-group-sm mb-3 search-calendar-button">
-  <%= link_to "Subscribe to more calendars", subscribe_url, class:"btn btn-sm btn-primary" %>
+    </thead>
+
+    <tbody>
+      <% UserCalendar.where(user_id:Current.user.id).each do |calendar| %>
+        <tr>
+          <td><%= calendar.calendar.name %></td>
+          <td><%= calendar.calendar.description %></td>
+          <td><%= User.find_by(id: calendar.calendar.user_id).first_name + " " + User.find_by(id: calendar.calendar.user_id).last_name %></td>
+          <% if calendar.calendar.shared %>
+            <td> Public</td>
+          <% else%>
+            <td> Not public </td>
+          <%end%>
+          <td><%= link_to 'Details', calendar.calendar %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%# redirect to search page %>
+  <div class="input-group input-group-sm mb-3 search-calendar-button" >
+    <%= link_to "Subscribe to more calendars", subscribe_url, class:"btn btn-lg btn-primary" %>
+  </div>
+
 </div>
