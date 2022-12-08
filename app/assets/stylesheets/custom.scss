@@ -228,6 +228,11 @@ input {
 
 .datepicker-box {
   padding-right: 50px;
+  margin-top:-30px;
+}
+
+.calendar-event-form{
+  margin-top:-5px;
 }
 
 .prev-next-button {
@@ -352,6 +357,7 @@ input {
 .calendar-label {
   color: black;
   font-family: "Whitney", sans-serif;
+  margin-top: -5px;
 }
 
 .delete-button {

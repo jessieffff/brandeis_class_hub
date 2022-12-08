@@ -3,48 +3,57 @@
     <h1 class="text-center calendar-label">
         <%= @month.get_month_year %>
     </h1>
-        <form class="datepicker-box" action="calendar", align="right">
-            <h3>Select a Date</h3>
-            <input id="datepicker" class="input-group input-group-sm mb-3" type="date" name="date" value=<% @day.currentDate %> min="2000-01-01" max="2100-12-31">
-            <br>
-            <input class="btn btn-sm btn-primary" id="datepicker-submit" value="Find" type="submit"/>      
-        </form>
+    <div class="row">
 
-    <div class="view-event-button">
-        <div class="dropdown" align="left">
-        <div class="btn btn-sm btn-primary">
-            <a href="#" id="new-event" class="dropdown-toggle">
-                New Event <b class="caret"></b>
-            </a>
+        <div class="column calendar-event-form">
+            <div class="view-event-button">
+                <div class="dropdown" align="left">
+                <div class="btn btn-sm btn-primary">
+                    <a href="#" id="new-event" class="dropdown-toggle">
+                        New Event <b class="caret"></b>
+                    </a>
+                </div>
+                <ul id="new-event-menu" class="dropdown-menu">
+                    <li>
+                    <%= link_to "New course", new_course_path %>
+                    <%= link_to "New assignment", new_assignment_path %>
+                    <%= link_to "New holiday", new_holiday_path %>
+                    <%= link_to "New other event", new_other_event_path %>
+                    </li>
+                </ul>
+                <%= link_to "Create a New Calendar", new_calendar_path, class: "btn btn-sm btn-primary" %>
+                </div>
+            </div>
+
+            <div class="view-container">
+                <ul class="nav nav-pills nav-fill justify-content-center bg-light">
+                    <li class= '<%= @nav_item_day %>' >
+                        <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
+                    </li>
+
+                    <li class= '<%= @nav_item_week %>'>
+                        <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
+                    </li>
+
+                    <li class='<%= @nav_item_month %>'>
+                        <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <ul id="new-event-menu" class="dropdown-menu">
-            <li>
-            <%= link_to "New course", new_course_path %>
-            <%= link_to "New assignment", new_assignment_path %>
-            <%= link_to "New holiday", new_holiday_path %>
-            <%= link_to "New other event", new_other_event_path %>
-            </li>
-        </ul>
-        <%= link_to "Create a New Calendar", new_calendar_path, class: "btn btn-sm btn-primary" %>
+        <div class="column">
+            <form class="datepicker-box" action="calendar", align="right">
+                <h3>Select a Date</h3>
+                <input id="datepicker" class="input-group input-group-sm mb-3" type="date" name="date" value=<% @day.currentDate %> min="2000-01-01" max="2100-12-31">
+                <br>
+                <input class="btn btn-sm btn-primary" id="datepicker-submit" value="Find" type="submit"/>      
+            </form>
         </div>
     </div>
 
-        <div class="view-container">
-            <ul class="nav nav-pills nav-fill justify-content-center bg-light">
-                <li class= '<%= @nav_item_day %>' >
-                    <%= link_to "Day View", home_calendar_path(date: @week.current, view: :day), method: :post%>
-                </li>
 
-                <li class= '<%= @nav_item_week %>'>
-                    <%= link_to "Week View", home_calendar_path(date: @month.current, view: :week), method: :post%>
-                </li>
 
-                <li class='<%= @nav_item_month %>'>
-                    <%= link_to "Month View", home_calendar_path(date: @month.current, view: :month), method: :post%>
-                </li>
-            </ul>
-        </div>
-    
+
     <% if @view.to_s == "month" %>
         <%= render 'month', :month => @month %>
     <% elsif @view.to_s == "week" %>
