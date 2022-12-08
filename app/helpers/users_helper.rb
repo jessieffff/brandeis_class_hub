@@ -8,6 +8,6 @@ module UsersHelper
     else
       gravatar_url = "brandeis_logo.png"
     end
-    image_tag(gravatar_url, alt: user.first_name, width: 100, class: "gravatar")
+    image_tag(gravatar_url, alt: user.first_name, width: 100, class: "gravatar", referrerpolicy:"no-referrer")
   end
 end
