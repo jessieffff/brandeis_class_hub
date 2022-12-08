@@ -54,7 +54,7 @@ class OtherEventsController < ApplicationController
     @other_event.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendar_path(prev_calendar_id), notice: "Event was successfully deleted." }
+      format.html { redirect_to home_calendar_url, notice: "Event was successfully deleted." }
       format.json { head :no_content }
     end
   end

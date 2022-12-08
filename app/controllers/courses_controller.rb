@@ -51,7 +51,7 @@ class CoursesController < ApplicationController
     @course.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendar_path(prev_calendar_id), notice: "Course was successfully destroyed." }
+      format.html { redirect_to home_calendar_url, notice: "Course was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -101,7 +101,6 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-<<<<<<< HEAD
       if params['course']['repetition_frequency'] != nil
         if params['course']['repetition_frequency'].class == Array
           params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
@@ -116,11 +115,6 @@ class CoursesController < ApplicationController
         params['course']['end_time'] = Time.parse(params['course']['end_time']).strftime("%I:%M%p")
       end
       params.require(:course).permit(:calendar_id, :name, :start_time, :end_time, :start_date, :end_date, :location, :professor_name, :repetition_frequency)
-=======
-      params['course']['repetition_frequency'] = params['course']['repetition_frequency'].join('')
-      params['course']['start_time'] = Time.parse(params['course']['start_time']).strftime("%I:%M%p")
-      params['course']['end_time'] = Time.parse(params['course']['end_time']).strftime("%I:%M%p")
-      params.require(:course).permit(:calendar_id, :name, :start_time, :end_time, :start_date, :end_date, :location, :professor_name, :repetition_frequency, :slug)
     end
 
     # Use callbacks to share common setup or constraints between actions.
@@ -130,7 +124,6 @@ class CoursesController < ApplicationController
       else
         render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
       end
->>>>>>> development
     end
 
 end

@@ -6,6 +6,7 @@ one:
   due_date: <%= Date.new(2022, 10, 21) %>
   due_time: <%= Time.zone.local(2000, 1, 1, 10, 0, 0) %>
   course_id: 1
+  slug: test-2
 
 two:
   calendar_id: 1
@@ -13,3 +14,4 @@ two:
   due_date: <%= Date.new(2022, 10, 22) %>
   due_time: <%= Time.zone.local(2000, 1, 1, 11, 0, 0) %>
   course_id: 2
+  slug: test-3
