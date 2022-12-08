@@ -1,10 +1,39 @@
-<h1>Editing holiday</h1>
+<h1>Edit Holiday Information</h1>
 
-<%= render "form", holiday: @holiday %>
+<div class="container event-box" align="center">
+  <%= form_with(scope: :holiday, url: calendar_holiday_path(@holiday), method: :patch) do |form| %>
+    <% if @holiday.errors.any? %>
+      <div style="color: red">
+        <ul>
+          <% @holiday.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-<br>
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :calendar_id, style: "display: block" %>
+      <%= form.select :calendar_id, CalendarHelper.load_calendars(current_user[:id]), include_blank:true %>
+    </div>
 
-<div>
-  <%= link_to "Show this holiday", @holiday %> |
-  <%= link_to "Back to holidays", holidays_path %>
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :holiday_name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :date, style: "display: block" %>
+      <%= form.date_field :date %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :holiday_type, style: "display: block" %>
+      <%= form.text_field :holiday_type %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.submit :Submit, class:"btn btn-sl btn-primary" %>
+    </div>
+  <% end %>
 </div>

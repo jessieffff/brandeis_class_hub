@@ -2,20 +2,12 @@
 
 one:
   calendar_id: 1
-  name: MyString
-  start_date: 2022-10-21
-  end_date: 2022-10-21
-  location: MyString
-  professor_name: MyString
-  repetition_frequency: MyString
-
-
-two:
-  calendar_id: 1
-  name: MyString
-  start_date: 2022-10-21
-  end_date: 2022-10-21
-  location: MyString
-  professor_name: MyString
-  repetition_frequency: MyString
+  name: COSCI_CLASS
+  start_date: 2022-10-01
+  end_date: 2022-10-10
+  start_time: <%= Time.zone.local(2000, 1, 1, 10, 0, 0) %>
+  end_time: <%= Time.zone.local(2000, 1, 1, 12, 0, 0) %>
+  professor_name: SALAS
+  repetition_frequency: MWH
+  slug: COSCI_CLASS
 

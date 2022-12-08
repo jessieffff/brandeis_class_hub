@@ -1,9 +1,9 @@
-<h1>Holiday</h1>
+<h1>Holiday Information</h1>
 <div class="container event-box" align="center">
-<p style="color: green"><%= notice %></p>
+
 
 <div>
-  <p><%= @holiday.name %></p>
+  <h3><%= @holiday.name %></h3>
 </div>
 
 <div>
@@ -12,11 +12,15 @@
 </div>
 
 <div>
-  <%= link_to "Edit", edit_holiday_path(@holiday), class:"btn btn-sm btn-primary" %> |
-  <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-sm btn-primary"%>
-
-  <div class="delete-button">
-    <%= button_to "Delete this assignment", @holiday, method: :delete, class:"btn btn-sm btn-primary" %>
-  </div>
+  <% if Calendar.find_by(id: @holiday.calendar_id).user_id == Current.user.id%>
+    <%= link_to "Edit",edit_calendar_holiday_path(Calendar.find_by(id: @holiday.calendar_id).invite_token, @holiday.slug), class:"btn btn-sl btn-primary" %> |
+  <%end%>
+    <%= link_to "Back", :back, class:"btn btn-sl btn-primary"%>
+  <br><br>
+  <% if Calendar.find_by(id: @holiday.calendar_id).user_id == Current.user.id%>
+    <div class="delete-button">
+      <%= button_to  "Delete this holiday", calendar_holiday_path, method: :delete, class:"btn btn-sl btn-danger", form: { data: { turbo_confirm: "Are you sure you want to delete this holiday?" } } %>
+    </div>
+  <%end%>
 </div>
 </div>

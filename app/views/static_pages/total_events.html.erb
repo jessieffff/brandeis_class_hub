@@ -1,0 +1,60 @@
+<h1 class = "container" style = "text-align: center"> All Events </h1>
+<div class = "calendar-details-page">
+
+<%# the goal is to loop each calendar %>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Event Name</th>
+            <th scope="col">Event Type</th>
+            <th scope="col">Event Date</th>
+            <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <% CalendarHelper.load_holidays(current_user[:id]).each do |info| %>
+            <tbody>
+                <tr>
+                    <td scope="row"><%= info[0] %></td>
+                    <td scope="row">Holiday</td>
+                    <td scope="row"><%= info[1] %></td>
+                    <td scope="row"><%= link_to "Show this holiday", calendar_holiday_path(Calendar.find_by(id: info[2]).invite_token, info[3]) %> <td>
+                </tr> 
+            </tbody>
+        <% end %>
+
+        <% CalendarHelper.load_courses(current_user[:id]).each do |info| %>
+            <tbody>
+                <tr>
+                    <td scope="row"><%= info[0] %></td>
+                    <td scope="row">Course</td>
+                    <td scope="row"><%= info[4] %>  <%= " to " %>  <%= info[5] %></td>
+                    <td scope="row"><%= link_to "Show this course",  calendar_course_path(Calendar.find_by(id: info[2]).invite_token, info[3]) %> <td>
+                </tr>
+            </tbody>
+        <% end %>
+
+        <% CalendarHelper.load_assignments(current_user[:id]).each do |info| %>
+            <tbody>
+                <tr>
+                    <td scope="row"><%= info[1] %></td>
+                    <td scope="row">Assignment</td>
+                    <td scope="row"><%= info[2] %></td>
+                    <td scope="row"><%= link_to "Show this assignment",  calendar_course_assignment_path(Calendar.find_by(id: info[5]).invite_token, 
+Course.find_by(id: info[5]).slug, info[4]) %> <td>
+                </tr>
+            </tbody>
+        <% end %>
+
+
+        <% CalendarHelper.load_other_events(current_user[:id]).each do |info| %>
+            <tbody>
+                <tr>
+                    <td scope="row"><%= info[1] %></td>
+                    <td scope="row">Event</td>
+                    <td scope="row"><%= info[2] %></td>
+                    <td scope="row"><%= link_to "Show this event",  calendar_other_event_path(Calendar.find_by(id:info[5] ).invite_token, info[6]) %> <td>
+                </tr>
+            </tbody>
+        <% end %>
+    </table>
+</div>

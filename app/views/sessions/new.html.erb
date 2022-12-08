@@ -1,21 +1,19 @@
-<div class="container event-box" align="center">
+<div class="container event-box login_page" align="center">
   <% provide(:title, "Log in") %>
-  <h1>Log in</h1>
-
+  <h3>Log in to Brandeis Class Hub</h3>
+  <br>
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= form_with(url: login_path, scope: :session) do |f| %>
-
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.email_field :email, class: 'form-control', placeholder: "Enter your email" %>
+        <%= f.password_field :password, class: 'form-control',  placeholder: "Enter your password" %>
 
         <%= f.submit "Log in", class: "btn btn-primary" %>
       <% end %>
-      <p>OR</p>
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-primary"  %>
+       <p>OR</p>
+       <%= link_to image_tag("google_sign_in_2.png", width: "175"), "/auth/google_oauth2" %>
+       <hr>
+      <%= link_to "Sign up for an account", signup_path%>
     </div>
   </div>
 </div>

@@ -1,0 +1,29 @@
+<h1> Search Results </h1>
+
+<table class="table calendar-list-page">
+  <thead>
+    <tr>
+      <th>Calendar Name</th>
+      <th>Description</th>
+      <th>Creator</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+
+  <tbody>
+   
+    <% @calendars.each do |calendar| %>
+      <tr>
+        <td><%= link_to calendar.name, calendar%></td>
+        <td><%= calendar.description %></td>
+        <td><%=  User.find_by(id: calendar.user_id).first_name + " " + User.find_by(id: calendar.user_id).last_name %></td>
+        <td><%= link_to "Details", calendar%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="input-group input-group-sm mb-3 search-calendar-button" >
+  <%= link_to "Back", :back, class:"btn btn-lg btn-primary"%>
+</div>
+

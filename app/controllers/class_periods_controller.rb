@@ -1,23 +1,22 @@
 class ClassPeriodsController < ApplicationController
+  before_action :logged_in_user
   before_action :set_class_period, only: %i[ show edit update destroy ]
-before_action :logged_in_user
+
   # GET /class_periods or /class_periods.json
   def index
     @class_periods = ClassPeriod.all
   end
 
-  # GET /class_periods/1 or /class_periods/1.json
-  def show
-  end
+  # GET
+  def show;end
 
   # GET /class_periods/new
   def new
     @class_period = ClassPeriod.new
   end
 
-  # GET /class_periods/1/edit
-  def edit
-  end
+  # GET
+  def edit;end
 
   # POST /class_periods or /class_periods.json
   def create
@@ -25,7 +24,9 @@ before_action :logged_in_user
 
     respond_to do |format|
       if @class_period.save
-        format.html { redirect_to class_period_url(@class_period), notice: "Class period was successfully created." }
+        format.html { redirect_to calendar_course_class_periods_path(Calendar.find_by(id: @class_period.calendar_id).invite_token, 
+          Course.find_by(id: @class_period.course_id).slug),
+          notice: "Class period was successfully created." }
         format.json { render :show, status: :created, location: @class_period }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,9 @@ before_action :logged_in_user
   def update
     respond_to do |format|
       if @class_period.update(class_period_params)
-        format.html { redirect_to class_period_url(@class_period), notice: "Class period was successfully updated." }
+        format.html { redirect_to calendar_course_class_period_path(Calendar.find_by(id: @class_period.calendar_id).invite_token, 
+          Course.find_by(id: @class_period.course_id).slug, ClassPeriod.last.id),
+          notice: "Class period was successfully updated." }
         format.json { render :show, status: :ok, location: @class_period }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -49,10 +52,11 @@ before_action :logged_in_user
 
   # DELETE /class_periods/1 or /class_periods/1.json
   def destroy
+    prev_calendar_id = Calendar.find_by(id: @class_period.calendar_id)
     @class_period.destroy
 
     respond_to do |format|
-      format.html { redirect_to class_periods_url, notice: "Class period was successfully destroyed." }
+      format.html { redirect_to calendar_path(prev_calendar_id), notice: "Class period was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -65,14 +69,7 @@ before_action :logged_in_user
 
     # Only allow a list of trusted parameters through.
     def class_period_params
-      params.require(:class_period).permit(:course_id, :start_time, :end_time)
+      params.require(:class_period).permit(:course_id, :start_time, :end_time, :date, :calendar_id)
     end
 
-          # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in? 
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url, status: :see_other
-    end
-  end
 end

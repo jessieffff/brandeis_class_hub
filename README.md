@@ -13,37 +13,59 @@ Generally, our functionality so far is making events for the calendar, sharing c
 https://trello.com/b/heBEa0Pv/main
 
 ### Heroku Link
-https://safe-woodland-06100.herokuapp.com/
+https://rocky-hollows-83897.herokuapp.com/
 
 ### Final Report Link
 It can be found [here](final-report.md)
 
 ### URL patterns
-**Root (/):** This gives the base view of the app, currently just our logo and a button to log in/sign up.
+**Root (/):** This shows the landing page of the app, it introduces the concept of the app and has a carousel showing main functionalities.
+**Calendar View (/home/calendar):** This is the main page of the app, where users see all their events showing one a calendar.
+**Search (/search):** This page shows the search result of calendars. 
+**Subscribe (/subscribe):** This page is where users have options to subscribe to more calendars.
+**Events table (/total_events):** This refers to a list of events this user has.
 
 **Calendar Routes:**
-- Route: */calendars* - /calendars refers to a single calendar.
+- Route: */calendars* - /calendars refers to a list of calendars this user has.
 - Methods: *#index*, *#create*
-  - #index shows the current calendars.
+  - #index shows the calendars.
   - #create allows the user to create a new calendar; it renders /new.
-- Sub-routes on /calendar: */new*, */:id* 
-  - /:id refers to the specific calendar.
-  - Methods on /:id - *#show*, *#update*, *#destroy*
+- Sub-routes on /calendar: */new*, */:index* 
+  - /:invite_token refers to the specific calendar.
+  - Methods on /:invite_token - *#show*, *#update*, *#destroy*
     - #show shows the current calendar.
     - #update updates the current calendar.
     - #destroy deletes the current calendar.
-  - Sub-route on /:id - /edit, which changes the settings on the current calendar.
+  - Sub-route on /:invite_token - /edit, which changes the settings on the current calendar.
+
+**UserCalendar Routes:**
+- Route: */user_calendars* - /calendars refers to a list of calendars with users.
+- Methods: *#index*, *#create*, *#subscribe*
+  - #index shows the user calendars.
+  - #create allows the user to create a new user calendar;
+  - #subscribe allows the user to subscribe to another calendar in the database; it renders /subscribe_calendar
+- Sub-routes on /user_calendars: */new*, */:index* 
+  - /:id refers to the specific calendar.
+  - Methods on /:id - *#show*, *#update*, *#destroy*
+    - #show shows the current user calendar.
+    - #update updates the current user calendar.
+    - #destroy deletes the current user calendar.
+  - Sub-route on /:id - /edit, which changes the settings on the current user calendar.
   
 **Event Routes**
 - Routes: */events*, */holidays*, */class_periods*, */courses*, */assignments*
   - All of these have the same methods, but are different types of event.
-- Methods on the event routes: *#index*, *#create*
-  - #index shows all events a user has of the specified type.
-  - #create makes a new event of the specified type, it renders /new.
-- Sub-routes for all event routes: */new*, */:id*
-  - /:id refers to the specific event.
-  - Method on /:id - *#show*: This displays the event.
-  - Sub-route on /:id - */edit*: This allows a user to edit the event.
+- Methods on these routes: *#new*
+  - #new makes a new event of the specified type, it renders /new.
+
+- Routes: */calendars/:calendar_invite_token/other_events*, */calendars/:calendar_invite_token/holidays*, */calendars/:calendar_invite_token/class_periods*, */calendars/:calendar_invite_token/courses*, */assignments*
+- Sub-routes for these routes: */:slug*
+  - /:slug refers to the specific event.
+  - Method on /:slug - *#show*, *#update*, *#destroy*
+    - #show shows the specific event.
+    - #update updates the specific event.
+    - #destroy deletes the specific event.
+  - Sub-route on /:slug - */edit*: This allows a user to edit the event.
   
 **Sign-up/Login Routes**
 - Routes: */users*, */signup*, */login*, */logout*
@@ -51,24 +73,27 @@ It can be found [here](final-report.md)
     - /login creates a new session and logs in the user. It uses sessions#new and sessions#create to do this.
     - /logout closes the session and logs out the user via sessions#destroy.
     - /users refers to all of the users.
-      - Method on /users: *#index*, which shows all users.
       - Sub-route on /users: */:id*, which refers to a single user.
-        - Methods on /:id - *#show*, *#update*, *#destroy*
+        - Methods on /:id - *#show*, *#update*
           - #show displays the user
           - #update updates the user via /edit.
-          - #destroy deletes the user.
         - Sub-route on /:id - */edit*, which is a page that updates the user.
 
 
 
 ### Schema
-<img src="./app/assets/images/schema.png"/>
+<img width="1156" alt="image" src="https://user-images.githubusercontent.com/88059544/206369199-2d2fa442-815d-4a43-a7bc-3f5247e51ace.png">
 
-### Planned views
+### Views
+- Landing page to introduce the app.
 - Sign up page and login page for users. 
-- Calendar home view where users can switch between days, weeks and months.
+- Calendar home view where users can switch between days, weeks and months and view all events.
 - Shared calendar view where users can create a calendar, edit a shared calendar, either shared or not.
 - Event view is built on calendar view, where users can create an event on a calendar. Based on the event category, assignment view, holiday view and other events view loads where users can put in detailed information for each event.
+- Calendar list view where users can see all the calendars they created and subscribed to.
+- Event list view where users can see all the events they have in a list.
+- Subscribe form view where users can search for more calendars to subscribe.
+- Search view where users can view the search result of calendars in a list. 
 
 ### List of our dependencies on APIs, gems, libraries and so on
 - gem 'rails', '~> 7.0.4'
@@ -94,18 +119,17 @@ It can be found [here](final-report.md)
 ### Instruction to run test
 ```
 rails test
+rails test:system test
 ```
 
-### Prototype
-<img src="./app/assets/images/paper_prototype/first_page.png">
-<img src="./app/assets/images/paper_prototype/login.png">
-<img src="./app/assets/images/paper_prototype/sign_up.png">
-<img src="./app/assets/images/paper_prototype/month.png">
-<img src="./app/assets/images/paper_prototype/week.png">
-<img src="./app/assets/images/paper_prototype/day.png">
-<img src="./app/assets/images/paper_prototype/event.png">
-<img src="./app/assets/images/paper_prototype/new_event.png">
-<img src="./app/assets/images/paper_prototype/shared_calendars.png">
+### Screenshots as of Dec 8
+<img src="./app/assets/images/Screenshots/Landing_Page.png">
+<img src="./app/assets/images/Screenshots/Calendar_View.png">
+<img src="./app/assets/images/Screenshots/New_Course_Form.png">
+<img src="./app/assets/images/Screenshots/Profile.png">
+<img src="./app/assets/images/Screenshots/Calendar_List.png">
+<img src="./app/assets/images/Screenshots/Course_Info.png">
+<img src="./app/assets/images/Screenshots/Repeated_Events.png">
 
 
 

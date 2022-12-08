@@ -3,21 +3,24 @@ class Day
 
     attr_accessor :day
 
-    def initialize(year, month, day)
+    def initialize(year, month, day, user_id)
         @day = day
         @month = month
         @year = year
         @today = Date.new(@year, @month, @day)
+        @user_id = user_id
     end
 
     def load_events
-        #load each type of event
-        #Find user
-        #user.calendars then go to holdya table and look for those
-        today_events = Holiday.all.where(date: @today.all_day) +
-                        OtherEvent.all.where(start_time: @today.all_day) +
-                        ClassPeriod.all.where(start_time: @today.all_day) +
-                        Assignment.all.where(due_date: @today.all_day)
+        today_events = []
+        calendars = UserCalendar.where(user_id: @user_id)
+        calendars.each do |cal|
+            today_events = today_events +
+                        Holiday.all.where(date: @today.all_day, calendar_id: cal.calendar_id) +
+                        OtherEvent.all.where(date: @today.all_day, calendar_id: cal.calendar_id) +
+                        ClassPeriod.all.where(date: @today.all_day, calendar_id: cal.calendar_id) +
+                        Assignment.all.where(due_date: @today.all_day, calendar_id: cal.calendar_id)
+        end
         return today_events
     end
 

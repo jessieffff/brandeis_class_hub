@@ -1,10 +1,71 @@
-<h1>Editing course</h1>
+<h1>Edit Course Information</h1>
 
-<%= render "form", course: @course %>
+<div class="container event-box" align="center">
+  <%= form_with(scope: :course, url: calendar_course_path(@course), method: :patch) do |form| %>
+    <% if @course.errors.any? %>
+      <div style="color: red">
+        <ul>
+          <% @course.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div> 
+    <% end %>
 
-<br>
+   <div class="input-group input-group-sm mb-3">
+      <%= form.label :calendar_id, style: "display: block" %>
+      <%= form.select :calendar_id, CalendarHelper.load_calendars(current_user[:id]), include_blank:true %>
+    </div>
 
-<div>
-  <%= link_to "Show this course", @course %> |
-  <%= link_to "Back to courses", courses_path %>
+    <%= link_to "Create a New Calendar", new_calendar_path %>
+    <br><br>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :start_date, style: "display: block" %>
+      <%= form.date_field :start_date %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :end_date, style: "display: block" %>
+      <%= form.date_field :end_date %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :start_time, style: "display: block" %>
+      <%= form.time_field :start_time, value: "%I:%M%p" %>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :end_time, style: "display: block" %>
+      <%= form.time_field :end_time, value: "%I:%M%p"%>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.label :professor_name, style: "display: block" %>
+      <%= form.text_field :professor_name %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :Meeting_Days %>
+        <div class = "weekday-selector">
+          M<%= form.check_box :repetition_frequency, { multiple: true }, 'M', false %>
+          T<%= form.check_box :repetition_frequency, { multiple: true }, 'T', false %>
+          W<%= form.check_box :repetition_frequency, { multiple: true }, 'W', false %>
+          Th<%= form.check_box :repetition_frequency, { multiple: true }, 'H', false %>
+          F<%= form.check_box :repetition_frequency, { multiple: true }, 'F', false %>
+          Sa<%= form.check_box :repetition_frequency, { multiple: true }, 'S', false %>
+          Su<%= form.check_box :repetition_frequency, { multiple: true }, 'U', false %>
+        </div>  
+    </div> 
+
+    <div class="input-group input-group-sm mb-3">
+      <%= form.submit :Submit, class:"btn btn-sl btn-primary" %>
+    </div>
+  <% end %>
 </div>
+

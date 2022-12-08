@@ -1,28 +1,36 @@
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Owner</th>
-      <th>Public</th>
-      <%# <th>Token</th> %>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @calendars.each do |calendar| %>
+<h1 style = "text-align: center"> Current Subscribed Calendars </h1>
+<div class = "calendar-details-page">
+  <table class="table">
+    
+    <thead>
+      
       <tr>
-        <td><%= calendar.calendar_name %></td>
-        <td><%= calendar.users.first.first_name + " " +calendar.users.first.last_name%></td>
-        <%# <><%= calendar.user_first_name %>
-        <td><%= calendar.shared %></td>
-        <%# <><%= calendar.invite_token %>
-        <%# change show to copy token %>
-        <td><%= link_to 'Details', calendar %></td>
-        <%# <td><%= link_to 'Edit', edit_calendar_path(calendar) %>
-        <%# <td><%= link_to 'Destroy', calendar, method: :delete %>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Owner</th>
+        <th>Public</th>
+        <th>Details</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% UserCalendar.where(user_id:Current.user.id).each do |calendar| %>
+        <tr>
+          <td><%= calendar.calendar.name %></td>
+          <td><%= calendar.calendar.description %></td>
+          <td><%= User.find_by(id: calendar.calendar.user_id).first_name + " " + User.find_by(id: calendar.calendar.user_id).last_name %></td>
+          <% if calendar.calendar.shared %>
+            <td> Public</td>
+          <% else%>
+            <td> Not public </td>
+          <%end%>
+          <td><%= link_to 'Details', calendar.calendar %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%# redirect to search page %>
+  <div class="input-group input-group-sm mb-3 search-calendar-button" >
+    <%= link_to "Create a new calendar", new_calendar_path, class:"btn btn-sl btn-primary" %> |  <%= link_to "Subscribe to more calendars", subscribe_url, class:"btn btn-sl btn-primary" %>
+  </div>
+</div>

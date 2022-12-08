@@ -1,13 +1,13 @@
 class Event
     def self.getURL(event, paths)
         if (event.is_a? Holiday)
-            "#{paths[:holiday]}/#{event.id}"
+            "#{paths[:calendar]}/#{Calendar.find_by(id: event.calendar_id).invite_token}/#{'holidays'}/#{event.slug}"
         elsif (event.is_a? Assignment)
-            "#{paths[:assignment]}/#{event.id}"
+            "#{paths[:calendar]}/#{Calendar.find_by(id: event.calendar_id).invite_token}/#{'courses'}/#{Course.find_by(id: event.course_id).slug}/#{'assignments'}/#{event.slug}"
         elsif (event.is_a? ClassPeriod)
-            "#{paths[:class_period]}/#{event.id}"
+            "#{paths[:calendar]}/#{Calendar.find_by(id: event.calendar_id).invite_token}/#{'courses'}/#{Course.find_by(id: event.course_id).slug}/#{'class_periods'}/#{event.id}"
         else
-            "#{paths[:other_event]}/#{event.id}"
+            "#{paths[:calendar]}/#{Calendar.find_by(id: event.calendar_id).invite_token}/#{'other_events'}/#{event.slug}"
         end
     end
 

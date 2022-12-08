@@ -6,10 +6,11 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test "get url" do
-    event = Holiday.create(id: 1, calendar_id: 2, name: "Christmas")
-    paths = {holiday: "holidayURL", assignment: "assignmentURL",
-             class_period: "class_periodURL", other_event: "other_eventURL"}
-    assert_equal(Event.getURL(event, paths), "holidayURL/1")
+    calendar = Calendar.create(name: "Test", user_id: 2, invite_token: "Test")
+    event = Holiday.create(calendar_id: calendar.id, name: "Christmas", date: Date.new(2022, 10, 30), holiday_type: "Party")
+    paths = {calendar: "calendars", holiday: "holidays", assignment: "assignments",
+             class_period: "class_periods", other_event: "other_events"}
+    assert_equal(Event.getURL(event, paths), "calendars/Test/holidays/christmas")
     
   end
 end

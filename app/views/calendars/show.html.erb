@@ -1,33 +1,188 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @calendar %>
+<h1 class = "container" style = "text-align: center"> Calendar Details </h1>
+<div class = "calendar-details-page">
 
-<div class="row">
-  <aside class="col-md-4">
-    <section >
-    <% if creator?(@calendar) == true %>
+<div class="calendar_details_overview" >
+  <h2><strong><%= @calendar.name %></strong> 
+    <% if @calendar.shared %> 
+      (Public)
+    <%else%> 
+    (Private)
+    <%end%>
+  </h2>
+
+  <h3><%= @calendar.description %></h3>
+
+  <h4> Created by: <%= User.find_by(id: @calendar.user_id).first_name %> <%= User.find_by(id: @calendar.user_id).last_name %> <h4>
+</div>
+
+
+
+
+<div class = "calendar-table">
+<%# assignment table %>
+  <% if Assignment.exists?(calendar_id: @calendar.id) %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Assignment </th>
+          <th scope="col">Assignment duetime</th>
+          <th scope="col">Course</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% Assignment.where(calendar_id: @calendar.id).each do |assignment| %>
+          <tr>
+            <td scope="row"><%= assignment.name %></td>
+            <td scope="row"><%= assignment.due_date %></td>
+            <td scope="row"><%= Course.find_by(id: assignment.course_id).name %></td>
+            <td scope="row"><%= link_to "Show this assignment", calendar_course_assignment_path(Calendar.find_by(id: assignment.calendar_id).invite_token, 
+          Course.find_by(id: assignment.course_id).slug, assignment.slug) %> <td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+<%# holiday table %>
+  <% if Holiday.exists?(calendar_id: @calendar.id) %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Holiday </th>
+          <th scope="col">Holiday Date</th>
+          <th scope="col">Holiday Type</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% Holiday.where(calendar_id: @calendar.id).each do |holiday| %>
+          <tr>
+            <td scope="row"><%= holiday.name %></td>
+            <td scope="row"><%= holiday.date %></td>
+            <td scope="row"><%= holiday.holiday_type %></td>
+            <td scope="row"><%= link_to "Show this holiday", calendar_holiday_path(Calendar.find_by(id: holiday.calendar_id).invite_token, holiday.slug) %> <td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  
+  <%# course table %>
+  <% if Course.exists?(calendar_id: @calendar.id) %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Course </th>
+          <th scope="col">Date</th>
+          <th scope="col">Professor</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% Course.where(calendar_id: @calendar.id).each do |course| %>
+          <tr>
+            <td scope="row"><%= course.name %></td>
+            <td scope="row"><%= course.start_date.to_s + " - " + course.end_date.to_s %></td>
+            <td scope="row"><%= course.professor_name %></td>
+            <td scope="row"><%= link_to "Show this course", calendar_course_path(Calendar.find_by(id: course.calendar_id).invite_token, course.slug) %> <td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <%# other event %>
+  <% if OtherEvent.exists?(calendar_id: @calendar.id) %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Other event </th>
+          <th scope="col">Date</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% OtherEvent.where(calendar_id: @calendar.id).each do |other| %>
+          <tr>
+            <td scope="row"><%= other.name %></td>
+            <td scope="row"><%= other.date %></td>
+            <td scope="row"><%= other.start_time.strftime("%I:%M%p").to_s + " - " + other.end_time.strftime("%I:%M%p").to_s  %></td>
+            <td scope="row"><%= link_to "Show this event", calendar_other_event_path(Calendar.find_by(id: other.calendar_id).invite_token, other.slug) %> <td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+<div>
+  <aside>
+    <section class="calendar-event-box" align="center">
+    <%# <% if UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %> 
+    <% if Calendar.find_by(id: @calendar.id).user_id == Current.user.id %>
       <h3>
-        <%= link_to "Edit this calendar", edit_calendar_path(@calendar) %> |
-        <%= link_to "Back to calendars", home_calendar_path %>
-        <%= button_to "Destroy this calendar", @calendar, method: :delete %> 
+        <%= link_to "Edit this Calendar", edit_calendar_path(@calendar), class:"btn btn-sl btn-primary"%> |
+        <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-sl btn-primary"%> | 
+        <div class="btn btn-sl btn-primary">
+            <a href="#" id="new-event" class="dropdown-toggle">
+                Add New Event <b class="caret"></b>
+            </a>
+        </div>
+        <ul id="new-event-menu" class="dropdown-menu">
+            <li>
+            <%= link_to "New course", new_course_path %>
+            <%= link_to "New assignment", new_assignment_path %>
+            <%= link_to "New holiday", new_holiday_path %>
+            <%= link_to "New other event", new_other_event_path %>
+            </li>
+        </ul>
       </h3>
-    <% else %>
-      <h3> 
-        <%= link_to "Back to calendars", home_calendar_path %>
-      </h3> 
-    <% end %>
-    </section>
-    <div <%= @calendar.id %>"  aria-labelledby="heading<%= @calendar.id %>">
+      <hr class="rounded">
+      <div <%= @calendar.id %> aria-labelledby="heading<%= @calendar.id %>">
       <div class="card-body">
-        <div class="invite-box mb-4" data-controller="invite">
-          <h5 class="mb-1">Click on the link below to copy and share:</h5>
-           
-          
-            <input onclick="this.select();document.execCommand('copy');" class="calendar-url" id="cb-link-field" type="text" value="<%= calendar_url(@calendar) %>" data-target="invite.url" data-group-token="<%= @calendar.invite_token %>"/>
-          
+        <div class="invite-box" data-controller="invite">
+          <h4 class="mb-1">Click on the link below to copy and share with a friend:</h4>
+          <input class="btn btn-lg btn-link" onclick="this.select();document.execCommand('copy');" class="calendar-url" id="cb-link-field" type="text" value="<%= new_calendar_user_calendar_url(@calendar) %>" data-target="invite.url" data-calendar-token="<%= @calendar.invite_token %>"/>
           </div>
         </div>
       </div>
+      <hr class="rounded">
+      <div class = "container" style = "width:70%" >
+      <h3> Import Courses To This Calendar</h3>
+        <%= form_tag import_from_excel_courses_url, multipart: true do %>
+          <%= file_field_tag :file%>
+          <%= hidden_field_tag :calendar_id , @calendar.id %>
+          <%= submit_tag "Import Courses", class:"btn btn-sl btn-primary subscribe-button" %>
+        <% end %>
+      </div>  
+      <hr class="rounded">
+      <div class="delete-button">
+        <%= button_to "Delete this Calendar", @calendar, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this calendar?/nAll related events will be delted" }}, class:"btn btn-lg btn-danger"%> 
+      </div>
     <div>
+    <% elsif UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %>
+      <h3> 
+        <%= button_to "Unsubscribe from this calendar", UserCalendar.find_by(user_id: @current_user.id, calendar_id: @calendar.id), method: :delete, class:"btn btn-lg btn-primary"%> 
+        <div class="delete-button">
+          <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-lg btn-primary" %>
+        <div>
+      </h3> 
+    <% else%>  
+    <div>
+    <%= form_tag subscribe_calendar_user_calendars_url, multipart: true do %>
+      <%= hidden_field_tag :calendar_id , @calendar.id %>
+      <%= submit_tag "Subscribe to this calendar", class:"btn btn-lg btn-primary subscribe-button" %>
+    <% end %>
+    </div>
+     <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-lg btn-primary" %>
+    <% end %>
+    </section>
   </aside>
+</div>
+</div>
 </div>

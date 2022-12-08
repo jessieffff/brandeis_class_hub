@@ -10,21 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_223716) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignments", force: :cascade do |t|
     t.integer "calendar_id"
     t.string "name"
-    t.datetime "due_date"
+    t.date "due_date"
+    t.time "due_time"
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["name"], name: "index_assignments_on_name", unique: true
+    t.index ["slug"], name: "index_assignments_on_slug", unique: true
   end
 
   create_table "calendars", force: :cascade do |t|
-    t.string "calendar_name"
+    t.string "name"
+    t.string "description"
     t.integer "user_id"
     t.boolean "shared"
     t.string "invite_token"
@@ -34,10 +39,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
   end
 
   create_table "class_periods", force: :cascade do |t|
+    t.integer "calendar_id"
     t.integer "course_id"
     t.string "name"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time "start_time"
+    t.time "end_time"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,29 +54,52 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
-    t.string "location"
+    t.time "start_time"
+    t.time "end_time"
     t.string "professor_name"
     t.string "repetition_frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["name"], name: "index_courses_on_name", unique: true
+    t.index ["slug"], name: "index_courses_on_slug", unique: true
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
   create_table "holidays", force: :cascade do |t|
     t.integer "calendar_id"
     t.string "name"
-    t.datetime "date"
+    t.date "date"
     t.string "holiday_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["name"], name: "index_holidays_on_name", unique: true
+    t.index ["slug"], name: "index_holidays_on_slug", unique: true
   end
 
   create_table "other_events", force: :cascade do |t|
     t.integer "calendar_id"
     t.string "name"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time "start_time"
+    t.time "end_time"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["name"], name: "index_other_events_on_name", unique: true
+    t.index ["slug"], name: "index_other_events_on_slug", unique: true
   end
 
   create_table "user_calendars", force: :cascade do |t|
@@ -83,11 +113,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_223807) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "student_id"
     t.string "email"
+    t.string "provider"
+    t.string "uid"
+    t.string "google_token"
+    t.string "google_refresh_token"
+    t.string "password_digest"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

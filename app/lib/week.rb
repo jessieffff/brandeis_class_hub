@@ -12,7 +12,7 @@ class Week
         @days = []
     end
 
-    def load_week
+    def load_week(user_id)
         #loads nil in starting positions if not full week in month
         if (@start_date.day < 22)
             for a in 0...(7 - @days_in_week)
@@ -22,7 +22,7 @@ class Week
         
         #loads each day
         for a in 0...@days_in_week do
-            day = Day.new(@start_date.year, @start_date.month, @start_date.day + a)
+            day = Day.new(@start_date.year, @start_date.month, @start_date.day + a, user_id)
             @days.push(day)
         end
 

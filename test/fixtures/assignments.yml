@@ -2,12 +2,16 @@
 
 one:
   calendar_id: 1
-  name: MyString
-  due_date: 2022-10-21 15:11:19
+  name: Test_Assignment
+  due_date: <%= Date.new(2022, 10, 21) %>
+  due_time: <%= Time.zone.local(2000, 1, 1, 10, 0, 0) %>
   course_id: 1
+  slug: test-2
 
 two:
   calendar_id: 1
-  name: MyString
-  due_date: 2022-10-21 15:11:19
-  course_id: 1
+  name: Test_Assignment2
+  due_date: <%= Date.new(2022, 10, 22) %>
+  due_time: <%= Time.zone.local(2000, 1, 1, 11, 0, 0) %>
+  course_id: 2
+  slug: test-3
