@@ -18,6 +18,9 @@ https://rocky-hollows-83897.herokuapp.com/
 ### Final Report Link
 It can be found [here](final-report.md)
 
+### Slideshow Link
+https://docs.google.com/presentation/d/1J1FzXEHdV9BLZOe5hHJ2pB9wRXQdi_IRz6i9zyYVDog/edit?usp=sharing
+
 ### URL patterns
 **Root (/):** This shows the landing page of the app, it introduces the concept of the app and has a carousel showing main functionalities.
 **Calendar View (/home/calendar):** This is the main page of the app, where users see all their events showing one a calendar.
