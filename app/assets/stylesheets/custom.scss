@@ -212,6 +212,7 @@ input {
 
 .dropdown-menu.active {
     display: block;
+    text-align: center;
   }
 
 
@@ -659,4 +660,10 @@ footer{
   text-align: center;
   height:10px;
   width:100%;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 5px solid #bbb;
+  border-radius: 5px;
 }

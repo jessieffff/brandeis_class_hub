@@ -20,7 +20,7 @@
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :course_id, style: "display: block" %>
-      <%= form.select :course_id, CalendarHelper.load_courses(current_user[:id]), include_blank:true %>
+      <%= form.select :course_id, CalendarHelper.load_courses_selection(current_user[:id]), include_blank:true%>
     </div>
 
     <%= link_to "Create a New Course", new_course_path %>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="input-group input-group-sm mb-3">
-      <%= form.submit :Submit, class:"btn btn-lg btn-primary" %>
+      <%= form.submit :Submit, class:"btn btn-sl btn-primary" %>
     </div>
   <% end %>
 </div>

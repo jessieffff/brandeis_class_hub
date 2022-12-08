@@ -24,8 +24,22 @@ class CalendarHelper
       end
     end
 
-    all_params
-  end
+    def self.load_courses(user_id)
+        calendars = UserCalendar.where(user_id: user_id)
+        all_courses = []
+        calendars.each do |cal|
+            all_courses += Course.all.where(calendar_id: cal.calendar_id).collect { |course| [course.name, course.id, course.calendar_id, course.slug, course.start_date, course.end_date, course.professor_name]}
+        end
+        return all_courses
+    end
+
+    def self.load_courses_selection(user_id)
+        calendars = UserCalendar.where(user_id: user_id)
+        all_courses_options = []
+        calendars.each do |cal|
+            all_courses_options += Course.all.where(calendar_id: cal.calendar_id).collect { |course| [course.name, course.id]}
+        end
+    return all_courses_options
 
   def self.load_calendars(user_id)
     Calendar.all.where(user_id:).collect { |calendar| [calendar.name, calendar.id] }

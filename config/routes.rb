@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :courses do
     collection { post :import_from_excel }
+    collection { post :add_new_assignment }
   end
 
 
