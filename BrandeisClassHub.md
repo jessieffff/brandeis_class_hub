@@ -1,5 +1,5 @@
 name: Brandeis Class Hub
-blurb: Brandeis Class Hub brings all your classes, assignments, and events together. A digital platform designed for Brandeis Community.
+blurb: A convenient way to manage, view and share Brandeis events such as classes and assignments. Data can be imported or manually inputted and calendars can be shared between users.
 course: 166B
 semester: 2022 (Fall)
 github: https://github.com/jessieffff/brandeis_class_hub.git
