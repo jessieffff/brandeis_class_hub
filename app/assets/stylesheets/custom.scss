@@ -646,3 +646,9 @@ footer{
   height:10px;
   width:100%;
 }
+
+/* Rounded border */
+hr.rounded {
+  border-top: 5px solid #bbb;
+  border-radius: 5px;
+}
