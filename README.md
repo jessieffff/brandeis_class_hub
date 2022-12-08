@@ -120,13 +120,13 @@ rails test:system test
 ```
 
 ### Screenshots as of Dec 8
-<img src="./app/assets/images/paper_prototype/Landing_Page.png">
-<img src="./app/assets/images/paper_prototype/Calendar_View.png">
-<img src="./app/assets/images/paper_prototype/New_Course_Form.png">
-<img src="./app/assets/images/paper_prototype/Profile.png">
-<img src="./app/assets/images/paper_prototype/Calendar_List.png">
-<img src="./app/assets/images/paper_prototype/Course_Info.png">
-<img src="./app/assets/images/paper_prototype/Repeated_Events.png">
+<img src="./app/assets/images/Screenshots/Landing_Page.png">
+<img src="./app/assets/images/Screenshots/Calendar_View.png">
+<img src="./app/assets/images/Screenshots/New_Course_Form.png">
+<img src="./app/assets/images/Screenshots/Profile.png">
+<img src="./app/assets/images/Screenshots/Calendar_List.png">
+<img src="./app/assets/images/Screenshots/Course_Info.png">
+<img src="./app/assets/images/Screenshots/Repeated_Events.png">
 
 
 
