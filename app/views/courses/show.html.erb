@@ -18,7 +18,7 @@
 
 <div>
   <strong>Repeat on</strong>
-  <p><%= @course.repetition_frequency %></p>
+  <p><%= CalendarHelper.reformat_repetition(@course.repetition_frequency) %></p>
 </div>
 
 
