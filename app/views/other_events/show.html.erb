@@ -19,7 +19,7 @@
     <%= link_to "Back", :back, class:"btn btn-lg btn-primary"%>
   <% if Calendar.find_by(id: @other_event.calendar_id).user_id == Current.user.id%>
     <div class="delete-button">
-        <%= button_to  "Delete this event", calendar_other_event_path, method: :delete, class:"btn btn-lg btn-primary", form: { data: { turbo_confirm: "Are you sure you want to delete this event?" }} %>
+        <%= button_to  "Delete this event", calendar_other_event_path, method: :delete, class:"btn btn-lg btn-danger", form: { data: { turbo_confirm: "Are you sure you want to delete this event?" }} %>
     </div>
   <%end%>
 </div>

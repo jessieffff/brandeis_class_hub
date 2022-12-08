@@ -129,7 +129,7 @@
         <%= link_to "Edit this calendar", edit_calendar_path(@calendar), class:"btn btn-lg btn-primary"%> |
         <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-lg btn-primary"%>
         <div class="delete-button">
-        <%= button_to "Delete this calendar", @calendar, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this calendar?/nAll related events will be delted" }}, class:"btn btn-lg btn-primary"%> 
+        <%= button_to "Delete this calendar", @calendar, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this calendar?/nAll related events will be delted" }}, class:"btn btn-lg btn-danger"%> 
         </div>
       </h3>
       <div <%= @calendar.id %> aria-labelledby="heading<%= @calendar.id %>">

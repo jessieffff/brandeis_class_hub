@@ -18,7 +18,7 @@
     <%= link_to "Back", :back, class:"btn btn-lg btn-primary"%>
   <% if Calendar.find_by(id: @holiday.calendar_id).user_id == Current.user.id%>
     <div class="delete-button">
-      <%= button_to  "Delete this holiday", calendar_holiday_path, method: :delete, class:"btn btn-lg btn-primary", form: { data: { turbo_confirm: "Are you sure you want to delete this holiday?" } } %>
+      <%= button_to  "Delete this holiday", calendar_holiday_path, method: :delete, class:"btn btn-lg btn-danger", form: { data: { turbo_confirm: "Are you sure you want to delete this holiday?" } } %>
     </div>
   <%end%>
 </div>

@@ -29,7 +29,7 @@
   <% end %>
   <% if Calendar.find_by(id: @class_period.calendar_id).user_id == Current.user.id%>
     <div class="delete-button">
-         <%= button_to  "Delete this class", calendar_course_class_period_path, method: :delete, class:"btn btn-lg btn-primary", form: { data: { turbo_confirm: "Are you sure you want to delete this class?" }} %>
+         <%= button_to  "Delete this class", calendar_course_class_period_path, method: :delete, class:"btn btn-lg btn-danger", form: { data: { turbo_confirm: "Are you sure you want to delete this class?" }} %>
     </div>
   <%end%>  
 </div>
