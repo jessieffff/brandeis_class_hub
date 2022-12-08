@@ -116,18 +116,17 @@ https://rocky-hollows-83897.herokuapp.com/
 ### Instruction to run test
 ```
 rails test
+rails test:system test
 ```
 
-### Prototype
-<img src="./app/assets/images/paper_prototype/first_page.png">
-<img src="./app/assets/images/paper_prototype/login.png">
-<img src="./app/assets/images/paper_prototype/sign_up.png">
-<img src="./app/assets/images/paper_prototype/month.png">
-<img src="./app/assets/images/paper_prototype/week.png">
-<img src="./app/assets/images/paper_prototype/day.png">
-<img src="./app/assets/images/paper_prototype/event.png">
-<img src="./app/assets/images/paper_prototype/new_event.png">
-<img src="./app/assets/images/paper_prototype/shared_calendars.png">
+### Screenshots as of Dec 8
+<img src="./app/assets/images/paper_prototype/Landing_Page.png">
+<img src="./app/assets/images/paper_prototype/Calendar_View.png">
+<img src="./app/assets/images/paper_prototype/New_Course_Form.png">
+<img src="./app/assets/images/paper_prototype/Profile.png">
+<img src="./app/assets/images/paper_prototype/Calendar_List.png">
+<img src="./app/assets/images/paper_prototype/Course_Info.png">
+<img src="./app/assets/images/paper_prototype/Repeated_Events.png">
 
 
 
