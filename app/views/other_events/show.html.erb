@@ -16,7 +16,7 @@
     <%= link_to "Edit", edit_calendar_other_event_path(Calendar.find_by(id: @other_event.calendar_id).invite_token, @other_event.slug), 
     class:"btn btn-lg btn-primary" %> |
   <%end%>
-    <%= link_to "Back", home_calendar_path(date: params[:date], view: :month), class:"btn btn-lg btn-primary"%>
+    <%= link_to "Back", :back, class:"btn btn-lg btn-primary"%>
   <% if Calendar.find_by(id: @other_event.calendar_id).user_id == Current.user.id%>
     <div class="delete-button">
         <%= button_to  "Delete this event", calendar_other_event_path, method: :delete, class:"btn btn-lg btn-primary" %>
