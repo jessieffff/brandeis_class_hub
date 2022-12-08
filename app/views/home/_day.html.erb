@@ -3,16 +3,16 @@
     <% require_relative '../../lib/event.rb' %>
     <% paths = {calendar:calendars_url, assignment: assignments_url,
     class_period: class_periods_url, other_event: other_events_url} %>
-    <div>
+    <div class = "dayview">
         <% if day %>
-            <div class="day-calendar-item">
+            <div class="day-calendar-item day_event_list">
                 <strong><%= day.day %></strong><br>
                 <% range = Event.getRange(@view) %>
                 <% day.load_events[range].each do |event| %>
                     <% url = Event.getURL(event, paths) %>
                     <% color = Event.getColor(event) %>
-                    <div class='event' id= '<%= color %>' >
-                        <%= link_to event.name, "#{url}?date=#{day.params_date}", class: "eventFont"%>
+                    <div class='event ' id= '<%= color %>' >
+                        <%= link_to event.name, "#{url}?date=#{day.params_date}", class: "eventFont" %>
                     </div>
                 <% end %>
                 <% if day.load_events.length() > 2 && @view != 'day' %>

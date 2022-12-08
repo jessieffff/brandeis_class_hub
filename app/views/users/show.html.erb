@@ -1,3 +1,4 @@
+<h1 class = "container" style = "text-align: center"> Your Information </h1>
 <div class="container event-box" align="center">
   <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
   <p><%= "#{@user.email}" %></p>
@@ -7,10 +8,10 @@
   
   <div>
    <% if @user.image_url%>
-    <%= link_to "Back", home_calendar_path, class:"btn btn-sm btn-primary"%>
+    <%= link_to "Back", :back, class:"btn btn-lg btn-primary"%>
    <% else%>
-   <%= link_to "Edit", edit_user_path(@user), class:"btn btn-sm btn-primary" %> |
-    <%= link_to "Back", home_calendar_path, class:"btn btn-sm btn-primary"%>
+   <%= link_to "Edit", edit_user_path(@user), class:"btn btn-lg btn-primary" %> |
+    <%= link_to "Back", :back, class:"btn btn-lg btn-primary"%>
     <%end%>
   </div>
 </div>

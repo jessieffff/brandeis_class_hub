@@ -1,0 +1,18 @@
+
+body {
+    padding-top: 40px;
+    background-image: url("assets/brandeis-background2.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Merriweather", sans-serif;
+}
+
+/* .main-template {
+    background-image: url("assets/brandeis-background2.jpeg");
+    background-size: cover;
+    min-width: 100%;
+    min-height: 600px;
+} */
+
+

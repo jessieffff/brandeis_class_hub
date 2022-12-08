@@ -2,8 +2,6 @@
 <%= form_with(model: calendar) do |form| %>
   <% if calendar.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
-
       <ul>
         <% calendar.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -27,7 +25,7 @@
   </div>
 
   <div class="input-group input-group-sm mb-3 delete-button">
-    <%= form.submit "Submit", class:"btn btn-sm btn-primary" %>
+    <%= form.submit "Submit", class:"btn btn-sl btn-primary" %>
   </div>
 <div>
 <% end %>
