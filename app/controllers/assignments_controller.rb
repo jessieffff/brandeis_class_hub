@@ -37,10 +37,11 @@ class AssignmentsController < ApplicationController
 
   # PATCH/PUT /assignments/1 or /assignments/1.json
   def update
+    @assignment.slug = nil if @assignment.name != params[:name]
     respond_to do |format|
       if @assignment.update(assignment_params)
         format.html { redirect_to calendar_course_assignment_path(Calendar.find_by(id: @assignment.calendar_id).invite_token, 
-          Course.find_by(id: @assignment.course_id).slug, @assignment.slug), 
+          Course.find_by(id: @assignment.course_id).slug, @assignment.slug),
           notice: "Assignment was successfully updated." }
         format.json { render :show, status: :ok, location: @assignment }
       else
