@@ -2,8 +2,6 @@
   <%= form_with(model: assignment) do |form| %>
     <% if assignment.errors.any? %>
       <div style="color: red">
-        <h2><%= pluralize(assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
-
         <ul>
           <% assignment.errors.each do |error| %>
             <li id="error_reason"><%= error.full_message %></li>
@@ -22,7 +20,7 @@
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :course_id, style: "display: block" %>
-      <%= form.select :course_id, CalendarHelper.load_courses(current_user[:id]), include_blank:true %>
+      <%= form.select :course_id, CalendarHelper.load_courses_selection(current_user[:id]), include_blank:true%>
     </div>
 
     <%= link_to "Create a New Course", new_course_path %>
@@ -44,7 +42,7 @@
     </div>
 
     <div class="input-group input-group-sm mb-3">
-      <%= form.submit :Submit, class:"btn btn-lg btn-primary" %>
+      <%= form.submit :Submit, class:"btn btn-sl btn-primary" %>
     </div>
   <% end %>
 </div>

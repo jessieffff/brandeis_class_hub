@@ -92,7 +92,27 @@ class CoursesController < ApplicationController
       redirect_to courses_url
     end
  end
-  
+
+  def add_new_assignment
+    calendar_id = params[:calendar_id]
+    course_id = params[:course_id]
+    @assignment = Assignment.new(
+      calendar_id: calendar_id,
+      course_id: course_id,
+      name: "Enter assignment name",
+      due_date: ActiveSupport::TimeZone['UTC'].parse(" "),
+      due_time: ActiveSupport::TimeZone['UTC'].parse(" "),
+      slug: "Enter assignment name".gsub(/\s+/, "").downcase
+    )
+    if @assignment.save
+      redirect_to edit_calendar_course_assignment_path(Calendar.find_by(id: calendar_id).invite_token, Course.find_by(id: course_id).slug, @assignment.slug)
+    else
+      @assignment.errors.each do |error| 
+        puts error.full_message
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

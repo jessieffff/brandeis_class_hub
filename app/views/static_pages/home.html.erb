@@ -1,27 +1,18 @@
-<div class="container">
-  <div class="row">
+<head>
+  <%= stylesheet_link_tag "landing_page" %>
+</head>
 
-      <div class="column intro-container">
-        <div class="row slogan"><p>Welcome to Brandeis Class Hub</p></div>
-          <div class="row intro">
-            <p class="highlight">
-            A digital platform that allows you to create as many as calendars as you want to save your course work, your assignments, your personal events and of course, holidays, as we have so many Brandeis Holidays to remember. 
-            </p>
-            <p class="highlight">
-            Say bye to the cumbersome Google calendar! Try set up your next semester's calendar by uploading the workday file using Brandeis Class Hub, one click and you are ready to go. 
-            </p>
-            <p class="highlight">
-            Set your calendars public, so every one can search and subscribe. Or set them private, and share with your closest friends using tokens. 
-            </p>
-          </div>
-          <%# <div class="row"><%= link_to image_tag("branCH.png", alt: "logo", width: "200") %>
+<div class="container">
+  <div>
+
+      <div class="intro-container">
+        <div class="slogan"><p style="text-align:center">Welcome to Brandeis Class Hub</p></div> 
+        <p class="landing_intro" style="text-align:center">Brandeis Class Hub brings all your classes, assignments, and events together.</p></div> 
+        <p class="landing_intro"style="text-align:center"> A digital platform designed for Brandeis Community.</p></div>
+        <div class = "start_button">
           <button class="row button-55"><%= link_to "Get Started Here", home_calendar_path %></button>
         </div>
-      </div>
-
-      <div class="column landing-carousel">
-        <div class="row">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide landing-carousel" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -54,7 +45,7 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-        </div>
+
       </div>
     </div>
 

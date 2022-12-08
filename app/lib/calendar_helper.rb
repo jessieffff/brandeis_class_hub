@@ -44,6 +44,15 @@ class CalendarHelper
             all_courses += Course.all.where(calendar_id: cal.calendar_id).collect { |course| [course.name, course.id, course.calendar_id, course.slug, course.start_date, course.end_date, course.professor_name]}
         end
         return all_courses
+    end
+
+    def self.load_courses_selection(user_id)
+        calendars = UserCalendar.where(user_id: user_id)
+        all_courses_options = []
+        calendars.each do |cal|
+            all_courses_options += Course.all.where(calendar_id: cal.calendar_id).collect { |course| [course.name, course.id]}
+        end
+    return all_courses_options
 
     end
 
@@ -74,5 +83,18 @@ class CalendarHelper
         end
         return all_other_events   
 
+    end
+
+    def self.reformat_repetition(repetition_frequency)
+      repetition = ''
+      repetition.concat('M ') if repetition_frequency.include? 'M'
+      repetition.concat('T ') if repetition_frequency.include? 'T'
+      repetition.concat('W ') if repetition_frequency.include? 'W'
+      repetition.concat('Th ') if repetition_frequency.include? 'H'
+      repetition.concat('F ') if repetition_frequency.include? 'F'
+      repetition.concat('Sa ') if repetition_frequency.include? 'S'
+      repetition.concat('Su ') if repetition_frequency.include? 'U'
+      repetition = repetition.chop
+      repetition.gsub(' ', '/')
     end
 end

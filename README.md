@@ -79,7 +79,7 @@ https://rocky-hollows-83897.herokuapp.com/
 
 
 ### Schema
-<img src="./app/assets/images/schema.png"/>
+<img width="1156" alt="image" src="https://user-images.githubusercontent.com/88059544/206369199-2d2fa442-815d-4a43-a7bc-3f5247e51ace.png">
 
 ### Views
 - Landing page to introduce the app.

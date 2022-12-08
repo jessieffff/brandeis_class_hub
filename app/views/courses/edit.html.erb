@@ -4,8 +4,6 @@
   <%= form_with(scope: :course, url: calendar_course_path(@course), method: :patch) do |form| %>
     <% if @course.errors.any? %>
       <div style="color: red">
-        <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
         <ul>
           <% @course.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -55,18 +53,18 @@
     <div class="form-group">
         <%= form.label :Meeting_Days %>
         <div class = "weekday-selector">
-          <%= form.check_box :repetition_frequency, { multiple: true }, 'M', false %>M
-          <%= form.check_box :repetition_frequency, { multiple: true }, 'T', false %>T
-          <%= form.check_box :repetition_frequency, { multiple: true }, 'W', false %>W
-          <%= form.check_box :repetition_frequency, { multiple: true }, 'H', false %>Th
-          <%= form.check_box :repetition_frequency, { multiple: true }, 'F', false %>F
-          <%= form.check_box :repetition_frequency, { multiple: true }, 'S', false %>Sa
-          <%= form.check_box :repetition_frequency, { multiple: true }, 'U', false %>Su
+          M<%= form.check_box :repetition_frequency, { multiple: true }, 'M', false %>
+          T<%= form.check_box :repetition_frequency, { multiple: true }, 'T', false %>
+          W<%= form.check_box :repetition_frequency, { multiple: true }, 'W', false %>
+          Th<%= form.check_box :repetition_frequency, { multiple: true }, 'H', false %>
+          F<%= form.check_box :repetition_frequency, { multiple: true }, 'F', false %>
+          Sa<%= form.check_box :repetition_frequency, { multiple: true }, 'S', false %>
+          Su<%= form.check_box :repetition_frequency, { multiple: true }, 'U', false %>
         </div>  
     </div> 
 
     <div class="input-group input-group-sm mb-3">
-      <%= form.submit :Submit, class:"btn btn-lg btn-primary" %>
+      <%= form.submit :Submit, class:"btn btn-sl btn-primary" %>
     </div>
   <% end %>
 </div>

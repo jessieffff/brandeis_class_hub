@@ -5,10 +5,11 @@
 
 body {
     padding-top: 40px;
-    background-image: url(backgrounds/background1.jpg);
+    background-image: url("assets/background1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: "Merriweather", sans-serif;
 }
 
 section {
@@ -33,19 +34,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    margin-top:65px;
     font-size: 3em;
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
+    font-weight: 600 weight;
 }
 
 h2 {
-font-size: 1.2em;
-letter-spacing: -1px;
-margin-bottom: 30px;
-text-align: center;
-font-weight: normal;
-color: $gray-light;
+  font-size: 2em;
+  font-weight: 600 weight;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 600 weight;
+}
+
+.h2-styling{
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
 }
 
 p {
@@ -123,6 +137,8 @@ footer {
 .calendar-container {
     display: grid;
     grid-template-columns: repeat(7, minmax(10px, 1fr));
+    padding-left:45px;
+    padding-right:45px;
 }
 
 .day-calender-item {
@@ -196,6 +212,7 @@ input {
 
 .dropdown-menu.active {
     display: block;
+    text-align: center;
   }
 
 
@@ -213,6 +230,11 @@ input {
 
 .datepicker-box {
   padding-right: 50px;
+  margin-top:-30px;
+}
+
+.calendar-event-form{
+  margin-top:-5px;
 }
 
 .prev-next-button {
@@ -222,12 +244,15 @@ input {
 
 
 .calendar-page {
-  margin: 100px;
+  margin-top:50px;
+  margin-bottom: 100px;
+  margin-left:100px;
+  margin-right:100px;
   padding: 20px;
-  background-color: rgba(121, 121, 121, 0.75);
-  border-radius: 10px;
-  border-width: 10px;
-  border-style: ridge;
+  background-color: rgba(235, 230, 230, 0.75);
+  border-radius: 5px;
+  border-width: 5px;
+  border: 5px solid #385988;
 }
 .calendar-container {
     display: grid;
@@ -237,17 +262,24 @@ input {
 .day-calendar-item {
     background-color: #f4fcff;
     padding: 20px;
+    padding-left:20px;
+    padding-right:20px;
     height: 150px;
     text-align: center;
     border-style: solid;
     border-width: 2px;
-    border-color:rgb(185, 185, 185)
+    border-color:rgb(185, 185, 185);
+}
+
+.day_event_list{
+  overflow-y: auto;
+  max-height: 400px;
 }
 
 .day_title {
   text-align: center;
-  color: rgb(255, 255, 255);
-  font-family: 'Trebuchet MS';
+  color: black;
+  font-family: "Whitney", sans-serif;
 }
 
 .event {
@@ -284,24 +316,21 @@ input {
 }
 
 .main-template {
-  background-image: url("backgrounds/background1.jpg");
+  background-image: url("assets/background1.jpg");
   background-size: cover;
   min-width: 100%;
   min-height: 600px;
-
 }
 
 .event-box {
-  border:rgb(44, 44, 44);
-  border-style: solid;
+  border: 5px solid #385988;
   border-radius: 5px;
   border-width: 5px;
-  border-style: ridge;
   margin-top: 10px;
   width: 400px;
   padding: 10px;
   margin-bottom: 1000px;
-  background-color: rgba(255, 244, 224, 0.5);
+  background-color:rgba(235, 230, 230, 0.75);
 }
 
 .submit-button {
@@ -312,9 +341,14 @@ input {
   align-items: center;
   background-color: white;
   padding: 10px;
+  margin-left:45px;
   border-radius: 10px;
-  width: 314px;
+  width: 350px;
   display: inline-block
+}
+
+.view-event-button{
+  margin-left: 45px;
 }
 
 .repitition-container {
@@ -330,8 +364,9 @@ input {
 }
 
 .calendar-label {
-  color: rgb(255, 255, 255);
-  font-family: 'Trebuchet MS';
+  color: black;
+  font-family: "Whitney", sans-serif;
+  margin-top: -5px;
 }
 
 .delete-button {
@@ -343,7 +378,9 @@ input {
 }
 
 .calendar-details-page {
-  margin: 100px;
+  margin-left: 100px;
+  margin-right:100px;
+  margin-bottom:100px;
   padding: 20px;
   background-color: rgba(235, 230, 230, 0.75);
   border-radius: 10px;
@@ -429,6 +466,7 @@ table td {
 }
 
 .new-calendar-page {
+  padding-top:20px;
   margin: auto;
   width: 80%;
   // padding: 20px;
@@ -499,22 +537,24 @@ table td {
 }
 
 
-
-
 .intro-container{
-  margin-left:10px;
   padding-top:20px;
 }
 
 .slogan{
-  margin-left: -30px;
+  text-align:center;
   margin-top:20px;
-  font-size: 45px;
-  font-family: "Righteous", sans-serif;
+  font-size: 50px;
+  font-family: "Whitney", sans-serif;
+  font-weight: bold;
+}
+
+.landing_intro{
+  font-family: "Merriweather", sans-serif;
+  font-size:20px
 }
 
 .intro{
-  
   margin-right: 20px;
   font-size: 20px;
 }
@@ -539,7 +579,7 @@ table td {
   color: #41403e;
   cursor: pointer;
   display: inline-block;
-  font-family: Neucha, sans-serif;
+  font-family: Merriweather, sans-serif;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
@@ -553,7 +593,7 @@ table td {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width:175px;
+  width:200px;
   font-size: 20px;
   text-align:center;
   color:black;
@@ -569,19 +609,16 @@ table td {
 }
 
 
-// .landing-carousel{
-//   width: 40%;
-//   margin-left:500px;
-//   margin-top: 0px;
-// }
-
 .landing-carousel {
-  // width: 80%;
-
-  padding-bottom: 40px;
-    position: absolute;
-      right: 200px;
-      width: 500px;
+  margin-top:15px;
+  margin-left:25%;
+  margin-right:12%;
+  width:55%;
+  // position: absolute;
+  height: 45%;
+  padding-left: 20px;
+  padding-right:20px;
+  margin-bottom: 10px;
 }     
 
 .row {
@@ -593,23 +630,40 @@ table td {
 }
 
 
-// .highlight {
-//   display: inline;
-//   padding: .25em 0;
-//   background: black;
-//   color: #ffffff;
-//   letter-spacing: .06em;
-//   box-shadow: .5em 0 0 #FFC107, -.5em 0 0 #FFC107;
-//   line-height: 1em;
-// }
+.start_button{
+  padding:10px;
+  margin-left:45%;
+  margin-right: 45%;
+  width:100%;
+}
 
-.highlight {
-  text-decoration: underline;
-  text-decoration-color: white;
-  color:black;
-  @supports (text-decoration-skip-ink: none) and (text-underline-offset: 1em) {
-    text-underline-offset: -0.65em;
-    text-decoration-thickness: 0.9em;
-    text-decoration-skip-ink: none;
-  }
+
+.customize_navbar{
+  background-color: #385988;
+  color:white;
+}
+
+.calendar_details_overview{
+  text-align: center;
+}
+
+
+.login_page {
+  margin-top: 75px;
+}
+
+footer{
+  background-color: #385988;
+  margin-top: 5em;
+  color: white;
+  padding-top:8px;
+  text-align: center;
+  height:10px;
+  width:100%;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 5px solid #bbb;
+  border-radius: 5px;
 }
