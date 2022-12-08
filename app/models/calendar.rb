@@ -1,4 +1,7 @@
 class Calendar < ApplicationRecord
+  validates :name, presence: true
+  validates :user_id, presence: true
+
   has_secure_token :invite_token
   has_many :user_calendars, dependent: :destroy
   has_many :users, through: :user_calendars

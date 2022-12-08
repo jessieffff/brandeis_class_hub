@@ -12,9 +12,6 @@ class Day
     end
 
     def load_events
-        #load each type of event
-        #Find user
-        #user.calendars then go to holdya table and look for those
         today_events = []
         calendars = UserCalendar.where(user_id: @user_id)
         calendars.each do |cal|

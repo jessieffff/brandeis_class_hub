@@ -39,8 +39,8 @@ class ClassPeriodsController < ApplicationController
   def update
     respond_to do |format|
       if @class_period.update(class_period_params)
-        format.html { redirect_to calendar_course_class_periods_path(Calendar.find_by(id: @class_period.calendar_id).invite_token, 
-          Course.find_by(id: @class_period.course_id).slug),
+        format.html { redirect_to calendar_course_class_period_path(Calendar.find_by(id: @class_period.calendar_id).invite_token, 
+          Course.find_by(id: @class_period.course_id).slug, ClassPeriod.last.id),
           notice: "Class period was successfully updated." }
         format.json { render :show, status: :ok, location: @class_period }
       else

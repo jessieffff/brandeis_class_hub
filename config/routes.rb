@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
 
 
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :calendars, param: :invite_token do
     resources :user_calendars, only: %i[new create]

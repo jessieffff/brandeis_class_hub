@@ -6,3 +6,9 @@ one:
   last_name: Shapiro
   email: davidshapiro@brandeis.edu
   password_digest: <%= User.digest('password') %>
+
+two:
+  first_name: Fred
+  last_name: Test
+  email: test@brandeis.edu
+  password_digest: <%= User.digest('password') %>

@@ -5,8 +5,9 @@ one:
   name: COSCI_CLASS
   start_date: 2022-10-01
   end_date: 2022-10-10
-  start_time: "10:00AM"
-  end_time: "12:00PM"
+  start_time: <%= Time.zone.local(2000, 1, 1, 10, 0, 0) %>
+  end_time: <%= Time.zone.local(2000, 1, 1, 12, 0, 0) %>
   professor_name: SALAS
   repetition_frequency: MWH
+  slug: COSCI_CLASS
 

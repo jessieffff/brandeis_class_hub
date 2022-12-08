@@ -20,7 +20,9 @@ class CalendarHelper
         initial_days.each do |day_of_week|
             current = day_of_week
             while (current <= end_date)
-                params = {name: name, course_id: id, start_time: start_time, end_time: end_time, date: current, calendar_id: calendar_id}
+                params = {name: name, course_id: id,
+                         start_time: start_time, end_time: end_time,
+                         date: current, calendar_id: calendar_id}
                 ClassPeriod.create(params)
                 current = current + 7
                 all_params.push(params);

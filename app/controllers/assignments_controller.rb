@@ -21,7 +21,6 @@ class AssignmentsController < ApplicationController
   # POST /assignments or /assignments.json
   def create
     @assignment = Assignment.new(assignment_params)
-
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to calendar_course_assignment_path(Calendar.find_by(id: @assignment.calendar_id).invite_token, 

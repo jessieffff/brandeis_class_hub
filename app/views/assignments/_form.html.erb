@@ -4,7 +4,7 @@
       <div style="color: red">
         <ul>
           <% assignment.errors.each do |error| %>
-            <li><%= error.full_message %></li>
+            <li id="error_reason"><%= error.full_message %></li>
           <% end %>
         </ul>
       </div>
