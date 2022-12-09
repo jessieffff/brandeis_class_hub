@@ -24,7 +24,7 @@ class AssignmentsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "should no create if no calendar" do
+  test "should not create if no calendar" do
     visit new_assignment_url
     select @course.name, :from => 'Course'
     fill_in "Name", with: @assignment_parameters[:name]
@@ -39,32 +39,66 @@ class AssignmentsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-#   test "should not create if no name" do
-#     visit assignments_url
-#     click_on "New assignment"
+  test "should not create if no name" do
+    visit new_assignment_url
+    select @course.name, :from => 'Course'
+    select 'TestCal2', :from => 'Calendar'
+    fill_in "Due date", with: @assignment.due_date
+    fill_in "Due time", with: @assignment.due_time
+    click_on "Submit"
 
-#     fill_in "Calendar", with: @assignment.calendar_id
-#     fill_in "Course", with: @assignment.course_id
-#     fill_in "Due date", with: @assignment.due_date
-#     click_on "Create Assignment"
+    assert_text "Name can't be blank"
+    fill_in "Name", with: @assignment_parameters[:name]
+    click_on "Submit"
+    assert_text "Assignment was successfully created"
+    click_on "Back"
+  end
 
-#     assert_select "error_reason" "Name can't be blank"
-#     click_on "Back"
-#   end
+  test "should not create if no due date" do
+    visit new_assignment_url
+    select @course.name, :from => 'Course'
+    select 'TestCal2', :from => 'Calendar'
+    fill_in "Name", with: @assignment_parameters[:name]
+    fill_in "Due time", with: @assignment.due_time
+    click_on "Submit"
 
-#   test "should update Assignment" do
-#     visit assignment_url(@assignment)
-#     click_on "Edit this assignment", match: :first
+    assert_text "Due date can't be blank"
+    fill_in "Due date", with: @assignment.due_date
+    click_on "Submit"
+    assert_text "Assignment was successfully created"
+    click_on "Back"
+  end
 
-#     fill_in "Assignment name", with: @assignment.name
-#     fill_in "Calendar", with: @assignment.calendar_id
-#     fill_in "Course", with: @assignment.course_id
-#     fill_in "Due date", with: @assignment.due_date
-#     click_on "Update Assignment"
+  test "should not create if no due time" do
+    visit new_assignment_url
+    select @course.name, :from => 'Course'
+    select 'TestCal2', :from => 'Calendar'
+    fill_in "Name", with: @assignment_parameters[:name]
+    fill_in "Due date", with: @assignment.due_date
+    click_on "Submit"
 
-#     assert_text "Assignment was successfully updated"
-#     click_on "Back"
-#   end
+    assert_text "Due time can't be blank"
+    fill_in "Due time", with: @assignment.due_time
+    click_on "Submit"
+    assert_text "Assignment was successfully created"
+    click_on "Back"
+  end
+
+  test "should update assignment" do
+    Assignment.last.update_attribute(:calendar_id, Calendar.first.id)
+    Assignment.last.update_attribute(:course_id, Course.first.id)
+    visit calendar_course_assignment_url(Calendar.find_by(id: Assignment.last.calendar_id).invite_token, 
+                                          Course.find_by(id: Assignment.last.course_id).slug, Assignment.last.slug)
+    click_on "Edit", match: :first
+    select 'TestCal2', :from => 'Calendar'
+    select Course.first.name, :from => 'Course'
+    fill_in "Name", with: @assignment_parameters[:name]
+    fill_in "Due date", with: @assignment[:due_date]
+    fill_in "Due time", with: @assignment[:due_time]
+    click_on "Submit"
+    assert_text "Assignment was successfully updated"
+    click_on "Back"
+  end
 
 #   test "should destroy Assignment" do
 #     visit assignment_url(@assignment)
