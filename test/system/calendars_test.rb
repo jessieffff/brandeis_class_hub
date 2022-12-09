@@ -2,46 +2,43 @@
 
 # class CalendarsTest < ApplicationSystemTestCase
 #   setup do
+#     @user = users(:one)
+#     log_in_as(@user)
 #     @calendar = calendars(:one)
 #   end
 
-#   test "visiting the index" do
-#     visit calendars_url
-#     assert_selector "h1", text: "Calendars"
-#   end
-
 #   test "should create calendar" do
-#     visit calendars_url
-#     click_on "New calendar"
-
-#     fill_in "Calendar name", with: @calendar.name
-#     check "Shared" if @calendar.shared
-#     fill_in "invite_token", with: @calendar.invite_token
-#     fill_in "User", with: @calendar.user_id
-#     click_on "Create Calendar"
+#     visit home_calendar_url
+#     click_on "Create a New Calendar"
+#     fill_in "Name", with: @calendar.name
+#     fill_in "Description", with: @calendar.description
+#     check "Public" if @calendar.shared
+#     click_on "Submit"
 
 #     assert_text "Calendar was successfully created"
-#     click_on "Back"
 #   end
 
-#   test "should update Calendar" do
+#   test "should update calendar" do
 #     visit calendar_url(@calendar)
-#     click_on "Edit this calendar", match: :first
-
-#     fill_in "Calendar name", with: @calendar.name
-#     check "Shared" if @calendar.shared
-#     fill_in "invite_token", with: @calendar.invite_token
-#     fill_in "User", with: @calendar.user_id
-#     click_on "Update Calendar"
+#     click_on "Edit this Calendar", match: :first
+#     fill_in "Name", with: @calendar.name
+#     fill_in "Description", with: @calendar.description
+#     check "Public" if @calendar.shared
+#     click_on "Submit"
 
 #     assert_text "Calendar was successfully updated"
-#     click_on "Back"
 #   end
 
-#   test "should destroy Calendar" do
-#     visit calendar_url(@calendar)
-#     click_on "Destroy this calendar", match: :first
+#   test "must have name" do
+#     visit home_calendar_url
+#     click_on "Create a New Calendar"
+#     fill_in "Description", with: @calendar.description
+#     check "Public" if @calendar.shared
+#     click_on "Submit"
+#     assert_text "Name can't be blank"
 
-#     assert_text "Calendar was successfully destroyed"
+#     fill_in "Name", with: @calendar.name
+#     click_on "Submit"
+#     assert_text "Calendar was successfully created"
 #   end
 # end
