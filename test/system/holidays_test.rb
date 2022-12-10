@@ -1,47 +1,61 @@
+#Need to fix this
+
 # require "application_system_test_case"
 
 # class HolidaysTest < ApplicationSystemTestCase
 #   setup do
 #     @holiday = holidays(:one)
-#   end
-
-#   test "visiting the index" do
-#     visit holidays_url
-#     assert_selector "h1", text: "Holidays"
+#     @user = users(:one)
+#     log_in_as(@user)
+#     @holiday_parameters = { calendar_id: Calendar.first.id, name: "new_holiday", date: Date.new(2022, 12, 7), holiday_type: "National", slug: "new_holiday" }
 #   end
 
 #   test "should create holiday" do
-#     visit holidays_url
-#     click_on "New holiday"
+#     visit new_holiday_url
 
-#     fill_in "Calendar", with: @holiday.calendar_id
-#     fill_in "Date", with: @holiday.date
-#     fill_in "Holiday name", with: @holiday.holiday_name
-#     fill_in "Holiday type", with: @holiday.holiday_type
-#     click_on "Create Holiday"
+#     select 'TestCal2', :from => 'Calendar'
+#     fill_in "Name", with: @holiday_parameters[:name]
+#     fill_in "Date", with: @holiday_parameters[:date]
+#     fill_in "Holiday type", with: @holiday_parameters[:holiday_type]
+#     click_on "Submit"
 
 #     assert_text "Holiday was successfully created"
 #     click_on "Back"
 #   end
 
-#   test "should update Holiday" do
-#     visit holiday_url(@holiday)
-#     click_on "Edit this holiday", match: :first
+# #   test "need holiday name" do
+# #     visit new_holiday_url
 
-#     fill_in "Calendar", with: @holiday.calendar_id
-#     fill_in "Date", with: @holiday.date
-#     fill_in "Holiday name", with: @holiday.holiday_name
-#     fill_in "Holiday type", with: @holiday.holiday_type
-#     click_on "Update Holiday"
+# #     select 'TestCal2', :from => 'Calendar'
+# #     fill_in "Date", with: @holiday_parameters[:date]
+# #     fill_in "Holiday type", with: @holiday_parameters[:holiday_type]
+# #     click_on "Submit"
+# #     assert_text "Name can't be blank"
 
-#     assert_text "Holiday was successfully updated"
-#     click_on "Back"
-#   end
+# #     fill_in "Name", with: @holiday_parameters[:name]
+# #     assert_text "Holiday was successfully created"
+# #     click_on "Back"
+# #   end
 
-#   test "should destroy Holiday" do
-#     visit holiday_url(@holiday)
-#     click_on "Destroy this holiday", match: :first
+  
+# #   test "should update Holiday" do
+# #     visit holiday_url(@holiday)
+# #     click_on "Edit this holiday", match: :first
 
-#     assert_text "Holiday was successfully destroyed"
-#   end
+# #     fill_in "Calendar", with: @holiday.calendar_id
+# #     fill_in "Date", with: @holiday.date
+# #     fill_in "Holiday name", with: @holiday.holiday_name
+# #     fill_in "Holiday type", with: @holiday.holiday_type
+# #     click_on "Update Holiday"
+
+# #     assert_text "Holiday was successfully updated"
+# #     click_on "Back"
+# #   end
+
+# #   test "should destroy Holiday" do
+# #     visit holiday_url(@holiday)
+# #     click_on "Destroy this holiday", match: :first
+
+# #     assert_text "Holiday was successfully destroyed"
+# #   end
 # end
