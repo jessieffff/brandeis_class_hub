@@ -1,3 +1,6 @@
+require 'time'
+require 'active_support'
+require 'friendly_id'
 class Holiday < ApplicationRecord
   extend FriendlyId
   validates :calendar_id, presence: true

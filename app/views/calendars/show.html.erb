@@ -162,7 +162,7 @@
       </div>  
       <hr class="rounded">
       <div class="delete-button">
-        <%= button_to "Delete this Calendar", @calendar, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this calendar?/nAll related events will be delted" }}, class:"btn btn-lg btn-danger"%> 
+        <%= button_to "Delete this Calendar", @calendar, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this calendar? All related events will be deleted" }}, class:"btn btn-lg btn-danger"%> 
       </div>
     <div>
     <% elsif UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %>
