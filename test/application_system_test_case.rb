@@ -5,9 +5,9 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   # Log in as a particular user.
   def log_in_as(user, password: 'password')
-    visit login_path
-    fill_in "Email", with: user.email
-    fill_in "Password", with: password
+    visit login_url
+    fill_in "Enter your email", with: user.email
+    fill_in "Enter your password", with: password
     click_button "Log in"
   end
 end

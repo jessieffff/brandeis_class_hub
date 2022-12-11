@@ -1,47 +1,107 @@
-# require "application_system_test_case"
+require "application_system_test_case"
 
-# class UsersTest < ApplicationSystemTestCase
-#   setup do
-#     @user = users(:one)
-#   end
+class UsersTest < ApplicationSystemTestCase
 
-#   test "visiting the index" do
-#     visit users_url
-#     assert_selector "h1", text: "Users"
-#   end
+  def setup
+    @user_params = {first_name: "Example3", last_name: "User3", email: "user3@brandeis.edu",
+                     password: "foobar", password_confirmation: "foobar"}
+  end
 
-#   test "should create user" do
-#     visit users_url
-#     click_on "New user"
+  test "should create user" do
+    visit signup_url
 
-#     fill_in "Email", with: @user.email
-#     fill_in "First name", with: @user.first_name
-#     fill_in "Last name", with: @user.last_name
-#     fill_in "Student", with: @user.student_id
-#     click_on "Create User"
+    fill_in "Enter first name", with: @user_params[:first_name]
+    fill_in "Enter last name", with: @user_params[:last_name]
+    fill_in "Enter email", with: @user_params[:email]
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
 
-#     assert_text "User was successfully created"
-#     click_on "Back"
-#   end
+    assert_text "User was successfully created"
+  end
 
-#   test "should update User" do
-#     visit user_url(@user)
-#     click_on "Edit this user", match: :first
+  test "needs first name" do
+    visit signup_url
 
-#     fill_in "Email", with: @user.email
-#     fill_in "First name", with: @user.first_name
-#     fill_in "Last name", with: @user.last_name
-#     fill_in "Student", with: @user.student_id
-#     click_on "Update User"
+    fill_in "Enter last name", with: @user_params[:last_name]
+    fill_in "Enter email", with: @user_params[:email]
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "First name can't be blank"
 
-#     assert_text "User was successfully updated"
-#     click_on "Back"
-#   end
+    fill_in "Enter first name", with: @user_params[:first_name]
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "User was successfully created"
+  end
 
-#   test "should destroy User" do
-#     visit user_url(@user)
-#     click_on "Destroy this user", match: :first
+  test "needs last name" do
+    visit signup_url
 
-#     assert_text "User was successfully destroyed"
-#   end
-# end
+    fill_in "Enter first name", with: @user_params[:first_name]
+    fill_in "Enter email", with: @user_params[:email]
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "Last name can't be blank"
+
+    fill_in "Enter last name", with: @user_params[:last_name]
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "User was successfully created"
+  end
+
+  test "needs email" do
+    visit signup_url
+
+    fill_in "Enter first name", with: @user_params[:first_name]
+    fill_in "Enter last name", with: @user_params[:last_name]
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "Email can't be blank"
+
+    fill_in "Enter email", with: @user_params[:email]
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "User was successfully created"
+  end
+
+  test "needs password" do
+    visit signup_url
+
+    fill_in "Enter first name", with: @user_params[:first_name]
+    fill_in "Enter last name", with: @user_params[:last_name]
+    fill_in "Enter email", with: @user_params[:email]
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "Password can't be blank"
+
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "User was successfully created"
+  end
+
+  test "needs confirmed password" do
+    visit signup_url
+
+    fill_in "Enter first name", with: @user_params[:first_name]
+    fill_in "Enter last name", with: @user_params[:last_name]
+    fill_in "Enter email", with: @user_params[:email]
+    fill_in "Enter password", with: "foobar"
+    click_on "Create account"
+    assert_text "Password confirmation doesn't match Password"
+
+    fill_in "Enter password", with: "foobar"
+    fill_in "Confirm password", with: "foobar"
+    click_on "Create account"
+    assert_text "User was successfully created"
+    
+  end
+
+end
