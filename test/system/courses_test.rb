@@ -163,7 +163,7 @@ class CoursesTest < ApplicationSystemTestCase
   test "need professor name" do
     visit new_course_url
     select 'TestCal2', :from => 'Calendar'
-    fill_in "Name", with: @course_parameters[:name]
+    fill_in "Name", with: "#{@course.name}#{rand 100}"
     fill_in "Start date", with: @course_parameters[:start_date]
     fill_in "End date", with: @course_parameters[:end_date]
     fill_in "Start time", with: @course_parameters[:start_time]
@@ -175,7 +175,7 @@ class CoursesTest < ApplicationSystemTestCase
 
     fill_in "Start time", with: @course_parameters[:start_time]
     fill_in "End time", with: @course_parameters[:end_time]
-    fill_in "Professor name", with: @course_parameters[:professor_name]
+    fill_in "Professor name", with: @course.professor_name
     check "course_repetition_frequency_m"
     check "course_repetition_frequency_w"
     click_on "Submit"
@@ -207,7 +207,7 @@ class CoursesTest < ApplicationSystemTestCase
   test "must end time after start time" do
     visit new_course_url
     select 'TestCal2', :from => 'Calendar'
-    fill_in "Name", with: @course_parameters[:name]
+    fill_in "Name", with: "#{@course.name}#{rand 100}"
     fill_in "Start date", with: @course_parameters[:start_date]
     fill_in "End date", with: @course_parameters[:end_date]
     fill_in "Start time", with: @course_parameters[:end_time]
@@ -259,7 +259,7 @@ class CoursesTest < ApplicationSystemTestCase
      click_on "Edit", match: :first
 
      select 'TestCal2', :from => 'Calendar'
-     fill_in "Name", with: @course.name
+     fill_in "Name", with: @course_parameters[:name]
      fill_in "End date", with: @course.end_date
      fill_in "Professor name", with: @course.professor_name
      fill_in "Start date", with: @course.start_date
