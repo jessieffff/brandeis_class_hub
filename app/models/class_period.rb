@@ -1,5 +1,6 @@
 class ClassPeriod < ApplicationRecord
   validates :calendar_id, presence: true
+  validates :name, presence: true
   validates :course_id, presence: true
   validates :start_time, presence: true
   validates :date, presence: true
