@@ -30,7 +30,7 @@
 
     <div class="input-group input-group-sm mb-3">
       <%= form.label :holiday_type, style: "display: block" %>
-      <%= form.text_field :holiday_type %>
+      <%= form.select :holiday_type, ["National Holiday", "Brandeis Holiday", "General Holiday"], include_blank:true%>
     </div>
 
     <div class="input-group input-group-sm mb-3">
