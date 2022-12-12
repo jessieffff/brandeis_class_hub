@@ -48,7 +48,7 @@ class AssignmentsTest < ApplicationSystemTestCase
     click_on "Submit"
 
     assert_text "Name can't be blank"
-    fill_in "Name", with: @assignment_parameters[:name]
+    fill_in "Name", with: @assignment_parameters[:name] + "4"
     click_on "Submit"
     assert_text "Assignment was successfully created"
     click_on "Back"
