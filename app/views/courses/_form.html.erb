@@ -51,6 +51,7 @@
 
     <div class="form-group">
         <%= form.label :Meeting_Days %>
+
         <div class = "weekday-selector">
           M<%= form.check_box :repetition_frequency, { multiple: true }, 'M', false %>
           T<%= form.check_box :repetition_frequency, { multiple: true }, 'T', false %>
@@ -59,7 +60,7 @@
           F<%= form.check_box :repetition_frequency, { multiple: true }, 'F', false %>
           Sa<%= form.check_box :repetition_frequency, { multiple: true }, 'S', false %>
           Su<%= form.check_box :repetition_frequency, { multiple: true }, 'U', false %>
-        </div>  
+        </div> 
     </div> 
 
     <div class="input-group input-group-sm mb-3">

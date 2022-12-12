@@ -5,10 +5,6 @@ module ApplicationHelper
     c.first.creator
   end
 
-  def calendar_ids(user)
-    #do this later
-  end
-
   def flash_class(level)
     case level
       when :notice then "alert alert-info"
