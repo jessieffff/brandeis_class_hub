@@ -167,19 +167,19 @@
     <div>
     <% elsif UserCalendar.exists?(user_id: @current_user.id, calendar_id: @calendar.id) %>
       <h3> 
-        <%= button_to "Unsubscribe from this calendar", UserCalendar.find_by(user_id: @current_user.id, calendar_id: @calendar.id), method: :delete, class:"btn btn-lg btn-primary"%> 
+        <%= button_to "Unsubscribe", UserCalendar.find_by(user_id: @current_user.id, calendar_id: @calendar.id), method: :delete, class:"btn btn-lg btn-primary"%> 
         <div class="delete-button">
-          <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-lg btn-primary" %>
+          <%= link_to "Back", :back, class:"btn btn-lg btn-primary"%>
         <div>
       </h3> 
     <% else%>  
     <div>
     <%= form_tag subscribe_calendar_user_calendars_url, multipart: true do %>
       <%= hidden_field_tag :calendar_id , @calendar.id %>
-      <%= submit_tag "Subscribe to this calendar", class:"btn btn-lg btn-primary subscribe-button" %>
+      <%= submit_tag "Subscribe", class:"btn btn-lg btn-primary subscribe-button" %>
     <% end %>
     </div>
-     <%= link_to "Back to Calendar List", calendars_path, class:"btn btn-lg btn-primary" %>
+     <%= link_to "Back", :back, class:"btn btn-lg btn-primary"%>
     <% end %>
     </section>
   </aside>

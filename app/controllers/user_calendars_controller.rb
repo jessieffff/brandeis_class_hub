@@ -31,7 +31,7 @@ class UserCalendarsController < ApplicationController
       calendar_id: calendar_id,
       user_id: Current.user.id,
     )
-    redirect_to home_calendar_url
+    redirect_to calendars_path
   end
  
 
