@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
     before_action :logged_in_user
     def calendar
-        if params[:date] != nil
+        if params[:date] != nil && params[:date] != ""
             @y = params[:date].split("-")[0].to_i
             @m = params[:date].split("-")[1].to_i
             @d = params[:date].split("-")[2].to_i

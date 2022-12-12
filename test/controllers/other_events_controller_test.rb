@@ -45,6 +45,6 @@ class OtherEventsControllerTest < ActionDispatch::IntegrationTest
       delete calendar_other_event_url(Calendar.find_by(id: @other_event.calendar_id).invite_token, @other_event.slug)
     end
 
-    assert_redirected_to home_calendar_url
+    assert_redirected_to calendar_path(Calendar.find_by(id: @other_event.calendar_id))
   end
 end

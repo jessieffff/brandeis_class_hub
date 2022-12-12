@@ -21,6 +21,17 @@ class MonthTest < ActiveSupport::TestCase
     assert_equal(weeks[4].days_in_week, 7)
     assert_equal(weeks[5].days_in_week, 2)
   end
+  
+  test "loading month ending on Sat" do
+    m = Month.new(12, 2022)
+    weeks = m.load_month(users(:one).id)
+    assert_equal(weeks[0].days_in_week, 3)
+    assert_equal(weeks[1].days_in_week, 7)
+    assert_equal(weeks[2].days_in_week, 7)
+    assert_equal(weeks[3].days_in_week, 7)
+    assert_equal(weeks[4].days_in_week, 7)
+    assert_nil(weeks[5])
+  end
 
   test "get month and year" do
     m = Month.new(10, 2022)

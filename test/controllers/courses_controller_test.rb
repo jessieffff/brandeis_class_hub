@@ -50,6 +50,6 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
       delete calendar_course_path(Calendar.find_by(id: @course.calendar_id).invite_token, @course.slug)
     end
 
-    assert_redirected_to home_calendar_url
+    assert_redirected_to calendar_path(Calendar.find_by(id: @course.calendar_id))
   end
 end
