@@ -21,7 +21,7 @@ class CalendarsTest < ApplicationSystemTestCase
   test "should update calendar" do
     visit calendar_url(@calendar)
     click_on "Edit this Calendar", match: :first
-    fill_in "Name", with: @calendar.name
+    fill_in "Name", with: "new"
     fill_in "Description", with: @calendar.description
     check "Public" if @calendar.shared
     click_on "Submit"
@@ -37,7 +37,7 @@ class CalendarsTest < ApplicationSystemTestCase
     click_on "Submit"
     assert_text "Name can't be blank"
 
-    fill_in "Name", with: @calendar.name
+    fill_in "Name", with: "correct name"
     click_on "Submit"
     assert_text "Calendar was successfully created"
   end

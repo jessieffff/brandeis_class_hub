@@ -48,15 +48,15 @@
                 <br>
                 <input class="btn btn-sm btn-primary" id="datepicker-submit" value="Find" type="submit"/>      
             </form>
-            <p><%= @day.currentDate %></p>
         </div>
     </div>
 
 
 
-    <div class="row">
     <% if @view.to_s == "month" %>
+        <div class="row">
             <%= render 'month', :month => @month %>
+        </div>
     <% elsif @view.to_s == "week" %>
         <%= render 'week_buttons', :week => @week %>
         <%= render 'week_view', :week => @week %>
@@ -64,5 +64,4 @@
         <%= render 'day_buttons', :day => @day %>
         <%= render 'day', :day => @day %>
     <% end %>
-    </div>
 </div>
