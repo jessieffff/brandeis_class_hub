@@ -1,4 +1,4 @@
-<div class="calendar-page">
+<div class="calendar-page container">
 
     <h1 class="text-center calendar-label">
         <%= @month.get_month_year %>
@@ -53,9 +53,9 @@
 
 
 
-
+    <div class="row">
     <% if @view.to_s == "month" %>
-        <%= render 'month', :month => @month %>
+            <%= render 'month', :month => @month %>
     <% elsif @view.to_s == "week" %>
         <%= render 'week_buttons', :week => @week %>
         <%= render 'week_view', :week => @week %>
@@ -63,4 +63,5 @@
         <%= render 'day_buttons', :day => @day %>
         <%= render 'day', :day => @day %>
     <% end %>
+    </div>
 </div>
