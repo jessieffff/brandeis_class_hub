@@ -38,20 +38,6 @@ class UserCalendarsController < ApplicationController
   # GET /user_calendars/1/edit
   def edit; end
 
-  # # POST /user_calendars or /user_calendars.json
-  # def create
-  #   @user_calendar = UserCalendar.new(user_calendar_params)
-
-  #   respond_to do |format|
-  #     if @user_calendar.save
-  #       format.html { redirect_to user_calendar_url(@user_calendar), notice: 'User calendar was successfully created.' }
-  #       format.json { render :show, status: :created, location: @user_calendar }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @user_calendar.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
 
   # PATCH/PUT /user_calendars/1 or /user_calendars/1.json
   def update

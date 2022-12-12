@@ -523,12 +523,6 @@ table td {
   width: 200px;
 }
 
-.weekday-selector{
-  width: 5%;
-  margin-left: -60%;
-  white-space: nowrap;
-}
-
 .search-form-input{
   width: 60%;
   padding:10px;
@@ -665,3 +659,11 @@ hr.rounded {
   border-top: 5px solid #bbb;
   border-radius: 5px;
 }
+
+
+.weekday-selector {
+  width: 5%;
+  margin-left: -60%;
+  white-space: nowrap;
+}
+
