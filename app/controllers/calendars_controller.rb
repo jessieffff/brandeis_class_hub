@@ -7,8 +7,9 @@ class CalendarsController < ApplicationController
     @calendars = Calendar.where(user_id: current_user.id)
   end
 
+  # case insensitive and is public
   def search
-    @calendars = Calendar.where("name LIKE ? AND shared = ?", "%" + params[:q] + "%", true)
+    @calendars = Calendar.where("name ILIKE ? AND shared = ?", "%" + params[:q] + "%", true) 
   end
 
   # GET /calendars/1 or /calendars/1.json
@@ -68,12 +69,7 @@ class CalendarsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_calendar
-    # @calendar = Calendar.find_by(params[:token])
-
     @calendar = Calendar.find_by_invite_token(params[:invite_token])
-    # comment out because we don't have current user yet
-    # UserCalendar.where(calendar_id: thiscalendar, user: current_user).first_or_create
-    # @calendar = Calendar.where(calendar: thiscalendar).first_or_create
   end
 
   # Only allow a list of trusted parameters through.

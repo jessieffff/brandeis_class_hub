@@ -51,7 +51,7 @@ class CoursesController < ApplicationController
     @course.destroy
 
     respond_to do |format|
-      format.html { redirect_to home_calendar_url, notice: "Course was successfully destroyed." }
+      format.html { redirect_to calendar_path(prev_calendar_id), notice: "Course was successfully destroyed." }
       format.json { head :no_content }
     end
   end
