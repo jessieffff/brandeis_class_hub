@@ -48,7 +48,7 @@ class AssignmentsTest < ApplicationSystemTestCase
     click_on "Submit"
 
     assert_text "Name can't be blank"
-    fill_in "Name", with: @assignment_parameters[:name]
+    fill_in "Name", with: @assignment_parameters[:name] + "4"
     click_on "Submit"
     assert_text "Assignment was successfully created"
     click_on "Back"
@@ -92,7 +92,7 @@ class AssignmentsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
     select 'TestCal2', :from => 'Calendar'
     select Course.first.name, :from => 'Course'
-    fill_in "Name", with: @assignment_parameters[:name]
+    fill_in "Name", with: @assignment_parameters[:name] + "3"
     fill_in "Due date", with: @assignment[:due_date]
     fill_in "Due time", with: @assignment[:due_time]
     click_on "Submit"

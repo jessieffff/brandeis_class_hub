@@ -20,7 +20,7 @@ class Month
         num_days_in_first_week = 7 - @first_of_month.wday
         num_days_in_last_week = (days_in_month - num_days_in_first_week) % 7
         num_inner_weeks = (days_in_month - num_days_in_first_week - num_days_in_last_week) / 7
-        
+
         #Load first week
         first_week = Week.new(make_date(01))
         weeks.push(first_week)
@@ -36,8 +36,10 @@ class Month
         end
 
         #load final week
-        last_week = Week.new(make_date(start_day))
-        weeks.push(last_week)
+        if (start_day + 6 != @last_of_month.day)
+            last_week = Week.new(make_date(start_day))
+            weeks.push(last_week)
+        end
         return weeks
     end
 
