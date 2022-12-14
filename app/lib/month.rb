@@ -36,8 +36,11 @@ class Month
         end
 
         #load final week
-        last_week = Week.new(make_date(start_day))
-        weeks.push(last_week)
+        if (start_day + 6 != @last_of_month.day)
+            last_week = Week.new(make_date(start_day))
+            weeks.push(last_week)
+        end
+        
         return weeks
     end
 

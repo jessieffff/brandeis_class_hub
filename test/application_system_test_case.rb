@@ -8,6 +8,10 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     visit login_url
     fill_in "Enter your email", with: user.email
     fill_in "Enter your password", with: password
-    click_button "Log in"
+    click_button "Log in", wait: 3
+  end
+
+  def wait
+    sleep 20
   end
 end

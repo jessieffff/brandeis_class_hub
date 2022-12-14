@@ -14,12 +14,13 @@ end
     visit calendar_course_class_period_url(Calendar.find_by(id: @class_period.calendar_id).invite_token, 
     Course.find_by(id: @class_period.course_id).slug, ClassPeriod.last.id)
     click_on "Edit", match: :first
+    
 
     fill_in "Date", with: @class_period_parameters[:date]
     fill_in "End time", with: @class_period_parameters[:end_time]
     fill_in "Start time", with: @class_period_parameters[:start_time]
     click_on "Submit"
-
+    
     assert_text "Class period was successfully updated"
     click_on "Back"
   end
