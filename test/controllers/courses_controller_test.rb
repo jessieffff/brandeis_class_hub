@@ -46,10 +46,11 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy course" do
+    prev_calendar_id = Calendar.find_by(id: @course.calendar_id)
     assert_difference("Course.count", -1) do
       delete calendar_course_path(Calendar.find_by(id: @course.calendar_id).invite_token, @course.slug)
     end
 
-    assert_redirected_to home_calendar_url
+    assert_redirected_to calendar_path(prev_calendar_id)
   end
 end

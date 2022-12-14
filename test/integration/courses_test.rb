@@ -58,15 +58,20 @@ class CoursesTest < ActionDispatch::IntegrationTest
     assert_template 'courses/new'
   end
 
-  test "need start time" do
-    # get new_course_url
-    # assert_no_difference("Course.count") do
-    #     post courses_url, params: { course: {calendar_id: Calendar.first.id, name: "Test thingy", start_date: Date.new(2023, 2, 7), end_date: Date.new(2023, 4, 7), start_time: Time.zone.local(2000, 1, 1, 10, 0, 0), professor_name: "Steve", repetition_frequency: "MW", slug: "new_course" } }
-    # end
-    #assert_select "li", "Start time can't be blank"
-    #assert_response :unprocessable_entity
-    #assert_template 'courses/new'
-  end
+#   test "need start time" do
+#      get new_course_url
+#      assert_no_difference("Course.count") do
+#         par = { course: {calendar_id: Calendar.first.id, name: "new_course",
+#         start_date: Date.new(2023, 2, 7), end_date: Date.new(2023, 4, 9),
+#         end_time: Time.zone.local(2000, 1, 1, 10, 0, 0), professor_name: "Steve",
+#         repetition_frequency: "MW", slug: "new_course" }}
+#         debugger
+#          post courses_url, params:  par
+#      end
+#     assert_select "li", "Start time can't be blank"
+#     assert_response :unprocessable_entity
+#     assert_template 'courses/new'
+#   end
 
 #   test "need end time" do
 #     get new_course_url

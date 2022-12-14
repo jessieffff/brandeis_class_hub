@@ -22,7 +22,7 @@ class CalendarsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show calendar" do
     get calendar_url(@calendar)
-    assert_select "h3", "Import Courses To This Calendar"
+    assert_select "h3", "Import Courses to this Calendar"
   end
 
   test "should get edit" do
@@ -37,10 +37,11 @@ class CalendarsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy calendar" do
+    prev_calendar_id = @calendar.id
     assert_difference("Calendar.count", -1) do
       delete calendar_url(@calendar)
     end
 
-    assert_redirected_to calendar_path(Calendar.find_by(id: @course.calendar_id))
+    assert_redirected_to calendars_path
   end
 end
