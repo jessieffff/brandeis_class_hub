@@ -2,7 +2,7 @@
 
 one:
   calendar_id: 1
-  name: Christmas
-  date: 2022-12-25
-  holiday_type: Christian
+  name: Day
+  date: 2022-12-20
+  holiday_type: Brandeis Holiday
   slug: Test
