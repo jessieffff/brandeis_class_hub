@@ -22,7 +22,7 @@ class HolidayTest < ActiveSupport::TestCase
   end
 
   test "name should be unigue" do
-    @holiday.name = "Christmas"
+    @holiday.name = "Day"
     assert_not @holiday.valid?
   end
 
