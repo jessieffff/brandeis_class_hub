@@ -123,7 +123,7 @@ https://raw.githubusercontent.com/jessieffff/brandeis_class_hub/development/app/
 - gem 'webdrivers'
 
 ### Instruction to run test
-We incorporated system tests as well (see how to run below) but unfortuneatly we kept get errors and the number of errors and failures would vary each time we ran it, without changing anything. It seems to be a race condition of some sort. Anyway, we did write them and met with TA but alas, were not able to solve this issue.
+We incorporated system tests as well (see how to run below) but unfortunately we kept get errors and the number of errors and failures would vary each time we ran it, without changing anything. It seems to be a race condition of some sort. Anyway, we did write them and met with TA but alas, were not able to solve this issue.
 ```
 rails test
 rails test:system test
