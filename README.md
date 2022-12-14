@@ -7,7 +7,7 @@
 - Team Members: Jason Gordon, Lu Hao, Jiefang Li, David Shapiro
 
 ### Summary of functionality
-Generally, our functionality so far is making events for the calendar, sharing calendars, and switching views/months. Most of our calendar and shared calendar functionality is up, and you can schedule and create events accordingly. You can share these calendars via link and have other people see them as well.
+Generally, our functionality so far is making events for the calendar, sharing calendars, and switching views/months. You can share these calendars via link and have other people see them as well.
 
 ### Trello Link
 https://trello.com/b/heBEa0Pv/main
@@ -23,6 +23,9 @@ https://docs.google.com/presentation/d/1J1FzXEHdV9BLZOe5hHJ2pB9wRXQdi_IRz6i9zyYV
 
 ### Icon
 https://raw.githubusercontent.com/jessieffff/brandeis_class_hub/development/app/assets/images/app_icon/branCH_icon.jpg
+
+### Important note
+Due to some unknown CI/CD issues, the deault main branch can not pass all the tests. Please go to `new-main-3` and clone that branch for testing. 
 
 ### URL patterns
 **Root (/):** This shows the landing page of the app, it introduces the concept of the app and has a carousel showing main functionalities.
