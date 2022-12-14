@@ -41,6 +41,6 @@ class CalendarsControllerTest < ActionDispatch::IntegrationTest
       delete calendar_url(@calendar)
     end
 
-    assert_redirected_to calendars_url
+    assert_redirected_to calendar_path(Calendar.find_by(id: @course.calendar_id))
   end
 end

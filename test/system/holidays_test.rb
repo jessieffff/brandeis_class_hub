@@ -16,7 +16,7 @@ class HolidaysTest < ApplicationSystemTestCase
     select 'TestCal2', :from => 'Calendar'
     fill_in "Name", with: @holiday_parameters[:name]
     fill_in "Date", with: @holiday_parameters[:date]
-    fill_in "Holiday type", with: "Brandeis Holiday"
+    select "Holiday type", with: "Brandeis Holiday"
     click_on "Submit"
     
     assert_text "Holiday was successfully created"
@@ -30,7 +30,7 @@ class HolidaysTest < ApplicationSystemTestCase
 
     select 'TestCal2', :from => 'Calendar'
     fill_in "Date", with: @holiday_parameters[:date]
-    fill_in "Holiday type", with: "Brandeis Holiday"
+    select "Holiday type", with: "Brandeis Holiday"
     click_on "Submit"
     
     assert_text "Name can't be blank"
@@ -49,7 +49,7 @@ class HolidaysTest < ApplicationSystemTestCase
 
     select 'TestCal2', :from => 'Calendar'
     fill_in "Name", with: @holiday_parameters[:name]
-    fill_in "Holiday type", with: "Brandeis Holiday"
+    select "Holiday type", with: "Brandeis Holiday"
     click_on "Submit"
     
     assert_text "Date can't be blank"
@@ -73,7 +73,7 @@ class HolidaysTest < ApplicationSystemTestCase
     
     assert_text "Holiday type can't be blank"
 
-    fill_in "Holiday type", with: "Brandeis Holiday"
+    select "Holiday type", with: "Brandeis Holiday"
     click_on "Submit"
     
     assert_text "Holiday was successfully created"
@@ -90,7 +90,7 @@ class HolidaysTest < ApplicationSystemTestCase
     select 'TestCal2', :from => 'Calendar'
     fill_in "Name", with: @holiday.name
     fill_in "Date", with: @holiday.date
-    fill_in "Holiday type", with: "Brandeis Holiday"
+    select "Holiday type", with: "Brandeis Holiday"
     click_on "Submit"
     
 
