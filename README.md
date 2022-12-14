@@ -25,7 +25,7 @@ https://docs.google.com/presentation/d/1J1FzXEHdV9BLZOe5hHJ2pB9wRXQdi_IRz6i9zyYV
 https://raw.githubusercontent.com/jessieffff/brandeis_class_hub/development/app/assets/images/app_icon/branCH_icon.jpg
 
 ### Important note
-Due to some unknown CI/CD issues, the deault main branch can not pass all the tests. Please go to `new-main-3` and clone that branch for testing. 
+Due to some unknown CI/CD issues, the deault main branch can not pass all the tests. Please go to branch `new-main-3` and clone that branch for testing. 
 
 ### URL patterns
 **Root (/):** This shows the landing page of the app, it introduces the concept of the app and has a carousel showing main functionalities.
